@@ -26,3 +26,4 @@ dist-ssr
 *.sln
 *.sw?
 .vscode/
+./python-app/__pycache__/jarvis.cpython-313.pyc
