@@ -1,0 +1,6 @@
+@UAInnovate2026backend_HostAddress = http://localhost:5228
+
+GET {{UAInnovate2026backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
