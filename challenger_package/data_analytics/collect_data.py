@@ -1,7 +1,7 @@
 import json
 
-def get_resource_data():
-    with open("../historical_avengers_data.csv", "r") as file:
+def get_resource_data(filename="../historical_avengers_data.csv"):
+    with open(filename, "r") as file:
         lines = file.readlines()[1:]
 
     sector_to_resource = {}
