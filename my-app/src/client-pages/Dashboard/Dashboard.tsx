@@ -117,6 +117,8 @@ export default function Dashboard() {
                 <button
                   className="date-filter-clear"
                   onClick={() => {
+                    setInputStart('');
+                    setInputEnd('');
                     setFetchStart(undefined);
                     setFetchEnd(undefined);
                   }}
