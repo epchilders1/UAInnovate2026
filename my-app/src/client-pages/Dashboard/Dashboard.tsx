@@ -3,110 +3,148 @@ import { useJarvis } from '../../context/JarvisContext';
 import { useDashboardData } from './DashboardApi';
 import { hatch } from 'ldrs';
 import {
-  Card,
-  AreaChart,
-} from '@tremor/react';
-import {
-  Shield,
-  LayoutDashboard,
-  Map,
-  BarChart3,
-  Settings,
-  Bell,
-} from 'lucide-react';
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+} from 'recharts';
+import DashboardHeader from '../../components/DashboardHeader/DashboardHeader';
+import StatsRow from '../../components/StatsRow/StatsRow';
+import ResourceCard from '../../components/ResourceCard/ResourceCard';
+import ReportCard from '../../components/ReportCard/ReportCard';
 
 hatch.register();
 
-const menuItems = [
-  { icon: LayoutDashboard, label: 'Dashboard', active: true },
-  { icon: Map, label: 'Sectors' },
-  { icon: BarChart3, label: 'Analytics' },
-  { icon: Bell, label: 'Alerts' },
-  { icon: Settings, label: 'Settings' },
-];
+const USAGE_COLORS = ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e'];
+const STOCK_COLORS = ['#f43f5e', '#f59e0b', '#8b5cf6', '#06b6d4', '#10b981'];
 
 export default function Dashboard() {
   const { askingPrompt } = useJarvis();
   const { data, loading } = useDashboardData();
 
-  const statCards = data
-    ? [
-        { title: 'Sectors', value: data.cards.sectors.toLocaleString() },
-        { title: 'Resources', value: data.cards.resources.toLocaleString() },
-        { title: 'Heroes', value: data.cards.heroes.toLocaleString() },
-        { title: 'Reports', value: data.cards.reports.toLocaleString() },
-      ]
-    : [];
-
   return (
-    <div className="dashboard-layout">
-      <aside className="sidebar">
-        <div className="sidebar-logo">
-          <Shield size={28} />
-          <span>JARVIS FUCKS</span>
-        </div>
-        <nav className="sidebar-nav">
-          {menuItems.map((item) => (
-            <button
-              key={item.label}
-              className={`sidebar-item ${item.active ? 'active' : ''}`}
-            >
-              <item.icon size={20} />
-              <span>{item.label}</span>
-            </button>
-          ))}
-        </nav>
-      </aside>
-
+    <div className="dashboard-layout dark">
       <main className="dashboard-main">
-        <header className="dashboard-header">
-          <h1>Dashboard</h1>
-          <p className="dashboard-subtitle">Operations Overview</p>
-        </header>
+        <DashboardHeader />
 
         {loading ? (
           <p>Loading...</p>
         ) : data ? (
           <>
-            <div className="stat-cards">
-              {statCards.map((card) => (
-                <Card key={card.title} className="stat-card">
-                  <p className="stat-label">{card.title}</p>
-                  <p className="stat-value">{card.value}</p>
-                </Card>
+            <StatsRow
+              resourceCount={data.resourceCount}
+              daysRemaining={data.daysRemaining}
+            />
+
+            <div className="charts-grid">
+              <div className="chart-card">
+                <h3 className="chart-title">Resource Usage</h3>
+                <p className="chart-subtitle">Consumption over time</p>
+                <div style={{ width: '100%', height: 240, marginTop: '1rem' }}>
+                  <ResponsiveContainer>
+                    <LineChart data={data.usageChart.data}>
+                      <CartesianGrid stroke="#1e2130" strokeDasharray="3 3" />
+                      <XAxis
+                        dataKey="timestamp"
+                        tick={{ fill: '#6b7280', fontSize: 11 }}
+                        axisLine={false}
+                        tickLine={false}
+                      />
+                      <YAxis
+                        width={48}
+                        tick={{ fill: '#6b7280', fontSize: 11 }}
+                        axisLine={false}
+                        tickLine={false}
+                      />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: '#1e2130',
+                          border: '1px solid #2d3148',
+                          borderRadius: 8,
+                          color: '#e5e7eb',
+                        }}
+                      />
+                      {data.usageChart.categories.map((cat, i) => (
+                        <Line
+                          key={cat}
+                          type="monotone"
+                          dataKey={cat}
+                          stroke={USAGE_COLORS[i % USAGE_COLORS.length]}
+                          strokeWidth={2}
+                          dot={false}
+                        />
+                      ))}
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+
+              <div className="chart-card">
+                <h3 className="chart-title">Stock Levels</h3>
+                <p className="chart-subtitle">Inventory levels over time</p>
+                <div style={{ width: '100%', height: 240, marginTop: '1rem' }}>
+                  <ResponsiveContainer>
+                    <LineChart data={data.stockChart.data}>
+                      <CartesianGrid stroke="#1e2130" strokeDasharray="3 3" />
+                      <XAxis
+                        dataKey="timestamp"
+                        tick={{ fill: '#6b7280', fontSize: 11 }}
+                        axisLine={false}
+                        tickLine={false}
+                      />
+                      <YAxis
+                        width={48}
+                        tick={{ fill: '#6b7280', fontSize: 11 }}
+                        axisLine={false}
+                        tickLine={false}
+                      />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: '#1e2130',
+                          border: '1px solid #2d3148',
+                          borderRadius: 8,
+                          color: '#e5e7eb',
+                        }}
+                      />
+                      {data.stockChart.categories.map((cat, i) => (
+                        <Line
+                          key={cat}
+                          type="monotone"
+                          dataKey={cat}
+                          stroke={STOCK_COLORS[i % STOCK_COLORS.length]}
+                          strokeWidth={2}
+                          dot={false}
+                        />
+                      ))}
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </div>
+
+            <div className="resource-cards-grid">
+              {data.resources.map((r) => (
+                <ResourceCard
+                  key={r.name}
+                  name={r.name}
+                  stockLevel={r.stockLevel}
+                  usage={r.usage}
+                />
               ))}
             </div>
 
-            <div className="charts-grid">
-              <Card className="chart-card">
-                <h3 className="chart-title">Resource Usage</h3>
-                <p className="chart-subtitle">Consumption over time</p>
-                <AreaChart
-                  className="mt-4 h-60"
-                  data={data.usageChart.data}
-                  index="timestamp"
-                  categories={data.usageChart.categories}
-                  colors={['blue', 'cyan', 'emerald']}
-                  yAxisWidth={48}
-                  showLegend={false}
-                  showAnimation
+            <div className="report-cards-grid">
+              {data.reports.map((r, i) => (
+                <ReportCard
+                  key={i}
+                  heroAlias={r.heroAlias}
+                  timestamp={r.timestamp}
+                  priority={r.priority}
                 />
-              </Card>
-
-              <Card className="chart-card">
-                <h3 className="chart-title">Stock Levels</h3>
-                <p className="chart-subtitle">Inventory levels over time</p>
-                <AreaChart
-                  className="mt-4 h-60"
-                  data={data.stockChart.data}
-                  index="timestamp"
-                  categories={data.stockChart.categories}
-                  colors={['rose', 'amber', 'violet']}
-                  yAxisWidth={48}
-                  showAnimation
-                  showLegend={false}
-                />
-              </Card>
+              ))}
             </div>
           </>
         ) : (
