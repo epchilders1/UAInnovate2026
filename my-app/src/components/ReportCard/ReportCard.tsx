@@ -4,6 +4,7 @@ interface ReportCardProps {
   heroAlias: string;
   timestamp: string;
   priority: string;
+  onClick?: () => void;
 }
 
 const priorityColors: Record<string, string> = {
@@ -12,7 +13,7 @@ const priorityColors: Record<string, string> = {
   'Avengers Level Threat': '#ef4444',
 };
 
-export default function ReportCard({ heroAlias, timestamp, priority }: ReportCardProps) {
+export default function ReportCard({ heroAlias, timestamp, priority, onClick }: ReportCardProps) {
   const date = new Date(timestamp);
   const formatted = date.toLocaleDateString('en-US', {
     month: 'short',
@@ -23,7 +24,7 @@ export default function ReportCard({ heroAlias, timestamp, priority }: ReportCar
   });
 
   return (
-    <div className="report-card">
+    <div className="report-card" onClick={onClick} style={{ cursor: onClick ? 'pointer' : undefined }}>
       <div className="report-card-top">
         <span
           className="report-card-dot"

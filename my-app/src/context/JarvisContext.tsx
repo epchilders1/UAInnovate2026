@@ -14,6 +14,7 @@ const TRIGGER_STRINGS = [
 interface JarvisContextType {
     askingPrompt: boolean;
     transcript: string;
+    referencedResources: string[];
 }
 
 interface Message{
@@ -28,6 +29,7 @@ export function JarvisProvider({ children }: { children: React.ReactNode }) {
     const { setLoading } = useLoading();
     const [askingPrompt, setAskingPrompt] = useState(false);
     const [messageList, setMessageList] = useState<Message[]>();
+    const [referencedResources, setReferencedResources] = useState<string[]>([]);
 
     const currentAudioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -89,6 +91,7 @@ export function JarvisProvider({ children }: { children: React.ReactNode }) {
             const data = await response.json();
             const jarvisMessage = { role: "assistant", content: data.response ?? "" };
             setMessageList([...updatedList, jarvisMessage]);
+            setReferencedResources(data.referencedResources ?? []);
             if (data?.response) await speakText(data.response);
             setLoading(false);
             setAskingPrompt(false);
@@ -98,7 +101,7 @@ export function JarvisProvider({ children }: { children: React.ReactNode }) {
     }, [transcript, askingPrompt]);
 
     return (
-        <JarvisContext.Provider value={{ askingPrompt, transcript }}>
+        <JarvisContext.Provider value={{ askingPrompt, transcript, referencedResources }}>
             {children}
         </JarvisContext.Provider>
     );
