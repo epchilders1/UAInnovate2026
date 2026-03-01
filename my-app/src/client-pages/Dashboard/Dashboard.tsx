@@ -62,12 +62,12 @@ export default function Dashboard() {
   useEffect(() => {
     if (referencedResources.length === 0 || !data?.resources) return;
     const normalize = (s: string) => s.replace(/\s*\(.*?\)$/, '').trim().toLowerCase();
-    const matched = new Set(
-      data.resources
-        .filter(r => referencedResources.some(ref => normalize(ref) === normalize(r.name)))
-        .map(r => r.name)
+    const matched = data.resources.filter(r =>
+      referencedResources.some(ref => normalize(ref) === normalize(r.name))
     );
-    if (matched.size > 0) setSelectedResources(matched);
+    matched.forEach(r => {
+      if (!selectedResources.has(r.name)) handleResourceClick(r);
+    });
   }, [referencedResources, data]);
   
   useEffect(() => {

@@ -533,7 +533,7 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
         session.query(ResourceStockLevel)
         .filter(ResourceStockLevel.sector_resource_id == sector_resource_id)
         .order_by(ResourceStockLevel.timestamp.desc())
-        .limit(20)
+        .limit(200)
     )
     rows = list(q)[::-1]  # reverse to chronological order
     if len(rows) < 2:
