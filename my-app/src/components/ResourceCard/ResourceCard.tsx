@@ -1,6 +1,7 @@
 import './ResourceCard.css';
 
 interface ResourceCardProps {
+  id: number;
   name: string;
   stockLevel?: number;
   usage?: number;
@@ -8,9 +9,9 @@ interface ResourceCardProps {
   onClick?: () => void;
 }
 
-export default function ResourceCard({ name, stockLevel, usage, isSelected, onClick }: ResourceCardProps) {
+export default function ResourceCard({ id, name, stockLevel, usage, isSelected, onClick }: ResourceCardProps) {
   return (
-    <div className={`resource-card${isSelected ? ' resource-card--selected' : ''}`} onClick={onClick} style={{ cursor: onClick ? 'pointer' : undefined }}>
+    <div className={`resource-card${isSelected ? ' resource-card--selected' : ''}`} onClick={() => { console.log(id); onClick?.(); }} style={{ cursor: onClick ? 'pointer' : undefined }}>
       <p className="resource-card-name">{name}</p>
       <p className="resource-card-stock">{stockLevel?.toLocaleString()}</p>
       <p className="resource-card-usage">Usage: {usage}/hr</p>

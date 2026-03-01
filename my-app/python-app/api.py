@@ -325,6 +325,7 @@ def get_dashboard(
     resources = session.exec(select(Resource)).all()
     resource_count = len(resources)
     resource_map = {r.id: r.resource_name for r in resources}
+    resource_id_map = {r.resource_name: r.id for r in resources}
 
     # Get all sector_resources to map sector_resource_id -> resource_name
     sector_resources = session.exec(select(SectorResource)).all()
@@ -360,6 +361,7 @@ def get_dashboard(
         avg_usage = stats["usage"] / stats["count"] if stats["count"] else 0
         stock = stats["stockLevel"]
         resource_list.append({
+            "id": resource_id_map.get(name),
             "name": name,
             "stockLevel": round(stock, 1),
             "usage": round(avg_usage, 2),

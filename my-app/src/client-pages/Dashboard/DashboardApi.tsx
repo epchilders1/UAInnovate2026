@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 
 export interface ResourceItem {
+  id: number;
   name: string;
   stockLevel: number;
   usage: number;

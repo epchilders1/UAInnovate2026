@@ -256,6 +256,7 @@ export default function Dashboard() {
               {data.resources.map((r, i) => (
                 <div key={r.name} className="animate-in" style={{ animationDelay: `${0.24 + i * 0.08}s` }}>
                   <ResourceCard
+                    id={r.id}
                     name={r.name}
                     stockLevel={r.stockLevel}
                     usage={r.usage}
