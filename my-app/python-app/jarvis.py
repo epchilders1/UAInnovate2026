@@ -6,7 +6,7 @@ from config import Config
 
 openai_client = AsyncOpenAI(api_key=Config.OPENAI_API_KEY)
 
-from redact_report import redact_reports
+from redact_report import redact_reports, redact_contact
 
 
 # ---------------------------------------------------------------------------
@@ -39,6 +39,10 @@ class JarvisDetector:
     def extract(self, parsed: dict) -> dict:
         """Returns a dict of key/value pairs to merge into the final response."""
         return {}
+
+    def sanitize_messages(self, messages: list[dict]) -> list[dict]:
+        """Optionally transforms message content before it is sent to the LLM."""
+        return messages
 
 
 class ResourceDetector(JarvisDetector):
@@ -107,7 +111,7 @@ class ResourceDetector(JarvisDetector):
                     )
         elif self.reports:
             lines.append("\nRecent reports:")
-            for r in self.reports[:5]:
+            for r in redact_reports(self.reports[:5]):
                 lines.append(
                     f"  [{r['timestamp'][:16]}] [REDACTED] | {r['priority']} | {r['rawText'][:120]}"
                 )
@@ -129,6 +133,98 @@ class ResourceDetector(JarvisDetector):
 
     def extract(self, parsed: dict) -> dict:
         return {"referencedResources": parsed.get("referencedResources", [])}
+
+
+class HeroDetector(JarvisDetector):
+    """Detects hero aliases mentioned in the user's message using fuzzy matching.
+
+    Injects reports filed by or about those heroes as context, with contact
+    info redacted but aliases kept visible (they are codenames, not identities).
+    """
+
+    FUZZY_THRESHOLD = 0.75
+
+    def __init__(
+        self,
+        hero_aliases: list[str],
+        reports: list[dict],
+        last_message: str = "",
+    ):
+        self.hero_aliases = hero_aliases
+        self.reports = reports
+        self.last_message = last_message.lower()
+
+    def _normalize(self, s: str) -> str:
+        return s.strip().lower()
+
+    def _mentioned(self) -> list[str]:
+        message_tokens = self.last_message.split()
+        mentioned = []
+
+        for alias in self.hero_aliases:
+            alias_clean = self._normalize(alias)
+            alias_tokens = alias_clean.split()
+            n = len(alias_tokens)
+
+            if alias_clean in self.last_message:
+                mentioned.append(alias)
+                continue
+
+            for i in range(len(message_tokens) - n + 1):
+                window = ' '.join(message_tokens[i:i + n])
+                ratio = difflib.SequenceMatcher(None, alias_clean, window).ratio()
+                if ratio >= self.FUZZY_THRESHOLD:
+                    mentioned.append(alias)
+                    break
+
+        return mentioned
+
+    def context(self) -> str:
+        mentioned = self._mentioned()
+        if not mentioned:
+            return ""
+
+        lines = []
+        for alias in mentioned:
+            relevant = [r for r in self.reports if self._normalize(r.get("heroAlias", "")) == self._normalize(alias)]
+            safe = redact_reports(relevant)  # full redaction — alias → [REDACTED] in both field and rawText
+            lines.append(f"\n[Field operative: REDACTED]")
+            lines.append(f"  Reports ({len(safe)} total):")
+            for r in safe:
+                lines.append(
+                    f"    [{r['timestamp'][:16]}] [REDACTED] | {r['priority']} | {r['rawText']}"
+                )
+
+        return "\n".join(lines)
+
+    def sanitize_messages(self, messages: list[dict]) -> list[dict]:
+        """Replace detected hero aliases in the user/assistant message content."""
+        mentioned = self._mentioned()
+        if not mentioned:
+            return messages
+        sanitized = []
+        for msg in messages:
+            content = msg["content"]
+            for alias in mentioned:
+                content = re.sub(re.escape(alias), "[REDACTED]", content, flags=re.IGNORECASE)
+            sanitized.append({**msg, "content": content})
+        return sanitized
+
+    def instruction(self) -> str:
+        if not self._mentioned():
+            return ""
+        return (
+            "CRITICAL INSTRUCTION — The user asked about a field operative whose identity is classified. "
+            "Summarize the report data provided above. "
+            "Do NOT reveal any identifying information. Do NOT add background knowledge. "
+            "Cite specific dates, priority levels, and report text from the data."
+        )
+
+    def schema(self) -> str:
+        return '"referencedHeroes": ["HeroAlias", ...]  // aliases from the available heroes that are relevant to this exchange'
+
+    def extract(self, parsed: dict) -> dict:
+        return {"referencedHeroes": parsed.get("referencedHeroes", [])}
 
 
 # ---------------------------------------------------------------------------
@@ -185,8 +281,12 @@ class Jarvis:
         detectors = detectors or []
         system_prompt = _build_system_prompt(detectors)
 
+        sanitized_list = list(messageList or [])
+        for detector in detectors:
+            sanitized_list = detector.sanitize_messages(sanitized_list)
+
         messages = [{"role": "system", "content": system_prompt}]
-        for msg in (messageList or []):
+        for msg in sanitized_list:
             messages.append({"role": msg["role"], "content": msg["content"]})
 
         response = await openai_client.chat.completions.create(

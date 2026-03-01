@@ -2,8 +2,16 @@ import numpy as np
 from typing import Optional, Dict, Any
 import datetime
 
+
+def _safe(v):
+    """Convert numpy scalar to a JSON-serializable Python float, or None if nan/inf."""
+    if v is None:
+        return None
+    f = float(v)
+    return None if (np.isnan(f) or np.isinf(f)) else f
+
 class RegressionResult:
-    async def __init__(self, alpha, beta, gamma, t_star, t_star_std, ci_95):
+    def __init__(self, alpha, beta, gamma, t_star, t_star_std, ci_95):
         self.alpha = alpha
         self.beta = beta
         self.gamma = gamma
@@ -11,25 +19,26 @@ class RegressionResult:
         self.t_star_std = t_star_std
         self.ci_95 = ci_95
 
-    async def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
+        ci_lo, ci_hi = self.ci_95
         return {
-            "alpha": self.alpha,
-            "beta": self.beta,
-            "gamma": self.gamma,
-            "t_star": self.t_star,
-            "t_star_std": self.t_star_std,
-            "ci_95": self.ci_95,
+            "alpha": _safe(self.alpha),
+            "beta": _safe(self.beta),
+            "gamma": _safe(self.gamma),
+            "t_star": _safe(self.t_star),
+            "t_star_std": _safe(self.t_star_std),
+            "ci_95": [_safe(ci_lo), _safe(ci_hi)],
         }
 
 class Regression:
-    async def __init__(self, stock_levels: np.ndarray, t_0: datetime.datetime, t_snap: Optional[int] = None):
+    def __init__(self, stock_levels: np.ndarray, t_0: datetime.datetime, t_snap: Optional[int] = None):
         self.stock_levels = np.array(stock_levels, dtype=float)
         self.T = len(stock_levels)
         self.t_0 = t_0
         self.t_snap = t_snap
         self.result = None
 
-    async def fit(self) -> RegressionResult:
+    def fit(self) -> RegressionResult:
         t = np.arange(self.T, dtype=float)
         y = self.stock_levels
 
@@ -54,17 +63,17 @@ class Regression:
             alpha_post = np.median(y_post - beta * t_post)
             gamma = alpha_post - alpha_pre
             alpha = alpha_pre
-            t_star = -(alpha + gamma) / beta
+            t_star = -(alpha + gamma) / beta if beta != 0 else np.inf
 
         else:
             slopes = []
             for i in range(self.T):
-                for j in range(i+1, T):
+                for j in range(i+1, self.T):
                     slopes.append((y[j] - y[i]) / (t[j] - t[i]))
             beta = np.median(slopes)
             alpha = np.median(y - beta * t)
             gamma = 0.0
-            t_star = -alpha / beta
+            t_star = -alpha / beta if beta != 0 else np.inf
 
         # Bootstrap confidence interval
         n_boot = 500
@@ -72,7 +81,7 @@ class Regression:
         rng = np.random.default_rng(42)
 
         for _ in range(n_boot):
-            idx = rng.integers(0, T, size=T)
+            idx = rng.integers(0, self.T, size=self.T)
             t_b, y_b = t[idx], y[idx]
 
             if self.t_snap is not None:
@@ -106,8 +115,8 @@ class Regression:
 
             else:
                 slopes_b = []
-                for i in range(T):
-                    for j in range(i+1, T):
+                for i in range(self.T):
+                    for j in range(i+1, self.T):
                         if t_b[j] != t_b[i]:
                             slopes_b.append((y_b[j] - y_b[i]) / (t_b[j] - t_b[i]))
                 if not slopes_b:
@@ -126,7 +135,7 @@ class Regression:
         return self.result
 
     @staticmethod
-    async def _compute_weights(T, t_snap=None):
+    def _compute_weights(T, t_snap=None):
         t = np.arange(T, dtype=float)
         if t_snap is None:
             w = 1.0 / (t + 1)
@@ -138,48 +147,45 @@ class Regression:
             w = pre_weight + post_weight
         return w / w.sum()
 
-    async def get_result_dict(self) -> Optional[Dict[str, Any]]:
+    def get_result_dict(self) -> Optional[Dict[str, Any]]:
         if self.result:
             return self.result.to_dict()
         return None
-    
-    async def get_line(self) -> Optional[Dict[str, Any]]:
+
+    def get_line(self) -> Optional[Dict[str, Any]]:
         if not self.result:
             return None
-        
-        t_star = self.result.t_star
-        ci_lo, ci_hi = self.result.ci_95
-        t_end = int(max(self.T + 5, ci_hi + 3 if not np.isnan(ci_hi) else 0, t_star + 3 if not np.isnan(t_star) else 0))
-        t_plot = np.linspace(0, t_end)
-        timestamps = [self.t_0 + datetime.timedelta(minutes=12 * int(i)) for i in t_plot]
 
-        # Snap logic: if t_snap is set, add gamma after snap
+        t_star = _safe(self.result.t_star) or 0
+        ci_lo, ci_hi = self.result.ci_95
+        ci_hi_safe = _safe(ci_hi) or 0
+        t_end = int(max(self.T + 5, ci_hi_safe + 3, t_star + 3))
+        t_plot = np.linspace(0, t_end)
+        timestamps = [(self.t_0 + datetime.timedelta(minutes=12 * int(i))).isoformat() for i in t_plot]
+
         if self.t_snap is not None:
             S_plot = (t_plot < self.t_snap).astype(float)
             line = self.result.alpha + self.result.beta * t_plot + self.result.gamma * S_plot
         else:
             line = self.result.alpha + self.result.beta * t_plot
-        
+
         return {
             "timestamps": timestamps,
             "data": line.tolist()
         }
-    
-    async def get_confidence_interval(self) -> Optional[Dict[str, Any]]:
+
+    def get_confidence_interval(self) -> Optional[Dict[str, Any]]:
         if not self.result:
             return None
-        
-        t_star = self.result.t_star
+
+        t_star = _safe(self.result.t_star)
         ci_lo, ci_hi = self.result.ci_95
 
-        if t_star <= 0:
-            return {
-                "OK": False
-            }
-        else:
-            return{
-                "OK": True,
-                "ci_lo": ci_lo,
-                "ci_hi": ci_hi,
-                "t_star": t_star
-            }
+        if t_star is None or t_star <= 0:
+            return {"OK": False}
+        return {
+            "OK": True,
+            "ci_lo": _safe(ci_lo),
+            "ci_hi": _safe(ci_hi),
+            "t_star": t_star,
+        }

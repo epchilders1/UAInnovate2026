@@ -1,11 +1,18 @@
 import { useState, useEffect } from 'react';
 
 
+export interface ResourceHistoryPoint {
+  timestamp: string;
+  stockLevel: number;
+}
+
 export interface ResourceItem {
   id: number;
   name: string;
   stockLevel: number;
   usage: number;
+  history: ResourceHistoryPoint[];
+  pctChange: number | null;
 }
 
 export interface ReportItem {

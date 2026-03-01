@@ -4,7 +4,7 @@ from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority, User, UserSession
-from jarvis import Jarvis, ResourceDetector, openai_client
+from jarvis import Jarvis, ResourceDetector, HeroDetector, openai_client
 from config import Config
 from pydantic import BaseModel
 from typing import List, Optional
@@ -99,8 +99,8 @@ def logout(body: LogoutRequest, db: Session = Depends(get_session)):
 @app.post("/ask_jarvis")
 async def ask_jarvis(body: AskJarvisRequest, db: Session = Depends(get_session)):
     resources = db.exec(select(Resource)).all()
-    reports = fetch_recent_reports(db);
-    reports = redact_reports(reports)
+    heroes = db.exec(select(Hero)).all()
+    reports = fetch_recent_reports(db)
     days_remaining = {r.resource_name: 0 for r in resources}
     last_message = body.messageList[-1].content if body.messageList else ""
     detectors = [
@@ -108,6 +108,11 @@ async def ask_jarvis(body: AskJarvisRequest, db: Session = Depends(get_session))
             resource_names=[r.resource_name for r in resources],
             reports=reports,
             days_remaining=days_remaining,
+            last_message=last_message,
+        ),
+        HeroDetector(
+            hero_aliases=[h.alias for h in heroes],
+            reports=reports,
             last_message=last_message,
         ),
     ]
@@ -276,20 +281,20 @@ def fetch_recent_reports(session: Session) -> list[dict]:
       - High / AvengersLevelThreat reports from the last 30 days
     Deduped and sorted newest-first.
     """
-    now = datetime(2026, 1, 6)
-    cutoff_7d  = now - timedelta(days=7)
-    cutoff_30d = now - timedelta(days=30)
+    now = datetime.now()
+    cutoff_50d  = now - timedelta(days=50)
+    cutoff_100d = now - timedelta(days=100)
 
     recent_any = session.exec(
         select(Report, Hero)
         .join(Hero, Report.hero_id == Hero.id)
-        .where(Report.timestamp >= cutoff_7d)
+        .where(Report.timestamp >= cutoff_50d)
     ).all()
-
+    recent_any = sorted(recent_any, key=lambda row: row[0].timestamp, reverse=True)                                                                                                                                
     urgent_30d = session.exec(
         select(Report, Hero)
         .join(Hero, Report.hero_id == Hero.id)
-        .where(Report.timestamp >= cutoff_30d)
+        .where(Report.timestamp >= cutoff_100d)
         .where(Report.priority >= Priority.High)
     ).all()
 
@@ -353,21 +358,48 @@ def get_dashboard(
         latest_stock = levels[0].stock_level
         avg_usage = sum(l.usage for l in levels) / len(levels) if levels else 0
         if rname not in resource_stats:
-            resource_stats[rname] = {"stockLevel": 0, "usage": 0, "count": 0}
+            resource_stats[rname] = {"stockLevel": 0, "usage": 0, "count": 0, "history_by_ts": {}}
         resource_stats[rname]["stockLevel"] += latest_stock
         resource_stats[rname]["usage"] += avg_usage
         resource_stats[rname]["count"] += 1
+        resource_stats[rname]["id"] = sr.id
+        for level in reversed(levels):  # chronological order
+            ts = level.timestamp.strftime("%Y-%m-%d %H:%M")
+            h = resource_stats[rname]["history_by_ts"]
+            if ts not in h:
+                h[ts] = {"sum": 0, "n": 0}
+            h[ts]["sum"] += level.stock_level
+            h[ts]["n"] += 1
 
     # Build resource list
     resource_list = []
-    for id, name, stats in resource_stats.items():
-        id = id,
+    for name, stats in resource_stats.items():
         avg_usage = stats["usage"] / stats["count"] if stats["count"] else 0
         stock = stats["stockLevel"]
+
+        history_raw = sorted(stats.get("history_by_ts", {}).items())
+        history = [
+            {"timestamp": ts, "stockLevel": round(v["sum"] / v["n"], 1)}
+            for ts, v in history_raw
+        ]
+        if len(history) > 24:
+            step = max(1, len(history) // 24)
+            history = history[::step]
+
+        pct_change = None
+        if len(history) >= 2:
+            first = history[0]["stockLevel"]
+            last = history[-1]["stockLevel"]
+            if first != 0:
+                pct_change = round((last - first) / first * 100, 1)
+
         resource_list.append({
+            "id": stats["id"],
             "name": name,
             "stockLevel": round(stock, 1),
             "usage": round(avg_usage, 2),
+            "history": history,
+            "pctChange": pct_change,
         })
 
     days_remaining = 5
@@ -496,14 +528,14 @@ def get_dashboard_reports(
     ]
 
 # --- Regression ---
-@app.get("/regression/{sector_resource_id}")
+@app.get("/api/regression/{sector_resource_id}")
 async def run_regression(sector_resource_id: int, session: Session = Depends(get_session)):
     # Get last 20 stock level entries for this resource
     q = (
         session.query(ResourceStockLevel)
         .filter(ResourceStockLevel.sector_resource_id == sector_resource_id)
         .order_by(ResourceStockLevel.timestamp.desc())
-        .limit(20)
+        .limit(300)
     )
     rows = list(q)[::-1]  # reverse to chronological order
     if len(rows) < 2:
@@ -513,15 +545,29 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
     t_0 = rows[0].timestamp
     snap_indexes = [i for i, row in enumerate(rows) if row.snap_event]
 
-    reg = Regression(stock_levels, t_0, snap_indexes)
+    t_snap = snap_indexes[0] if snap_indexes else None
+    reg = Regression(stock_levels, t_0, t_snap)
     reg.fit()
     result = reg.get_result_dict()
     line = reg.get_line()
     ci = reg.get_confidence_interval()
+
+    def idx_to_ts(idx):
+        if idx is None:
+            return None
+        return (t_0 + timedelta(minutes=int(12 * float(idx)))).strftime("%Y-%m-%d %H:%M")
+
+    t_star_ts = idx_to_ts(result.get("t_star")) if result else None
+    ci_lo_ts = idx_to_ts(ci.get("ci_lo")) if ci and ci.get("OK") else None
+    ci_hi_ts = idx_to_ts(ci.get("ci_hi")) if ci and ci.get("OK") else None
+
     return {
         "result": result,
         "line": line,
         "snap_indexes": snap_indexes,
-        "t_0": t_0,
-        "ci": ci
+        "t_0": t_0.isoformat(),
+        "ci": ci,
+        "t_star_ts": t_star_ts,
+        "ci_lo_ts": ci_lo_ts,
+        "ci_hi_ts": ci_hi_ts,
     }
