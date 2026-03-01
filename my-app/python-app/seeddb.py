@@ -85,7 +85,8 @@ def seed():
 
         # --- Stock Levels from CSV ---
         stock_count = 0
-        with open(f"{DATA_DIR}/cleaned_avengers_data.csv", newline="") as f:
+        # with open(f"{DATA_DIR}/cleaned_avengers_data.csv", newline="") as f:
+        with open(f"{DATA_DIR}/avengers_data_with_snap.csv", newline="") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 sector_name = row["sector_id"]

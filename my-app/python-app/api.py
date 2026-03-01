@@ -340,7 +340,7 @@ def get_dashboard(
     sr_to_resource = {sr.id: resource_map.get(sr.resource_id, "Unknown") for sr in sector_resources}
 
     # Get latest stock level and average usage per resource (within date range)
-    resource_stats = {}
+    resource_stats = {}   
     for sr in sector_resources:
         rname = sr_to_resource[sr.id]
         levels_query = (
@@ -374,6 +374,7 @@ def get_dashboard(
     # Build resource list
     resource_list = []
     for name, stats in resource_stats.items():
+    for name, stats in resource_stats.items():
         avg_usage = stats["usage"] / stats["count"] if stats["count"] else 0
         stock = stats["stockLevel"]
 
@@ -398,8 +399,6 @@ def get_dashboard(
             "name": name,
             "stockLevel": round(stock, 1),
             "usage": round(avg_usage, 2),
-            "history": history,
-            "pctChange": pct_change,
         })
 
     days_remaining = 5

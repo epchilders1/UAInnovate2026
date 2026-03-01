@@ -164,7 +164,7 @@ class Regression:
         timestamps = [(self.t_0 + datetime.timedelta(minutes=12 * int(i))).isoformat() for i in t_plot]
 
         if self.t_snap is not None:
-            S_plot = (t_plot < self.t_snap).astype(float)
+            S_plot = (t_plot >= self.t_snap).astype(float)
             line = self.result.alpha + self.result.beta * t_plot + self.result.gamma * S_plot
         else:
             line = self.result.alpha + self.result.beta * t_plot
