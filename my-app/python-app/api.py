@@ -4,7 +4,8 @@ from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority, User, UserSession
-from jarvis import Jarvis
+from jarvis import Jarvis, openai_client
+from config import Config
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
@@ -191,12 +192,61 @@ def get_report(report_id: int, session: Session = Depends(get_session)):
         "sector": report.sector.sector_name if report.sector else None,
     }
 
+class CreateReportRequest(BaseModel):
+    raw_text: str
+    hero_id: int
+    priority: int
+
 @app.post("/reports")
-def create_report(report: Report, session: Session = Depends(get_session)):
+async def create_report(body: CreateReportRequest, session: Session = Depends(get_session)):
+    # Convert ORM objects to plain dicts before the await — SQLAlchemy expires
+    # ORM objects after async suspension, causing their attributes to read as None.
+    sector_data = [{"id": s.id, "name": s.sector_name} for s in session.exec(select(Sector)).all()]
+    resource_data = [{"id": r.id, "name": r.resource_name} for r in session.exec(select(Resource)).all()]
+
+    sector_names = [s["name"] for s in sector_data]
+    resource_names = [r["name"] for r in resource_data]
+
+    prompt = (
+        f"You are analyzing a field report to extract the most relevant sector and resource.\n"
+        f"Available sectors: {sector_names}\n"
+        f"Available resources: {resource_names}\n"
+        f"Report: {body.raw_text}\n\n"
+        f"Respond with a JSON object with exactly two keys: \"sector\" and \"resource\", "
+        f"using the exact names from the lists above. Pick the closest match if not explicitly stated."
+    )
+
+    ai_response = await openai_client.chat.completions.create(
+        model=Config.MODEL,
+        response_format={"type": "json_object"},
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0,
+    )
+    extracted = json.loads(ai_response.choices[0].message.content or "{}")
+    sector_name = extracted.get("sector", sector_names[0] if sector_names else "")
+    resource_name = extracted.get("resource", resource_names[0] if resource_names else "")
+
+    matched_sector = next((s for s in sector_data if s["name"] == sector_name), sector_data[0] if sector_data else None)
+    matched_resource = next((r for r in resource_data if r["name"] == resource_name), resource_data[0] if resource_data else None)
+
+    if not matched_sector or not matched_resource:
+        raise HTTPException(status_code=400, detail="Could not resolve sector or resource")
+
+    report = Report(
+        raw_text=body.raw_text,
+        hero_id=body.hero_id,
+        priority=body.priority,
+        sector_id=matched_sector["id"],
+        resource_id=matched_resource["id"],
+    )
     session.add(report)
     session.commit()
     session.refresh(report)
-    return report
+    return {
+        "id": report.id,
+        "sector": matched_sector["name"],
+        "resource": matched_resource["name"],
+    }
 
 
 # --- Dashboard ---

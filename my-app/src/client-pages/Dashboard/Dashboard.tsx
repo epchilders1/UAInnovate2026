@@ -18,6 +18,7 @@ import StatsRow from '../../components/StatsRow/StatsRow';
 import ResourceCard from '../../components/ResourceCard/ResourceCard';
 import ReportCard from '../../components/ReportCard/ReportCard';
 import ReportModal from '../../components/ReportModal/ReportModal';
+import NewReportModal from '../../components/NewReportModal/NewReportModal';
 
 hatch.register();
 
@@ -29,6 +30,8 @@ export default function Dashboard() {
   const { askingPrompt } = useJarvis();
   const [selectedResources, setSelectedResources] = useState<Set<string>>(new Set());
   const [activeReport, setActiveReport] = useState<ReportDetail | null>(null);
+  const [showNewReport, setShowNewReport] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   // Input state (what's shown in the date pickers)
   const [inputStart, setInputStart] = useState('');
@@ -38,7 +41,7 @@ export default function Dashboard() {
   const [fetchStart, setFetchStart] = useState<string | undefined>(undefined);
   const [fetchEnd, setFetchEnd] = useState<string | undefined>(undefined);
 
-  const { data, loading } = useDashboardData(fetchStart, fetchEnd);
+  const { data, loading } = useDashboardData(fetchStart, fetchEnd, refreshKey);
 
   // Populate date inputs from data on first load without triggering a re-fetch
   useEffect(() => {
@@ -213,6 +216,7 @@ export default function Dashboard() {
               </div>
             </div>
 
+            <h2 className="section-title">Resources</h2>
             <div className="resource-cards-grid">
               {data.resources.map((r) => (
                 <ResourceCard
@@ -230,6 +234,10 @@ export default function Dashboard() {
               ))}
             </div>
 
+            <div className="section-header">
+              <h2 className="section-title">Reports</h2>
+              <button className="new-report-btn" onClick={() => setShowNewReport(true)}>+ New</button>
+            </div>
             <div className="report-cards-grid">
               {data.reports.map((r) => (
                 <ReportCard
@@ -249,6 +257,12 @@ export default function Dashboard() {
 
       {activeReport && (
         <ReportModal report={activeReport} onClose={() => setActiveReport(null)} />
+      )}
+      {showNewReport && (
+        <NewReportModal
+          onClose={() => setShowNewReport(false)}
+          onSuccess={() => setRefreshKey(k => k + 1)}
+        />
       )}
     </div>
   );

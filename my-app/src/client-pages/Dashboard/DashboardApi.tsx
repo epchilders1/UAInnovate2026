@@ -42,7 +42,7 @@ export interface DashboardData {
   };
 }
 
-export function useDashboardData(startDate?: string, endDate?: string) {
+export function useDashboardData(startDate?: string, endDate?: string, refreshKey?: number) {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -56,8 +56,7 @@ export function useDashboardData(startDate?: string, endDate?: string) {
         setLoading(false);
         setRefreshing(false);
       });
-  }, [startDate, endDate]);
+  }, [startDate, endDate, refreshKey]);
 
-  console.log(data)
   return { data, loading, refreshing };
 }

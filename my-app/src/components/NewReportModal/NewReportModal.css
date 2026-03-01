@@ -1,0 +1,91 @@
+.new-report-modal {
+  gap: 1.25rem;
+}
+
+.new-report-hero-select {
+  background: transparent;
+  border: none;
+  color: #f3f4f6;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  padding-bottom: .5rem;
+}
+
+.new-report-hero-select option {
+  background: #161923;
+  color: #f3f4f6;
+}
+
+.new-report-select {
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.new-report-select option {
+  background: #161923;
+  color: #e5e7eb;
+}
+
+.new-report-placeholder {
+  color: #4b5563;
+}
+
+.new-report-textarea {
+  background: #0f1117;
+  border: 1px solid #2d3148;
+  border-radius: 8px;
+  color: #d1d5db;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding: 0.75rem;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.new-report-textarea:focus {
+  border-color: #3b82f6;
+}
+
+.new-report-textarea::placeholder {
+  color: #4b5563;
+}
+
+.new-report-error {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.new-report-submit {
+  background: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: .6rem 0rem;
+  padding: 0.6rem 1.25rem;
+  align-self: flex-end;
+  transition: background 0.15s;
+}
+
+.new-report-submit:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.new-report-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
