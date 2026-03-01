@@ -1,8 +1,8 @@
 import './Dashboard.css';
 import { useState, useEffect } from 'react';
 import { useJarvis } from '../../context/JarvisContext';
-import { useDashboardData } from './DashboardApi';
-import type { ReportDetail } from './DashboardApi';
+import { useDashboardData, fetchMoreReports } from './DashboardApi';
+import type { ReportDetail, ReportItem } from './DashboardApi';
 import { hatch } from 'ldrs';
 import {
   ResponsiveContainer,
@@ -33,6 +33,10 @@ export default function Dashboard() {
   const [activeReport, setActiveReport] = useState<ReportDetail | null>(null);
   const [showNewReport, setShowNewReport] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
+
+  const [extraReports, setExtraReports] = useState<ReportItem[]>([]);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
   const [inputStart, setInputStart] = useState('');
   const [inputEnd, setInputEnd] = useState('');
@@ -65,10 +69,40 @@ export default function Dashboard() {
     setFetchEnd(end || undefined);
   }
 
+  // Reset extra reports when the base data refreshes
+  useEffect(() => {
+    setExtraReports([]);
+    setHasMore(true);
+  }, [data]);
+
+  async function handleLoadMore() {
+    if (!data) return;
+    setLoadingMore(true);
+    const next = await fetchMoreReports(
+      data.reports.length + extraReports.length,
+      fetchStart,
+      fetchEnd,
+    );
+    setExtraReports(prev => [...prev, ...next]);
+    if (next.length < 5) setHasMore(false);
+    setLoadingMore(false);
+  }
+
   async function handleReportClick(id: number) {
     const res = await fetch(`${import.meta.env.VITE_API_BASE}/reports/${id}`);
     const detail: ReportDetail = await res.json();
     setActiveReport(detail);
+  }
+
+  async function handleResourceClick(r) {
+      const data = await fetch(`${import.meta.env.VITE_API_BASE}/api/regression/${r.id}`)
+      console.log("Data: ", data)
+    return setSelectedResources(prev => {
+      const next = new Set(prev);
+      next.has(r.name) ? next.delete(r.name) : next.add(r.name);
+
+      return next;
+    })
   }
 
   return (
@@ -233,15 +267,12 @@ export default function Dashboard() {
               {data.resources.map((r, i) => (
                 <div key={r.name} className="animate-in" style={{ animationDelay: `${0.24 + i * 0.08}s` }}>
                   <ResourceCard
+                    id={r.id}
                     name={r.name}
                     stockLevel={r.stockLevel}
                     usage={r.usage}
                     isSelected={selectedResources.has(r.name)}
-                    onClick={() => setSelectedResources(prev => {
-                      const next = new Set(prev);
-                      next.has(r.name) ? next.delete(r.name) : next.add(r.name);
-                      return next;
-                    })}
+                    onClick={() => handleResourceClick(r)}
                   />
                 </div>
               ))}
@@ -252,7 +283,7 @@ export default function Dashboard() {
               <button className="new-report-btn" onClick={() => setShowNewReport(true)}>+ New</button>
             </div>
             <div className="report-cards-grid">
-              {data.reports.map((r, i) => (
+              {[...data.reports, ...extraReports].map((r, i) => (
                 <div key={r.id} className="animate-in" style={{ animationDelay: `${0.64 + i * 0.08}s` }}>
                   <ReportCard
                     heroAlias={r.heroAlias}
@@ -263,6 +294,16 @@ export default function Dashboard() {
                 </div>
               ))}
             </div>
+            {hasMore && (
+              <button
+                className="date-filter-clear"
+                style={{ marginTop: '0.75rem' }}
+                onClick={handleLoadMore}
+                disabled={loadingMore}
+              >
+                {loadingMore ? 'Loading…' : 'Load more'}
+              </button>
+            )}
           </>
         ) : (
           <p>Failed to load dashboard data.</p>

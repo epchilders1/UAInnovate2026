@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 
 export interface ResourceItem {
+  id: number;
   name: string;
   stockLevel: number;
   usage: number;
@@ -65,4 +66,20 @@ export function useDashboardData(startDate?: string, endDate?: string, refreshKe
 
   // console.log(data)
   return { data, loading, refreshing };
+}
+
+export async function fetchMoreReports(
+  offset: number,
+  startDate?: string,
+  endDate?: string,
+): Promise<ReportItem[]> {
+  const params = new URLSearchParams();
+  params.set('offset', String(offset));
+  params.set('limit', '5');
+  if (startDate) params.set('start_date', startDate);
+  if (endDate) params.set('end_date', endDate);
+  const res = await fetch(
+    `${import.meta.env.VITE_API_BASE}/api/dashboard/reports?${params.toString()}`
+  );
+  return res.json();
 }

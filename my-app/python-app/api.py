@@ -10,6 +10,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime, timedelta
 import uuid, base64, json
+from regression import Regression
 
 from redact_report import redact_reports
 
@@ -359,7 +360,8 @@ def get_dashboard(
 
     # Build resource list
     resource_list = []
-    for name, stats in resource_stats.items():
+    for id, name, stats in resource_stats.items():
+        id = id,
         avg_usage = stats["usage"] / stats["count"] if stats["count"] else 0
         stock = stats["stockLevel"]
         resource_list.append({
@@ -456,4 +458,70 @@ def get_dashboard(
             "categories": categories,
             "data": stock_data,
         },
+    }
+
+
+@app.get("/api/dashboard/reports")
+def get_dashboard_reports(
+    session: Session = Depends(get_session),
+    offset: int = 0,
+    limit: int = 5,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
+):
+    start_dt = datetime.strptime(start_date, '%Y-%m-%d') if start_date else None
+    end_dt = datetime.strptime(end_date, '%Y-%m-%d').replace(hour=23, minute=59, second=59) if end_date else None
+
+    reports_query = (
+        select(Report, Hero)
+        .join(Hero, Report.hero_id == Hero.id)
+        .order_by(desc(Report.timestamp))
+    )
+    if start_dt:
+        reports_query = reports_query.where(Report.timestamp >= start_dt)
+    if end_dt:
+        reports_query = reports_query.where(Report.timestamp <= end_dt)
+    reports_query = reports_query.offset(offset).limit(limit)
+
+    report_rows = session.exec(reports_query).all()
+    priority_names = {0: "Routine", 1: "High", 2: "Avengers Level Threat"}
+    return [
+        {
+            "id": report.id,
+            "heroAlias": hero.alias,
+            "timestamp": report.timestamp.isoformat(),
+            "priority": priority_names.get(report.priority, "Routine"),
+        }
+        for report, hero in report_rows
+    ]
+
+# --- Regression ---
+@app.get("/regression/{sector_resource_id}")
+async def run_regression(sector_resource_id: int, session: Session = Depends(get_session)):
+    # Get last 20 stock level entries for this resource
+    q = (
+        session.query(ResourceStockLevel)
+        .filter(ResourceStockLevel.sector_resource_id == sector_resource_id)
+        .order_by(ResourceStockLevel.timestamp.desc())
+        .limit(20)
+    )
+    rows = list(q)[::-1]  # reverse to chronological order
+    if len(rows) < 2:
+        raise HTTPException(status_code=404, detail="Not enough data for regression.")
+
+    stock_levels = [row.stock_level for row in rows]
+    t_0 = rows[0].timestamp
+    snap_indexes = [i for i, row in enumerate(rows) if row.snap_event]
+
+    reg = Regression(stock_levels, t_0, snap_indexes)
+    reg.fit()
+    result = reg.get_result_dict()
+    line = reg.get_line()
+    ci = reg.get_confidence_interval()
+    return {
+        "result": result,
+        "line": line,
+        "snap_indexes": snap_indexes,
+        "t_0": t_0,
+        "ci": ci
     }
