@@ -6,7 +6,7 @@
 }
 
 .dashboard-main {
-  max-width: 1280px;
+  max-width: 90vw;
   margin: 0 auto;
   padding: 1.5rem 2rem;
 }
@@ -102,6 +102,40 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+}
+
+/* Skeleton */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.skeleton {
+  background: #1e2130;
+  border-radius: 8px;
+  animation: skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+.skeleton-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-stat {
+  height: 90px;
+  border-radius: 12px;
+}
+
+.skeleton-chart {
+  height: 300px;
+  border-radius: 12px;
+}
+
+.skeleton-card {
+  height: 110px;
+  border-radius: 12px;
 }
 
 /* Responsive */

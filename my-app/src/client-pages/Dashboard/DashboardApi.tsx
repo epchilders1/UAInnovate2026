@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-const API_BASE = 'http://localhost:5001';
 
 export interface ResourceItem {
   name: string;
@@ -49,18 +48,7 @@ export function useDashboardData(startDate?: string, endDate?: string) {
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
-    if (data) {
-      setRefreshing(true);
-    } else {
-      setLoading(true);
-    }
-
-    const params = new URLSearchParams();
-    if (startDate) params.set('start_date', startDate);
-    if (endDate) params.set('end_date', endDate);
-    const query = params.toString() ? `?${params}` : '';
-
-    fetch(`${API_BASE}/api/dashboard${query}`)
+    fetch(`${import.meta.env.VITE_API_BASE}/api/dashboard`)
       .then(res => res.json())
       .then((json: DashboardData) => setData(json))
       .catch(err => console.error('Failed to fetch dashboard data:', err))

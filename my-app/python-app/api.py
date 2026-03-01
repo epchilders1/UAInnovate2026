@@ -315,12 +315,10 @@ def get_dashboard(
 
     usage_data = list(usage_by_ts.values())
     stock_data = list(stock_by_ts.values())
-
-    # Global min/max dates for the date picker (always from full dataset)
-    min_ts = session.exec(select(func.min(ResourceStockLevel.timestamp))).one()
-    max_ts = session.exec(select(func.max(ResourceStockLevel.timestamp))).one()
-    min_date = min_ts.date().isoformat() if min_ts else None
-    max_date = max_ts.date().isoformat() if max_ts else None
+    if len(usage_data) > 50:
+        step = len(usage_data) // 50
+        usage_data = usage_data[::step]
+        stock_data = stock_data[::step]
 
     return {
         "resourceCount": resource_count,

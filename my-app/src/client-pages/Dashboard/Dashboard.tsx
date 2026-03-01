@@ -65,7 +65,21 @@ export default function Dashboard() {
         <DashboardHeader />
 
         {loading ? (
-          <p>Loading...</p>
+          <>
+            <div className="skeleton-stats-row">
+              {[...Array(4)].map((_, i) => <div key={i} className="skeleton skeleton-stat" />)}
+            </div>
+            <div className="charts-grid" style={{ marginBottom: '1.5rem' }}>
+              <div className="skeleton skeleton-chart" />
+              <div className="skeleton skeleton-chart" />
+            </div>
+            <div className="resource-cards-grid">
+              {[...Array(5)].map((_, i) => <div key={i} className="skeleton skeleton-card" />)}
+            </div>
+            <div className="report-cards-grid" style={{ marginTop: '1rem' }}>
+              {[...Array(5)].map((_, i) => <div key={i} className="skeleton skeleton-card" />)}
+            </div>
+          </>
         ) : data ? (
           <>
             <StatsRow
