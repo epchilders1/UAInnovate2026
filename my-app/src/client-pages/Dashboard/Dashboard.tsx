@@ -22,7 +22,6 @@ import NewReportModal from '../../components/NewReportModal/NewReportModal';
 
 hatch.register();
 
-const API_BASE = 'http://localhost:5001';
 const USAGE_COLORS = ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e'];
 const STOCK_COLORS = ['#f43f5e', '#f59e0b', '#8b5cf6', '#06b6d4', '#10b981'];
 
@@ -57,7 +56,7 @@ export default function Dashboard() {
   }
 
   async function handleReportClick(id: number) {
-    const res = await fetch(`${API_BASE}/reports/${id}`);
+    const res = await fetch(`${import.meta.env.VITE_API_BASE}/reports/${id}`);
     const detail: ReportDetail = await res.json();
     setActiveReport(detail);
   }
@@ -66,7 +65,6 @@ export default function Dashboard() {
     <div className="dashboard-layout dark">
       <main className="dashboard-main">
         <DashboardHeader />
-
         {loading ? (
           <>
             <div className="skeleton-stats-row">
@@ -85,10 +83,12 @@ export default function Dashboard() {
           </>
         ) : data ? (
           <>
-            <StatsRow
-              resourceCount={data.resourceCount}
-              daysRemaining={data.daysRemaining}
-            />
+            <div className="animate-in" style={{ animationDelay: '0s' }}>
+              <StatsRow
+                resourceCount={data.resourceCount}
+                daysRemaining={data.daysRemaining}
+              />
+            </div>
 
             <div className="date-filter-row">
               <label className="date-filter-label">
@@ -127,7 +127,7 @@ export default function Dashboard() {
             </div>
 
             <div className="charts-grid">
-              <div className="chart-card">
+              <div className="chart-card animate-in" style={{ animationDelay: '0.08s' }}>
                 <h3 className="chart-title">Resource Usage</h3>
                 <p className="chart-subtitle">Consumption over time</p>
                 <div style={{ width: '100%', height: 240, marginTop: '1rem' }}>
@@ -171,7 +171,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <div className="chart-card">
+              <div className="chart-card animate-in" style={{ animationDelay: '0.16s' }}>
                 <h3 className="chart-title">Stock Levels</h3>
                 <p className="chart-subtitle">Inventory levels over time</p>
                 <div style={{ width: '100%', height: 240, marginTop: '1rem' }}>
@@ -218,19 +218,20 @@ export default function Dashboard() {
 
             <h2 className="section-title">Resources</h2>
             <div className="resource-cards-grid">
-              {data.resources.map((r) => (
-                <ResourceCard
-                  key={r.name}
-                  name={r.name}
-                  stockLevel={r.stockLevel}
-                  usage={r.usage}
-                  isSelected={selectedResources.has(r.name)}
-                  onClick={() => setSelectedResources(prev => {
-                    const next = new Set(prev);
-                    next.has(r.name) ? next.delete(r.name) : next.add(r.name);
-                    return next;
-                  })}
-                />
+              {data.resources.map((r, i) => (
+                <div key={r.name} className="animate-in" style={{ animationDelay: `${0.24 + i * 0.08}s` }}>
+                  <ResourceCard
+                    name={r.name}
+                    stockLevel={r.stockLevel}
+                    usage={r.usage}
+                    isSelected={selectedResources.has(r.name)}
+                    onClick={() => setSelectedResources(prev => {
+                      const next = new Set(prev);
+                      next.has(r.name) ? next.delete(r.name) : next.add(r.name);
+                      return next;
+                    })}
+                  />
+                </div>
               ))}
             </div>
 
@@ -239,14 +240,15 @@ export default function Dashboard() {
               <button className="new-report-btn" onClick={() => setShowNewReport(true)}>+ New</button>
             </div>
             <div className="report-cards-grid">
-              {data.reports.map((r) => (
-                <ReportCard
-                  key={r.id}
-                  heroAlias={r.heroAlias}
-                  timestamp={r.timestamp}
-                  priority={r.priority}
-                  onClick={() => handleReportClick(r.id)}
-                />
+              {data.reports.map((r, i) => (
+                <div key={r.id} className="animate-in" style={{ animationDelay: `${0.64 + i * 0.08}s` }}>
+                  <ReportCard
+                    heroAlias={r.heroAlias}
+                    timestamp={r.timestamp}
+                    priority={r.priority}
+                    onClick={() => handleReportClick(r.id)}
+                  />
+                </div>
               ))}
             </div>
           </>
