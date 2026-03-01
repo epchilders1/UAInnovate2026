@@ -11,10 +11,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.ConfigureHttpJsonOptions(options =>
     options.SerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
 
+builder.Services.AddCors(options =>
+    options.AddDefaultPolicy(policy =>
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -32,6 +38,7 @@ app.MapSectorResourceEndpoints();
 app.MapResourceStockLevelEndpoints();
 app.MapHeroEndpoints();
 app.MapReportEndpoints();
+app.MapDashboardEndpoints();
 
 // Apply migrations and seed data on startup
 using (var scope = app.Services.CreateScope())

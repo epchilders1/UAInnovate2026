@@ -164,9 +164,9 @@ C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backen
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\obj\Debug\net9.0\UAInnovate2026backend.pdb
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\obj\Debug\net9.0\UAInnovate2026backend.genruntimeconfig.cache
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\obj\Debug\net9.0\ref\UAInnovate2026backend.dll
-C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\bin\Debug\net9.0\SeedData\historical_avengers_data.csv
 C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\bin\Debug\net9.0\SeedData\field_intel_reports.json
+C:\Users\luke\Desktop\UAInnovate2026\UAInnovate2026\backend\UAInnovate2026backend\UAInnovate2026backend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

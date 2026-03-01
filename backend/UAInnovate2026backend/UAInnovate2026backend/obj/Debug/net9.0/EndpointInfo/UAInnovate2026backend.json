@@ -5,6 +5,19 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/dashboard": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "operationId": "GetDashboardData",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/heroes": {
       "get": {
         "tags": [
@@ -159,7 +172,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Int32StringDateTimePriorityInt32Int32StringInt32String<>f__AnonymousType0"
+                    "$ref": "#/components/schemas/Int32StringDateTimePriorityInt32Int32StringInt32String<>f__AnonymousType4"
                   }
                 }
               }
@@ -793,7 +806,7 @@
         },
         "additionalProperties": false
       },
-      "Int32StringDateTimePriorityInt32Int32StringInt32String<>f__AnonymousType0": {
+      "Int32StringDateTimePriorityInt32Int32StringInt32String<>f__AnonymousType4": {
         "type": "object",
         "properties": {
           "id": {
@@ -1007,6 +1020,9 @@
     }
   },
   "tags": [
+    {
+      "name": "Dashboard"
+    },
     {
       "name": "Heroes"
     },

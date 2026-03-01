@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UAInnovate2026backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b31cfcaa832bcffb96d55b8faab8d12d89c20fc9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ebde526c4c507ecc727bc8f887e12cadb2d8cd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("UAInnovate2026backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UAInnovate2026backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
