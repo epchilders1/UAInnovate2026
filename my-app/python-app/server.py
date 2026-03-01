@@ -11,8 +11,8 @@ jarvis = Jarvis()
 @app.route("/ask_jarvis", methods=['POST'])
 async def ask_jarvis():
     data = request.get_json()
-    text = data.get("question")
-    response = await jarvis.ask_jarvis(text=text)
+    messageList = data.get("messageList")
+    response = await jarvis.ask_jarvis(messageList=messageList)
     return json.dumps(response)
 
 if __name__ == "__main__":

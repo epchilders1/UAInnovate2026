@@ -24,6 +24,7 @@ class Jarvis:
             - Uses elevated vocabulary but remains clear.
             - Occasionally uses light, refined humor.
             - Avoid slang or modern internet speech.
+            - Don't under any circumstance use markdown in your responses
 
             Core Function:
             You specialize in:
@@ -53,18 +54,14 @@ class Jarvis:
 
             Always respond with a valid JSON object in this exact format: {"response": "<your reply as a single string>"}
             """
-    async def ask_jarvis(self,text):
+    async def ask_jarvis(self, messageList):
+        messages = [{"role": "system", "content": self.instructions}]
+        for msg in (messageList or []):
+            messages.append({"role": msg["role"], "content": msg["content"]})
         response = await openai_client.chat.completions.create(
             model=Config.MODEL,
             response_format={"type": "json_object"},
-            messages=[
-                {
-                    "role": "system",
-                    
-                    "content": (self.instructions),
-                },
-                {"role": "user", "content":text},
-            ],
+            messages=messages,
             temperature=0,
         )
         content = response.choices[0].message.content or "{}"
