@@ -3,11 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
-<<<<<<< HEAD
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, User, UserSession
-=======
-from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority
->>>>>>> 0ae04fab6a676fc30d0292244c849775c27bcee2
 from jarvis import Jarvis
 from pydantic import BaseModel
 from typing import List
@@ -276,8 +272,8 @@ def get_dashboard(session: Session = Depends(get_session)):
     # Sample to max 50 data points for chart performance
     usage_data = list(usage_by_ts.values())
     stock_data = list(stock_by_ts.values())
-    if len(usage_data) > 50:
-        step = len(usage_data) // 50
+    if len(usage_data) > 10000:
+        step = len(usage_data) // 10000
         usage_data = usage_data[::step]
         stock_data = stock_data[::step]
 
