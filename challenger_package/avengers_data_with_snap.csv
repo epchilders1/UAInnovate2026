@@ -1,0 +1,2551 @@
+timestamp,sector_id,resource_type,stock_level,usage_rate_hourly,snap_event_detected
+2026-01-01T00:00:00,New Asgard,Vibranium (kg),2500.0,6.43,False
+2026-01-01T00:00:00,Wakanda,Arc Reactor Cores,800.0,6.13,False
+2026-01-01T00:00:00,Sokovia,Pym Particles,800.0,7.39,False
+2026-01-01T00:00:00,Sanctum Sanctorum,Clean Water (L),2500.0,5.44,False
+2026-01-01T00:00:00,Avengers Compound,Medical Kits,800.0,3.48,False
+2026-01-01T00:12:00,New Asgard,Vibranium (kg),2500.0,4.19,False
+2026-01-01T00:12:00,Wakanda,Arc Reactor Cores,800.0,4.05,False
+2026-01-01T00:12:00,Sokovia,Pym Particles,800.0,6.34,False
+2026-01-01T00:12:00,Sanctum Sanctorum,Clean Water (L),2500.0,7.6,False
+2026-01-01T00:12:00,Avengers Compound,Medical Kits,800.0,4.99,False
+2026-01-01T00:24:00,New Asgard,Vibranium (kg),2500.0,7.52,False
+2026-01-01T00:24:00,Wakanda,Arc Reactor Cores,800.0,2.65,False
+2026-01-01T00:24:00,Sokovia,Pym Particles,800.0,6.93,False
+2026-01-01T00:24:00,Sanctum Sanctorum,Clean Water (L),2500.0,7.11,False
+2026-01-01T00:24:00,Avengers Compound,Medical Kits,800.0,7.63,False
+2026-01-01T00:36:00,New Asgard,Vibranium (kg),2500.0,6.75,False
+2026-01-01T00:36:00,Wakanda,Arc Reactor Cores,800.0,7.53,False
+2026-01-01T00:36:00,Sokovia,Pym Particles,800.0,3.86,False
+2026-01-01T00:36:00,Sanctum Sanctorum,Clean Water (L),2500.0,5.96,False
+2026-01-01T00:36:00,Avengers Compound,Medical Kits,800.0,3.42,False
+2026-01-01T00:48:00,New Asgard,Vibranium (kg),2500.0,5.05,False
+2026-01-01T00:48:00,Wakanda,Arc Reactor Cores,800.0,2.77,False
+2026-01-01T00:48:00,Sokovia,Pym Particles,800.0,3.5,False
+2026-01-01T00:48:00,Sanctum Sanctorum,Clean Water (L),2500.0,3.24,False
+2026-01-01T00:48:00,Avengers Compound,Medical Kits,800.0,7.72,False
+2026-01-01T01:00:00,New Asgard,Vibranium (kg),2492.43,7.57,False
+2026-01-01T01:00:00,Wakanda,Arc Reactor Cores,793.97,6.03,False
+2026-01-01T01:00:00,Sokovia,Pym Particles,795.47,4.53,False
+2026-01-01T01:00:00,Sanctum Sanctorum,Clean Water (L),2497.84,2.16,False
+2026-01-01T01:00:00,Avengers Compound,Medical Kits,792.79,7.21,False
+2026-01-01T01:12:00,New Asgard,Vibranium (kg),2496.79,3.21,False
+2026-01-01T01:12:00,Wakanda,Arc Reactor Cores,792.6,7.4,False
+2026-01-01T01:12:00,Sokovia,Pym Particles,794.65,5.35,False
+2026-01-01T01:12:00,Sanctum Sanctorum,Clean Water (L),2495.86,4.14,False
+2026-01-01T01:12:00,Avengers Compound,Medical Kits,794.11,5.89,False
+2026-01-01T01:24:00,New Asgard,Vibranium (kg),2493.29,6.71,False
+2026-01-01T01:24:00,Wakanda,Arc Reactor Cores,793.72,6.28,False
+2026-01-01T01:24:00,Sokovia,Pym Particles,796.95,3.05,False
+2026-01-01T01:24:00,Sanctum Sanctorum,Clean Water (L),2493.56,6.44,False
+2026-01-01T01:24:00,Avengers Compound,Medical Kits,794.21,5.79,False
+2026-01-01T01:36:00,New Asgard,Vibranium (kg),2494.8,5.2,False
+2026-01-01T01:36:00,Wakanda,Arc Reactor Cores,795.2,4.8,False
+2026-01-01T01:36:00,Sokovia,Pym Particles,794.54,5.46,False
+2026-01-01T01:36:00,Sanctum Sanctorum,Clean Water (L),2494.11,5.89,False
+2026-01-01T01:36:00,Avengers Compound,Medical Kits,794.67,5.33,False
+2026-01-01T01:48:00,New Asgard,Vibranium (kg),2495.05,4.95,False
+2026-01-01T01:48:00,Wakanda,Arc Reactor Cores,794.79,5.21,False
+2026-01-01T01:48:00,Sokovia,Pym Particles,796.44,3.56,False
+2026-01-01T01:48:00,Sanctum Sanctorum,Clean Water (L),2496.72,3.28,False
+2026-01-01T01:48:00,Avengers Compound,Medical Kits,796.91,3.09,False
+2026-01-01T02:00:00,New Asgard,Vibranium (kg),2493.45,3.28,False
+2026-01-01T02:00:00,Wakanda,Arc Reactor Cores,787.46,6.27,False
+2026-01-01T02:00:00,Sokovia,Pym Particles,790.33,4.83,False
+2026-01-01T02:00:00,Sanctum Sanctorum,Clean Water (L),2495.95,2.03,False
+2026-01-01T02:00:00,Avengers Compound,Medical Kits,793.99,3.0,False
+2026-01-01T02:12:00,New Asgard,Vibranium (kg),2494.71,2.64,False
+2026-01-01T02:12:00,Wakanda,Arc Reactor Cores,790.07,4.97,False
+2026-01-01T02:12:00,Sokovia,Pym Particles,785.88,7.06,False
+2026-01-01T02:12:00,Sanctum Sanctorum,Clean Water (L),2487.74,6.13,False
+2026-01-01T02:12:00,Avengers Compound,Medical Kits,793.56,3.22,False
+2026-01-01T02:24:00,New Asgard,Vibranium (kg),2488.06,5.97,False
+2026-01-01T02:24:00,Wakanda,Arc Reactor Cores,789.3,5.35,False
+2026-01-01T02:24:00,Sokovia,Pym Particles,787.25,6.37,False
+2026-01-01T02:24:00,Sanctum Sanctorum,Clean Water (L),2485.02,7.49,False
+2026-01-01T02:24:00,Avengers Compound,Medical Kits,787.2,6.4,False
+2026-01-01T02:36:00,New Asgard,Vibranium (kg),2492.67,3.67,False
+2026-01-01T02:36:00,Wakanda,Arc Reactor Cores,793.92,3.04,False
+2026-01-01T02:36:00,Sokovia,Pym Particles,787.42,6.29,False
+2026-01-01T02:36:00,Sanctum Sanctorum,Clean Water (L),2489.96,5.02,False
+2026-01-01T02:36:00,Avengers Compound,Medical Kits,784.2,7.9,False
+2026-01-01T02:48:00,New Asgard,Vibranium (kg),2484.39,7.8,False
+2026-01-01T02:48:00,Wakanda,Arc Reactor Cores,788.95,5.52,False
+2026-01-01T02:48:00,Sokovia,Pym Particles,792.36,3.82,False
+2026-01-01T02:48:00,Sanctum Sanctorum,Clean Water (L),2495.29,2.35,False
+2026-01-01T02:48:00,Avengers Compound,Medical Kits,786.47,6.76,False
+2026-01-01T03:00:00,New Asgard,Vibranium (kg),2486.99,4.34,False
+2026-01-01T03:00:00,Wakanda,Arc Reactor Cores,787.67,4.11,False
+2026-01-01T03:00:00,Sokovia,Pym Particles,784.09,5.3,False
+2026-01-01T03:00:00,Sanctum Sanctorum,Clean Water (L),2491.84,2.72,False
+2026-01-01T03:00:00,Avengers Compound,Medical Kits,784.96,5.01,False
+2026-01-01T03:12:00,New Asgard,Vibranium (kg),2478.91,7.03,False
+2026-01-01T03:12:00,Wakanda,Arc Reactor Cores,787.3,4.23,False
+2026-01-01T03:12:00,Sokovia,Pym Particles,793.01,2.33,False
+2026-01-01T03:12:00,Sanctum Sanctorum,Clean Water (L),2492.83,2.39,False
+2026-01-01T03:12:00,Avengers Compound,Medical Kits,784.22,5.26,False
+2026-01-01T03:24:00,New Asgard,Vibranium (kg),2491.56,2.81,False
+2026-01-01T03:24:00,Wakanda,Arc Reactor Cores,782.53,5.82,False
+2026-01-01T03:24:00,Sokovia,Pym Particles,783.39,5.54,False
+2026-01-01T03:24:00,Sanctum Sanctorum,Clean Water (L),2486.95,4.35,False
+2026-01-01T03:24:00,Avengers Compound,Medical Kits,776.77,7.74,False
+2026-01-01T03:36:00,New Asgard,Vibranium (kg),2483.12,5.63,False
+2026-01-01T03:36:00,Wakanda,Arc Reactor Cores,790.2,3.27,False
+2026-01-01T03:36:00,Sokovia,Pym Particles,787.08,4.31,False
+2026-01-01T03:36:00,Sanctum Sanctorum,Clean Water (L),2482.98,5.67,False
+2026-01-01T03:36:00,Avengers Compound,Medical Kits,788.05,3.98,False
+2026-01-01T03:48:00,New Asgard,Vibranium (kg),2492.54,2.49,False
+2026-01-01T03:48:00,Wakanda,Arc Reactor Cores,792.04,2.65,False
+2026-01-01T03:48:00,Sokovia,Pym Particles,785.18,4.94,False
+2026-01-01T03:48:00,Sanctum Sanctorum,Clean Water (L),2482.37,5.88,False
+2026-01-01T03:48:00,Avengers Compound,Medical Kits,789.87,3.38,False
+2026-01-01T04:00:00,New Asgard,Vibranium (kg),2471.74,7.07,False
+2026-01-01T04:00:00,Wakanda,Arc Reactor Cores,790.88,2.28,False
+2026-01-01T04:00:00,Sokovia,Pym Particles,785.55,3.61,False
+2026-01-01T04:00:00,Sanctum Sanctorum,Clean Water (L),2486.25,3.44,False
+2026-01-01T04:00:00,Avengers Compound,Medical Kits,774.87,6.28,False
+2026-01-01T04:12:00,New Asgard,Vibranium (kg),2491.36,2.16,False
+2026-01-01T04:12:00,Wakanda,Arc Reactor Cores,784.3,3.92,False
+2026-01-01T04:12:00,Sokovia,Pym Particles,784.69,3.83,False
+2026-01-01T04:12:00,Sanctum Sanctorum,Clean Water (L),2481.7,4.58,False
+2026-01-01T04:12:00,Avengers Compound,Medical Kits,788.29,2.93,False
+2026-01-01T04:24:00,New Asgard,Vibranium (kg),2479.02,5.24,False
+2026-01-01T04:24:00,Wakanda,Arc Reactor Cores,780.38,4.9,False
+2026-01-01T04:24:00,Sokovia,Pym Particles,778.24,5.44,False
+2026-01-01T04:24:00,Sanctum Sanctorum,Clean Water (L),2471.09,7.23,False
+2026-01-01T04:24:00,Avengers Compound,Medical Kits,768.77,7.81,False
+2026-01-01T04:36:00,New Asgard,Vibranium (kg),2468.72,7.82,False
+2026-01-01T04:36:00,Wakanda,Arc Reactor Cores,787.47,3.13,False
+2026-01-01T04:36:00,Sokovia,Pym Particles,769.6,7.6,False
+2026-01-01T04:36:00,Sanctum Sanctorum,Clean Water (L),2473.76,6.56,False
+2026-01-01T04:36:00,Avengers Compound,Medical Kits,787.13,3.22,False
+2026-01-01T04:48:00,New Asgard,Vibranium (kg),2491.43,2.14,False
+2026-01-01T04:48:00,Wakanda,Arc Reactor Cores,770.94,7.26,False
+2026-01-01T04:48:00,Sokovia,Pym Particles,781.08,4.73,False
+2026-01-01T04:48:00,Sanctum Sanctorum,Clean Water (L),2491.6,2.1,False
+2026-01-01T04:48:00,Avengers Compound,Medical Kits,776.39,5.9,False
+2026-01-01T05:00:00,New Asgard,Vibranium (kg),2471.87,5.63,False
+2026-01-01T05:00:00,Wakanda,Arc Reactor Cores,769.46,6.11,False
+2026-01-01T05:00:00,Sokovia,Pym Particles,762.55,7.49,False
+2026-01-01T05:00:00,Sanctum Sanctorum,Clean Water (L),2463.12,7.38,False
+2026-01-01T05:00:00,Avengers Compound,Medical Kits,764.82,7.04,False
+2026-01-01T05:12:00,New Asgard,Vibranium (kg),2488.9,2.22,False
+2026-01-01T05:12:00,Wakanda,Arc Reactor Cores,789.0,2.2,False
+2026-01-01T05:12:00,Sokovia,Pym Particles,778.41,4.32,False
+2026-01-01T05:12:00,Sanctum Sanctorum,Clean Water (L),2476.72,4.66,False
+2026-01-01T05:12:00,Avengers Compound,Medical Kits,787.88,2.42,False
+2026-01-01T05:24:00,New Asgard,Vibranium (kg),2469.92,6.02,False
+2026-01-01T05:24:00,Wakanda,Arc Reactor Cores,788.73,2.25,False
+2026-01-01T05:24:00,Sokovia,Pym Particles,762.82,7.44,False
+2026-01-01T05:24:00,Sanctum Sanctorum,Clean Water (L),2482.36,3.53,False
+2026-01-01T05:24:00,Avengers Compound,Medical Kits,760.32,7.94,False
+2026-01-01T05:36:00,New Asgard,Vibranium (kg),2488.76,2.25,False
+2026-01-01T05:36:00,Wakanda,Arc Reactor Cores,760.68,7.86,False
+2026-01-01T05:36:00,Sokovia,Pym Particles,769.37,6.13,False
+2026-01-01T05:36:00,Sanctum Sanctorum,Clean Water (L),2468.33,6.33,False
+2026-01-01T05:36:00,Avengers Compound,Medical Kits,785.02,3.0,False
+2026-01-01T05:48:00,New Asgard,Vibranium (kg),2483.61,3.28,False
+2026-01-01T05:48:00,Wakanda,Arc Reactor Cores,774.58,5.08,False
+2026-01-01T05:48:00,Sokovia,Pym Particles,767.88,6.42,False
+2026-01-01T05:48:00,Sanctum Sanctorum,Clean Water (L),2478.58,4.28,False
+2026-01-01T05:48:00,Avengers Compound,Medical Kits,771.83,5.63,False
+2026-01-01T06:00:00,New Asgard,Vibranium (kg),2483.92,2.68,False
+2026-01-01T06:00:00,Wakanda,Arc Reactor Cores,772.89,4.52,False
+2026-01-01T06:00:00,Sokovia,Pym Particles,776.94,3.84,False
+2026-01-01T06:00:00,Sanctum Sanctorum,Clean Water (L),2465.52,5.75,False
+2026-01-01T06:00:00,Avengers Compound,Medical Kits,775.5,4.08,False
+2026-01-01T06:12:00,New Asgard,Vibranium (kg),2477.96,3.67,False
+2026-01-01T06:12:00,Wakanda,Arc Reactor Cores,757.25,7.13,False
+2026-01-01T06:12:00,Sokovia,Pym Particles,758.54,6.91,False
+2026-01-01T06:12:00,Sanctum Sanctorum,Clean Water (L),2485.83,2.36,False
+2026-01-01T06:12:00,Avengers Compound,Medical Kits,787.29,2.12,False
+2026-01-01T06:24:00,New Asgard,Vibranium (kg),2456.6,7.23,False
+2026-01-01T06:24:00,Wakanda,Arc Reactor Cores,758.64,6.89,False
+2026-01-01T06:24:00,Sokovia,Pym Particles,759.45,6.76,False
+2026-01-01T06:24:00,Sanctum Sanctorum,Clean Water (L),2472.31,4.61,False
+2026-01-01T06:24:00,Avengers Compound,Medical Kits,782.11,2.98,False
+2026-01-01T06:36:00,New Asgard,Vibranium (kg),2459.55,6.74,False
+2026-01-01T06:36:00,Wakanda,Arc Reactor Cores,773.68,4.39,False
+2026-01-01T06:36:00,Sokovia,Pym Particles,769.49,5.09,False
+2026-01-01T06:36:00,Sanctum Sanctorum,Clean Water (L),2472.73,4.54,False
+2026-01-01T06:36:00,Avengers Compound,Medical Kits,781.09,3.15,False
+2026-01-01T06:48:00,New Asgard,Vibranium (kg),2467.75,5.38,False
+2026-01-01T06:48:00,Wakanda,Arc Reactor Cores,780.56,3.24,False
+2026-01-01T06:48:00,Sokovia,Pym Particles,769.1,5.15,False
+2026-01-01T06:48:00,Sanctum Sanctorum,Clean Water (L),2472.03,4.66,False
+2026-01-01T06:48:00,Avengers Compound,Medical Kits,753.24,7.79,False
+2026-01-01T07:00:00,New Asgard,Vibranium (kg),2473.43,3.8,False
+2026-01-01T07:00:00,Wakanda,Arc Reactor Cores,756.27,6.25,False
+2026-01-01T07:00:00,Sokovia,Pym Particles,755.22,6.4,False
+2026-01-01T07:00:00,Sanctum Sanctorum,Clean Water (L),2462.24,5.39,False
+2026-01-01T07:00:00,Avengers Compound,Medical Kits,758.0,6.0,False
+2026-01-01T07:12:00,New Asgard,Vibranium (kg),2482.12,2.55,False
+2026-01-01T07:12:00,Wakanda,Arc Reactor Cores,779.49,2.93,False
+2026-01-01T07:12:00,Sokovia,Pym Particles,763.53,5.21,False
+2026-01-01T07:12:00,Sanctum Sanctorum,Clean Water (L),2463.84,5.17,False
+2026-01-01T07:12:00,Avengers Compound,Medical Kits,751.04,6.99,False
+2026-01-01T07:24:00,New Asgard,Vibranium (kg),2478.89,3.02,False
+2026-01-01T07:24:00,Wakanda,Arc Reactor Cores,763.06,5.28,False
+2026-01-01T07:24:00,Sokovia,Pym Particles,748.8,7.31,False
+2026-01-01T07:24:00,Sanctum Sanctorum,Clean Water (L),2457.61,6.06,False
+2026-01-01T07:24:00,Avengers Compound,Medical Kits,782.29,2.53,False
+2026-01-01T07:36:00,New Asgard,Vibranium (kg),2475.74,3.47,False
+2026-01-01T07:36:00,Wakanda,Arc Reactor Cores,781.57,2.63,False
+2026-01-01T07:36:00,Sokovia,Pym Particles,745.42,7.8,False
+2026-01-01T07:36:00,Sanctum Sanctorum,Clean Water (L),2477.61,3.2,False
+2026-01-01T07:36:00,Avengers Compound,Medical Kits,755.36,6.38,False
+2026-01-01T07:48:00,New Asgard,Vibranium (kg),2460.78,5.6,False
+2026-01-01T07:48:00,Wakanda,Arc Reactor Cores,764.58,5.06,False
+2026-01-01T07:48:00,Sokovia,Pym Particles,750.4,7.09,False
+2026-01-01T07:48:00,Sanctum Sanctorum,Clean Water (L),2461.35,5.52,False
+2026-01-01T07:48:00,Avengers Compound,Medical Kits,774.6,3.63,False
+2026-01-01T08:00:00,New Asgard,Vibranium (kg),2440.71,7.41,False
+2026-01-01T08:00:00,Wakanda,Arc Reactor Cores,742.16,7.23,False
+2026-01-01T08:00:00,Sokovia,Pym Particles,736.53,7.93,False
+2026-01-01T08:00:00,Sanctum Sanctorum,Clean Water (L),2463.0,4.62,False
+2026-01-01T08:00:00,Avengers Compound,Medical Kits,750.62,6.17,False
+2026-01-01T08:12:00,New Asgard,Vibranium (kg),2471.26,3.59,False
+2026-01-01T08:12:00,Wakanda,Arc Reactor Cores,780.58,2.43,False
+2026-01-01T08:12:00,Sokovia,Pym Particles,754.95,5.63,False
+2026-01-01T08:12:00,Sanctum Sanctorum,Clean Water (L),2443.62,7.05,False
+2026-01-01T08:12:00,Avengers Compound,Medical Kits,768.09,3.99,False
+2026-01-01T08:24:00,New Asgard,Vibranium (kg),2467.7,4.04,False
+2026-01-01T08:24:00,Wakanda,Arc Reactor Cores,782.36,2.2,False
+2026-01-01T08:24:00,Sokovia,Pym Particles,764.29,4.46,False
+2026-01-01T08:24:00,Sanctum Sanctorum,Clean Water (L),2480.98,2.38,False
+2026-01-01T08:24:00,Avengers Compound,Medical Kits,779.74,2.53,False
+2026-01-01T08:36:00,New Asgard,Vibranium (kg),2476.44,2.94,False
+2026-01-01T08:36:00,Wakanda,Arc Reactor Cores,749.35,6.33,False
+2026-01-01T08:36:00,Sokovia,Pym Particles,763.6,4.55,False
+2026-01-01T08:36:00,Sanctum Sanctorum,Clean Water (L),2451.7,6.04,False
+2026-01-01T08:36:00,Avengers Compound,Medical Kits,766.07,4.24,False
+2026-01-01T08:48:00,New Asgard,Vibranium (kg),2463.99,4.5,False
+2026-01-01T08:48:00,Wakanda,Arc Reactor Cores,740.97,7.38,False
+2026-01-01T08:48:00,Sokovia,Pym Particles,776.34,2.96,False
+2026-01-01T08:48:00,Sanctum Sanctorum,Clean Water (L),2463.86,4.52,False
+2026-01-01T08:48:00,Avengers Compound,Medical Kits,744.91,6.89,False
+2026-01-01T09:00:00,New Asgard,Vibranium (kg),2458.13,4.65,False
+2026-01-01T09:00:00,Wakanda,Arc Reactor Cores,772.72,3.03,False
+2026-01-01T09:00:00,Sokovia,Pym Particles,734.33,7.3,False
+2026-01-01T09:00:00,Sanctum Sanctorum,Clean Water (L),2478.46,2.39,False
+2026-01-01T09:00:00,Avengers Compound,Medical Kits,773.33,2.96,False
+2026-01-01T09:12:00,New Asgard,Vibranium (kg),2458.0,4.67,False
+2026-01-01T09:12:00,Wakanda,Arc Reactor Cores,763.72,4.03,False
+2026-01-01T09:12:00,Sokovia,Pym Particles,773.96,2.89,False
+2026-01-01T09:12:00,Sanctum Sanctorum,Clean Water (L),2457.52,4.72,False
+2026-01-01T09:12:00,Avengers Compound,Medical Kits,745.2,6.09,False
+2026-01-01T09:24:00,New Asgard,Vibranium (kg),2472.84,3.02,False
+2026-01-01T09:24:00,Wakanda,Arc Reactor Cores,772.42,3.06,False
+2026-01-01T09:24:00,Sokovia,Pym Particles,751.43,5.4,False
+2026-01-01T09:24:00,Sanctum Sanctorum,Clean Water (L),2474.21,2.87,False
+2026-01-01T09:24:00,Avengers Compound,Medical Kits,777.5,2.5,False
+2026-01-01T09:36:00,New Asgard,Vibranium (kg),2455.63,4.93,False
+2026-01-01T09:36:00,Wakanda,Arc Reactor Cores,781.77,2.03,False
+2026-01-01T09:36:00,Sokovia,Pym Particles,771.8,3.13,False
+2026-01-01T09:36:00,Sanctum Sanctorum,Clean Water (L),2479.62,2.26,False
+2026-01-01T09:36:00,Avengers Compound,Medical Kits,760.56,4.38,False
+2026-01-01T09:48:00,New Asgard,Vibranium (kg),2435.78,7.14,False
+2026-01-01T09:48:00,Wakanda,Arc Reactor Cores,752.2,5.31,False
+2026-01-01T09:48:00,Sokovia,Pym Particles,745.3,6.08,False
+2026-01-01T09:48:00,Sanctum Sanctorum,Clean Water (L),2480.17,2.2,False
+2026-01-01T09:48:00,Avengers Compound,Medical Kits,739.03,6.77,False
+2026-01-01T10:00:00,New Asgard,Vibranium (kg),2436.57,6.34,False
+2026-01-01T10:00:00,Wakanda,Arc Reactor Cores,759.24,4.08,False
+2026-01-01T10:00:00,Sokovia,Pym Particles,727.46,7.25,False
+2026-01-01T10:00:00,Sanctum Sanctorum,Clean Water (L),2420.8,7.92,False
+2026-01-01T10:00:00,Avengers Compound,Medical Kits,761.82,3.82,False
+2026-01-01T10:12:00,New Asgard,Vibranium (kg),2452.59,4.74,False
+2026-01-01T10:12:00,Wakanda,Arc Reactor Cores,727.45,7.25,False
+2026-01-01T10:12:00,Sokovia,Pym Particles,779.57,2.04,False
+2026-01-01T10:12:00,Sanctum Sanctorum,Clean Water (L),2437.98,6.2,False
+2026-01-01T10:12:00,Avengers Compound,Medical Kits,772.29,2.77,False
+2026-01-01T10:24:00,New Asgard,Vibranium (kg),2432.2,6.78,False
+2026-01-01T10:24:00,Wakanda,Arc Reactor Cores,744.79,5.52,False
+2026-01-01T10:24:00,Sokovia,Pym Particles,745.22,5.48,False
+2026-01-01T10:24:00,Sanctum Sanctorum,Clean Water (L),2452.15,4.79,False
+2026-01-01T10:24:00,Avengers Compound,Medical Kits,724.74,7.53,False
+2026-01-01T10:36:00,New Asgard,Vibranium (kg),2448.25,5.18,False
+2026-01-01T10:36:00,Wakanda,Arc Reactor Cores,735.2,6.48,False
+2026-01-01T10:36:00,Sokovia,Pym Particles,748.62,5.14,False
+2026-01-01T10:36:00,Sanctum Sanctorum,Clean Water (L),2426.87,7.31,False
+2026-01-01T10:36:00,Avengers Compound,Medical Kits,779.17,2.08,False
+2026-01-01T10:48:00,New Asgard,Vibranium (kg),2436.51,6.35,False
+2026-01-01T10:48:00,Wakanda,Arc Reactor Cores,758.66,4.13,False
+2026-01-01T10:48:00,Sokovia,Pym Particles,741.66,5.83,False
+2026-01-01T10:48:00,Sanctum Sanctorum,Clean Water (L),2458.98,4.1,False
+2026-01-01T10:48:00,Avengers Compound,Medical Kits,777.36,2.26,False
+2026-01-01T11:00:00,New Asgard,Vibranium (kg),2453.27,4.25,False
+2026-01-01T11:00:00,Wakanda,Arc Reactor Cores,773.57,2.4,False
+2026-01-01T11:00:00,Sokovia,Pym Particles,746.17,4.89,False
+2026-01-01T11:00:00,Sanctum Sanctorum,Clean Water (L),2445.11,4.99,False
+2026-01-01T11:00:00,Avengers Compound,Medical Kits,770.6,2.67,False
+2026-01-01T11:12:00,New Asgard,Vibranium (kg),2474.31,2.34,False
+2026-01-01T11:12:00,Wakanda,Arc Reactor Cores,770.12,2.72,False
+2026-01-01T11:12:00,Sokovia,Pym Particles,731.53,6.22,False
+2026-01-01T11:12:00,Sanctum Sanctorum,Clean Water (L),2451.05,4.45,False
+2026-01-01T11:12:00,Avengers Compound,Medical Kits,738.92,5.55,False
+2026-01-01T11:24:00,New Asgard,Vibranium (kg),2438.14,5.62,False
+2026-01-01T11:24:00,Wakanda,Arc Reactor Cores,739.14,5.53,False
+2026-01-01T11:24:00,Sokovia,Pym Particles,736.24,5.8,False
+2026-01-01T11:24:00,Sanctum Sanctorum,Clean Water (L),2464.22,3.25,False
+2026-01-01T11:24:00,Avengers Compound,Medical Kits,737.06,5.72,False
+2026-01-01T11:36:00,New Asgard,Vibranium (kg),2412.2,7.98,False
+2026-01-01T11:36:00,Wakanda,Arc Reactor Cores,739.4,5.51,False
+2026-01-01T11:36:00,Sokovia,Pym Particles,726.59,6.67,False
+2026-01-01T11:36:00,Sanctum Sanctorum,Clean Water (L),2419.36,7.33,False
+2026-01-01T11:36:00,Avengers Compound,Medical Kits,740.65,5.4,False
+2026-01-01T11:48:00,New Asgard,Vibranium (kg),2468.67,2.85,False
+2026-01-01T11:48:00,Wakanda,Arc Reactor Cores,777.1,2.08,False
+2026-01-01T11:48:00,Sokovia,Pym Particles,742.67,5.21,False
+2026-01-01T11:48:00,Sanctum Sanctorum,Clean Water (L),2474.26,2.34,False
+2026-01-01T11:48:00,Avengers Compound,Medical Kits,732.51,6.14,False
+2026-01-01T12:00:00,New Asgard,Vibranium (kg),2422.52,6.46,False
+2026-01-01T12:00:00,Wakanda,Arc Reactor Cores,760.38,3.3,False
+2026-01-01T12:00:00,Sokovia,Pym Particles,744.03,4.66,False
+2026-01-01T12:00:00,Sanctum Sanctorum,Clean Water (L),2405.52,7.87,False
+2026-01-01T12:00:00,Avengers Compound,Medical Kits,740.06,4.99,False
+2026-01-01T12:12:00,New Asgard,Vibranium (kg),2447.8,4.35,False
+2026-01-01T12:12:00,Wakanda,Arc Reactor Cores,720.61,6.62,False
+2026-01-01T12:12:00,Sokovia,Pym Particles,733.47,5.54,False
+2026-01-01T12:12:00,Sanctum Sanctorum,Clean Water (L),2468.71,2.61,False
+2026-01-01T12:12:00,Avengers Compound,Medical Kits,711.07,7.41,False
+2026-01-01T12:24:00,New Asgard,Vibranium (kg),2432.0,5.67,False
+2026-01-01T12:24:00,Wakanda,Arc Reactor Cores,729.4,5.88,False
+2026-01-01T12:24:00,Sokovia,Pym Particles,741.45,4.88,False
+2026-01-01T12:24:00,Sanctum Sanctorum,Clean Water (L),2453.33,3.89,False
+2026-01-01T12:24:00,Avengers Compound,Medical Kits,732.39,5.63,False
+2026-01-01T12:36:00,New Asgard,Vibranium (kg),2409.03,7.58,False
+2026-01-01T12:36:00,Wakanda,Arc Reactor Cores,768.37,2.64,False
+2026-01-01T12:36:00,Sokovia,Pym Particles,764.42,2.96,False
+2026-01-01T12:36:00,Sanctum Sanctorum,Clean Water (L),2438.18,5.15,False
+2026-01-01T12:36:00,Avengers Compound,Medical Kits,764.9,2.92,False
+2026-01-01T12:48:00,New Asgard,Vibranium (kg),2405.13,7.91,False
+2026-01-01T12:48:00,Wakanda,Arc Reactor Cores,751.9,4.01,False
+2026-01-01T12:48:00,Sokovia,Pym Particles,754.33,3.81,False
+2026-01-01T12:48:00,Sanctum Sanctorum,Clean Water (L),2446.96,4.42,False
+2026-01-01T12:48:00,Avengers Compound,Medical Kits,762.3,3.14,False
+2026-01-01T13:00:00,New Asgard,Vibranium (kg),2432.57,5.19,False
+2026-01-01T13:00:00,Wakanda,Arc Reactor Cores,729.59,5.42,False
+2026-01-01T13:00:00,Sokovia,Pym Particles,733.7,5.1,False
+2026-01-01T13:00:00,Sanctum Sanctorum,Clean Water (L),2446.09,4.15,False
+2026-01-01T13:00:00,Avengers Compound,Medical Kits,700.05,7.69,False
+2026-01-01T13:12:00,New Asgard,Vibranium (kg),2408.1,7.07,False
+2026-01-01T13:12:00,Wakanda,Arc Reactor Cores,745.17,4.22,False
+2026-01-01T13:12:00,Sokovia,Pym Particles,699.81,7.71,False
+2026-01-01T13:12:00,Sanctum Sanctorum,Clean Water (L),2470.28,2.29,False
+2026-01-01T13:12:00,Avengers Compound,Medical Kits,763.3,2.82,False
+2026-01-01T13:24:00,New Asgard,Vibranium (kg),2421.42,6.04,False
+2026-01-01T13:24:00,Wakanda,Arc Reactor Cores,763.49,2.81,False
+2026-01-01T13:24:00,Sokovia,Pym Particles,743.14,4.37,False
+2026-01-01T13:24:00,Sanctum Sanctorum,Clean Water (L),2461.43,2.97,False
+2026-01-01T13:24:00,Avengers Compound,Medical Kits,731.44,5.27,False
+2026-01-01T13:36:00,New Asgard,Vibranium (kg),2454.06,3.53,False
+2026-01-01T13:36:00,Wakanda,Arc Reactor Cores,737.01,4.85,False
+2026-01-01T13:36:00,Sokovia,Pym Particles,720.98,6.08,False
+2026-01-01T13:36:00,Sanctum Sanctorum,Clean Water (L),2469.14,2.37,False
+2026-01-01T13:36:00,Avengers Compound,Medical Kits,704.44,7.35,False
+2026-01-01T13:48:00,New Asgard,Vibranium (kg),2425.44,5.74,False
+2026-01-01T13:48:00,Wakanda,Arc Reactor Cores,729.71,5.41,False
+2026-01-01T13:48:00,Sokovia,Pym Particles,719.06,6.23,False
+2026-01-01T13:48:00,Sanctum Sanctorum,Clean Water (L),2470.76,2.25,False
+2026-01-01T13:48:00,Avengers Compound,Medical Kits,744.09,4.3,False
+2026-01-01T14:00:00,New Asgard,Vibranium (kg),2463.34,2.62,False
+2026-01-01T14:00:00,Wakanda,Arc Reactor Cores,701.37,7.05,False
+2026-01-01T14:00:00,Sokovia,Pym Particles,765.08,2.49,False
+2026-01-01T14:00:00,Sanctum Sanctorum,Clean Water (L),2418.88,5.79,False
+2026-01-01T14:00:00,Avengers Compound,Medical Kits,727.36,5.19,False
+2026-01-01T14:12:00,New Asgard,Vibranium (kg),2415.53,6.03,False
+2026-01-01T14:12:00,Wakanda,Arc Reactor Cores,751.02,3.5,False
+2026-01-01T14:12:00,Sokovia,Pym Particles,700.29,7.12,False
+2026-01-01T14:12:00,Sanctum Sanctorum,Clean Water (L),2414.38,6.12,False
+2026-01-01T14:12:00,Avengers Compound,Medical Kits,688.35,7.97,False
+2026-01-01T14:24:00,New Asgard,Vibranium (kg),2415.23,6.05,False
+2026-01-01T14:24:00,Wakanda,Arc Reactor Cores,740.48,4.25,False
+2026-01-01T14:24:00,Sokovia,Pym Particles,705.9,6.72,False
+2026-01-01T14:24:00,Sanctum Sanctorum,Clean Water (L),2395.49,7.47,False
+2026-01-01T14:24:00,Avengers Compound,Medical Kits,695.38,7.47,False
+2026-01-01T14:36:00,New Asgard,Vibranium (kg),2396.58,7.39,False
+2026-01-01T14:36:00,Wakanda,Arc Reactor Cores,689.87,7.87,False
+2026-01-01T14:36:00,Sokovia,Pym Particles,743.34,4.05,False
+2026-01-01T14:36:00,Sanctum Sanctorum,Clean Water (L),2412.62,6.24,False
+2026-01-01T14:36:00,Avengers Compound,Medical Kits,699.59,7.17,False
+2026-01-01T14:48:00,New Asgard,Vibranium (kg),2431.79,4.87,False
+2026-01-01T14:48:00,Wakanda,Arc Reactor Cores,733.71,4.74,False
+2026-01-01T14:48:00,Sokovia,Pym Particles,702.76,6.95,False
+2026-01-01T14:48:00,Sanctum Sanctorum,Clean Water (L),2420.08,5.71,False
+2026-01-01T14:48:00,Avengers Compound,Medical Kits,729.48,5.04,False
+2026-01-01T15:00:00,New Asgard,Vibranium (kg),2418.28,5.45,False
+2026-01-01T15:00:00,Wakanda,Arc Reactor Cores,769.6,2.03,False
+2026-01-01T15:00:00,Sokovia,Pym Particles,750.39,3.31,False
+2026-01-01T15:00:00,Sanctum Sanctorum,Clean Water (L),2466.66,2.22,False
+2026-01-01T15:00:00,Avengers Compound,Medical Kits,706.55,6.23,False
+2026-01-01T15:12:00,New Asgard,Vibranium (kg),2454.94,3.0,False
+2026-01-01T15:12:00,Wakanda,Arc Reactor Cores,704.74,6.35,False
+2026-01-01T15:12:00,Sokovia,Pym Particles,743.75,3.75,False
+2026-01-01T15:12:00,Sanctum Sanctorum,Clean Water (L),2410.65,5.96,False
+2026-01-01T15:12:00,Avengers Compound,Medical Kits,733.11,4.46,False
+2026-01-01T15:24:00,New Asgard,Vibranium (kg),2394.35,7.04,False
+2026-01-01T15:24:00,Wakanda,Arc Reactor Cores,762.69,2.49,False
+2026-01-01T15:24:00,Sokovia,Pym Particles,757.61,2.83,False
+2026-01-01T15:24:00,Sanctum Sanctorum,Clean Water (L),2451.81,3.21,False
+2026-01-01T15:24:00,Avengers Compound,Medical Kits,691.53,7.23,False
+2026-01-01T15:36:00,New Asgard,Vibranium (kg),2402.22,6.52,False
+2026-01-01T15:36:00,Wakanda,Arc Reactor Cores,762.7,2.49,False
+2026-01-01T15:36:00,Sokovia,Pym Particles,690.93,7.27,False
+2026-01-01T15:36:00,Sanctum Sanctorum,Clean Water (L),2434.37,4.38,False
+2026-01-01T15:36:00,Avengers Compound,Medical Kits,737.33,4.18,False
+2026-01-01T15:48:00,New Asgard,Vibranium (kg),2452.96,3.14,False
+2026-01-01T15:48:00,Wakanda,Arc Reactor Cores,730.37,4.64,False
+2026-01-01T15:48:00,Sokovia,Pym Particles,733.69,4.42,False
+2026-01-01T15:48:00,Sanctum Sanctorum,Clean Water (L),2447.38,3.51,False
+2026-01-01T15:48:00,Avengers Compound,Medical Kits,759.3,2.71,False
+2026-01-01T16:00:00,New Asgard,Vibranium (kg),2399.29,6.29,False
+2026-01-01T16:00:00,Wakanda,Arc Reactor Cores,682.52,7.34,False
+2026-01-01T16:00:00,Sokovia,Pym Particles,672.38,7.98,False
+2026-01-01T16:00:00,Sanctum Sanctorum,Clean Water (L),2448.12,3.24,False
+2026-01-01T16:00:00,Avengers Compound,Medical Kits,747.94,3.25,False
+2026-01-01T16:12:00,New Asgard,Vibranium (kg),2425.09,4.68,False
+2026-01-01T16:12:00,Wakanda,Arc Reactor Cores,700.76,6.2,False
+2026-01-01T16:12:00,Sokovia,Pym Particles,731.81,4.26,False
+2026-01-01T16:12:00,Sanctum Sanctorum,Clean Water (L),2396.46,6.47,False
+2026-01-01T16:12:00,Avengers Compound,Medical Kits,695.73,6.52,False
+2026-01-01T16:24:00,New Asgard,Vibranium (kg),2453.91,2.88,False
+2026-01-01T16:24:00,Wakanda,Arc Reactor Cores,676.55,7.72,False
+2026-01-01T16:24:00,Sokovia,Pym Particles,689.28,6.92,False
+2026-01-01T16:24:00,Sanctum Sanctorum,Clean Water (L),2445.65,3.4,False
+2026-01-01T16:24:00,Avengers Compound,Medical Kits,740.95,3.69,False
+2026-01-01T16:36:00,New Asgard,Vibranium (kg),2397.4,6.41,False
+2026-01-01T16:36:00,Wakanda,Arc Reactor Cores,720.99,4.94,False
+2026-01-01T16:36:00,Sokovia,Pym Particles,681.98,7.38,False
+2026-01-01T16:36:00,Sanctum Sanctorum,Clean Water (L),2381.59,7.4,False
+2026-01-01T16:36:00,Avengers Compound,Medical Kits,758.35,2.6,False
+2026-01-01T16:48:00,New Asgard,Vibranium (kg),2460.79,2.45,False
+2026-01-01T16:48:00,Wakanda,Arc Reactor Cores,742.86,3.57,False
+2026-01-01T16:48:00,Sokovia,Pym Particles,699.88,6.26,False
+2026-01-01T16:48:00,Sanctum Sanctorum,Clean Water (L),2386.92,7.07,False
+2026-01-01T16:48:00,Avengers Compound,Medical Kits,740.81,3.7,False
+2026-01-01T17:00:00,New Asgard,Vibranium (kg),2450.62,2.9,False
+2026-01-01T17:00:00,Wakanda,Arc Reactor Cores,745.93,3.18,False
+2026-01-01T17:00:00,Sokovia,Pym Particles,703.34,5.69,False
+2026-01-01T17:00:00,Sanctum Sanctorum,Clean Water (L),2413.67,5.08,False
+2026-01-01T17:00:00,Avengers Compound,Medical Kits,705.66,5.55,False
+2026-01-01T17:12:00,New Asgard,Vibranium (kg),2386.94,6.65,False
+2026-01-01T17:12:00,Wakanda,Arc Reactor Cores,765.42,2.03,False
+2026-01-01T17:12:00,Sokovia,Pym Particles,687.55,6.61,False
+2026-01-01T17:12:00,Sanctum Sanctorum,Clean Water (L),2449.83,2.95,False
+2026-01-01T17:12:00,Avengers Compound,Medical Kits,721.13,4.64,False
+2026-01-01T17:24:00,New Asgard,Vibranium (kg),2446.82,3.13,False
+2026-01-01T17:24:00,Wakanda,Arc Reactor Cores,671.09,7.58,False
+2026-01-01T17:24:00,Sokovia,Pym Particles,685.92,6.71,False
+2026-01-01T17:24:00,Sanctum Sanctorum,Clean Water (L),2370.67,7.61,False
+2026-01-01T17:24:00,Avengers Compound,Medical Kits,682.96,6.88,False
+2026-01-01T17:36:00,New Asgard,Vibranium (kg),2403.11,5.7,False
+2026-01-01T17:36:00,Wakanda,Arc Reactor Cores,687.55,6.61,False
+2026-01-01T17:36:00,Sokovia,Pym Particles,693.92,6.24,False
+2026-01-01T17:36:00,Sanctum Sanctorum,Clean Water (L),2441.7,3.43,False
+2026-01-01T17:36:00,Avengers Compound,Medical Kits,735.1,3.82,False
+2026-01-01T17:48:00,New Asgard,Vibranium (kg),2453.91,2.71,False
+2026-01-01T17:48:00,Wakanda,Arc Reactor Cores,759.67,2.37,False
+2026-01-01T17:48:00,Sokovia,Pym Particles,716.66,4.9,False
+2026-01-01T17:48:00,Sanctum Sanctorum,Clean Water (L),2386.36,6.68,False
+2026-01-01T17:48:00,Avengers Compound,Medical Kits,753.42,2.74,False
+2026-01-01T18:00:00,New Asgard,Vibranium (kg),2373.56,7.02,False
+2026-01-01T18:00:00,Wakanda,Arc Reactor Cores,730.43,3.86,False
+2026-01-01T18:00:00,Sokovia,Pym Particles,712.51,4.86,False
+2026-01-01T18:00:00,Sanctum Sanctorum,Clean Water (L),2435.75,3.57,False
+2026-01-01T18:00:00,Avengers Compound,Medical Kits,746.14,2.99,False
+2026-01-01T18:12:00,New Asgard,Vibranium (kg),2356.77,7.96,False
+2026-01-01T18:12:00,Wakanda,Arc Reactor Cores,676.43,6.87,False
+2026-01-01T18:12:00,Sokovia,Pym Particles,762.18,2.1,False
+2026-01-01T18:12:00,Sanctum Sanctorum,Clean Water (L),2444.81,3.07,False
+2026-01-01T18:12:00,Avengers Compound,Medical Kits,742.02,3.22,False
+2026-01-01T18:24:00,New Asgard,Vibranium (kg),2429.47,3.92,False
+2026-01-01T18:24:00,Wakanda,Arc Reactor Cores,692.8,5.96,False
+2026-01-01T18:24:00,Sokovia,Pym Particles,671.64,7.13,False
+2026-01-01T18:24:00,Sanctum Sanctorum,Clean Water (L),2448.44,2.86,False
+2026-01-01T18:24:00,Avengers Compound,Medical Kits,657.94,7.89,False
+2026-01-01T18:36:00,New Asgard,Vibranium (kg),2414.19,4.77,False
+2026-01-01T18:36:00,Wakanda,Arc Reactor Cores,668.83,7.29,False
+2026-01-01T18:36:00,Sokovia,Pym Particles,693.39,5.92,False
+2026-01-01T18:36:00,Sanctum Sanctorum,Clean Water (L),2384.31,6.43,False
+2026-01-01T18:36:00,Avengers Compound,Medical Kits,661.97,7.67,False
+2026-01-01T18:48:00,New Asgard,Vibranium (kg),2458.6,2.3,False
+2026-01-01T18:48:00,Wakanda,Arc Reactor Cores,754.45,2.53,False
+2026-01-01T18:48:00,Sokovia,Pym Particles,708.43,5.09,False
+2026-01-01T18:48:00,Sanctum Sanctorum,Clean Water (L),2418.28,4.54,False
+2026-01-01T18:48:00,Avengers Compound,Medical Kits,690.59,6.08,False
+2026-01-01T19:00:00,New Asgard,Vibranium (kg),2360.2,7.36,False
+2026-01-01T19:00:00,Wakanda,Arc Reactor Cores,704.4,5.03,False
+2026-01-01T19:00:00,Sokovia,Pym Particles,710.72,4.7,False
+2026-01-01T19:00:00,Sanctum Sanctorum,Clean Water (L),2445.95,2.84,False
+2026-01-01T19:00:00,Avengers Compound,Medical Kits,721.26,4.14,False
+2026-01-01T19:12:00,New Asgard,Vibranium (kg),2449.5,2.66,False
+2026-01-01T19:12:00,Wakanda,Arc Reactor Cores,675.58,6.55,True
+2026-01-01T19:12:00,Sokovia,Pym Particles,648.86,7.95,True
+2026-01-01T19:12:00,Sanctum Sanctorum,Clean Water (L),2438.58,3.23,True
+2026-01-01T19:12:00,Avengers Compound,Medical Kits,679.86,6.32,True
+2026-01-01T19:24:00,New Asgard,Vibranium (kg),2461.12,2.05,True
+2026-01-01T19:24:00,Wakanda,Arc Reactor Cores,755.36,2.35,True
+2026-01-01T19:24:00,Sokovia,Pym Particles,655.42,7.61,True
+2026-01-01T19:24:00,Sanctum Sanctorum,Clean Water (L),2416.7,4.38,True
+2026-01-01T19:24:00,Avengers Compound,Medical Kits,658.06,7.47,True
+2026-01-01T19:36:00,New Asgard,Vibranium (kg),2351.2,7.83,True
+2026-01-01T19:36:00,Wakanda,Arc Reactor Cores,669.76,6.85,True
+2026-01-01T19:36:00,Sokovia,Pym Particles,649.72,7.91,True
+2026-01-01T19:36:00,Sanctum Sanctorum,Clean Water (L),2406.5,4.92,True
+2026-01-01T19:36:00,Avengers Compound,Medical Kits,712.24,4.62,True
+2026-01-01T19:48:00,New Asgard,Vibranium (kg),2401.44,5.19,True
+2026-01-01T19:48:00,Wakanda,Arc Reactor Cores,737.92,3.27,True
+2026-01-01T19:48:00,Sokovia,Pym Particles,713.22,4.57,True
+2026-01-01T19:48:00,Sanctum Sanctorum,Clean Water (L),2393.32,5.61,True
+2026-01-01T19:48:00,Avengers Compound,Medical Kits,740.18,3.15,True
+2026-01-01T20:00:00,New Asgard,Vibranium (kg),2346.86,7.66,True
+2026-01-01T20:00:00,Wakanda,Arc Reactor Cores,707.52,4.62,True
+2026-01-01T20:00:00,Sokovia,Pym Particles,756.64,2.17,True
+2026-01-01T20:00:00,Sanctum Sanctorum,Clean Water (L),2365.58,6.72,True
+2026-01-01T20:00:00,Avengers Compound,Medical Kits,726.92,3.65,True
+2026-01-01T20:12:00,New Asgard,Vibranium (kg),2404.28,4.79,True
+2026-01-01T20:12:00,Wakanda,Arc Reactor Cores,746.78,2.66,True
+2026-01-01T20:12:00,Sokovia,Pym Particles,737.82,3.11,True
+2026-01-01T20:12:00,Sanctum Sanctorum,Clean Water (L),2369.26,6.54,True
+2026-01-01T20:12:00,Avengers Compound,Medical Kits,753.18,2.34,True
+2026-01-01T20:24:00,New Asgard,Vibranium (kg),2408.14,4.59,True
+2026-01-01T20:24:00,Wakanda,Arc Reactor Cores,693.06,5.35,True
+2026-01-01T20:24:00,Sokovia,Pym Particles,698.26,5.09,True
+2026-01-01T20:24:00,Sanctum Sanctorum,Clean Water (L),2377.42,6.13,True
+2026-01-01T20:24:00,Avengers Compound,Medical Kits,714.52,4.27,True
+2026-01-01T20:36:00,New Asgard,Vibranium (kg),2361.26,6.94,True
+2026-01-01T20:36:00,Wakanda,Arc Reactor Cores,698.8,5.06,True
+2026-01-01T20:36:00,Sokovia,Pym Particles,671.94,6.4,True
+2026-01-01T20:36:00,Sanctum Sanctorum,Clean Water (L),2399.02,5.05,True
+2026-01-01T20:36:00,Avengers Compound,Medical Kits,673.66,6.32,True
+2026-01-01T20:48:00,New Asgard,Vibranium (kg),2361.24,6.94,False
+2026-01-01T20:48:00,Wakanda,Arc Reactor Cores,693.33,5.33,False
+2026-01-01T20:48:00,Sokovia,Pym Particles,759.57,2.02,False
+2026-01-01T20:48:00,Sanctum Sanctorum,Clean Water (L),2395.77,5.21,False
+2026-01-01T20:48:00,Avengers Compound,Medical Kits,749.43,2.53,False
+2026-01-01T21:00:00,New Asgard,Vibranium (kg),2392.8,5.1,False
+2026-01-01T21:00:00,Wakanda,Arc Reactor Cores,698.14,4.85,False
+2026-01-01T21:00:00,Sokovia,Pym Particles,727.66,3.44,False
+2026-01-01T21:00:00,Sanctum Sanctorum,Clean Water (L),2354.31,6.94,False
+2026-01-01T21:00:00,Avengers Compound,Medical Kits,636.79,7.77,False
+2026-01-01T21:12:00,New Asgard,Vibranium (kg),2404.63,4.54,False
+2026-01-01T21:12:00,Wakanda,Arc Reactor Cores,738.48,2.93,False
+2026-01-01T21:12:00,Sokovia,Pym Particles,722.8,3.68,False
+2026-01-01T21:12:00,Sanctum Sanctorum,Clean Water (L),2401.96,4.67,False
+2026-01-01T21:12:00,Avengers Compound,Medical Kits,648.77,7.2,False
+2026-01-01T21:24:00,New Asgard,Vibranium (kg),2364.09,6.47,False
+2026-01-01T21:24:00,Wakanda,Arc Reactor Cores,663.39,6.51,False
+2026-01-01T21:24:00,Sokovia,Pym Particles,646.85,7.29,False
+2026-01-01T21:24:00,Sanctum Sanctorum,Clean Water (L),2428.64,3.4,False
+2026-01-01T21:24:00,Avengers Compound,Medical Kits,741.96,2.76,False
+2026-01-01T21:36:00,New Asgard,Vibranium (kg),2432.91,3.19,False
+2026-01-01T21:36:00,Wakanda,Arc Reactor Cores,678.38,5.79,False
+2026-01-01T21:36:00,Sokovia,Pym Particles,715.76,4.01,False
+2026-01-01T21:36:00,Sanctum Sanctorum,Clean Water (L),2452.59,2.26,False
+2026-01-01T21:36:00,Avengers Compound,Medical Kits,691.47,5.17,False
+2026-01-01T21:48:00,New Asgard,Vibranium (kg),2456.82,2.06,False
+2026-01-01T21:48:00,Wakanda,Arc Reactor Cores,640.0,7.62,False
+2026-01-01T21:48:00,Sokovia,Pym Particles,652.27,7.03,False
+2026-01-01T21:48:00,Sanctum Sanctorum,Clean Water (L),2386.45,5.41,False
+2026-01-01T21:48:00,Avengers Compound,Medical Kits,672.49,6.07,False
+2026-01-01T22:00:00,New Asgard,Vibranium (kg),2429.97,3.18,False
+2026-01-01T22:00:00,Wakanda,Arc Reactor Cores,665.79,6.1,False
+2026-01-01T22:00:00,Sokovia,Pym Particles,629.01,7.77,False
+2026-01-01T22:00:00,Sanctum Sanctorum,Clean Water (L),2378.47,5.52,False
+2026-01-01T22:00:00,Avengers Compound,Medical Kits,708.23,4.17,False
+2026-01-01T22:12:00,New Asgard,Vibranium (kg),2455.97,2.0,False
+2026-01-01T22:12:00,Wakanda,Arc Reactor Cores,695.1,4.77,False
+2026-01-01T22:12:00,Sokovia,Pym Particles,694.34,4.8,False
+2026-01-01T22:12:00,Sanctum Sanctorum,Clean Water (L),2450.32,2.26,False
+2026-01-01T22:12:00,Avengers Compound,Medical Kits,662.29,6.26,False
+2026-01-01T22:24:00,New Asgard,Vibranium (kg),2425.62,3.38,False
+2026-01-01T22:24:00,Wakanda,Arc Reactor Cores,680.56,5.43,False
+2026-01-01T22:24:00,Sokovia,Pym Particles,741.19,2.67,False
+2026-01-01T22:24:00,Sanctum Sanctorum,Clean Water (L),2438.42,2.8,False
+2026-01-01T22:24:00,Avengers Compound,Medical Kits,694.25,4.81,False
+2026-01-01T22:36:00,New Asgard,Vibranium (kg),2364.97,6.14,False
+2026-01-01T22:36:00,Wakanda,Arc Reactor Cores,677.96,5.55,False
+2026-01-01T22:36:00,Sokovia,Pym Particles,632.12,7.63,False
+2026-01-01T22:36:00,Sanctum Sanctorum,Clean Water (L),2378.74,5.51,False
+2026-01-01T22:36:00,Avengers Compound,Medical Kits,734.02,3.0,False
+2026-01-01T22:48:00,New Asgard,Vibranium (kg),2344.45,7.07,False
+2026-01-01T22:48:00,Wakanda,Arc Reactor Cores,685.52,5.2,False
+2026-01-01T22:48:00,Sokovia,Pym Particles,646.11,7.0,False
+2026-01-01T22:48:00,Sanctum Sanctorum,Clean Water (L),2440.38,2.71,False
+2026-01-01T22:48:00,Avengers Compound,Medical Kits,656.59,6.52,False
+2026-01-01T23:00:00,New Asgard,Vibranium (kg),2371.99,5.57,False
+2026-01-01T23:00:00,Wakanda,Arc Reactor Cores,753.98,2.0,False
+2026-01-01T23:00:00,Sokovia,Pym Particles,743.04,2.48,False
+2026-01-01T23:00:00,Sanctum Sanctorum,Clean Water (L),2415.45,3.68,False
+2026-01-01T23:00:00,Avengers Compound,Medical Kits,700.33,4.33,False
+2026-01-01T23:12:00,New Asgard,Vibranium (kg),2366.16,5.82,False
+2026-01-01T23:12:00,Wakanda,Arc Reactor Cores,730.36,3.03,False
+2026-01-01T23:12:00,Sokovia,Pym Particles,622.41,7.72,False
+2026-01-01T23:12:00,Sanctum Sanctorum,Clean Water (L),2355.89,6.27,False
+2026-01-01T23:12:00,Avengers Compound,Medical Kits,620.6,7.8,False
+2026-01-01T23:24:00,New Asgard,Vibranium (kg),2399.02,4.39,False
+2026-01-01T23:24:00,Wakanda,Arc Reactor Cores,630.33,7.38,False
+2026-01-01T23:24:00,Sokovia,Pym Particles,663.09,5.95,False
+2026-01-01T23:24:00,Sanctum Sanctorum,Clean Water (L),2417.3,3.6,False
+2026-01-01T23:24:00,Avengers Compound,Medical Kits,666.91,5.79,False
+2026-01-01T23:36:00,New Asgard,Vibranium (kg),2438.83,2.66,False
+2026-01-01T23:36:00,Wakanda,Arc Reactor Cores,688.24,4.86,False
+2026-01-01T23:36:00,Sokovia,Pym Particles,715.03,3.69,False
+2026-01-01T23:36:00,Sanctum Sanctorum,Clean Water (L),2344.23,6.77,False
+2026-01-01T23:36:00,Avengers Compound,Medical Kits,719.53,3.5,False
+2026-01-01T23:48:00,New Asgard,Vibranium (kg),2317.99,7.91,False
+2026-01-01T23:48:00,Wakanda,Arc Reactor Cores,695.78,4.53,False
+2026-01-01T23:48:00,Sokovia,Pym Particles,739.95,2.61,False
+2026-01-01T23:48:00,Sanctum Sanctorum,Clean Water (L),2405.78,4.1,False
+2026-01-01T23:48:00,Avengers Compound,Medical Kits,704.55,4.15,False
+2026-01-02T00:00:00,New Asgard,Vibranium (kg),2343.45,6.52,False
+2026-01-02T00:00:00,Wakanda,Arc Reactor Cores,728.96,2.96,False
+2026-01-02T00:00:00,Sokovia,Pym Particles,666.67,5.56,False
+2026-01-02T00:00:00,Sanctum Sanctorum,Clean Water (L),2373.03,5.29,False
+2026-01-02T00:00:00,Avengers Compound,Medical Kits,677.15,5.12,False
+2026-01-02T00:12:00,New Asgard,Vibranium (kg),2357.27,5.95,False
+2026-01-02T00:12:00,Wakanda,Arc Reactor Cores,669.39,5.44,False
+2026-01-02T00:12:00,Sokovia,Pym Particles,611.16,7.87,False
+2026-01-02T00:12:00,Sanctum Sanctorum,Clean Water (L),2404.19,3.99,False
+2026-01-02T00:12:00,Avengers Compound,Medical Kits,656.74,5.97,False
+2026-01-02T00:24:00,New Asgard,Vibranium (kg),2355.81,6.01,False
+2026-01-02T00:24:00,Wakanda,Arc Reactor Cores,745.55,2.27,False
+2026-01-02T00:24:00,Sokovia,Pym Particles,742.93,2.38,False
+2026-01-02T00:24:00,Sanctum Sanctorum,Clean Water (L),2438.66,2.56,False
+2026-01-02T00:24:00,Avengers Compound,Medical Kits,648.69,6.3,False
+2026-01-02T00:36:00,New Asgard,Vibranium (kg),2329.79,7.09,False
+2026-01-02T00:36:00,Wakanda,Arc Reactor Cores,656.32,5.99,False
+2026-01-02T00:36:00,Sokovia,Pym Particles,719.47,3.36,False
+2026-01-02T00:36:00,Sanctum Sanctorum,Clean Water (L),2350.51,6.23,False
+2026-01-02T00:36:00,Avengers Compound,Medical Kits,691.21,4.53,False
+2026-01-02T00:48:00,New Asgard,Vibranium (kg),2446.88,2.21,False
+2026-01-02T00:48:00,Wakanda,Arc Reactor Cores,612.89,7.8,False
+2026-01-02T00:48:00,Sokovia,Pym Particles,611.15,7.87,False
+2026-01-02T00:48:00,Sanctum Sanctorum,Clean Water (L),2310.33,7.9,False
+2026-01-02T00:48:00,Avengers Compound,Medical Kits,717.45,3.44,False
+2026-01-02T01:00:00,New Asgard,Vibranium (kg),2374.48,5.02,False
+2026-01-02T01:00:00,Wakanda,Arc Reactor Cores,654.01,5.84,False
+2026-01-02T01:00:00,Sokovia,Pym Particles,731.86,2.73,False
+2026-01-02T01:00:00,Sanctum Sanctorum,Clean Water (L),2332.41,6.7,False
+2026-01-02T01:00:00,Avengers Compound,Medical Kits,739.79,2.41,False
+2026-01-02T01:12:00,New Asgard,Vibranium (kg),2448.86,2.05,False
+2026-01-02T01:12:00,Wakanda,Arc Reactor Cores,724.4,3.02,False
+2026-01-02T01:12:00,Sokovia,Pym Particles,601.6,7.94,False
+2026-01-02T01:12:00,Sanctum Sanctorum,Clean Water (L),2411.23,3.55,False
+2026-01-02T01:12:00,Avengers Compound,Medical Kits,702.81,3.89,False
+2026-01-02T01:24:00,New Asgard,Vibranium (kg),2321.07,7.16,False
+2026-01-02T01:24:00,Wakanda,Arc Reactor Cores,610.01,7.6,False
+2026-01-02T01:24:00,Sokovia,Pym Particles,716.11,3.36,False
+2026-01-02T01:24:00,Sanctum Sanctorum,Clean Water (L),2412.92,3.48,False
+2026-01-02T01:24:00,Avengers Compound,Medical Kits,671.08,5.16,False
+2026-01-02T01:36:00,New Asgard,Vibranium (kg),2377.2,4.91,False
+2026-01-02T01:36:00,Wakanda,Arc Reactor Cores,714.36,3.43,False
+2026-01-02T01:36:00,Sokovia,Pym Particles,661.58,5.54,False
+2026-01-02T01:36:00,Sanctum Sanctorum,Clean Water (L),2406.73,3.73,False
+2026-01-02T01:36:00,Avengers Compound,Medical Kits,611.06,7.56,False
+2026-01-02T01:48:00,New Asgard,Vibranium (kg),2325.6,6.98,False
+2026-01-02T01:48:00,Wakanda,Arc Reactor Cores,613.15,7.47,False
+2026-01-02T01:48:00,Sokovia,Pym Particles,742.31,2.31,False
+2026-01-02T01:48:00,Sanctum Sanctorum,Clean Water (L),2423.83,3.05,False
+2026-01-02T01:48:00,Avengers Compound,Medical Kits,632.13,6.71,False
+2026-01-02T02:00:00,New Asgard,Vibranium (kg),2333.13,6.42,False
+2026-01-02T02:00:00,Wakanda,Arc Reactor Cores,723.1,2.96,False
+2026-01-02T02:00:00,Sokovia,Pym Particles,665.76,5.16,False
+2026-01-02T02:00:00,Sanctum Sanctorum,Clean Water (L),2334.51,6.37,False
+2026-01-02T02:00:00,Avengers Compound,Medical Kits,660.25,5.37,False
+2026-01-02T02:12:00,New Asgard,Vibranium (kg),2315.68,7.09,False
+2026-01-02T02:12:00,Wakanda,Arc Reactor Cores,648.59,5.82,False
+2026-01-02T02:12:00,Sokovia,Pym Particles,613.62,7.17,False
+2026-01-02T02:12:00,Sanctum Sanctorum,Clean Water (L),2353.69,5.63,False
+2026-01-02T02:12:00,Avengers Compound,Medical Kits,736.81,2.43,False
+2026-01-02T02:24:00,New Asgard,Vibranium (kg),2369.26,5.03,False
+2026-01-02T02:24:00,Wakanda,Arc Reactor Cores,596.21,7.84,False
+2026-01-02T02:24:00,Sokovia,Pym Particles,705.45,3.64,False
+2026-01-02T02:24:00,Sanctum Sanctorum,Clean Water (L),2404.49,3.67,False
+2026-01-02T02:24:00,Avengers Compound,Medical Kits,666.43,5.14,False
+2026-01-02T02:36:00,New Asgard,Vibranium (kg),2292.72,7.97,False
+2026-01-02T02:36:00,Wakanda,Arc Reactor Cores,714.06,3.31,False
+2026-01-02T02:36:00,Sokovia,Pym Particles,682.29,4.53,False
+2026-01-02T02:36:00,Sanctum Sanctorum,Clean Water (L),2340.81,6.12,False
+2026-01-02T02:36:00,Avengers Compound,Medical Kits,717.21,3.18,False
+2026-01-02T02:48:00,New Asgard,Vibranium (kg),2372.53,4.9,False
+2026-01-02T02:48:00,Wakanda,Arc Reactor Cores,628.22,6.61,False
+2026-01-02T02:48:00,Sokovia,Pym Particles,643.24,6.03,False
+2026-01-02T02:48:00,Sanctum Sanctorum,Clean Water (L),2417.35,3.18,False
+2026-01-02T02:48:00,Avengers Compound,Medical Kits,612.72,7.2,False
+2026-01-02T03:00:00,New Asgard,Vibranium (kg),2329.14,6.33,False
+2026-01-02T03:00:00,Wakanda,Arc Reactor Cores,687.03,4.18,False
+2026-01-02T03:00:00,Sokovia,Pym Particles,610.41,7.02,False
+2026-01-02T03:00:00,Sanctum Sanctorum,Clean Water (L),2418.4,3.02,False
+2026-01-02T03:00:00,Avengers Compound,Medical Kits,676.97,4.56,False
+2026-01-02T03:12:00,New Asgard,Vibranium (kg),2383.61,4.31,False
+2026-01-02T03:12:00,Wakanda,Arc Reactor Cores,588.17,7.85,False
+2026-01-02T03:12:00,Sokovia,Pym Particles,628.97,6.33,False
+2026-01-02T03:12:00,Sanctum Sanctorum,Clean Water (L),2401.01,3.67,False
+2026-01-02T03:12:00,Avengers Compound,Medical Kits,656.28,5.32,False
+2026-01-02T03:24:00,New Asgard,Vibranium (kg),2341.14,5.88,False
+2026-01-02T03:24:00,Wakanda,Arc Reactor Cores,732.61,2.5,False
+2026-01-02T03:24:00,Sokovia,Pym Particles,666.44,4.95,False
+2026-01-02T03:24:00,Sanctum Sanctorum,Clean Water (L),2416.46,3.09,False
+2026-01-02T03:24:00,Avengers Compound,Medical Kits,663.95,5.04,False
+2026-01-02T03:36:00,New Asgard,Vibranium (kg),2359.19,5.22,False
+2026-01-02T03:36:00,Wakanda,Arc Reactor Cores,600.79,7.38,False
+2026-01-02T03:36:00,Sokovia,Pym Particles,668.96,4.85,False
+2026-01-02T03:36:00,Sanctum Sanctorum,Clean Water (L),2392.34,3.99,False
+2026-01-02T03:36:00,Avengers Compound,Medical Kits,599.39,7.43,False
+2026-01-02T03:48:00,New Asgard,Vibranium (kg),2388.25,4.14,False
+2026-01-02T03:48:00,Wakanda,Arc Reactor Cores,688.48,4.13,False
+2026-01-02T03:48:00,Sokovia,Pym Particles,664.69,5.01,False
+2026-01-02T03:48:00,Sanctum Sanctorum,Clean Water (L),2405.95,3.48,False
+2026-01-02T03:48:00,Avengers Compound,Medical Kits,589.62,7.79,False
+2026-01-02T04:00:00,New Asgard,Vibranium (kg),2423.49,2.73,False
+2026-01-02T04:00:00,Wakanda,Arc Reactor Cores,715.36,3.02,False
+2026-01-02T04:00:00,Sokovia,Pym Particles,659.11,5.03,False
+2026-01-02T04:00:00,Sanctum Sanctorum,Clean Water (L),2437.1,2.25,False
+2026-01-02T04:00:00,Avengers Compound,Medical Kits,742.99,2.04,False
+2026-01-02T04:12:00,New Asgard,Vibranium (kg),2301.87,7.08,False
+2026-01-02T04:12:00,Wakanda,Arc Reactor Cores,648.18,5.42,False
+2026-01-02T04:12:00,Sokovia,Pym Particles,609.01,6.82,False
+2026-01-02T04:12:00,Sanctum Sanctorum,Clean Water (L),2387.89,4.0,False
+2026-01-02T04:12:00,Avengers Compound,Medical Kits,637.44,5.81,False
+2026-01-02T04:24:00,New Asgard,Vibranium (kg),2339.54,5.73,False
+2026-01-02T04:24:00,Wakanda,Arc Reactor Cores,657.79,5.08,False
+2026-01-02T04:24:00,Sokovia,Pym Particles,606.8,6.9,False
+2026-01-02T04:24:00,Sanctum Sanctorum,Clean Water (L),2427.82,2.58,False
+2026-01-02T04:24:00,Avengers Compound,Medical Kits,581.69,7.8,False
+2026-01-02T04:36:00,New Asgard,Vibranium (kg),2436.21,2.28,False
+2026-01-02T04:36:00,Wakanda,Arc Reactor Cores,732.13,2.42,False
+2026-01-02T04:36:00,Sokovia,Pym Particles,665.26,4.81,False
+2026-01-02T04:36:00,Sanctum Sanctorum,Clean Water (L),2361.09,4.96,False
+2026-01-02T04:36:00,Avengers Compound,Medical Kits,587.3,7.6,False
+2026-01-02T04:48:00,New Asgard,Vibranium (kg),2432.79,2.4,False
+2026-01-02T04:48:00,Wakanda,Arc Reactor Cores,674.79,4.47,False
+2026-01-02T04:48:00,Sokovia,Pym Particles,576.27,7.99,False
+2026-01-02T04:48:00,Sanctum Sanctorum,Clean Water (L),2382.67,4.19,False
+2026-01-02T04:48:00,Avengers Compound,Medical Kits,701.92,3.5,False
+2026-01-02T05:00:00,New Asgard,Vibranium (kg),2391.98,3.72,False
+2026-01-02T05:00:00,Wakanda,Arc Reactor Cores,589.46,7.26,False
+2026-01-02T05:00:00,Sokovia,Pym Particles,684.63,3.98,False
+2026-01-02T05:00:00,Sanctum Sanctorum,Clean Water (L),2337.68,5.6,False
+2026-01-02T05:00:00,Avengers Compound,Medical Kits,621.56,6.15,False
+2026-01-02T05:12:00,New Asgard,Vibranium (kg),2394.44,3.64,False
+2026-01-02T05:12:00,Wakanda,Arc Reactor Cores,703.44,3.33,False
+2026-01-02T05:12:00,Sokovia,Pym Particles,680.87,4.11,False
+2026-01-02T05:12:00,Sanctum Sanctorum,Clean Water (L),2357.82,4.9,False
+2026-01-02T05:12:00,Avengers Compound,Medical Kits,573.01,7.83,False
+2026-01-02T05:24:00,New Asgard,Vibranium (kg),2349.56,5.19,False
+2026-01-02T05:24:00,Wakanda,Arc Reactor Cores,632.24,5.78,False
+2026-01-02T05:24:00,Sokovia,Pym Particles,737.62,2.15,False
+2026-01-02T05:24:00,Sanctum Sanctorum,Clean Water (L),2401.01,3.41,False
+2026-01-02T05:24:00,Avengers Compound,Medical Kits,688.82,3.83,False
+2026-01-02T05:36:00,New Asgard,Vibranium (kg),2269.78,7.94,False
+2026-01-02T05:36:00,Wakanda,Arc Reactor Cores,707.14,3.2,False
+2026-01-02T05:36:00,Sokovia,Pym Particles,681.05,4.1,False
+2026-01-02T05:36:00,Sanctum Sanctorum,Clean Water (L),2308.76,6.59,False
+2026-01-02T05:36:00,Avengers Compound,Medical Kits,714.71,2.94,False
+2026-01-02T05:48:00,New Asgard,Vibranium (kg),2386.07,3.93,False
+2026-01-02T05:48:00,Wakanda,Arc Reactor Cores,649.42,5.19,False
+2026-01-02T05:48:00,Sokovia,Pym Particles,691.34,3.75,False
+2026-01-02T05:48:00,Sanctum Sanctorum,Clean Water (L),2326.41,5.99,False
+2026-01-02T05:48:00,Avengers Compound,Medical Kits,691.42,3.74,False
+2026-01-02T06:00:00,New Asgard,Vibranium (kg),2356.64,4.78,False
+2026-01-02T06:00:00,Wakanda,Arc Reactor Cores,577.17,7.43,False
+2026-01-02T06:00:00,Sokovia,Pym Particles,613.89,6.2,False
+2026-01-02T06:00:00,Sanctum Sanctorum,Clean Water (L),2323.45,5.89,False
+2026-01-02T06:00:00,Avengers Compound,Medical Kits,569.68,7.68,False
+2026-01-02T06:12:00,New Asgard,Vibranium (kg),2387.87,3.74,False
+2026-01-02T06:12:00,Wakanda,Arc Reactor Cores,604.6,6.51,False
+2026-01-02T06:12:00,Sokovia,Pym Particles,680.16,3.99,False
+2026-01-02T06:12:00,Sanctum Sanctorum,Clean Water (L),2395.14,3.5,False
+2026-01-02T06:12:00,Avengers Compound,Medical Kits,705.1,3.16,False
+2026-01-02T06:24:00,New Asgard,Vibranium (kg),2350.46,4.98,False
+2026-01-02T06:24:00,Wakanda,Arc Reactor Cores,581.3,7.29,False
+2026-01-02T06:24:00,Sokovia,Pym Particles,642.83,5.24,False
+2026-01-02T06:24:00,Sanctum Sanctorum,Clean Water (L),2435.45,2.15,False
+2026-01-02T06:24:00,Avengers Compound,Medical Kits,717.47,2.75,False
+2026-01-02T06:36:00,New Asgard,Vibranium (kg),2404.57,3.18,False
+2026-01-02T06:36:00,Wakanda,Arc Reactor Cores,666.45,4.45,False
+2026-01-02T06:36:00,Sokovia,Pym Particles,566.12,7.8,False
+2026-01-02T06:36:00,Sanctum Sanctorum,Clean Water (L),2329.48,5.68,False
+2026-01-02T06:36:00,Avengers Compound,Medical Kits,571.82,7.61,False
+2026-01-02T06:48:00,New Asgard,Vibranium (kg),2337.8,5.41,False
+2026-01-02T06:48:00,Wakanda,Arc Reactor Cores,567.75,7.74,False
+2026-01-02T06:48:00,Sokovia,Pym Particles,680.28,3.99,False
+2026-01-02T06:48:00,Sanctum Sanctorum,Clean Water (L),2311.11,6.3,False
+2026-01-02T06:48:00,Avengers Compound,Medical Kits,594.36,6.85,False
+2026-01-02T07:00:00,New Asgard,Vibranium (kg),2371.92,4.13,False
+2026-01-02T07:00:00,Wakanda,Arc Reactor Cores,694.9,3.39,False
+2026-01-02T07:00:00,Sokovia,Pym Particles,572.9,7.33,False
+2026-01-02T07:00:00,Sanctum Sanctorum,Clean Water (L),2259.59,7.76,False
+2026-01-02T07:00:00,Avengers Compound,Medical Kits,638.03,5.22,False
+2026-01-02T07:12:00,New Asgard,Vibranium (kg),2392.76,3.46,False
+2026-01-02T07:12:00,Wakanda,Arc Reactor Cores,646.9,4.94,False
+2026-01-02T07:12:00,Sokovia,Pym Particles,710.04,2.9,False
+2026-01-02T07:12:00,Sanctum Sanctorum,Clean Water (L),2371.75,4.14,False
+2026-01-02T07:12:00,Avengers Compound,Medical Kits,628.06,5.55,False
+2026-01-02T07:24:00,New Asgard,Vibranium (kg),2402.15,3.16,False
+2026-01-02T07:24:00,Wakanda,Arc Reactor Cores,701.21,3.19,False
+2026-01-02T07:24:00,Sokovia,Pym Particles,688.04,3.61,False
+2026-01-02T07:24:00,Sanctum Sanctorum,Clean Water (L),2336.57,5.27,False
+2026-01-02T07:24:00,Avengers Compound,Medical Kits,611.09,6.09,False
+2026-01-02T07:36:00,New Asgard,Vibranium (kg),2367.29,4.28,False
+2026-01-02T07:36:00,Wakanda,Arc Reactor Cores,583.88,6.97,False
+2026-01-02T07:36:00,Sokovia,Pym Particles,613.55,6.01,False
+2026-01-02T07:36:00,Sanctum Sanctorum,Clean Water (L),2390.87,3.52,False
+2026-01-02T07:36:00,Avengers Compound,Medical Kits,693.55,3.43,False
+2026-01-02T07:48:00,New Asgard,Vibranium (kg),2276.07,7.22,False
+2026-01-02T07:48:00,Wakanda,Arc Reactor Cores,606.66,6.24,False
+2026-01-02T07:48:00,Sokovia,Pym Particles,593.81,6.65,False
+2026-01-02T07:48:00,Sanctum Sanctorum,Clean Water (L),2266.3,7.54,False
+2026-01-02T07:48:00,Avengers Compound,Medical Kits,554.42,7.92,False
+2026-01-02T08:00:00,New Asgard,Vibranium (kg),2388.58,3.48,False
+2026-01-02T08:00:00,Wakanda,Arc Reactor Cores,702.0,3.06,False
+2026-01-02T08:00:00,Sokovia,Pym Particles,603.41,6.14,False
+2026-01-02T08:00:00,Sanctum Sanctorum,Clean Water (L),2308.62,5.98,False
+2026-01-02T08:00:00,Avengers Compound,Medical Kits,633.57,5.2,False
+2026-01-02T08:12:00,New Asgard,Vibranium (kg),2255.4,7.64,False
+2026-01-02T08:12:00,Wakanda,Arc Reactor Cores,624.79,5.48,False
+2026-01-02T08:12:00,Sokovia,Pym Particles,705.9,2.94,False
+2026-01-02T08:12:00,Sanctum Sanctorum,Clean Water (L),2397.04,3.22,False
+2026-01-02T08:12:00,Avengers Compound,Medical Kits,606.06,6.06,False
+2026-01-02T08:24:00,New Asgard,Vibranium (kg),2266.26,7.3,False
+2026-01-02T08:24:00,Wakanda,Arc Reactor Cores,595.02,6.41,False
+2026-01-02T08:24:00,Sokovia,Pym Particles,615.84,5.75,False
+2026-01-02T08:24:00,Sanctum Sanctorum,Clean Water (L),2318.51,5.67,False
+2026-01-02T08:24:00,Avengers Compound,Medical Kits,636.48,5.11,False
+2026-01-02T08:36:00,New Asgard,Vibranium (kg),2284.16,6.75,False
+2026-01-02T08:36:00,Wakanda,Arc Reactor Cores,674.96,3.91,False
+2026-01-02T08:36:00,Sokovia,Pym Particles,691.48,3.39,False
+2026-01-02T08:36:00,Sanctum Sanctorum,Clean Water (L),2387.14,3.53,False
+2026-01-02T08:36:00,Avengers Compound,Medical Kits,594.53,6.42,False
+2026-01-02T08:48:00,New Asgard,Vibranium (kg),2291.27,6.52,False
+2026-01-02T08:48:00,Wakanda,Arc Reactor Cores,711.0,2.78,False
+2026-01-02T08:48:00,Sokovia,Pym Particles,628.09,5.37,False
+2026-01-02T08:48:00,Sanctum Sanctorum,Clean Water (L),2415.68,2.64,False
+2026-01-02T08:48:00,Avengers Compound,Medical Kits,692.42,3.36,False
+2026-01-02T09:00:00,New Asgard,Vibranium (kg),2393.7,3.22,False
+2026-01-02T09:00:00,Wakanda,Arc Reactor Cores,691.86,3.28,False
+2026-01-02T09:00:00,Sokovia,Pym Particles,726.0,2.24,False
+2026-01-02T09:00:00,Sanctum Sanctorum,Clean Water (L),2303.13,5.97,False
+2026-01-02T09:00:00,Avengers Compound,Medical Kits,559.32,7.29,False
+2026-01-02T09:12:00,New Asgard,Vibranium (kg),2399.93,3.03,False
+2026-01-02T09:12:00,Wakanda,Arc Reactor Cores,574.79,6.82,False
+2026-01-02T09:12:00,Sokovia,Pym Particles,542.48,7.8,False
+2026-01-02T09:12:00,Sanctum Sanctorum,Clean Water (L),2351.7,4.49,False
+2026-01-02T09:12:00,Avengers Compound,Medical Kits,660.58,4.22,False
+2026-01-02T09:24:00,New Asgard,Vibranium (kg),2334.38,5.02,False
+2026-01-02T09:24:00,Wakanda,Arc Reactor Cores,627.78,5.22,False
+2026-01-02T09:24:00,Sokovia,Pym Particles,593.45,6.26,False
+2026-01-02T09:24:00,Sanctum Sanctorum,Clean Water (L),2251.63,7.53,False
+2026-01-02T09:24:00,Avengers Compound,Medical Kits,646.84,4.64,False
+2026-01-02T09:36:00,New Asgard,Vibranium (kg),2309.63,5.77,False
+2026-01-02T09:36:00,Wakanda,Arc Reactor Cores,646.64,4.65,False
+2026-01-02T09:36:00,Sokovia,Pym Particles,543.66,7.77,False
+2026-01-02T09:36:00,Sanctum Sanctorum,Clean Water (L),2314.78,5.61,False
+2026-01-02T09:36:00,Avengers Compound,Medical Kits,719.45,2.44,False
+2026-01-02T09:48:00,New Asgard,Vibranium (kg),2310.61,5.74,False
+2026-01-02T09:48:00,Wakanda,Arc Reactor Cores,650.44,4.53,False
+2026-01-02T09:48:00,Sokovia,Pym Particles,592.13,6.3,False
+2026-01-02T09:48:00,Sanctum Sanctorum,Clean Water (L),2376.43,3.74,False
+2026-01-02T09:48:00,Avengers Compound,Medical Kits,706.25,2.84,False
+2026-01-02T10:00:00,New Asgard,Vibranium (kg),2408.85,2.68,False
+2026-01-02T10:00:00,Wakanda,Arc Reactor Cores,616.0,5.41,False
+2026-01-02T10:00:00,Sokovia,Pym Particles,580.87,6.44,False
+2026-01-02T10:00:00,Sanctum Sanctorum,Clean Water (L),2408.4,2.69,False
+2026-01-02T10:00:00,Avengers Compound,Medical Kits,611.04,5.56,False
+2026-01-02T10:12:00,New Asgard,Vibranium (kg),2318.05,5.35,False
+2026-01-02T10:12:00,Wakanda,Arc Reactor Cores,605.79,5.71,False
+2026-01-02T10:12:00,Sokovia,Pym Particles,679.18,3.55,False
+2026-01-02T10:12:00,Sanctum Sanctorum,Clean Water (L),2372.61,3.75,False
+2026-01-02T10:12:00,Avengers Compound,Medical Kits,647.35,4.49,False
+2026-01-02T10:24:00,New Asgard,Vibranium (kg),2253.25,7.26,False
+2026-01-02T10:24:00,Wakanda,Arc Reactor Cores,540.83,7.62,False
+2026-01-02T10:24:00,Sokovia,Pym Particles,601.75,5.83,False
+2026-01-02T10:24:00,Sanctum Sanctorum,Clean Water (L),2229.3,7.96,False
+2026-01-02T10:24:00,Avengers Compound,Medical Kits,558.51,7.1,False
+2026-01-02T10:36:00,New Asgard,Vibranium (kg),2242.54,7.57,False
+2026-01-02T10:36:00,Wakanda,Arc Reactor Cores,654.31,4.29,False
+2026-01-02T10:36:00,Sokovia,Pym Particles,678.85,3.56,False
+2026-01-02T10:36:00,Sanctum Sanctorum,Clean Water (L),2389.54,3.25,False
+2026-01-02T10:36:00,Avengers Compound,Medical Kits,632.01,4.94,False
+2026-01-02T10:48:00,New Asgard,Vibranium (kg),2372.71,3.74,False
+2026-01-02T10:48:00,Wakanda,Arc Reactor Cores,673.89,3.71,False
+2026-01-02T10:48:00,Sokovia,Pym Particles,673.61,3.72,False
+2026-01-02T10:48:00,Sanctum Sanctorum,Clean Water (L),2347.56,4.48,False
+2026-01-02T10:48:00,Avengers Compound,Medical Kits,609.59,5.6,False
+2026-01-02T11:00:00,New Asgard,Vibranium (kg),2257.82,6.92,False
+2026-01-02T11:00:00,Wakanda,Arc Reactor Cores,630.25,4.85,False
+2026-01-02T11:00:00,Sokovia,Pym Particles,720.94,2.26,False
+2026-01-02T11:00:00,Sanctum Sanctorum,Clean Water (L),2390.72,3.12,False
+2026-01-02T11:00:00,Avengers Compound,Medical Kits,711.1,2.54,False
+2026-01-02T11:12:00,New Asgard,Vibranium (kg),2229.53,7.73,False
+2026-01-02T11:12:00,Wakanda,Arc Reactor Cores,625.48,4.99,False
+2026-01-02T11:12:00,Sokovia,Pym Particles,718.32,2.33,False
+2026-01-02T11:12:00,Sanctum Sanctorum,Clean Water (L),2312.4,5.36,False
+2026-01-02T11:12:00,Avengers Compound,Medical Kits,540.83,7.4,False
+2026-01-02T11:24:00,New Asgard,Vibranium (kg),2321.04,5.11,False
+2026-01-02T11:24:00,Wakanda,Arc Reactor Cores,703.96,2.74,False
+2026-01-02T11:24:00,Sokovia,Pym Particles,693.94,3.03,False
+2026-01-02T11:24:00,Sanctum Sanctorum,Clean Water (L),2247.18,7.22,False
+2026-01-02T11:24:00,Avengers Compound,Medical Kits,669.03,3.74,False
+2026-01-02T11:36:00,New Asgard,Vibranium (kg),2377.51,3.5,False
+2026-01-02T11:36:00,Wakanda,Arc Reactor Cores,725.69,2.12,False
+2026-01-02T11:36:00,Sokovia,Pym Particles,605.69,5.55,False
+2026-01-02T11:36:00,Sanctum Sanctorum,Clean Water (L),2370.13,3.71,False
+2026-01-02T11:36:00,Avengers Compound,Medical Kits,664.69,3.87,False
+2026-01-02T11:48:00,New Asgard,Vibranium (kg),2248.22,7.19,False
+2026-01-02T11:48:00,Wakanda,Arc Reactor Cores,689.29,3.16,False
+2026-01-02T11:48:00,Sokovia,Pym Particles,718.63,2.32,False
+2026-01-02T11:48:00,Sanctum Sanctorum,Clean Water (L),2289.97,6.0,False
+2026-01-02T11:48:00,Avengers Compound,Medical Kits,617.29,5.22,False
+2026-01-02T12:00:00,New Asgard,Vibranium (kg),2237.03,7.3,False
+2026-01-02T12:00:00,Wakanda,Arc Reactor Cores,516.27,7.88,False
+2026-01-02T12:00:00,Sokovia,Pym Particles,572.98,6.31,False
+2026-01-02T12:00:00,Sanctum Sanctorum,Clean Water (L),2287.6,5.9,False
+2026-01-02T12:00:00,Avengers Compound,Medical Kits,630.0,4.72,False
+2026-01-02T12:12:00,New Asgard,Vibranium (kg),2241.5,7.18,False
+2026-01-02T12:12:00,Wakanda,Arc Reactor Cores,665.65,3.73,False
+2026-01-02T12:12:00,Sokovia,Pym Particles,707.72,2.56,False
+2026-01-02T12:12:00,Sanctum Sanctorum,Clean Water (L),2405.3,2.63,False
+2026-01-02T12:12:00,Avengers Compound,Medical Kits,633.54,4.62,False
+2026-01-02T12:24:00,New Asgard,Vibranium (kg),2247.07,7.03,False
+2026-01-02T12:24:00,Wakanda,Arc Reactor Cores,723.42,2.13,False
+2026-01-02T12:24:00,Sokovia,Pym Particles,634.85,4.59,False
+2026-01-02T12:24:00,Sanctum Sanctorum,Clean Water (L),2307.21,5.36,False
+2026-01-02T12:24:00,Avengers Compound,Medical Kits,545.16,7.08,False
+2026-01-02T12:36:00,New Asgard,Vibranium (kg),2303.07,5.47,False
+2026-01-02T12:36:00,Wakanda,Arc Reactor Cores,571.86,6.34,False
+2026-01-02T12:36:00,Sokovia,Pym Particles,694.71,2.92,False
+2026-01-02T12:36:00,Sanctum Sanctorum,Clean Water (L),2249.28,6.96,False
+2026-01-02T12:36:00,Avengers Compound,Medical Kits,592.42,5.77,False
+2026-01-02T12:48:00,New Asgard,Vibranium (kg),2352.49,4.1,False
+2026-01-02T12:48:00,Wakanda,Arc Reactor Cores,614.36,5.16,False
+2026-01-02T12:48:00,Sokovia,Pym Particles,562.38,6.6,False
+2026-01-02T12:48:00,Sanctum Sanctorum,Clean Water (L),2327.26,4.8,False
+2026-01-02T12:48:00,Avengers Compound,Medical Kits,540.31,7.21,False
+2026-01-02T13:00:00,New Asgard,Vibranium (kg),2355.05,3.92,False
+2026-01-02T13:00:00,Wakanda,Arc Reactor Cores,658.48,3.82,False
+2026-01-02T13:00:00,Sokovia,Pym Particles,602.33,5.34,False
+2026-01-02T13:00:00,Sanctum Sanctorum,Clean Water (L),2415.38,2.29,False
+2026-01-02T13:00:00,Avengers Compound,Medical Kits,719.97,2.16,False
+2026-01-02T13:12:00,New Asgard,Vibranium (kg),2264.22,6.37,False
+2026-01-02T13:12:00,Wakanda,Arc Reactor Cores,653.12,3.97,False
+2026-01-02T13:12:00,Sokovia,Pym Particles,561.3,6.45,False
+2026-01-02T13:12:00,Sanctum Sanctorum,Clean Water (L),2328.4,4.64,False
+2026-01-02T13:12:00,Avengers Compound,Medical Kits,558.2,6.54,False
+2026-01-02T13:24:00,New Asgard,Vibranium (kg),2388.14,3.02,False
+2026-01-02T13:24:00,Wakanda,Arc Reactor Cores,693.74,2.87,False
+2026-01-02T13:24:00,Sokovia,Pym Particles,540.57,7.01,False
+2026-01-02T13:24:00,Sanctum Sanctorum,Clean Water (L),2409.41,2.45,False
+2026-01-02T13:24:00,Avengers Compound,Medical Kits,562.01,6.43,False
+2026-01-02T13:36:00,New Asgard,Vibranium (kg),2225.77,7.41,False
+2026-01-02T13:36:00,Wakanda,Arc Reactor Cores,581.99,5.89,False
+2026-01-02T13:36:00,Sokovia,Pym Particles,531.56,7.26,False
+2026-01-02T13:36:00,Sanctum Sanctorum,Clean Water (L),2302.98,5.32,False
+2026-01-02T13:36:00,Avengers Compound,Medical Kits,563.72,6.39,False
+2026-01-02T13:48:00,New Asgard,Vibranium (kg),2340.12,4.32,False
+2026-01-02T13:48:00,Wakanda,Arc Reactor Cores,553.81,6.65,False
+2026-01-02T13:48:00,Sokovia,Pym Particles,682.81,3.17,False
+2026-01-02T13:48:00,Sanctum Sanctorum,Clean Water (L),2400.86,2.68,False
+2026-01-02T13:48:00,Avengers Compound,Medical Kits,526.07,7.4,False
+2026-01-02T14:00:00,New Asgard,Vibranium (kg),2267.75,6.11,False
+2026-01-02T14:00:00,Wakanda,Arc Reactor Cores,539.85,6.85,False
+2026-01-02T14:00:00,Sokovia,Pym Particles,649.56,3.96,False
+2026-01-02T14:00:00,Sanctum Sanctorum,Clean Water (L),2199.48,7.91,False
+2026-01-02T14:00:00,Avengers Compound,Medical Kits,717.2,2.18,False
+2026-01-02T14:12:00,New Asgard,Vibranium (kg),2241.41,6.81,False
+2026-01-02T14:12:00,Wakanda,Arc Reactor Cores,668.09,3.47,False
+2026-01-02T14:12:00,Sokovia,Pym Particles,651.81,3.9,False
+2026-01-02T14:12:00,Sanctum Sanctorum,Clean Water (L),2394.53,2.78,False
+2026-01-02T14:12:00,Avengers Compound,Medical Kits,602.31,5.2,False
+2026-01-02T14:24:00,New Asgard,Vibranium (kg),2250.49,6.57,False
+2026-01-02T14:24:00,Wakanda,Arc Reactor Cores,690.9,2.87,False
+2026-01-02T14:24:00,Sokovia,Pym Particles,523.33,7.28,False
+2026-01-02T14:24:00,Sanctum Sanctorum,Clean Water (L),2360.48,3.67,False
+2026-01-02T14:24:00,Avengers Compound,Medical Kits,572.92,5.98,False
+2026-01-02T14:36:00,New Asgard,Vibranium (kg),2263.34,6.23,False
+2026-01-02T14:36:00,Wakanda,Arc Reactor Cores,678.22,3.2,False
+2026-01-02T14:36:00,Sokovia,Pym Particles,689.99,2.89,False
+2026-01-02T14:36:00,Sanctum Sanctorum,Clean Water (L),2384.97,3.03,False
+2026-01-02T14:36:00,Avengers Compound,Medical Kits,580.44,5.78,False
+2026-01-02T14:48:00,New Asgard,Vibranium (kg),2282.02,5.74,False
+2026-01-02T14:48:00,Wakanda,Arc Reactor Cores,632.27,4.41,False
+2026-01-02T14:48:00,Sokovia,Pym Particles,552.37,6.52,False
+2026-01-02T14:48:00,Sanctum Sanctorum,Clean Water (L),2299.48,5.28,False
+2026-01-02T14:48:00,Avengers Compound,Medical Kits,586.23,5.63,False
+2026-01-02T15:00:00,New Asgard,Vibranium (kg),2405.08,2.43,False
+2026-01-02T15:00:00,Wakanda,Arc Reactor Cores,514.96,7.31,False
+2026-01-02T15:00:00,Sokovia,Pym Particles,599.59,5.14,False
+2026-01-02T15:00:00,Sanctum Sanctorum,Clean Water (L),2243.83,6.57,False
+2026-01-02T15:00:00,Avengers Compound,Medical Kits,686.68,2.91,False
+2026-01-02T15:12:00,New Asgard,Vibranium (kg),2390.11,2.82,False
+2026-01-02T15:12:00,Wakanda,Arc Reactor Cores,544.76,6.54,False
+2026-01-02T15:12:00,Sokovia,Pym Particles,659.49,3.6,False
+2026-01-02T15:12:00,Sanctum Sanctorum,Clean Water (L),2228.2,6.97,False
+2026-01-02T15:12:00,Avengers Compound,Medical Kits,618.91,4.64,False
+2026-01-02T15:24:00,New Asgard,Vibranium (kg),2244.45,6.55,False
+2026-01-02T15:24:00,Wakanda,Arc Reactor Cores,697.19,2.64,False
+2026-01-02T15:24:00,Sokovia,Pym Particles,607.62,4.93,False
+2026-01-02T15:24:00,Sanctum Sanctorum,Clean Water (L),2333.99,4.26,False
+2026-01-02T15:24:00,Avengers Compound,Medical Kits,523.29,7.1,False
+2026-01-02T15:36:00,New Asgard,Vibranium (kg),2391.62,2.78,False
+2026-01-02T15:36:00,Wakanda,Arc Reactor Cores,539.35,6.68,False
+2026-01-02T15:36:00,Sokovia,Pym Particles,628.05,4.41,False
+2026-01-02T15:36:00,Sanctum Sanctorum,Clean Water (L),2337.17,4.18,False
+2026-01-02T15:36:00,Avengers Compound,Medical Kits,547.17,6.48,False
+2026-01-02T15:48:00,New Asgard,Vibranium (kg),2284.6,5.52,False
+2026-01-02T15:48:00,Wakanda,Arc Reactor Cores,523.16,7.1,False
+2026-01-02T15:48:00,Sokovia,Pym Particles,541.72,6.62,False
+2026-01-02T15:48:00,Sanctum Sanctorum,Clean Water (L),2360.1,3.59,False
+2026-01-02T15:48:00,Avengers Compound,Medical Kits,580.79,5.62,False
+2026-01-02T16:00:00,New Asgard,Vibranium (kg),2301.4,4.96,False
+2026-01-02T16:00:00,Wakanda,Arc Reactor Cores,611.64,4.71,False
+2026-01-02T16:00:00,Sokovia,Pym Particles,593.25,5.17,False
+2026-01-02T16:00:00,Sanctum Sanctorum,Clean Water (L),2314.59,4.64,False
+2026-01-02T16:00:00,Avengers Compound,Medical Kits,569.86,5.75,False
+2026-01-02T16:12:00,New Asgard,Vibranium (kg),2314.76,4.63,False
+2026-01-02T16:12:00,Wakanda,Arc Reactor Cores,577.0,5.57,False
+2026-01-02T16:12:00,Sokovia,Pym Particles,619.13,4.52,False
+2026-01-02T16:12:00,Sanctum Sanctorum,Clean Water (L),2239.42,6.51,False
+2026-01-02T16:12:00,Avengers Compound,Medical Kits,574.66,5.63,False
+2026-01-02T16:24:00,New Asgard,Vibranium (kg),2234.11,6.65,False
+2026-01-02T16:24:00,Wakanda,Arc Reactor Cores,542.38,6.44,False
+2026-01-02T16:24:00,Sokovia,Pym Particles,700.22,2.49,False
+2026-01-02T16:24:00,Sanctum Sanctorum,Clean Water (L),2282.86,5.43,False
+2026-01-02T16:24:00,Avengers Compound,Medical Kits,497.6,7.56,False
+2026-01-02T16:36:00,New Asgard,Vibranium (kg),2206.62,7.33,False
+2026-01-02T16:36:00,Wakanda,Arc Reactor Cores,705.97,2.35,False
+2026-01-02T16:36:00,Sokovia,Pym Particles,647.65,3.81,False
+2026-01-02T16:36:00,Sanctum Sanctorum,Clean Water (L),2393.69,2.66,False
+2026-01-02T16:36:00,Avengers Compound,Medical Kits,601.66,4.96,False
+2026-01-02T16:48:00,New Asgard,Vibranium (kg),2296.68,5.08,False
+2026-01-02T16:48:00,Wakanda,Arc Reactor Cores,562.22,5.94,False
+2026-01-02T16:48:00,Sokovia,Pym Particles,583.75,5.41,False
+2026-01-02T16:48:00,Sanctum Sanctorum,Clean Water (L),2349.42,3.76,False
+2026-01-02T16:48:00,Avengers Compound,Medical Kits,686.68,2.83,False
+2026-01-02T17:00:00,New Asgard,Vibranium (kg),2189.25,7.58,False
+2026-01-02T17:00:00,Wakanda,Arc Reactor Cores,551.93,6.05,False
+2026-01-02T17:00:00,Sokovia,Pym Particles,693.24,2.6,False
+2026-01-02T17:00:00,Sanctum Sanctorum,Clean Water (L),2412.74,2.13,False
+2026-01-02T17:00:00,Avengers Compound,Medical Kits,538.13,6.39,False
+2026-01-02T17:12:00,New Asgard,Vibranium (kg),2294.2,5.02,False
+2026-01-02T17:12:00,Wakanda,Arc Reactor Cores,543.28,6.26,False
+2026-01-02T17:12:00,Sokovia,Pym Particles,688.12,2.73,False
+2026-01-02T17:12:00,Sanctum Sanctorum,Clean Water (L),2334.92,4.03,False
+2026-01-02T17:12:00,Avengers Compound,Medical Kits,510.14,7.07,False
+2026-01-02T17:24:00,New Asgard,Vibranium (kg),2396.29,2.53,False
+2026-01-02T17:24:00,Wakanda,Arc Reactor Cores,646.7,3.74,False
+2026-01-02T17:24:00,Sokovia,Pym Particles,676.17,3.02,False
+2026-01-02T17:24:00,Sanctum Sanctorum,Clean Water (L),2236.47,6.43,False
+2026-01-02T17:24:00,Avengers Compound,Medical Kits,593.3,5.04,False
+2026-01-02T17:36:00,New Asgard,Vibranium (kg),2308.55,4.67,False
+2026-01-02T17:36:00,Wakanda,Arc Reactor Cores,702.77,2.37,False
+2026-01-02T17:36:00,Sokovia,Pym Particles,592.32,5.07,False
+2026-01-02T17:36:00,Sanctum Sanctorum,Clean Water (L),2284.71,5.25,False
+2026-01-02T17:36:00,Avengers Compound,Medical Kits,567.26,5.68,False
+2026-01-02T17:48:00,New Asgard,Vibranium (kg),2344.68,3.79,False
+2026-01-02T17:48:00,Wakanda,Arc Reactor Cores,569.99,5.61,False
+2026-01-02T17:48:00,Sokovia,Pym Particles,531.62,6.55,False
+2026-01-02T17:48:00,Sanctum Sanctorum,Clean Water (L),2218.63,6.86,False
+2026-01-02T17:48:00,Avengers Compound,Medical Kits,717.36,2.02,False
+2026-01-02T18:00:00,New Asgard,Vibranium (kg),2199.12,7.16,False
+2026-01-02T18:00:00,Wakanda,Arc Reactor Cores,560.03,5.71,False
+2026-01-02T18:00:00,Sokovia,Pym Particles,553.85,5.86,False
+2026-01-02T18:00:00,Sanctum Sanctorum,Clean Water (L),2344.6,3.7,False
+2026-01-02T18:00:00,Avengers Compound,Medical Kits,654.36,3.47,False
+2026-01-02T18:12:00,New Asgard,Vibranium (kg),2337.52,3.87,False
+2026-01-02T18:12:00,Wakanda,Arc Reactor Cores,706.43,2.23,False
+2026-01-02T18:12:00,Sokovia,Pym Particles,590.77,4.98,False
+2026-01-02T18:12:00,Sanctum Sanctorum,Clean Water (L),2309.43,4.54,False
+2026-01-02T18:12:00,Avengers Compound,Medical Kits,629.95,4.05,False
+2026-01-02T18:24:00,New Asgard,Vibranium (kg),2233.83,6.34,False
+2026-01-02T18:24:00,Wakanda,Arc Reactor Cores,710.31,2.14,False
+2026-01-02T18:24:00,Sokovia,Pym Particles,513.23,6.83,False
+2026-01-02T18:24:00,Sanctum Sanctorum,Clean Water (L),2213.75,6.82,False
+2026-01-02T18:24:00,Avengers Compound,Medical Kits,498.3,7.18,False
+2026-01-02T18:36:00,New Asgard,Vibranium (kg),2295.46,4.87,False
+2026-01-02T18:36:00,Wakanda,Arc Reactor Cores,629.72,4.05,False
+2026-01-02T18:36:00,Sokovia,Pym Particles,569.67,5.48,False
+2026-01-02T18:36:00,Sanctum Sanctorum,Clean Water (L),2280.99,5.21,False
+2026-01-02T18:36:00,Avengers Compound,Medical Kits,477.59,7.68,False
+2026-01-02T18:48:00,New Asgard,Vibranium (kg),2275.49,5.35,False
+2026-01-02T18:48:00,Wakanda,Arc Reactor Cores,593.08,4.93,False
+2026-01-02T18:48:00,Sokovia,Pym Particles,490.24,7.38,False
+2026-01-02T18:48:00,Sanctum Sanctorum,Clean Water (L),2235.51,6.3,False
+2026-01-02T18:48:00,Avengers Compound,Medical Kits,693.1,2.55,False
+2026-01-02T19:00:00,New Asgard,Vibranium (kg),2360.41,3.25,False
+2026-01-02T19:00:00,Wakanda,Arc Reactor Cores,686.56,2.64,False
+2026-01-02T19:00:00,Sokovia,Pym Particles,477.83,7.49,False
+2026-01-02T19:00:00,Sanctum Sanctorum,Clean Water (L),2319.45,4.2,False
+2026-01-02T19:00:00,Avengers Compound,Medical Kits,464.97,7.79,False
+2026-01-02T19:12:00,New Asgard,Vibranium (kg),2273.29,5.27,False
+2026-01-02T19:12:00,Wakanda,Arc Reactor Cores,627.22,4.02,False
+2026-01-02T19:12:00,Sokovia,Pym Particles,578.83,5.14,False
+2026-01-02T19:12:00,Sanctum Sanctorum,Clean Water (L),2401.59,2.29,False
+2026-01-02T19:12:00,Avengers Compound,Medical Kits,547.09,5.88,False
+2026-01-02T19:24:00,New Asgard,Vibranium (kg),2318.25,4.23,False
+2026-01-02T19:24:00,Wakanda,Arc Reactor Cores,473.83,7.59,False
+2026-01-02T19:24:00,Sokovia,Pym Particles,592.39,4.83,False
+2026-01-02T19:24:00,Sanctum Sanctorum,Clean Water (L),2282.93,5.05,False
+2026-01-02T19:24:00,Avengers Compound,Medical Kits,644.41,3.62,False
+2026-01-02T19:36:00,New Asgard,Vibranium (kg),2167.98,7.72,False
+2026-01-02T19:36:00,Wakanda,Arc Reactor Cores,567.12,5.42,False
+2026-01-02T19:36:00,Sokovia,Pym Particles,490.59,7.2,False
+2026-01-02T19:36:00,Sanctum Sanctorum,Clean Water (L),2156.6,7.99,False
+2026-01-02T19:36:00,Avengers Compound,Medical Kits,478.12,7.49,False
+2026-01-02T19:48:00,New Asgard,Vibranium (kg),2190.29,7.2,False
+2026-01-02T19:48:00,Wakanda,Arc Reactor Cores,684.72,2.68,False
+2026-01-02T19:48:00,Sokovia,Pym Particles,600.97,4.63,False
+2026-01-02T19:48:00,Sanctum Sanctorum,Clean Water (L),2213.03,6.67,False
+2026-01-02T19:48:00,Avengers Compound,Medical Kits,681.26,2.76,False
+2026-01-02T20:00:00,New Asgard,Vibranium (kg),2371.33,2.92,False
+2026-01-02T20:00:00,Wakanda,Arc Reactor Cores,652.18,3.36,False
+2026-01-02T20:00:00,Sokovia,Pym Particles,592.88,4.71,False
+2026-01-02T20:00:00,Sanctum Sanctorum,Clean Water (L),2195.69,6.92,False
+2026-01-02T20:00:00,Avengers Compound,Medical Kits,520.66,6.35,False
+2026-01-02T20:12:00,New Asgard,Vibranium (kg),2176.3,7.36,False
+2026-01-02T20:12:00,Wakanda,Arc Reactor Cores,538.33,5.95,False
+2026-01-02T20:12:00,Sokovia,Pym Particles,577.72,5.05,False
+2026-01-02T20:12:00,Sanctum Sanctorum,Clean Water (L),2263.87,5.37,False
+2026-01-02T20:12:00,Avengers Compound,Medical Kits,476.1,7.36,False
+2026-01-02T20:24:00,New Asgard,Vibranium (kg),2255.29,5.56,False
+2026-01-02T20:24:00,Wakanda,Arc Reactor Cores,695.06,2.38,False
+2026-01-02T20:24:00,Sokovia,Pym Particles,607.57,4.37,False
+2026-01-02T20:24:00,Sanctum Sanctorum,Clean Water (L),2370.18,2.95,False
+2026-01-02T20:24:00,Avengers Compound,Medical Kits,504.34,6.72,False
+2026-01-02T20:36:00,New Asgard,Vibranium (kg),2324.52,3.99,False
+2026-01-02T20:36:00,Wakanda,Arc Reactor Cores,664.9,3.07,False
+2026-01-02T20:36:00,Sokovia,Pym Particles,566.71,5.3,False
+2026-01-02T20:36:00,Sanctum Sanctorum,Clean Water (L),2380.82,2.71,False
+2026-01-02T20:36:00,Avengers Compound,Medical Kits,514.98,6.48,False
+2026-01-02T20:48:00,New Asgard,Vibranium (kg),2239.4,5.92,False
+2026-01-02T20:48:00,Wakanda,Arc Reactor Cores,602.74,4.48,False
+2026-01-02T20:48:00,Sokovia,Pym Particles,643.44,3.56,False
+2026-01-02T20:48:00,Sanctum Sanctorum,Clean Water (L),2213.13,6.52,False
+2026-01-02T20:48:00,Avengers Compound,Medical Kits,457.73,7.78,False
+2026-01-02T21:00:00,New Asgard,Vibranium (kg),2291.9,4.62,False
+2026-01-02T21:00:00,Wakanda,Arc Reactor Cores,624.64,3.9,False
+2026-01-02T21:00:00,Sokovia,Pym Particles,513.9,6.36,False
+2026-01-02T21:00:00,Sanctum Sanctorum,Clean Water (L),2176.51,7.19,False
+2026-01-02T21:00:00,Avengers Compound,Medical Kits,661.32,3.08,False
+2026-01-02T21:12:00,New Asgard,Vibranium (kg),2374.55,2.79,False
+2026-01-02T21:12:00,Wakanda,Arc Reactor Cores,457.68,7.61,False
+2026-01-02T21:12:00,Sokovia,Pym Particles,498.62,6.7,False
+2026-01-02T21:12:00,Sanctum Sanctorum,Clean Water (L),2329.51,3.79,False
+2026-01-02T21:12:00,Avengers Compound,Medical Kits,610.28,4.22,False
+2026-01-02T21:24:00,New Asgard,Vibranium (kg),2399.55,2.23,False
+2026-01-02T21:24:00,Wakanda,Arc Reactor Cores,472.75,7.27,False
+2026-01-02T21:24:00,Sokovia,Pym Particles,605.75,4.32,False
+2026-01-02T21:24:00,Sanctum Sanctorum,Clean Water (L),2223.04,6.15,False
+2026-01-02T21:24:00,Avengers Compound,Medical Kits,511.02,6.42,False
+2026-01-02T21:36:00,New Asgard,Vibranium (kg),2196.21,6.75,False
+2026-01-02T21:36:00,Wakanda,Arc Reactor Cores,563.58,5.25,False
+2026-01-02T21:36:00,Sokovia,Pym Particles,494.76,6.78,False
+2026-01-02T21:36:00,Sanctum Sanctorum,Clean Water (L),2336.57,3.63,False
+2026-01-02T21:36:00,Avengers Compound,Medical Kits,600.51,4.43,False
+2026-01-02T21:48:00,New Asgard,Vibranium (kg),2202.2,6.62,False
+2026-01-02T21:48:00,Wakanda,Arc Reactor Cores,504.44,6.57,False
+2026-01-02T21:48:00,Sokovia,Pym Particles,651.69,3.3,False
+2026-01-02T21:48:00,Sanctum Sanctorum,Clean Water (L),2145.19,7.88,False
+2026-01-02T21:48:00,Avengers Compound,Medical Kits,606.12,4.31,False
+2026-01-02T22:00:00,New Asgard,Vibranium (kg),2170.07,7.17,False
+2026-01-02T22:00:00,Wakanda,Arc Reactor Cores,509.99,6.3,False
+2026-01-02T22:00:00,Sokovia,Pym Particles,484.0,6.87,False
+2026-01-02T22:00:00,Sanctum Sanctorum,Clean Water (L),2285.77,4.66,False
+2026-01-02T22:00:00,Avengers Compound,Medical Kits,698.7,2.2,False
+2026-01-02T22:12:00,New Asgard,Vibranium (kg),2341.18,3.45,False
+2026-01-02T22:12:00,Wakanda,Arc Reactor Cores,432.57,7.99,False
+2026-01-02T22:12:00,Sokovia,Pym Particles,698.42,2.21,False
+2026-01-02T22:12:00,Sanctum Sanctorum,Clean Water (L),2317.21,3.97,False
+2026-01-02T22:12:00,Avengers Compound,Medical Kits,622.9,3.85,False
+2026-01-02T22:24:00,New Asgard,Vibranium (kg),2401.41,2.14,False
+2026-01-02T22:24:00,Wakanda,Arc Reactor Cores,531.53,5.84,False
+2026-01-02T22:24:00,Sokovia,Pym Particles,663.17,2.97,False
+2026-01-02T22:24:00,Sanctum Sanctorum,Clean Water (L),2396.01,2.26,False
+2026-01-02T22:24:00,Avengers Compound,Medical Kits,453.03,7.54,False
+2026-01-02T22:36:00,New Asgard,Vibranium (kg),2172.72,7.11,False
+2026-01-02T22:36:00,Wakanda,Arc Reactor Cores,607.61,4.18,False
+2026-01-02T22:36:00,Sokovia,Pym Particles,644.56,3.38,False
+2026-01-02T22:36:00,Sanctum Sanctorum,Clean Water (L),2332.83,3.63,False
+2026-01-02T22:36:00,Avengers Compound,Medical Kits,563.35,5.14,False
+2026-01-02T22:48:00,New Asgard,Vibranium (kg),2227.9,5.92,False
+2026-01-02T22:48:00,Wakanda,Arc Reactor Cores,686.17,2.47,False
+2026-01-02T22:48:00,Sokovia,Pym Particles,705.63,2.05,False
+2026-01-02T22:48:00,Sanctum Sanctorum,Clean Water (L),2341.01,3.46,False
+2026-01-02T22:48:00,Avengers Compound,Medical Kits,511.7,6.27,False
+2026-01-02T23:00:00,New Asgard,Vibranium (kg),2174.72,6.92,False
+2026-01-02T23:00:00,Wakanda,Arc Reactor Cores,607.15,4.1,False
+2026-01-02T23:00:00,Sokovia,Pym Particles,551.69,5.28,False
+2026-01-02T23:00:00,Sanctum Sanctorum,Clean Water (L),2347.62,3.24,False
+2026-01-02T23:00:00,Avengers Compound,Medical Kits,435.25,7.76,False
+2026-01-02T23:12:00,New Asgard,Vibranium (kg),2136.87,7.73,False
+2026-01-02T23:12:00,Wakanda,Arc Reactor Cores,523.38,5.89,False
+2026-01-02T23:12:00,Sokovia,Pym Particles,425.82,7.96,False
+2026-01-02T23:12:00,Sanctum Sanctorum,Clean Water (L),2148.95,7.47,False
+2026-01-02T23:12:00,Avengers Compound,Medical Kits,682.39,2.5,False
+2026-01-02T23:24:00,New Asgard,Vibranium (kg),2340.86,3.39,False
+2026-01-02T23:24:00,Wakanda,Arc Reactor Cores,430.49,7.86,False
+2026-01-02T23:24:00,Sokovia,Pym Particles,513.82,6.09,False
+2026-01-02T23:24:00,Sanctum Sanctorum,Clean Water (L),2269.4,4.91,False
+2026-01-02T23:24:00,Avengers Compound,Medical Kits,519.14,5.98,False
+2026-01-02T23:36:00,New Asgard,Vibranium (kg),2161.32,7.21,False
+2026-01-02T23:36:00,Wakanda,Arc Reactor Cores,625.52,3.71,False
+2026-01-02T23:36:00,Sokovia,Pym Particles,542.28,5.48,False
+2026-01-02T23:36:00,Sanctum Sanctorum,Clean Water (L),2314.12,3.95,False
+2026-01-02T23:36:00,Avengers Compound,Medical Kits,632.55,3.56,False
+2026-01-02T23:48:00,New Asgard,Vibranium (kg),2178.15,6.85,False
+2026-01-02T23:48:00,Wakanda,Arc Reactor Cores,559.0,5.13,False
+2026-01-02T23:48:00,Sokovia,Pym Particles,638.2,3.44,False
+2026-01-02T23:48:00,Sanctum Sanctorum,Clean Water (L),2143.52,7.58,False
+2026-01-02T23:48:00,Avengers Compound,Medical Kits,544.4,5.44,False
+2026-01-03T00:00:00,New Asgard,Vibranium (kg),2383.17,2.43,False
+2026-01-03T00:00:00,Wakanda,Arc Reactor Cores,587.76,4.42,False
+2026-01-03T00:00:00,Sokovia,Pym Particles,420.29,7.91,False
+2026-01-03T00:00:00,Sanctum Sanctorum,Clean Water (L),2122.04,7.87,False
+2026-01-03T00:00:00,Avengers Compound,Medical Kits,613.44,3.89,False
+2026-01-03T00:12:00,New Asgard,Vibranium (kg),2238.65,5.44,False
+2026-01-03T00:12:00,Wakanda,Arc Reactor Cores,644.0,3.25,False
+2026-01-03T00:12:00,Sokovia,Pym Particles,609.43,3.97,False
+2026-01-03T00:12:00,Sanctum Sanctorum,Clean Water (L),2133.91,7.63,False
+2026-01-03T00:12:00,Avengers Compound,Medical Kits,651.24,3.1,False
+2026-01-03T00:24:00,New Asgard,Vibranium (kg),2311.89,3.92,False
+2026-01-03T00:24:00,Wakanda,Arc Reactor Cores,685.96,2.38,False
+2026-01-03T00:24:00,Sokovia,Pym Particles,432.42,7.66,False
+2026-01-03T00:24:00,Sanctum Sanctorum,Clean Water (L),2289.98,4.38,False
+2026-01-03T00:24:00,Avengers Compound,Medical Kits,645.32,3.22,False
+2026-01-03T00:36:00,New Asgard,Vibranium (kg),2400.88,2.07,False
+2026-01-03T00:36:00,Wakanda,Arc Reactor Cores,593.24,4.31,False
+2026-01-03T00:36:00,Sokovia,Pym Particles,461.23,7.06,False
+2026-01-03T00:36:00,Sanctum Sanctorum,Clean Water (L),2397.88,2.13,False
+2026-01-03T00:36:00,Avengers Compound,Medical Kits,513.81,5.96,False
+2026-01-03T00:48:00,New Asgard,Vibranium (kg),2165.8,6.96,False
+2026-01-03T00:48:00,Wakanda,Arc Reactor Cores,648.22,3.16,False
+2026-01-03T00:48:00,Sokovia,Pym Particles,475.29,6.76,False
+2026-01-03T00:48:00,Sanctum Sanctorum,Clean Water (L),2192.47,6.41,False
+2026-01-03T00:48:00,Avengers Compound,Medical Kits,653.02,3.06,False
+2026-01-03T01:00:00,New Asgard,Vibranium (kg),2151.28,7.12,False
+2026-01-03T01:00:00,Wakanda,Arc Reactor Cores,651.95,3.02,False
+2026-01-03T01:00:00,Sokovia,Pym Particles,517.14,5.77,False
+2026-01-03T01:00:00,Sanctum Sanctorum,Clean Water (L),2143.97,7.27,False
+2026-01-03T01:00:00,Avengers Compound,Medical Kits,477.63,6.58,False
+2026-01-03T01:12:00,New Asgard,Vibranium (kg),2341.21,3.24,False
+2026-01-03T01:12:00,Wakanda,Arc Reactor Cores,458.48,6.97,False
+2026-01-03T01:12:00,Sokovia,Pym Particles,587.34,4.34,False
+2026-01-03T01:12:00,Sanctum Sanctorum,Clean Water (L),2339.06,3.28,False
+2026-01-03T01:12:00,Avengers Compound,Medical Kits,595.51,4.17,False
+2026-01-03T01:24:00,New Asgard,Vibranium (kg),2219.24,5.73,False
+2026-01-03T01:24:00,Wakanda,Arc Reactor Cores,437.21,7.4,False
+2026-01-03T01:24:00,Sokovia,Pym Particles,597.72,4.13,False
+2026-01-03T01:24:00,Sanctum Sanctorum,Clean Water (L),2291.95,4.25,False
+2026-01-03T01:24:00,Avengers Compound,Medical Kits,623.58,3.6,False
+2026-01-03T01:36:00,New Asgard,Vibranium (kg),2327.42,3.52,False
+2026-01-03T01:36:00,Wakanda,Arc Reactor Cores,499.61,6.13,False
+2026-01-03T01:36:00,Sokovia,Pym Particles,671.16,2.63,False
+2026-01-03T01:36:00,Sanctum Sanctorum,Clean Water (L),2170.5,6.72,False
+2026-01-03T01:36:00,Avengers Compound,Medical Kits,524.02,5.63,False
+2026-01-03T01:48:00,New Asgard,Vibranium (kg),2294.91,4.19,False
+2026-01-03T01:48:00,Wakanda,Arc Reactor Cores,608.12,3.92,False
+2026-01-03T01:48:00,Sokovia,Pym Particles,472.16,6.69,False
+2026-01-03T01:48:00,Sanctum Sanctorum,Clean Water (L),2377.94,2.49,False
+2026-01-03T01:48:00,Avengers Compound,Medical Kits,592.97,4.23,False
+2026-01-03T02:00:00,New Asgard,Vibranium (kg),2142.47,7.15,False
+2026-01-03T02:00:00,Wakanda,Arc Reactor Cores,688.79,2.22,False
+2026-01-03T02:00:00,Sokovia,Pym Particles,626.26,3.47,False
+2026-01-03T02:00:00,Sanctum Sanctorum,Clean Water (L),2336.09,3.28,False
+2026-01-03T02:00:00,Avengers Compound,Medical Kits,672.1,2.56,False
+2026-01-03T02:12:00,New Asgard,Vibranium (kg),2182.38,6.35,False
+2026-01-03T02:12:00,Wakanda,Arc Reactor Cores,437.63,7.25,False
+2026-01-03T02:12:00,Sokovia,Pym Particles,570.88,4.58,False
+2026-01-03T02:12:00,Sanctum Sanctorum,Clean Water (L),2129.66,7.41,False
+2026-01-03T02:12:00,Avengers Compound,Medical Kits,617.99,3.64,False
+2026-01-03T02:24:00,New Asgard,Vibranium (kg),2254.17,4.92,False
+2026-01-03T02:24:00,Wakanda,Arc Reactor Cores,431.68,7.37,False
+2026-01-03T02:24:00,Sokovia,Pym Particles,668.88,2.62,False
+2026-01-03T02:24:00,Sanctum Sanctorum,Clean Water (L),2191.46,6.17,False
+2026-01-03T02:24:00,Avengers Compound,Medical Kits,521.35,5.57,False
+2026-01-03T02:36:00,New Asgard,Vibranium (kg),2296.14,4.08,False
+2026-01-03T02:36:00,Wakanda,Arc Reactor Cores,585.13,4.3,False
+2026-01-03T02:36:00,Sokovia,Pym Particles,673.21,2.54,False
+2026-01-03T02:36:00,Sanctum Sanctorum,Clean Water (L),2165.08,6.7,False
+2026-01-03T02:36:00,Avengers Compound,Medical Kits,598.93,4.02,False
+2026-01-03T02:48:00,New Asgard,Vibranium (kg),2193.73,6.13,False
+2026-01-03T02:48:00,Wakanda,Arc Reactor Cores,532.82,5.34,False
+2026-01-03T02:48:00,Sokovia,Pym Particles,604.97,3.9,False
+2026-01-03T02:48:00,Sanctum Sanctorum,Clean Water (L),2269.96,4.6,False
+2026-01-03T02:48:00,Avengers Compound,Medical Kits,455.95,6.88,False
+2026-01-03T03:00:00,New Asgard,Vibranium (kg),2168.7,6.5,False
+2026-01-03T03:00:00,Wakanda,Arc Reactor Cores,493.72,6.01,False
+2026-01-03T03:00:00,Sokovia,Pym Particles,412.06,7.61,False
+2026-01-03T03:00:00,Sanctum Sanctorum,Clean Water (L),2126.81,7.32,False
+2026-01-03T03:00:00,Avengers Compound,Medical Kits,616.36,3.6,False
+2026-01-03T03:12:00,New Asgard,Vibranium (kg),2252.59,4.85,False
+2026-01-03T03:12:00,Wakanda,Arc Reactor Cores,429.17,7.27,False
+2026-01-03T03:12:00,Sokovia,Pym Particles,446.96,6.92,False
+2026-01-03T03:12:00,Sanctum Sanctorum,Clean Water (L),2320.84,3.51,False
+2026-01-03T03:12:00,Avengers Compound,Medical Kits,641.46,3.11,False
+2026-01-03T03:24:00,New Asgard,Vibranium (kg),2281.07,4.29,False
+2026-01-03T03:24:00,Wakanda,Arc Reactor Cores,607.52,3.77,False
+2026-01-03T03:24:00,Sokovia,Pym Particles,679.13,2.37,False
+2026-01-03T03:24:00,Sanctum Sanctorum,Clean Water (L),2339.78,3.14,False
+2026-01-03T03:24:00,Avengers Compound,Medical Kits,659.89,2.75,False
+2026-01-03T03:36:00,New Asgard,Vibranium (kg),2347.62,2.99,False
+2026-01-03T03:36:00,Wakanda,Arc Reactor Cores,411.94,7.61,False
+2026-01-03T03:36:00,Sokovia,Pym Particles,442.56,7.01,False
+2026-01-03T03:36:00,Sanctum Sanctorum,Clean Water (L),2244.6,5.01,False
+2026-01-03T03:36:00,Avengers Compound,Medical Kits,619.5,3.54,False
+2026-01-03T03:48:00,New Asgard,Vibranium (kg),2372.23,2.51,False
+2026-01-03T03:48:00,Wakanda,Arc Reactor Cores,633.71,3.26,False
+2026-01-03T03:48:00,Sokovia,Pym Particles,682.77,2.3,False
+2026-01-03T03:48:00,Sanctum Sanctorum,Clean Water (L),2316.95,3.59,False
+2026-01-03T03:48:00,Avengers Compound,Medical Kits,392.13,8.0,False
+2026-01-03T04:00:00,New Asgard,Vibranium (kg),2280.34,4.22,False
+2026-01-03T04:00:00,Wakanda,Arc Reactor Cores,570.18,4.42,False
+2026-01-03T04:00:00,Sokovia,Pym Particles,543.43,4.93,False
+2026-01-03T04:00:00,Sanctum Sanctorum,Clean Water (L),2122.91,7.25,False
+2026-01-03T04:00:00,Avengers Compound,Medical Kits,405.29,7.59,False
+2026-01-03T04:12:00,New Asgard,Vibranium (kg),2102.05,7.65,False
+2026-01-03T04:12:00,Wakanda,Arc Reactor Cores,642.98,3.02,False
+2026-01-03T04:12:00,Sokovia,Pym Particles,502.43,5.72,False
+2026-01-03T04:12:00,Sanctum Sanctorum,Clean Water (L),2319.9,3.46,False
+2026-01-03T04:12:00,Avengers Compound,Medical Kits,595.96,3.92,False
+2026-01-03T04:24:00,New Asgard,Vibranium (kg),2371.46,2.47,False
+2026-01-03T04:24:00,Wakanda,Arc Reactor Cores,572.89,4.37,False
+2026-01-03T04:24:00,Sokovia,Pym Particles,666.57,2.57,False
+2026-01-03T04:24:00,Sanctum Sanctorum,Clean Water (L),2137.95,6.96,False
+2026-01-03T04:24:00,Avengers Compound,Medical Kits,487.94,6.0,False
+2026-01-03T04:36:00,New Asgard,Vibranium (kg),2109.22,7.51,False
+2026-01-03T04:36:00,Wakanda,Arc Reactor Cores,527.25,5.25,False
+2026-01-03T04:36:00,Sokovia,Pym Particles,643.2,3.02,False
+2026-01-03T04:36:00,Sanctum Sanctorum,Clean Water (L),2090.82,7.87,False
+2026-01-03T04:36:00,Avengers Compound,Medical Kits,510.13,5.57,False
+2026-01-03T04:48:00,New Asgard,Vibranium (kg),2278.87,4.25,False
+2026-01-03T04:48:00,Wakanda,Arc Reactor Cores,438.96,6.94,False
+2026-01-03T04:48:00,Sokovia,Pym Particles,441.81,6.89,False
+2026-01-03T04:48:00,Sanctum Sanctorum,Clean Water (L),2343.21,3.02,False
+2026-01-03T04:48:00,Avengers Compound,Medical Kits,455.47,6.63,False
+2026-01-03T05:00:00,New Asgard,Vibranium (kg),2226.7,5.16,False
+2026-01-03T05:00:00,Wakanda,Arc Reactor Cores,652.08,2.79,False
+2026-01-03T05:00:00,Sokovia,Pym Particles,429.8,6.98,False
+2026-01-03T05:00:00,Sanctum Sanctorum,Clean Water (L),2145.55,6.69,False
+2026-01-03T05:00:00,Avengers Compound,Medical Kits,506.23,5.54,False
+2026-01-03T05:12:00,New Asgard,Vibranium (kg),2343.23,2.96,False
+2026-01-03T05:12:00,Wakanda,Arc Reactor Cores,597.24,3.83,False
+2026-01-03T05:12:00,Sokovia,Pym Particles,636.5,3.08,False
+2026-01-03T05:12:00,Sanctum Sanctorum,Clean Water (L),2279.39,4.16,False
+2026-01-03T05:12:00,Avengers Compound,Medical Kits,637.78,3.06,False
+2026-01-03T05:24:00,New Asgard,Vibranium (kg),2372.9,2.4,False
+2026-01-03T05:24:00,Wakanda,Arc Reactor Cores,383.77,7.85,False
+2026-01-03T05:24:00,Sokovia,Pym Particles,493.99,5.77,False
+2026-01-03T05:24:00,Sanctum Sanctorum,Clean Water (L),2268.0,4.38,False
+2026-01-03T05:24:00,Avengers Compound,Medical Kits,394.6,7.65,False
+2026-01-03T05:36:00,New Asgard,Vibranium (kg),2097.65,7.59,False
+2026-01-03T05:36:00,Wakanda,Arc Reactor Cores,592.49,3.92,False
+2026-01-03T05:36:00,Sokovia,Pym Particles,381.8,7.89,False
+2026-01-03T05:36:00,Sanctum Sanctorum,Clean Water (L),2292.8,3.91,False
+2026-01-03T05:36:00,Avengers Compound,Medical Kits,460.66,6.4,False
+2026-01-03T05:48:00,New Asgard,Vibranium (kg),2248.56,4.74,False
+2026-01-03T05:48:00,Wakanda,Arc Reactor Cores,614.2,3.51,False
+2026-01-03T05:48:00,Sokovia,Pym Particles,644.15,2.94,False
+2026-01-03T05:48:00,Sanctum Sanctorum,Clean Water (L),2247.1,4.77,False
+2026-01-03T05:48:00,Avengers Compound,Medical Kits,460.49,6.41,False
+2026-01-03T06:00:00,New Asgard,Vibranium (kg),2207.43,5.42,False
+2026-01-03T06:00:00,Wakanda,Arc Reactor Cores,415.27,7.12,False
+2026-01-03T06:00:00,Sokovia,Pym Particles,532.03,4.96,False
+2026-01-03T06:00:00,Sanctum Sanctorum,Clean Water (L),2366.26,2.48,False
+2026-01-03T06:00:00,Avengers Compound,Medical Kits,499.73,5.56,False
+2026-01-03T06:12:00,New Asgard,Vibranium (kg),2093.08,7.54,False
+2026-01-03T06:12:00,Wakanda,Arc Reactor Cores,637.92,3.0,False
+2026-01-03T06:12:00,Sokovia,Pym Particles,614.37,3.44,False
+2026-01-03T06:12:00,Sanctum Sanctorum,Clean Water (L),2243.59,4.75,False
+2026-01-03T06:12:00,Avengers Compound,Medical Kits,378.6,7.8,False
+2026-01-03T06:24:00,New Asgard,Vibranium (kg),2190.96,5.72,False
+2026-01-03T06:24:00,Wakanda,Arc Reactor Cores,413.44,7.16,False
+2026-01-03T06:24:00,Sokovia,Pym Particles,682.54,2.18,False
+2026-01-03T06:24:00,Sanctum Sanctorum,Clean Water (L),2231.49,4.97,False
+2026-01-03T06:24:00,Avengers Compound,Medical Kits,449.96,6.48,False
+2026-01-03T06:36:00,New Asgard,Vibranium (kg),2153.34,6.42,False
+2026-01-03T06:36:00,Wakanda,Arc Reactor Cores,602.22,3.66,False
+2026-01-03T06:36:00,Sokovia,Pym Particles,368.9,7.98,False
+2026-01-03T06:36:00,Sanctum Sanctorum,Clean Water (L),2118.04,7.07,False
+2026-01-03T06:36:00,Avengers Compound,Medical Kits,502.62,5.51,False
+2026-01-03T06:48:00,New Asgard,Vibranium (kg),2287.92,3.93,False
+2026-01-03T06:48:00,Wakanda,Arc Reactor Cores,654.39,2.7,False
+2026-01-03T06:48:00,Sokovia,Pym Particles,485.04,5.83,False
+2026-01-03T06:48:00,Sanctum Sanctorum,Clean Water (L),2178.53,5.95,False
+2026-01-03T06:48:00,Avengers Compound,Medical Kits,472.21,6.07,False
+2026-01-03T07:00:00,New Asgard,Vibranium (kg),2105.05,7.18,False
+2026-01-03T07:00:00,Wakanda,Arc Reactor Cores,390.32,7.45,False
+2026-01-03T07:00:00,Sokovia,Pym Particles,502.05,5.42,False
+2026-01-03T07:00:00,Sanctum Sanctorum,Clean Water (L),2340.96,2.89,False
+2026-01-03T07:00:00,Avengers Compound,Medical Kits,454.43,6.28,False
+2026-01-03T07:12:00,New Asgard,Vibranium (kg),2158.78,6.2,False
+2026-01-03T07:12:00,Wakanda,Arc Reactor Cores,595.13,3.72,False
+2026-01-03T07:12:00,Sokovia,Pym Particles,394.52,7.37,False
+2026-01-03T07:12:00,Sanctum Sanctorum,Clean Water (L),2084.32,7.56,False
+2026-01-03T07:12:00,Avengers Compound,Medical Kits,590.31,3.81,False
+2026-01-03T07:24:00,New Asgard,Vibranium (kg),2092.89,7.4,False
+2026-01-03T07:24:00,Wakanda,Arc Reactor Cores,421.75,6.88,False
+2026-01-03T07:24:00,Sokovia,Pym Particles,507.49,5.32,False
+2026-01-03T07:24:00,Sanctum Sanctorum,Clean Water (L),2383.14,2.12,False
+2026-01-03T07:24:00,Avengers Compound,Medical Kits,456.57,6.24,False
+2026-01-03T07:36:00,New Asgard,Vibranium (kg),2068.0,7.85,False
+2026-01-03T07:36:00,Wakanda,Arc Reactor Cores,425.17,6.82,False
+2026-01-03T07:36:00,Sokovia,Pym Particles,490.32,5.63,False
+2026-01-03T07:36:00,Sanctum Sanctorum,Clean Water (L),2157.59,6.23,False
+2026-01-03T07:36:00,Avengers Compound,Medical Kits,598.55,3.66,False
+2026-01-03T07:48:00,New Asgard,Vibranium (kg),2352.39,2.68,False
+2026-01-03T07:48:00,Wakanda,Arc Reactor Cores,416.76,6.97,False
+2026-01-03T07:48:00,Sokovia,Pym Particles,477.62,5.86,False
+2026-01-03T07:48:00,Sanctum Sanctorum,Clean Water (L),2311.83,3.42,False
+2026-01-03T07:48:00,Avengers Compound,Medical Kits,394.45,7.37,False
+2026-01-03T08:00:00,New Asgard,Vibranium (kg),2192.71,5.49,False
+2026-01-03T08:00:00,Wakanda,Arc Reactor Cores,500.65,5.35,False
+2026-01-03T08:00:00,Sokovia,Pym Particles,436.12,6.5,False
+2026-01-03T08:00:00,Sanctum Sanctorum,Clean Water (L),2355.5,2.58,False
+2026-01-03T08:00:00,Avengers Compound,Medical Kits,439.42,6.44,False
+2026-01-03T08:12:00,New Asgard,Vibranium (kg),2293.79,3.68,False
+2026-01-03T08:12:00,Wakanda,Arc Reactor Cores,482.5,5.67,False
+2026-01-03T08:12:00,Sokovia,Pym Particles,524.9,4.91,False
+2026-01-03T08:12:00,Sanctum Sanctorum,Clean Water (L),2269.53,4.12,False
+2026-01-03T08:12:00,Avengers Compound,Medical Kits,569.65,4.11,False
+2026-01-03T08:24:00,New Asgard,Vibranium (kg),2070.04,7.68,False
+2026-01-03T08:24:00,Wakanda,Arc Reactor Cores,679.27,2.16,False
+2026-01-03T08:24:00,Sokovia,Pym Particles,577.37,3.98,False
+2026-01-03T08:24:00,Sanctum Sanctorum,Clean Water (L),2067.97,7.71,False
+2026-01-03T08:24:00,Avengers Compound,Medical Kits,558.86,4.31,False
+2026-01-03T08:36:00,New Asgard,Vibranium (kg),2129.53,6.62,False
+2026-01-03T08:36:00,Wakanda,Arc Reactor Cores,523.55,4.94,False
+2026-01-03T08:36:00,Sokovia,Pym Particles,562.28,4.24,False
+2026-01-03T08:36:00,Sanctum Sanctorum,Clean Water (L),2258.91,4.31,False
+2026-01-03T08:36:00,Avengers Compound,Medical Kits,651.44,2.65,False
+2026-01-03T08:48:00,New Asgard,Vibranium (kg),2325.89,3.11,False
+2026-01-03T08:48:00,Wakanda,Arc Reactor Cores,658.84,2.52,False
+2026-01-03T08:48:00,Sokovia,Pym Particles,591.17,3.73,False
+2026-01-03T08:48:00,Sanctum Sanctorum,Clean Water (L),2381.74,2.11,False
+2026-01-03T08:48:00,Avengers Compound,Medical Kits,583.04,3.87,False
+2026-01-03T09:00:00,New Asgard,Vibranium (kg),2268.12,4.07,False
+2026-01-03T09:00:00,Wakanda,Arc Reactor Cores,490.05,5.44,False
+2026-01-03T09:00:00,Sokovia,Pym Particles,525.83,4.81,False
+2026-01-03T09:00:00,Sanctum Sanctorum,Clean Water (L),2373.17,2.23,False
+2026-01-03T09:00:00,Avengers Compound,Medical Kits,362.93,7.67,False
+2026-01-03T09:12:00,New Asgard,Vibranium (kg),2118.67,6.69,False
+2026-01-03T09:12:00,Wakanda,Arc Reactor Cores,501.82,5.23,False
+2026-01-03T09:12:00,Sokovia,Pym Particles,637.68,2.85,False
+2026-01-03T09:12:00,Sanctum Sanctorum,Clean Water (L),2193.24,5.38,False
+2026-01-03T09:12:00,Avengers Compound,Medical Kits,371.61,7.52,False
+2026-01-03T09:24:00,New Asgard,Vibranium (kg),2139.09,6.33,False
+2026-01-03T09:24:00,Wakanda,Arc Reactor Cores,510.67,5.08,False
+2026-01-03T09:24:00,Sokovia,Pym Particles,594.02,3.61,False
+2026-01-03T09:24:00,Sanctum Sanctorum,Clean Water (L),2167.22,5.84,False
+2026-01-03T09:24:00,Avengers Compound,Medical Kits,359.84,7.72,False
+2026-01-03T09:36:00,New Asgard,Vibranium (kg),2075.62,7.45,False
+2026-01-03T09:36:00,Wakanda,Arc Reactor Cores,637.53,2.85,False
+2026-01-03T09:36:00,Sokovia,Pym Particles,636.74,2.86,False
+2026-01-03T09:36:00,Sanctum Sanctorum,Clean Water (L),2198.61,5.29,False
+2026-01-03T09:36:00,Avengers Compound,Medical Kits,357.61,7.76,False
+2026-01-03T09:48:00,New Asgard,Vibranium (kg),2314.19,3.26,False
+2026-01-03T09:48:00,Wakanda,Arc Reactor Cores,639.98,2.81,False
+2026-01-03T09:48:00,Sokovia,Pym Particles,387.63,7.23,False
+2026-01-03T09:48:00,Sanctum Sanctorum,Clean Water (L),2353.32,2.57,False
+2026-01-03T09:48:00,Avengers Compound,Medical Kits,380.9,7.35,False
+2026-01-03T10:00:00,New Asgard,Vibranium (kg),2108.7,6.75,False
+2026-01-03T10:00:00,Wakanda,Arc Reactor Cores,667.61,2.28,False
+2026-01-03T10:00:00,Sokovia,Pym Particles,440.62,6.2,False
+2026-01-03T10:00:00,Sanctum Sanctorum,Clean Water (L),2237.86,4.52,False
+2026-01-03T10:00:00,Avengers Compound,Medical Kits,444.66,6.13,False
+2026-01-03T10:12:00,New Asgard,Vibranium (kg),2125.36,6.46,False
+2026-01-03T10:12:00,Wakanda,Arc Reactor Cores,393.71,7.0,False
+2026-01-03T10:12:00,Sokovia,Pym Particles,681.06,2.05,False
+2026-01-03T10:12:00,Sanctum Sanctorum,Clean Water (L),2163.54,5.8,False
+2026-01-03T10:12:00,Avengers Compound,Medical Kits,430.61,6.37,False
+2026-01-03T10:24:00,New Asgard,Vibranium (kg),2139.23,6.22,False
+2026-01-03T10:24:00,Wakanda,Arc Reactor Cores,616.92,3.16,False
+2026-01-03T10:24:00,Sokovia,Pym Particles,633.16,2.88,False
+2026-01-03T10:24:00,Sanctum Sanctorum,Clean Water (L),2099.52,6.9,False
+2026-01-03T10:24:00,Avengers Compound,Medical Kits,355.02,7.67,False
+2026-01-03T10:36:00,New Asgard,Vibranium (kg),2125.47,6.46,False
+2026-01-03T10:36:00,Wakanda,Arc Reactor Cores,544.61,4.4,False
+2026-01-03T10:36:00,Sokovia,Pym Particles,458.43,5.89,False
+2026-01-03T10:36:00,Sanctum Sanctorum,Clean Water (L),2038.36,7.96,False
+2026-01-03T10:36:00,Avengers Compound,Medical Kits,664.44,2.34,False
+2026-01-03T10:48:00,New Asgard,Vibranium (kg),2213.5,4.94,False
+2026-01-03T10:48:00,Wakanda,Arc Reactor Cores,404.68,6.82,False
+2026-01-03T10:48:00,Sokovia,Pym Particles,566.5,4.03,False
+2026-01-03T10:48:00,Sanctum Sanctorum,Clean Water (L),2335.96,2.83,False
+2026-01-03T10:48:00,Avengers Compound,Medical Kits,491.3,5.32,False
+2026-01-03T11:00:00,New Asgard,Vibranium (kg),2155.84,5.83,False
+2026-01-03T11:00:00,Wakanda,Arc Reactor Cores,540.07,4.41,False
+2026-01-03T11:00:00,Sokovia,Pym Particles,334.33,7.89,False
+2026-01-03T11:00:00,Sanctum Sanctorum,Clean Water (L),2031.64,7.94,False
+2026-01-03T11:00:00,Avengers Compound,Medical Kits,340.01,7.8,False
+2026-01-03T11:12:00,New Asgard,Vibranium (kg),2031.7,7.94,False
+2026-01-03T11:12:00,Wakanda,Arc Reactor Cores,556.88,4.12,False
+2026-01-03T11:12:00,Sokovia,Pym Particles,348.64,7.65,False
+2026-01-03T11:12:00,Sanctum Sanctorum,Clean Water (L),2122.76,6.39,False
+2026-01-03T11:12:00,Avengers Compound,Medical Kits,569.74,3.9,False
+2026-01-03T11:24:00,New Asgard,Vibranium (kg),2266.0,3.97,False
+2026-01-03T11:24:00,Wakanda,Arc Reactor Cores,514.89,4.83,False
+2026-01-03T11:24:00,Sokovia,Pym Particles,381.08,7.1,False
+2026-01-03T11:24:00,Sanctum Sanctorum,Clean Water (L),2359.29,2.38,False
+2026-01-03T11:24:00,Avengers Compound,Medical Kits,341.76,7.77,False
+2026-01-03T11:36:00,New Asgard,Vibranium (kg),2073.11,7.24,False
+2026-01-03T11:36:00,Wakanda,Arc Reactor Cores,435.39,6.18,False
+2026-01-03T11:36:00,Sokovia,Pym Particles,457.4,5.81,False
+2026-01-03T11:36:00,Sanctum Sanctorum,Clean Water (L),2095.08,6.86,False
+2026-01-03T11:36:00,Avengers Compound,Medical Kits,492.88,5.21,False
+2026-01-03T11:48:00,New Asgard,Vibranium (kg),2154.35,5.86,False
+2026-01-03T11:48:00,Wakanda,Arc Reactor Cores,554.49,4.16,False
+2026-01-03T11:48:00,Sokovia,Pym Particles,430.97,6.25,False
+2026-01-03T11:48:00,Sanctum Sanctorum,Clean Water (L),2291.1,3.54,False
+2026-01-03T11:48:00,Avengers Compound,Medical Kits,362.74,7.41,False
+2026-01-03T12:00:00,New Asgard,Vibranium (kg),2214.69,4.76,False
+2026-01-03T12:00:00,Wakanda,Arc Reactor Cores,557.9,4.03,False
+2026-01-03T12:00:00,Sokovia,Pym Particles,447.22,5.88,False
+2026-01-03T12:00:00,Sanctum Sanctorum,Clean Water (L),2225.15,4.58,False
+2026-01-03T12:00:00,Avengers Compound,Medical Kits,553.07,4.12,False
+2026-01-03T12:12:00,New Asgard,Vibranium (kg),2379.96,2.0,False
+2026-01-03T12:12:00,Wakanda,Arc Reactor Cores,360.9,7.32,False
+2026-01-03T12:12:00,Sokovia,Pym Particles,453.01,5.78,False
+2026-01-03T12:12:00,Sanctum Sanctorum,Clean Water (L),2372.56,2.12,False
+2026-01-03T12:12:00,Avengers Compound,Medical Kits,676.93,2.05,False
+2026-01-03T12:24:00,New Asgard,Vibranium (kg),2247.2,4.21,False
+2026-01-03T12:24:00,Wakanda,Arc Reactor Cores,593.98,3.43,False
+2026-01-03T12:24:00,Sokovia,Pym Particles,660.99,2.32,False
+2026-01-03T12:24:00,Sanctum Sanctorum,Clean Water (L),2357.0,2.38,False
+2026-01-03T12:24:00,Avengers Compound,Medical Kits,526.47,4.56,False
+2026-01-03T12:36:00,New Asgard,Vibranium (kg),2099.84,6.67,False
+2026-01-03T12:36:00,Wakanda,Arc Reactor Cores,635.99,2.73,False
+2026-01-03T12:36:00,Sokovia,Pym Particles,576.42,3.73,False
+2026-01-03T12:36:00,Sanctum Sanctorum,Clean Water (L),2165.42,5.58,False
+2026-01-03T12:36:00,Avengers Compound,Medical Kits,412.7,6.45,False
+2026-01-03T12:48:00,New Asgard,Vibranium (kg),2292.44,3.46,False
+2026-01-03T12:48:00,Wakanda,Arc Reactor Cores,505.97,4.9,False
+2026-01-03T12:48:00,Sokovia,Pym Particles,323.9,7.94,False
+2026-01-03T12:48:00,Sanctum Sanctorum,Clean Water (L),2370.36,2.16,False
+2026-01-03T12:48:00,Avengers Compound,Medical Kits,580.87,3.65,False
+2026-01-03T13:00:00,New Asgard,Vibranium (kg),2365.47,2.21,False
+2026-01-03T13:00:00,Wakanda,Arc Reactor Cores,581.28,3.59,False
+2026-01-03T13:00:00,Sokovia,Pym Particles,530.55,4.42,False
+2026-01-03T13:00:00,Sanctum Sanctorum,Clean Water (L),2108.97,6.41,False
+2026-01-03T13:00:00,Avengers Compound,Medical Kits,510.73,4.74,False
+2026-01-03T13:12:00,New Asgard,Vibranium (kg),2065.43,7.12,False
+2026-01-03T13:12:00,Wakanda,Arc Reactor Cores,565.16,3.85,False
+2026-01-03T13:12:00,Sokovia,Pym Particles,540.82,4.25,False
+2026-01-03T13:12:00,Sanctum Sanctorum,Clean Water (L),2268.4,3.8,False
+2026-01-03T13:12:00,Avengers Compound,Medical Kits,663.22,2.24,False
+2026-01-03T13:24:00,New Asgard,Vibranium (kg),2125.66,6.14,False
+2026-01-03T13:24:00,Wakanda,Arc Reactor Cores,429.4,6.08,False
+2026-01-03T13:24:00,Sokovia,Pym Particles,313.48,7.98,False
+2026-01-03T13:24:00,Sanctum Sanctorum,Clean Water (L),2015.12,7.95,False
+2026-01-03T13:24:00,Avengers Compound,Medical Kits,451.76,5.71,False
+2026-01-03T13:36:00,New Asgard,Vibranium (kg),2115.26,6.31,False
+2026-01-03T13:36:00,Wakanda,Arc Reactor Cores,394.32,6.65,False
+2026-01-03T13:36:00,Sokovia,Pym Particles,357.13,7.26,False
+2026-01-03T13:36:00,Sanctum Sanctorum,Clean Water (L),2324.68,2.87,False
+2026-01-03T13:36:00,Avengers Compound,Medical Kits,514.63,4.68,False
+2026-01-03T13:48:00,New Asgard,Vibranium (kg),2341.28,2.6,False
+2026-01-03T13:48:00,Wakanda,Arc Reactor Cores,497.73,4.96,False
+2026-01-03T13:48:00,Sokovia,Pym Particles,564.7,3.86,False
+2026-01-03T13:48:00,Sanctum Sanctorum,Clean Water (L),2164.26,5.5,False
+2026-01-03T13:48:00,Avengers Compound,Medical Kits,653.4,2.4,False
+2026-01-03T14:00:00,New Asgard,Vibranium (kg),2240.96,4.18,False
+2026-01-03T14:00:00,Wakanda,Arc Reactor Cores,307.96,7.94,False
+2026-01-03T14:00:00,Sokovia,Pym Particles,459.26,5.5,False
+2026-01-03T14:00:00,Sanctum Sanctorum,Clean Water (L),2049.54,7.27,False
+2026-01-03T14:00:00,Avengers Compound,Medical Kits,312.83,7.86,False
+2026-01-03T14:12:00,New Asgard,Vibranium (kg),2018.67,7.76,False
+2026-01-03T14:12:00,Wakanda,Arc Reactor Cores,535.84,4.26,False
+2026-01-03T14:12:00,Sokovia,Pym Particles,609.42,3.07,False
+2026-01-03T14:12:00,Sanctum Sanctorum,Clean Water (L),2156.68,5.54,False
+2026-01-03T14:12:00,Avengers Compound,Medical Kits,477.12,5.21,False
+2026-01-03T14:24:00,New Asgard,Vibranium (kg),2319.73,2.91,False
+2026-01-03T14:24:00,Wakanda,Arc Reactor Cores,339.98,7.42,False
+2026-01-03T14:24:00,Sokovia,Pym Particles,536.58,4.25,False
+2026-01-03T14:24:00,Sanctum Sanctorum,Clean Water (L),2317.32,2.95,False
+2026-01-03T14:24:00,Avengers Compound,Medical Kits,390.33,6.61,False
+2026-01-03T14:36:00,New Asgard,Vibranium (kg),2115.36,6.2,False
+2026-01-03T14:36:00,Wakanda,Arc Reactor Cores,448.45,5.67,False
+2026-01-03T14:36:00,Sokovia,Pym Particles,359.72,7.1,False
+2026-01-03T14:36:00,Sanctum Sanctorum,Clean Water (L),2206.44,4.73,False
+2026-01-03T14:36:00,Avengers Compound,Medical Kits,615.23,2.98,False
+2026-01-03T14:48:00,New Asgard,Vibranium (kg),2058.36,7.12,False
+2026-01-03T14:48:00,Wakanda,Arc Reactor Cores,577.29,3.59,False
+2026-01-03T14:48:00,Sokovia,Pym Particles,551.56,4.01,False
+2026-01-03T14:48:00,Sanctum Sanctorum,Clean Water (L),2124.83,6.05,False
+2026-01-03T14:48:00,Avengers Compound,Medical Kits,324.95,7.66,False
+2026-01-03T15:00:00,New Asgard,Vibranium (kg),2229.21,4.3,False
+2026-01-03T15:00:00,Wakanda,Arc Reactor Cores,437.4,5.76,False
+2026-01-03T15:00:00,Sokovia,Pym Particles,658.78,2.24,False
+2026-01-03T15:00:00,Sanctum Sanctorum,Clean Water (L),2108.27,6.22,False
+2026-01-03T15:00:00,Avengers Compound,Medical Kits,423.62,5.97,False
+2026-01-03T15:12:00,New Asgard,Vibranium (kg),2266.7,3.7,False
+2026-01-03T15:12:00,Wakanda,Arc Reactor Cores,668.87,2.08,False
+2026-01-03T15:12:00,Sokovia,Pym Particles,505.55,4.67,False
+2026-01-03T15:12:00,Sanctum Sanctorum,Clean Water (L),2133.87,5.81,False
+2026-01-03T15:12:00,Avengers Compound,Medical Kits,435.04,5.79,False
+2026-01-03T15:24:00,New Asgard,Vibranium (kg),2103.47,6.29,False
+2026-01-03T15:24:00,Wakanda,Arc Reactor Cores,301.93,7.91,False
+2026-01-03T15:24:00,Sokovia,Pym Particles,582.58,3.45,False
+2026-01-03T15:24:00,Sanctum Sanctorum,Clean Water (L),1997.21,7.98,False
+2026-01-03T15:24:00,Avengers Compound,Medical Kits,322.25,7.58,False
+2026-01-03T15:36:00,New Asgard,Vibranium (kg),2341.72,2.51,False
+2026-01-03T15:36:00,Wakanda,Arc Reactor Cores,300.01,7.94,False
+2026-01-03T15:36:00,Sokovia,Pym Particles,374.42,6.76,False
+2026-01-03T15:36:00,Sanctum Sanctorum,Clean Water (L),2322.15,2.82,False
+2026-01-03T15:36:00,Avengers Compound,Medical Kits,504.49,4.69,False
+2026-01-03T15:48:00,New Asgard,Vibranium (kg),2087.89,6.54,False
+2026-01-03T15:48:00,Wakanda,Arc Reactor Cores,413.75,6.13,False
+2026-01-03T15:48:00,Sokovia,Pym Particles,484.12,5.01,False
+2026-01-03T15:48:00,Sanctum Sanctorum,Clean Water (L),2195.54,4.83,False
+2026-01-03T15:48:00,Avengers Compound,Medical Kits,590.76,3.32,False
+2026-01-03T16:00:00,New Asgard,Vibranium (kg),2012.91,7.61,False
+2026-01-03T16:00:00,Wakanda,Arc Reactor Cores,352.88,6.99,False
+2026-01-03T16:00:00,Sokovia,Pym Particles,639.51,2.51,False
+2026-01-03T16:00:00,Sanctum Sanctorum,Clean Water (L),2067.31,6.76,False
+2026-01-03T16:00:00,Avengers Compound,Medical Kits,447.73,5.5,False
+2026-01-03T16:12:00,New Asgard,Vibranium (kg),2344.79,2.43,False
+2026-01-03T16:12:00,Wakanda,Arc Reactor Cores,302.28,7.78,False
+2026-01-03T16:12:00,Sokovia,Pym Particles,666.54,2.09,False
+2026-01-03T16:12:00,Sanctum Sanctorum,Clean Water (L),2171.72,5.13,False
+2026-01-03T16:12:00,Avengers Compound,Medical Kits,601.03,3.11,False
+2026-01-03T16:24:00,New Asgard,Vibranium (kg),2154.82,5.39,False
+2026-01-03T16:24:00,Wakanda,Arc Reactor Cores,360.72,6.86,False
+2026-01-03T16:24:00,Sokovia,Pym Particles,494.53,4.77,False
+2026-01-03T16:24:00,Sanctum Sanctorum,Clean Water (L),2230.49,4.21,False
+2026-01-03T16:24:00,Avengers Compound,Medical Kits,489.08,4.86,False
+2026-01-03T16:36:00,New Asgard,Vibranium (kg),2132.61,5.74,False
+2026-01-03T16:36:00,Wakanda,Arc Reactor Cores,332.53,7.3,False
+2026-01-03T16:36:00,Sokovia,Pym Particles,577.54,3.48,False
+2026-01-03T16:36:00,Sanctum Sanctorum,Clean Water (L),2122.2,5.9,False
+2026-01-03T16:36:00,Avengers Compound,Medical Kits,621.22,2.79,False
+2026-01-03T16:48:00,New Asgard,Vibranium (kg),2085.7,6.47,False
+2026-01-03T16:48:00,Wakanda,Arc Reactor Cores,552.53,3.87,False
+2026-01-03T16:48:00,Sokovia,Pym Particles,460.81,5.3,False
+2026-01-03T16:48:00,Sanctum Sanctorum,Clean Water (L),2274.24,3.53,False
+2026-01-03T16:48:00,Avengers Compound,Medical Kits,408.54,6.12,False
+2026-01-03T17:00:00,New Asgard,Vibranium (kg),2202.34,4.58,False
+2026-01-03T17:00:00,Wakanda,Arc Reactor Cores,408.49,6.02,False
+2026-01-03T17:00:00,Sokovia,Pym Particles,568.18,3.57,False
+2026-01-03T17:00:00,Sanctum Sanctorum,Clean Water (L),2272.16,3.51,False
+2026-01-03T17:00:00,Avengers Compound,Medical Kits,479.3,4.93,False
+2026-01-03T17:12:00,New Asgard,Vibranium (kg),2095.12,6.23,False
+2026-01-03T17:12:00,Wakanda,Arc Reactor Cores,507.73,4.5,False
+2026-01-03T17:12:00,Sokovia,Pym Particles,617.8,2.8,False
+2026-01-03T17:12:00,Sanctum Sanctorum,Clean Water (L),2290.58,3.22,False
+2026-01-03T17:12:00,Avengers Compound,Medical Kits,436.79,5.59,False
+2026-01-03T17:24:00,New Asgard,Vibranium (kg),2208.13,4.49,False
+2026-01-03T17:24:00,Wakanda,Arc Reactor Cores,400.77,6.14,False
+2026-01-03T17:24:00,Sokovia,Pym Particles,572.61,3.5,False
+2026-01-03T17:24:00,Sanctum Sanctorum,Clean Water (L),2146.28,5.44,False
+2026-01-03T17:24:00,Avengers Compound,Medical Kits,493.58,4.71,False
+2026-01-03T17:36:00,New Asgard,Vibranium (kg),2102.02,6.12,False
+2026-01-03T17:36:00,Wakanda,Arc Reactor Cores,642.72,2.42,False
+2026-01-03T17:36:00,Sokovia,Pym Particles,367.49,6.65,False
+2026-01-03T17:36:00,Sanctum Sanctorum,Clean Water (L),2347.08,2.35,False
+2026-01-03T17:36:00,Avengers Compound,Medical Kits,641.8,2.43,False
+2026-01-03T17:48:00,New Asgard,Vibranium (kg),2240.78,3.99,False
+2026-01-03T17:48:00,Wakanda,Arc Reactor Cores,442.18,5.5,False
+2026-01-03T17:48:00,Sokovia,Pym Particles,570.24,3.53,False
+2026-01-03T17:48:00,Sanctum Sanctorum,Clean Water (L),2067.58,6.65,False
+2026-01-03T17:48:00,Avengers Compound,Medical Kits,343.2,7.03,False
+2026-01-03T18:00:00,New Asgard,Vibranium (kg),2180.85,4.84,False
+2026-01-03T18:00:00,Wakanda,Arc Reactor Cores,554.33,3.72,False
+2026-01-03T18:00:00,Sokovia,Pym Particles,650.01,2.27,False
+2026-01-03T18:00:00,Sanctum Sanctorum,Clean Water (L),2319.91,2.73,False
+2026-01-03T18:00:00,Avengers Compound,Medical Kits,612.35,2.84,False
+2026-01-03T18:12:00,New Asgard,Vibranium (kg),2166.84,5.05,False
+2026-01-03T18:12:00,Wakanda,Arc Reactor Cores,350.84,6.81,False
+2026-01-03T18:12:00,Sokovia,Pym Particles,501.75,4.52,False
+2026-01-03T18:12:00,Sanctum Sanctorum,Clean Water (L),2044.47,6.9,False
+2026-01-03T18:12:00,Avengers Compound,Medical Kits,639.53,2.43,False
+2026-01-03T18:24:00,New Asgard,Vibranium (kg),2105.16,5.98,False
+2026-01-03T18:24:00,Wakanda,Arc Reactor Cores,376.33,6.42,False
+2026-01-03T18:24:00,Sokovia,Pym Particles,343.87,6.91,False
+2026-01-03T18:24:00,Sanctum Sanctorum,Clean Water (L),2074.73,6.44,False
+2026-01-03T18:24:00,Avengers Compound,Medical Kits,601.85,3.0,False
+2026-01-03T18:36:00,New Asgard,Vibranium (kg),2084.34,6.3,False
+2026-01-03T18:36:00,Wakanda,Arc Reactor Cores,416.36,5.81,False
+2026-01-03T18:36:00,Sokovia,Pym Particles,560.99,3.62,False
+2026-01-03T18:36:00,Sanctum Sanctorum,Clean Water (L),2243.99,3.88,False
+2026-01-03T18:36:00,Avengers Compound,Medical Kits,379.82,6.37,False
+2026-01-03T18:48:00,New Asgard,Vibranium (kg),2026.82,7.17,False
+2026-01-03T18:48:00,Wakanda,Arc Reactor Cores,469.87,5.0,False
+2026-01-03T18:48:00,Sokovia,Pym Particles,399.82,6.06,False
+2026-01-03T18:48:00,Sanctum Sanctorum,Clean Water (L),2026.3,7.18,False
+2026-01-03T18:48:00,Avengers Compound,Medical Kits,511.49,4.37,False
+2026-01-03T19:00:00,New Asgard,Vibranium (kg),2264.96,3.51,False
+2026-01-03T19:00:00,Wakanda,Arc Reactor Cores,314.66,7.24,False
+2026-01-03T19:00:00,Sokovia,Pym Particles,439.21,5.38,False
+2026-01-03T19:00:00,Sanctum Sanctorum,Clean Water (L),2280.31,3.28,False
+2026-01-03T19:00:00,Avengers Compound,Medical Kits,303.83,7.41,False
+2026-01-03T19:12:00,New Asgard,Vibranium (kg),2095.98,6.03,False
+2026-01-03T19:12:00,Wakanda,Arc Reactor Cores,649.96,2.24,False
+2026-01-03T19:12:00,Sokovia,Pym Particles,361.42,6.55,False
+2026-01-03T19:12:00,Sanctum Sanctorum,Clean Water (L),2000.04,7.46,False
+2026-01-03T19:12:00,Avengers Compound,Medical Kits,348.43,6.74,False
+2026-01-03T19:24:00,New Asgard,Vibranium (kg),2048.88,6.73,False
+2026-01-03T19:24:00,Wakanda,Arc Reactor Cores,355.47,6.63,False
+2026-01-03T19:24:00,Sokovia,Pym Particles,324.24,7.1,False
+2026-01-03T19:24:00,Sanctum Sanctorum,Clean Water (L),2233.29,3.98,False
+2026-01-03T19:24:00,Avengers Compound,Medical Kits,353.44,6.67,False
+2026-01-03T19:36:00,New Asgard,Vibranium (kg),2130.6,5.51,False
+2026-01-03T19:36:00,Wakanda,Arc Reactor Cores,369.05,6.43,False
+2026-01-03T19:36:00,Sokovia,Pym Particles,372.45,6.38,False
+2026-01-03T19:36:00,Sanctum Sanctorum,Clean Water (L),2322.43,2.65,False
+2026-01-03T19:36:00,Avengers Compound,Medical Kits,454.58,5.16,False
+2026-01-03T19:48:00,New Asgard,Vibranium (kg),2286.46,3.19,False
+2026-01-03T19:48:00,Wakanda,Arc Reactor Cores,481.84,4.75,False
+2026-01-03T19:48:00,Sokovia,Pym Particles,480.98,4.76,False
+2026-01-03T19:48:00,Sanctum Sanctorum,Clean Water (L),2074.09,6.36,False
+2026-01-03T19:48:00,Avengers Compound,Medical Kits,328.96,7.03,False
+2026-01-03T20:00:00,New Asgard,Vibranium (kg),2289.52,3.1,False
+2026-01-03T20:00:00,Wakanda,Arc Reactor Cores,575.37,3.3,False
+2026-01-03T20:00:00,Sokovia,Pym Particles,521.54,4.09,False
+2026-01-03T20:00:00,Sanctum Sanctorum,Clean Water (L),1991.1,7.48,False
+2026-01-03T20:00:00,Avengers Compound,Medical Kits,531.34,3.95,False
+2026-01-03T20:12:00,New Asgard,Vibranium (kg),2277.33,3.27,False
+2026-01-03T20:12:00,Wakanda,Arc Reactor Cores,475.0,4.78,False
+2026-01-03T20:12:00,Sokovia,Pym Particles,610.02,2.79,False
+2026-01-03T20:12:00,Sanctum Sanctorum,Clean Water (L),2191.69,4.53,False
+2026-01-03T20:12:00,Avengers Compound,Medical Kits,452.93,5.1,False
+2026-01-03T20:24:00,New Asgard,Vibranium (kg),1985.61,7.56,False
+2026-01-03T20:24:00,Wakanda,Arc Reactor Cores,508.17,4.29,False
+2026-01-03T20:24:00,Sokovia,Pym Particles,442.29,5.26,False
+2026-01-03T20:24:00,Sanctum Sanctorum,Clean Water (L),2340.6,2.34,False
+2026-01-03T20:24:00,Avengers Compound,Medical Kits,463.22,4.95,False
+2026-01-03T20:36:00,New Asgard,Vibranium (kg),2329.66,2.51,False
+2026-01-03T20:36:00,Wakanda,Arc Reactor Cores,642.0,2.32,False
+2026-01-03T20:36:00,Sokovia,Pym Particles,275.06,7.72,False
+2026-01-03T20:36:00,Sanctum Sanctorum,Clean Water (L),2184.55,4.64,False
+2026-01-03T20:36:00,Avengers Compound,Medical Kits,374.92,6.25,False
+2026-01-03T20:48:00,New Asgard,Vibranium (kg),2343.8,2.3,False
+2026-01-03T20:48:00,Wakanda,Arc Reactor Cores,387.42,6.07,False
+2026-01-03T20:48:00,Sokovia,Pym Particles,298.31,7.38,False
+2026-01-03T20:48:00,Sanctum Sanctorum,Clean Water (L),2297.84,2.97,False
+2026-01-03T20:48:00,Avengers Compound,Medical Kits,366.16,6.38,False
+2026-01-03T21:00:00,New Asgard,Vibranium (kg),2206.27,4.26,False
+2026-01-03T21:00:00,Wakanda,Arc Reactor Cores,582.76,3.15,False
+2026-01-03T21:00:00,Sokovia,Pym Particles,589.82,3.05,False
+2026-01-03T21:00:00,Sanctum Sanctorum,Clean Water (L),1972.61,7.64,False
+2026-01-03T21:00:00,Avengers Compound,Medical Kits,465.5,4.85,False
+2026-01-03T21:12:00,New Asgard,Vibranium (kg),2340.58,2.31,False
+2026-01-03T21:12:00,Wakanda,Arc Reactor Cores,504.4,4.28,False
+2026-01-03T21:12:00,Sokovia,Pym Particles,599.83,2.9,False
+2026-01-03T21:12:00,Sanctum Sanctorum,Clean Water (L),2236.09,3.82,False
+2026-01-03T21:12:00,Avengers Compound,Medical Kits,458.46,4.95,False
+2026-01-03T21:24:00,New Asgard,Vibranium (kg),2284.0,3.13,False
+2026-01-03T21:24:00,Wakanda,Arc Reactor Cores,599.74,2.9,False
+2026-01-03T21:24:00,Sokovia,Pym Particles,351.37,6.5,False
+2026-01-03T21:24:00,Sanctum Sanctorum,Clean Water (L),2273.5,3.28,False
+2026-01-03T21:24:00,Avengers Compound,Medical Kits,565.02,3.41,False
+2026-01-03T21:36:00,New Asgard,Vibranium (kg),2293.63,2.99,False
+2026-01-03T21:36:00,Wakanda,Arc Reactor Cores,484.02,4.58,False
+2026-01-03T21:36:00,Sokovia,Pym Particles,405.69,5.71,False
+2026-01-03T21:36:00,Sanctum Sanctorum,Clean Water (L),2181.14,4.62,False
+2026-01-03T21:36:00,Avengers Compound,Medical Kits,600.28,2.89,False
+2026-01-03T21:48:00,New Asgard,Vibranium (kg),2081.92,6.06,False
+2026-01-03T21:48:00,Wakanda,Arc Reactor Cores,347.41,6.56,False
+2026-01-03T21:48:00,Sokovia,Pym Particles,554.82,3.55,False
+2026-01-03T21:48:00,Sanctum Sanctorum,Clean Water (L),2287.89,3.07,False
+2026-01-03T21:48:00,Avengers Compound,Medical Kits,267.73,7.71,False
+2026-01-03T22:00:00,New Asgard,Vibranium (kg),2146.86,5.04,False
+2026-01-03T22:00:00,Wakanda,Arc Reactor Cores,485.0,4.5,False
+2026-01-03T22:00:00,Sokovia,Pym Particles,550.46,3.56,False
+2026-01-03T22:00:00,Sanctum Sanctorum,Clean Water (L),2331.16,2.41,False
+2026-01-03T22:00:00,Avengers Compound,Medical Kits,275.42,7.49,False
+2026-01-03T22:12:00,New Asgard,Vibranium (kg),2052.72,6.39,False
+2026-01-03T22:12:00,Wakanda,Arc Reactor Cores,635.54,2.35,False
+2026-01-03T22:12:00,Sokovia,Pym Particles,346.41,6.48,False
+2026-01-03T22:12:00,Sanctum Sanctorum,Clean Water (L),2310.75,2.7,False
+2026-01-03T22:12:00,Avengers Compound,Medical Kits,622.47,2.54,False
+2026-01-03T22:24:00,New Asgard,Vibranium (kg),2337.66,2.32,False
+2026-01-03T22:24:00,Wakanda,Arc Reactor Cores,569.63,3.29,False
+2026-01-03T22:24:00,Sokovia,Pym Particles,515.77,4.06,False
+2026-01-03T22:24:00,Sanctum Sanctorum,Clean Water (L),2049.09,6.44,False
+2026-01-03T22:24:00,Avengers Compound,Medical Kits,620.45,2.56,False
+2026-01-03T22:36:00,New Asgard,Vibranium (kg),2325.66,2.49,False
+2026-01-03T22:36:00,Wakanda,Arc Reactor Cores,285.67,7.35,False
+2026-01-03T22:36:00,Sokovia,Pym Particles,416.6,5.48,False
+2026-01-03T22:36:00,Sanctum Sanctorum,Clean Water (L),2035.06,6.64,False
+2026-01-03T22:36:00,Avengers Compound,Medical Kits,507.5,4.18,False
+2026-01-03T22:48:00,New Asgard,Vibranium (kg),2224.47,3.94,False
+2026-01-03T22:48:00,Wakanda,Arc Reactor Cores,325.23,6.78,False
+2026-01-03T22:48:00,Sokovia,Pym Particles,557.12,3.47,False
+2026-01-03T22:48:00,Sanctum Sanctorum,Clean Water (L),2061.14,6.27,False
+2026-01-03T22:48:00,Avengers Compound,Medical Kits,602.33,2.82,False
+2026-01-03T23:00:00,New Asgard,Vibranium (kg),2313.52,2.63,False
+2026-01-03T23:00:00,Wakanda,Arc Reactor Cores,499.29,4.24,False
+2026-01-03T23:00:00,Sokovia,Pym Particles,492.88,4.33,False
+2026-01-03T23:00:00,Sanctum Sanctorum,Clean Water (L),2093.47,5.73,False
+2026-01-03T23:00:00,Avengers Compound,Medical Kits,437.75,5.1,False
+2026-01-03T23:12:00,New Asgard,Vibranium (kg),1998.67,7.06,False
+2026-01-03T23:12:00,Wakanda,Arc Reactor Cores,344.72,6.41,False
+2026-01-03T23:12:00,Sokovia,Pym Particles,391.81,5.75,False
+2026-01-03T23:12:00,Sanctum Sanctorum,Clean Water (L),2232.1,3.77,False
+2026-01-03T23:12:00,Avengers Compound,Medical Kits,348.67,6.36,False
+2026-01-03T23:24:00,New Asgard,Vibranium (kg),2278.53,3.12,False
+2026-01-03T23:24:00,Wakanda,Arc Reactor Cores,322.74,6.72,False
+2026-01-03T23:24:00,Sokovia,Pym Particles,506.01,4.14,False
+2026-01-03T23:24:00,Sanctum Sanctorum,Clean Water (L),2257.07,3.42,False
+2026-01-03T23:24:00,Avengers Compound,Medical Kits,606.22,2.73,False
+2026-01-03T23:36:00,New Asgard,Vibranium (kg),2129.0,5.23,False
+2026-01-03T23:36:00,Wakanda,Arc Reactor Cores,438.62,5.09,False
+2026-01-03T23:36:00,Sokovia,Pym Particles,537.89,3.69,False
+2026-01-03T23:36:00,Sanctum Sanctorum,Clean Water (L),2316.12,2.59,False
+2026-01-03T23:36:00,Avengers Compound,Medical Kits,513.69,4.03,False
+2026-01-03T23:48:00,New Asgard,Vibranium (kg),2290.63,2.95,False
+2026-01-03T23:48:00,Wakanda,Arc Reactor Cores,337.07,6.52,False
+2026-01-03T23:48:00,Sokovia,Pym Particles,380.61,5.91,False
+2026-01-03T23:48:00,Sanctum Sanctorum,Clean Water (L),1954.4,7.68,False
+2026-01-03T23:48:00,Avengers Compound,Medical Kits,542.1,3.63,False
+2026-01-04T00:00:00,New Asgard,Vibranium (kg),2187.4,4.34,False
+2026-01-04T00:00:00,Wakanda,Arc Reactor Cores,408.06,5.44,False
+2026-01-04T00:00:00,Sokovia,Pym Particles,559.93,3.33,False
+2026-01-04T00:00:00,Sanctum Sanctorum,Clean Water (L),1973.93,7.31,False
+2026-01-04T00:00:00,Avengers Compound,Medical Kits,331.55,6.51,False
+2026-01-04T00:12:00,New Asgard,Vibranium (kg),1942.73,7.74,False
+2026-01-04T00:12:00,Wakanda,Arc Reactor Cores,450.24,4.86,False
+2026-01-04T00:12:00,Sokovia,Pym Particles,647.24,2.12,False
+2026-01-04T00:12:00,Sanctum Sanctorum,Clean Water (L),2032.06,6.5,False
+2026-01-04T00:12:00,Avengers Compound,Medical Kits,619.5,2.51,False
+2026-01-04T00:24:00,New Asgard,Vibranium (kg),1974.7,7.3,False
+2026-01-04T00:24:00,Wakanda,Arc Reactor Cores,598.31,2.8,False
+2026-01-04T00:24:00,Sokovia,Pym Particles,555.85,3.39,False
+2026-01-04T00:24:00,Sanctum Sanctorum,Clean Water (L),1955.04,7.57,False
+2026-01-04T00:24:00,Avengers Compound,Medical Kits,446.68,4.91,False
+2026-01-04T00:36:00,New Asgard,Vibranium (kg),2302.17,2.75,False
+2026-01-04T00:36:00,Wakanda,Arc Reactor Cores,289.67,7.09,False
+2026-01-04T00:36:00,Sokovia,Pym Particles,452.65,4.82,False
+2026-01-04T00:36:00,Sanctum Sanctorum,Clean Water (L),2295.74,2.84,False
+2026-01-04T00:36:00,Avengers Compound,Medical Kits,236.85,7.82,False
+2026-01-04T00:48:00,New Asgard,Vibranium (kg),2216.1,3.94,False
+2026-01-04T00:48:00,Wakanda,Arc Reactor Cores,367.21,6.01,False
+2026-01-04T00:48:00,Sokovia,Pym Particles,445.99,4.92,False
+2026-01-04T00:48:00,Sanctum Sanctorum,Clean Water (L),1947.16,7.68,False
+2026-01-04T00:48:00,Avengers Compound,Medical Kits,315.13,6.73,False
+2026-01-04T01:00:00,New Asgard,Vibranium (kg),1982.87,7.08,False
+2026-01-04T01:00:00,Wakanda,Arc Reactor Cores,522.13,3.81,False
+2026-01-04T01:00:00,Sokovia,Pym Particles,427.61,5.1,False
+2026-01-04T01:00:00,Sanctum Sanctorum,Clean Water (L),2185.11,4.31,False
+2026-01-04T01:00:00,Avengers Compound,Medical Kits,571.1,3.14,False
+2026-01-04T01:12:00,New Asgard,Vibranium (kg),2328.08,2.36,False
+2026-01-04T01:12:00,Wakanda,Arc Reactor Cores,371.79,5.87,False
+2026-01-04T01:12:00,Sokovia,Pym Particles,558.93,3.3,False
+2026-01-04T01:12:00,Sanctum Sanctorum,Clean Water (L),2070.22,5.89,False
+2026-01-04T01:12:00,Avengers Compound,Medical Kits,633.26,2.28,False
+2026-01-04T01:24:00,New Asgard,Vibranium (kg),2058.99,6.04,False
+2026-01-04T01:24:00,Wakanda,Arc Reactor Cores,540.17,3.56,False
+2026-01-04T01:24:00,Sokovia,Pym Particles,455.21,4.72,False
+2026-01-04T01:24:00,Sanctum Sanctorum,Clean Water (L),2170.23,4.52,False
+2026-01-04T01:24:00,Avengers Compound,Medical Kits,634.83,2.26,False
+2026-01-04T01:36:00,New Asgard,Vibranium (kg),2239.11,3.57,False
+2026-01-04T01:36:00,Wakanda,Arc Reactor Cores,456.37,4.71,False
+2026-01-04T01:36:00,Sokovia,Pym Particles,559.93,3.29,False
+2026-01-04T01:36:00,Sanctum Sanctorum,Clean Water (L),2284.45,2.95,False
+2026-01-04T01:36:00,Avengers Compound,Medical Kits,291.13,6.97,False
+2026-01-04T01:48:00,New Asgard,Vibranium (kg),2018.83,6.59,False
+2026-01-04T01:48:00,Wakanda,Arc Reactor Cores,581.55,2.99,False
+2026-01-04T01:48:00,Sokovia,Pym Particles,221.32,7.93,False
+2026-01-04T01:48:00,Sanctum Sanctorum,Clean Water (L),1955.13,7.46,False
+2026-01-04T01:48:00,Avengers Compound,Medical Kits,562.02,3.26,False
+2026-01-04T02:00:00,New Asgard,Vibranium (kg),2101.04,5.39,False
+2026-01-04T02:00:00,Wakanda,Arc Reactor Cores,369.69,5.82,False
+2026-01-04T02:00:00,Sokovia,Pym Particles,215.1,7.9,False
+2026-01-04T02:00:00,Sanctum Sanctorum,Clean Water (L),2242.96,3.47,False
+2026-01-04T02:00:00,Avengers Compound,Medical Kits,377.74,5.71,False
+2026-01-04T02:12:00,New Asgard,Vibranium (kg),2069.02,5.82,False
+2026-01-04T02:12:00,Wakanda,Arc Reactor Cores,426.24,5.05,False
+2026-01-04T02:12:00,Sokovia,Pym Particles,593.62,2.79,False
+2026-01-04T02:12:00,Sanctum Sanctorum,Clean Water (L),2342.56,2.13,False
+2026-01-04T02:12:00,Avengers Compound,Medical Kits,447.61,4.76,False
+2026-01-04T02:24:00,New Asgard,Vibranium (kg),2262.83,3.2,False
+2026-01-04T02:24:00,Wakanda,Arc Reactor Cores,537.91,3.54,False
+2026-01-04T02:24:00,Sokovia,Pym Particles,635.24,2.23,False
+2026-01-04T02:24:00,Sanctum Sanctorum,Clean Water (L),2136.89,4.91,False
+2026-01-04T02:24:00,Avengers Compound,Medical Kits,330.96,6.34,False
+2026-01-04T02:36:00,New Asgard,Vibranium (kg),2126.97,5.04,False
+2026-01-04T02:36:00,Wakanda,Arc Reactor Cores,573.77,3.06,False
+2026-01-04T02:36:00,Sokovia,Pym Particles,344.47,6.16,False
+2026-01-04T02:36:00,Sanctum Sanctorum,Clean Water (L),2179.99,4.32,False
+2026-01-04T02:36:00,Avengers Compound,Medical Kits,454.51,4.67,False
+2026-01-04T02:48:00,New Asgard,Vibranium (kg),1908.34,8.0,False
+2026-01-04T02:48:00,Wakanda,Arc Reactor Cores,569.46,3.12,False
+2026-01-04T02:48:00,Sokovia,Pym Particles,260.9,7.29,False
+2026-01-04T02:48:00,Sanctum Sanctorum,Clean Water (L),2051.79,6.06,False
+2026-01-04T02:48:00,Avengers Compound,Medical Kits,429.0,5.01,False
+2026-01-04T03:00:00,New Asgard,Vibranium (kg),2240.94,3.45,False
+2026-01-04T03:00:00,Wakanda,Arc Reactor Cores,603.61,2.62,False
+2026-01-04T03:00:00,Sokovia,Pym Particles,510.29,3.86,False
+2026-01-04T03:00:00,Sanctum Sanctorum,Clean Water (L),2329.02,2.28,False
+2026-01-04T03:00:00,Avengers Compound,Medical Kits,370.93,5.72,False
+2026-01-04T03:12:00,New Asgard,Vibranium (kg),2234.72,3.54,False
+2026-01-04T03:12:00,Wakanda,Arc Reactor Cores,329.81,6.27,False
+2026-01-04T03:12:00,Sokovia,Pym Particles,336.58,6.18,False
+2026-01-04T03:12:00,Sanctum Sanctorum,Clean Water (L),1930.16,7.6,False
+2026-01-04T03:12:00,Avengers Compound,Medical Kits,558.24,3.22,False
+2026-01-04T03:24:00,New Asgard,Vibranium (kg),1951.33,7.32,False
+2026-01-04T03:24:00,Wakanda,Arc Reactor Cores,516.57,3.78,False
+2026-01-04T03:24:00,Sokovia,Pym Particles,421.37,5.05,False
+2026-01-04T03:24:00,Sanctum Sanctorum,Clean Water (L),2065.92,5.79,False
+2026-01-04T03:24:00,Avengers Compound,Medical Kits,239.27,7.48,False
+2026-01-04T03:36:00,New Asgard,Vibranium (kg),2086.08,5.52,False
+2026-01-04T03:36:00,Wakanda,Arc Reactor Cores,350.94,5.99,False
+2026-01-04T03:36:00,Sokovia,Pym Particles,513.56,3.82,False
+2026-01-04T03:36:00,Sanctum Sanctorum,Clean Water (L),2113.38,5.15,False
+2026-01-04T03:36:00,Avengers Compound,Medical Kits,424.24,5.01,False
+2026-01-04T03:48:00,New Asgard,Vibranium (kg),2303.49,2.62,False
+2026-01-04T03:48:00,Wakanda,Arc Reactor Cores,389.09,5.48,False
+2026-01-04T03:48:00,Sokovia,Pym Particles,294.68,6.74,False
+2026-01-04T03:48:00,Sanctum Sanctorum,Clean Water (L),2242.86,3.43,False
+2026-01-04T03:48:00,Avengers Compound,Medical Kits,636.9,2.17,False
+2026-01-04T04:00:00,New Asgard,Vibranium (kg),1913.53,7.72,False
+2026-01-04T04:00:00,Wakanda,Arc Reactor Cores,338.63,6.07,False
+2026-01-04T04:00:00,Sokovia,Pym Particles,501.52,3.93,False
+2026-01-04T04:00:00,Sanctum Sanctorum,Clean Water (L),1967.81,7.0,False
+2026-01-04T04:00:00,Avengers Compound,Medical Kits,342.28,6.02,False
+2026-01-04T04:12:00,New Asgard,Vibranium (kg),2269.56,3.03,False
+2026-01-04T04:12:00,Wakanda,Arc Reactor Cores,513.78,3.77,False
+2026-01-04T04:12:00,Sokovia,Pym Particles,542.23,3.39,False
+2026-01-04T04:12:00,Sanctum Sanctorum,Clean Water (L),2227.56,3.58,False
+2026-01-04T04:12:00,Avengers Compound,Medical Kits,457.76,4.5,False
+2026-01-04T04:24:00,New Asgard,Vibranium (kg),2127.96,4.9,False
+2026-01-04T04:24:00,Wakanda,Arc Reactor Cores,292.72,6.67,False
+2026-01-04T04:24:00,Sokovia,Pym Particles,235.56,7.43,False
+2026-01-04T04:24:00,Sanctum Sanctorum,Clean Water (L),2337.22,2.14,False
+2026-01-04T04:24:00,Avengers Compound,Medical Kits,234.58,7.44,False
+2026-01-04T04:36:00,New Asgard,Vibranium (kg),2038.3,6.07,False
+2026-01-04T04:36:00,Wakanda,Arc Reactor Cores,591.97,2.74,False
+2026-01-04T04:36:00,Sokovia,Pym Particles,594.22,2.71,False
+2026-01-04T04:36:00,Sanctum Sanctorum,Clean Water (L),1989.19,6.72,False
+2026-01-04T04:36:00,Avengers Compound,Medical Kits,230.5,7.49,False
+2026-01-04T04:48:00,New Asgard,Vibranium (kg),2267.65,3.06,False
+2026-01-04T04:48:00,Wakanda,Arc Reactor Cores,321.35,6.3,False
+2026-01-04T04:48:00,Sokovia,Pym Particles,247.05,7.28,False
+2026-01-04T04:48:00,Sanctum Sanctorum,Clean Water (L),1940.68,7.36,False
+2026-01-04T04:48:00,Avengers Compound,Medical Kits,309.44,6.45,False
+2026-01-04T05:00:00,New Asgard,Vibranium (kg),1981.75,6.73,False
+2026-01-04T05:00:00,Wakanda,Arc Reactor Cores,397.36,5.23,False
+2026-01-04T05:00:00,Sokovia,Pym Particles,191.41,7.9,False
+2026-01-04T05:00:00,Sanctum Sanctorum,Clean Water (L),2194.83,3.96,False
+2026-01-04T05:00:00,Avengers Compound,Medical Kits,434.12,4.75,False
+2026-01-04T05:12:00,New Asgard,Vibranium (kg),2325.99,2.26,False
+2026-01-04T05:12:00,Wakanda,Arc Reactor Cores,299.18,6.5,False
+2026-01-04T05:12:00,Sokovia,Pym Particles,558.14,3.14,False
+2026-01-04T05:12:00,Sanctum Sanctorum,Clean Water (L),2216.57,3.68,False
+2026-01-04T05:12:00,Avengers Compound,Medical Kits,577.42,2.89,False
+2026-01-04T05:24:00,New Asgard,Vibranium (kg),2317.12,2.38,False
+2026-01-04T05:24:00,Wakanda,Arc Reactor Cores,396.61,5.24,False
+2026-01-04T05:24:00,Sokovia,Pym Particles,331.55,6.08,False
+2026-01-04T05:24:00,Sanctum Sanctorum,Clean Water (L),2226.22,3.56,False
+2026-01-04T05:24:00,Avengers Compound,Medical Kits,545.81,3.3,False
+2026-01-04T05:36:00,New Asgard,Vibranium (kg),2263.29,3.07,False
+2026-01-04T05:36:00,Wakanda,Arc Reactor Cores,576.76,2.9,False
+2026-01-04T05:36:00,Sokovia,Pym Particles,321.95,6.21,False
+2026-01-04T05:36:00,Sanctum Sanctorum,Clean Water (L),2005.59,6.42,False
+2026-01-04T05:36:00,Avengers Compound,Medical Kits,491.85,4.0,False
+2026-01-04T05:48:00,New Asgard,Vibranium (kg),1954.34,7.09,False
+2026-01-04T05:48:00,Wakanda,Arc Reactor Cores,420.56,4.93,False
+2026-01-04T05:48:00,Sokovia,Pym Particles,319.15,6.24,False
+2026-01-04T05:48:00,Sanctum Sanctorum,Clean Water (L),2052.84,5.81,False
+2026-01-04T05:48:00,Avengers Compound,Medical Kits,578.02,2.88,False
+2026-01-04T06:00:00,New Asgard,Vibranium (kg),2182.66,4.07,False
+2026-01-04T06:00:00,Wakanda,Arc Reactor Cores,470.52,4.22,False
+2026-01-04T06:00:00,Sokovia,Pym Particles,513.88,3.67,False
+2026-01-04T06:00:00,Sanctum Sanctorum,Clean Water (L),2143.09,4.58,False
+2026-01-04T06:00:00,Avengers Compound,Medical Kits,214.06,7.51,False
+2026-01-04T06:12:00,New Asgard,Vibranium (kg),2224.56,3.53,False
+2026-01-04T06:12:00,Wakanda,Arc Reactor Cores,420.69,4.86,False
+2026-01-04T06:12:00,Sokovia,Pym Particles,259.47,6.93,False
+2026-01-04T06:12:00,Sanctum Sanctorum,Clean Water (L),2012.43,6.25,False
+2026-01-04T06:12:00,Avengers Compound,Medical Kits,550.47,3.2,False
+2026-01-04T06:24:00,New Asgard,Vibranium (kg),2139.9,4.62,False
+2026-01-04T06:24:00,Wakanda,Arc Reactor Cores,499.07,3.86,False
+2026-01-04T06:24:00,Sokovia,Pym Particles,248.04,7.08,False
+2026-01-04T06:24:00,Sanctum Sanctorum,Clean Water (L),2011.73,6.26,False
+2026-01-04T06:24:00,Avengers Compound,Medical Kits,268.53,6.81,False
+2026-01-04T06:36:00,New Asgard,Vibranium (kg),2076.16,5.43,False
+2026-01-04T06:36:00,Wakanda,Arc Reactor Cores,321.46,6.14,False
+2026-01-04T06:36:00,Sokovia,Pym Particles,385.14,5.32,False
+2026-01-04T06:36:00,Sanctum Sanctorum,Clean Water (L),2074.49,5.46,False
+2026-01-04T06:36:00,Avengers Compound,Medical Kits,337.78,5.93,False
+2026-01-04T06:48:00,New Asgard,Vibranium (kg),2020.91,6.14,False
+2026-01-04T06:48:00,Wakanda,Arc Reactor Cores,437.24,4.65,False
+2026-01-04T06:48:00,Sokovia,Pym Particles,250.31,7.05,False
+2026-01-04T06:48:00,Sanctum Sanctorum,Clean Water (L),2094.49,5.2,False
+2026-01-04T06:48:00,Avengers Compound,Medical Kits,205.34,7.62,False
+2026-01-04T07:00:00,New Asgard,Vibranium (kg),1981.24,6.57,False
+2026-01-04T07:00:00,Wakanda,Arc Reactor Cores,597.35,2.57,False
+2026-01-04T07:00:00,Sokovia,Pym Particles,510.51,3.66,False
+2026-01-04T07:00:00,Sanctum Sanctorum,Clean Water (L),2178.69,4.07,False
+2026-01-04T07:00:00,Avengers Compound,Medical Kits,250.43,6.96,False
+2026-01-04T07:12:00,New Asgard,Vibranium (kg),1895.9,7.65,False
+2026-01-04T07:12:00,Wakanda,Arc Reactor Cores,564.09,2.99,False
+2026-01-04T07:12:00,Sokovia,Pym Particles,526.56,3.46,False
+2026-01-04T07:12:00,Sanctum Sanctorum,Clean Water (L),2172.25,4.15,False
+2026-01-04T07:12:00,Avengers Compound,Medical Kits,471.63,4.16,False
+2026-01-04T07:24:00,New Asgard,Vibranium (kg),2132.33,4.65,False
+2026-01-04T07:24:00,Wakanda,Arc Reactor Cores,434.92,4.62,False
+2026-01-04T07:24:00,Sokovia,Pym Particles,211.64,7.45,False
+2026-01-04T07:24:00,Sanctum Sanctorum,Clean Water (L),2285.4,2.72,False
+2026-01-04T07:24:00,Avengers Compound,Medical Kits,312.79,6.17,False
+2026-01-04T07:36:00,New Asgard,Vibranium (kg),2164.26,4.25,False
+2026-01-04T07:36:00,Wakanda,Arc Reactor Cores,341.54,5.8,False
+2026-01-04T07:36:00,Sokovia,Pym Particles,611.16,2.39,False
+2026-01-04T07:36:00,Sanctum Sanctorum,Clean Water (L),2219.79,3.55,False
+2026-01-04T07:36:00,Avengers Compound,Medical Kits,352.38,5.67,False
+2026-01-04T07:48:00,New Asgard,Vibranium (kg),2326.39,2.2,False
+2026-01-04T07:48:00,Wakanda,Arc Reactor Cores,413.69,4.89,False
+2026-01-04T07:48:00,Sokovia,Pym Particles,357.39,5.6,False
+2026-01-04T07:48:00,Sanctum Sanctorum,Clean Water (L),2087.77,5.22,False
+2026-01-04T07:48:00,Avengers Compound,Medical Kits,307.12,6.24,False
+2026-01-04T08:00:00,New Asgard,Vibranium (kg),2214.26,3.57,False
+2026-01-04T08:00:00,Wakanda,Arc Reactor Cores,631.13,2.11,False
+2026-01-04T08:00:00,Sokovia,Pym Particles,283.25,6.46,False
+2026-01-04T08:00:00,Sanctum Sanctorum,Clean Water (L),2209.76,3.63,False
+2026-01-04T08:00:00,Avengers Compound,Medical Kits,637.73,2.03,False
+2026-01-04T08:12:00,New Asgard,Vibranium (kg),2157.21,4.28,False
+2026-01-04T08:12:00,Wakanda,Arc Reactor Cores,313.58,6.08,False
+2026-01-04T08:12:00,Sokovia,Pym Particles,326.29,5.92,False
+2026-01-04T08:12:00,Sanctum Sanctorum,Clean Water (L),1961.04,6.74,False
+2026-01-04T08:12:00,Avengers Compound,Medical Kits,601.22,2.48,False
+2026-01-04T08:24:00,New Asgard,Vibranium (kg),2257.22,3.03,False
+2026-01-04T08:24:00,Wakanda,Arc Reactor Cores,195.05,7.56,False
+2026-01-04T08:24:00,Sokovia,Pym Particles,542.24,3.22,False
+2026-01-04T08:24:00,Sanctum Sanctorum,Clean Water (L),2254.38,3.07,False
+2026-01-04T08:24:00,Avengers Compound,Medical Kits,540.86,3.24,False
+2026-01-04T08:36:00,New Asgard,Vibranium (kg),2136.78,4.54,False
+2026-01-04T08:36:00,Wakanda,Arc Reactor Cores,603.93,2.45,False
+2026-01-04T08:36:00,Sokovia,Pym Particles,442.47,4.47,False
+2026-01-04T08:36:00,Sanctum Sanctorum,Clean Water (L),1895.79,7.55,False
+2026-01-04T08:36:00,Avengers Compound,Medical Kits,433.46,4.58,False
+2026-01-04T08:48:00,New Asgard,Vibranium (kg),1975.23,6.56,False
+2026-01-04T08:48:00,Wakanda,Arc Reactor Cores,217.57,7.28,False
+2026-01-04T08:48:00,Sokovia,Pym Particles,377.17,5.29,False
+2026-01-04T08:48:00,Sanctum Sanctorum,Clean Water (L),2249.8,3.13,False
+2026-01-04T08:48:00,Avengers Compound,Medical Kits,493.95,3.83,False
+2026-01-04T09:00:00,New Asgard,Vibranium (kg),1925.72,7.09,False
+2026-01-04T09:00:00,Wakanda,Arc Reactor Cores,330.83,5.79,False
+2026-01-04T09:00:00,Sokovia,Pym Particles,293.01,6.26,False
+2026-01-04T09:00:00,Sanctum Sanctorum,Clean Water (L),2238.5,3.23,False
+2026-01-04T09:00:00,Avengers Compound,Medical Kits,343.64,5.63,False
+2026-01-04T09:12:00,New Asgard,Vibranium (kg),1908.31,7.3,False
+2026-01-04T09:12:00,Wakanda,Arc Reactor Cores,366.54,5.35,False
+2026-01-04T09:12:00,Sokovia,Pym Particles,439.68,4.45,False
+2026-01-04T09:12:00,Sanctum Sanctorum,Clean Water (L),1966.52,6.59,False
+2026-01-04T09:12:00,Avengers Compound,Medical Kits,451.32,4.3,False
+2026-01-04T09:24:00,New Asgard,Vibranium (kg),2079.15,5.2,False
+2026-01-04T09:24:00,Wakanda,Arc Reactor Cores,224.12,7.11,False
+2026-01-04T09:24:00,Sokovia,Pym Particles,163.16,7.86,False
+2026-01-04T09:24:00,Sanctum Sanctorum,Clean Water (L),2113.51,4.77,False
+2026-01-04T09:24:00,Avengers Compound,Medical Kits,570.85,2.83,False
+2026-01-04T09:36:00,New Asgard,Vibranium (kg),1947.64,6.82,False
+2026-01-04T09:36:00,Wakanda,Arc Reactor Cores,168.74,7.79,False
+2026-01-04T09:36:00,Sokovia,Pym Particles,298.44,6.19,False
+2026-01-04T09:36:00,Sanctum Sanctorum,Clean Water (L),2008.8,6.06,False
+2026-01-04T09:36:00,Avengers Compound,Medical Kits,580.22,2.71,False
+2026-01-04T09:48:00,New Asgard,Vibranium (kg),2319.61,2.23,False
+2026-01-04T09:48:00,Wakanda,Arc Reactor Cores,536.73,3.25,False
+2026-01-04T09:48:00,Sokovia,Pym Particles,307.94,6.07,False
+2026-01-04T09:48:00,Sanctum Sanctorum,Clean Water (L),2121.88,4.67,False
+2026-01-04T09:48:00,Avengers Compound,Medical Kits,625.82,2.15,False
+2026-01-04T10:00:00,New Asgard,Vibranium (kg),1960.62,6.58,False
+2026-01-04T10:00:00,Wakanda,Arc Reactor Cores,358.68,5.38,False
+2026-01-04T10:00:00,Sokovia,Pym Particles,152.03,7.9,False
+2026-01-04T10:00:00,Sanctum Sanctorum,Clean Water (L),1948.33,6.73,False
+2026-01-04T10:00:00,Avengers Compound,Medical Kits,547.77,3.08,False
+2026-01-04T10:12:00,New Asgard,Vibranium (kg),1897.78,7.34,False
+2026-01-04T10:12:00,Wakanda,Arc Reactor Cores,633.43,2.03,False
+2026-01-04T10:12:00,Sokovia,Pym Particles,250.21,6.7,False
+2026-01-04T10:12:00,Sanctum Sanctorum,Clean Water (L),2316.6,2.24,False
+2026-01-04T10:12:00,Avengers Compound,Medical Kits,533.76,3.25,False
+2026-01-04T10:24:00,New Asgard,Vibranium (kg),2201.73,3.64,False
+2026-01-04T10:24:00,Wakanda,Arc Reactor Cores,154.0,7.88,False
+2026-01-04T10:24:00,Sokovia,Pym Particles,343.22,5.57,False
+2026-01-04T10:24:00,Sanctum Sanctorum,Clean Water (L),1951.08,6.69,False
+2026-01-04T10:24:00,Avengers Compound,Medical Kits,487.11,3.82,False
+2026-01-04T10:36:00,New Asgard,Vibranium (kg),1889.0,7.45,False
+2026-01-04T10:36:00,Wakanda,Arc Reactor Cores,316.19,5.9,False
+2026-01-04T10:36:00,Sokovia,Pym Particles,501.97,3.63,False
+2026-01-04T10:36:00,Sanctum Sanctorum,Clean Water (L),1991.31,6.2,False
+2026-01-04T10:36:00,Avengers Compound,Medical Kits,298.32,6.12,False
+2026-01-04T10:48:00,New Asgard,Vibranium (kg),2279.74,2.69,False
+2026-01-04T10:48:00,Wakanda,Arc Reactor Cores,475.77,3.95,False
+2026-01-04T10:48:00,Sokovia,Pym Particles,345.58,5.54,False
+2026-01-04T10:48:00,Sanctum Sanctorum,Clean Water (L),2027.52,5.76,False
+2026-01-04T10:48:00,Avengers Compound,Medical Kits,604.36,2.39,False
+2026-01-04T11:00:00,New Asgard,Vibranium (kg),1954.09,6.58,False
+2026-01-04T11:00:00,Wakanda,Arc Reactor Cores,593.89,2.48,False
+2026-01-04T11:00:00,Sokovia,Pym Particles,460.9,4.09,False
+2026-01-04T11:00:00,Sanctum Sanctorum,Clean Water (L),2094.95,4.88,False
+2026-01-04T11:00:00,Avengers Compound,Medical Kits,222.83,6.95,False
+2026-01-04T11:12:00,New Asgard,Vibranium (kg),2229.13,3.26,False
+2026-01-04T11:12:00,Wakanda,Arc Reactor Cores,362.45,5.27,False
+2026-01-04T11:12:00,Sokovia,Pym Particles,509.69,3.5,False
+2026-01-04T11:12:00,Sanctum Sanctorum,Clean Water (L),2041.53,5.52,False
+2026-01-04T11:12:00,Avengers Compound,Medical Kits,144.42,7.9,False
+2026-01-04T11:24:00,New Asgard,Vibranium (kg),2233.01,3.22,False
+2026-01-04T11:24:00,Wakanda,Arc Reactor Cores,468.46,3.99,False
+2026-01-04T11:24:00,Sokovia,Pym Particles,575.39,2.71,False
+2026-01-04T11:24:00,Sanctum Sanctorum,Clean Water (L),2302.68,2.38,False
+2026-01-04T11:24:00,Avengers Compound,Medical Kits,492.03,3.71,False
+2026-01-04T11:36:00,New Asgard,Vibranium (kg),1918.92,7.0,False
+2026-01-04T11:36:00,Wakanda,Arc Reactor Cores,526.39,3.3,False
+2026-01-04T11:36:00,Sokovia,Pym Particles,297.13,6.06,False
+2026-01-04T11:36:00,Sanctum Sanctorum,Clean Water (L),2267.91,2.8,False
+2026-01-04T11:36:00,Avengers Compound,Medical Kits,552.03,2.99,False
+2026-01-04T11:48:00,New Asgard,Vibranium (kg),2013.99,5.86,False
+2026-01-04T11:48:00,Wakanda,Arc Reactor Cores,621.08,2.16,False
+2026-01-04T11:48:00,Sokovia,Pym Particles,451.75,4.2,False
+2026-01-04T11:48:00,Sanctum Sanctorum,Clean Water (L),2191.67,3.71,False
+2026-01-04T11:48:00,Avengers Compound,Medical Kits,185.34,7.41,False
+2026-01-04T12:00:00,New Asgard,Vibranium (kg),1983.16,6.15,False
+2026-01-04T12:00:00,Wakanda,Arc Reactor Cores,341.99,5.45,False
+2026-01-04T12:00:00,Sokovia,Pym Particles,554.87,2.92,False
+2026-01-04T12:00:00,Sanctum Sanctorum,Clean Water (L),2310.17,2.26,False
+2026-01-04T12:00:00,Avengers Compound,Medical Kits,364.02,5.19,False
+2026-01-04T12:12:00,New Asgard,Vibranium (kg),2295.73,2.43,False
+2026-01-04T12:12:00,Wakanda,Arc Reactor Cores,410.75,4.63,False
+2026-01-04T12:12:00,Sokovia,Pym Particles,305.52,5.89,False
+2026-01-04T12:12:00,Sanctum Sanctorum,Clean Water (L),2197.32,3.6,False
+2026-01-04T12:12:00,Avengers Compound,Medical Kits,551.9,2.95,False
+2026-01-04T12:24:00,New Asgard,Vibranium (kg),2192.35,3.66,False
+2026-01-04T12:24:00,Wakanda,Arc Reactor Cores,553.28,2.94,False
+2026-01-04T12:24:00,Sokovia,Pym Particles,181.7,7.36,False
+2026-01-04T12:24:00,Sanctum Sanctorum,Clean Water (L),2063.95,5.19,False
+2026-01-04T12:24:00,Avengers Compound,Medical Kits,501.47,3.55,False
+2026-01-04T12:36:00,New Asgard,Vibranium (kg),2211.72,3.43,False
+2026-01-04T12:36:00,Wakanda,Arc Reactor Cores,316.32,5.76,False
+2026-01-04T12:36:00,Sokovia,Pym Particles,535.5,3.15,False
+2026-01-04T12:36:00,Sanctum Sanctorum,Clean Water (L),1910.41,7.02,False
+2026-01-04T12:36:00,Avengers Compound,Medical Kits,157.26,7.65,False
+2026-01-04T12:48:00,New Asgard,Vibranium (kg),2005.85,5.88,False
+2026-01-04T12:48:00,Wakanda,Arc Reactor Cores,161.23,7.6,False
+2026-01-04T12:48:00,Sokovia,Pym Particles,626.65,2.06,False
+2026-01-04T12:48:00,Sanctum Sanctorum,Clean Water (L),2006.92,5.87,False
+2026-01-04T12:48:00,Avengers Compound,Medical Kits,561.43,2.84,False
+2026-01-04T13:00:00,New Asgard,Vibranium (kg),2133.38,4.31,False
+2026-01-04T13:00:00,Wakanda,Arc Reactor Cores,170.77,7.4,False
+2026-01-04T13:00:00,Sokovia,Pym Particles,243.41,6.55,False
+2026-01-04T13:00:00,Sanctum Sanctorum,Clean Water (L),2100.21,4.7,False
+2026-01-04T13:00:00,Avengers Compound,Medical Kits,460.3,4.0,False
+2026-01-04T13:12:00,New Asgard,Vibranium (kg),2220.33,3.29,False
+2026-01-04T13:12:00,Wakanda,Arc Reactor Cores,254.43,6.42,False
+2026-01-04T13:12:00,Sokovia,Pym Particles,290.22,6.0,False
+2026-01-04T13:12:00,Sanctum Sanctorum,Clean Water (L),2049.38,5.3,False
+2026-01-04T13:12:00,Avengers Compound,Medical Kits,157.11,7.56,False
+2026-01-04T13:24:00,New Asgard,Vibranium (kg),2153.41,4.08,False
+2026-01-04T13:24:00,Wakanda,Arc Reactor Cores,448.91,4.13,False
+2026-01-04T13:24:00,Sokovia,Pym Particles,297.24,5.91,False
+2026-01-04T13:24:00,Sanctum Sanctorum,Clean Water (L),2036.71,5.45,False
+2026-01-04T13:24:00,Avengers Compound,Medical Kits,227.36,6.74,False
+2026-01-04T13:36:00,New Asgard,Vibranium (kg),1928.43,6.72,False
+2026-01-04T13:36:00,Wakanda,Arc Reactor Cores,291.14,5.99,False
+2026-01-04T13:36:00,Sokovia,Pym Particles,217.57,6.85,False
+2026-01-04T13:36:00,Sanctum Sanctorum,Clean Water (L),1939.64,6.59,False
+2026-01-04T13:36:00,Avengers Compound,Medical Kits,284.29,6.07,False
+2026-01-04T13:48:00,New Asgard,Vibranium (kg),1825.23,7.94,False
+2026-01-04T13:48:00,Wakanda,Arc Reactor Cores,189.61,7.18,False
+2026-01-04T13:48:00,Sokovia,Pym Particles,174.92,7.35,False
+2026-01-04T13:48:00,Sanctum Sanctorum,Clean Water (L),2109.94,4.59,False
+2026-01-04T13:48:00,Avengers Compound,Medical Kits,347.01,5.33,False
+2026-01-04T14:00:00,New Asgard,Vibranium (kg),2069.59,5.0,False
+2026-01-04T14:00:00,Wakanda,Arc Reactor Cores,162.75,7.41,False
+2026-01-04T14:00:00,Sokovia,Pym Particles,491.51,3.59,False
+2026-01-04T14:00:00,Sanctum Sanctorum,Clean Water (L),1979.8,6.05,False
+2026-01-04T14:00:00,Avengers Compound,Medical Kits,297.69,5.84,False
+2026-01-04T14:12:00,New Asgard,Vibranium (kg),1932.35,6.6,False
+2026-01-04T14:12:00,Wakanda,Arc Reactor Cores,364.89,5.06,False
+2026-01-04T14:12:00,Sokovia,Pym Particles,215.09,6.8,False
+2026-01-04T14:12:00,Sanctum Sanctorum,Clean Water (L),2151.67,4.05,False
+2026-01-04T14:12:00,Avengers Compound,Medical Kits,177.46,7.24,False
+2026-01-04T14:24:00,New Asgard,Vibranium (kg),2243.91,2.98,False
+2026-01-04T14:24:00,Wakanda,Arc Reactor Cores,294.67,5.88,False
+2026-01-04T14:24:00,Sokovia,Pym Particles,478.16,3.74,False
+2026-01-04T14:24:00,Sanctum Sanctorum,Clean Water (L),2193.01,3.57,False
+2026-01-04T14:24:00,Avengers Compound,Medical Kits,517.54,3.28,False
+2026-01-04T14:36:00,New Asgard,Vibranium (kg),2214.9,3.32,False
+2026-01-04T14:36:00,Wakanda,Arc Reactor Cores,481.76,3.7,False
+2026-01-04T14:36:00,Sokovia,Pym Particles,200.29,6.97,False
+2026-01-04T14:36:00,Sanctum Sanctorum,Clean Water (L),2256.23,2.83,False
+2026-01-04T14:36:00,Avengers Compound,Medical Kits,547.49,2.94,False
+2026-01-04T14:48:00,New Asgard,Vibranium (kg),1868.4,7.34,False
+2026-01-04T14:48:00,Wakanda,Arc Reactor Cores,605.6,2.26,False
+2026-01-04T14:48:00,Sokovia,Pym Particles,611.01,2.2,False
+2026-01-04T14:48:00,Sanctum Sanctorum,Clean Water (L),2053.78,5.19,False
+2026-01-04T14:48:00,Avengers Compound,Medical Kits,434.24,4.25,False
+2026-01-04T15:00:00,New Asgard,Vibranium (kg),2247.87,2.9,False
+2026-01-04T15:00:00,Wakanda,Arc Reactor Cores,478.1,3.7,False
+2026-01-04T15:00:00,Sokovia,Pym Particles,453.09,3.99,False
+2026-01-04T15:00:00,Sanctum Sanctorum,Clean Water (L),1997.91,5.77,False
+2026-01-04T15:00:00,Avengers Compound,Medical Kits,257.31,6.24,False
+2026-01-04T15:12:00,New Asgard,Vibranium (kg),2034.27,5.35,False
+2026-01-04T15:12:00,Wakanda,Arc Reactor Cores,389.48,4.72,False
+2026-01-04T15:12:00,Sokovia,Pym Particles,243.34,6.4,False
+2026-01-04T15:12:00,Sanctum Sanctorum,Clean Water (L),2052.43,5.14,False
+2026-01-04T15:12:00,Avengers Compound,Medical Kits,273.85,6.05,False
+2026-01-04T15:24:00,New Asgard,Vibranium (kg),2123.42,4.33,False
+2026-01-04T15:24:00,Wakanda,Arc Reactor Cores,120.9,7.81,False
+2026-01-04T15:24:00,Sokovia,Pym Particles,470.4,3.79,False
+2026-01-04T15:24:00,Sanctum Sanctorum,Clean Water (L),1972.3,6.07,False
+2026-01-04T15:24:00,Avengers Compound,Medical Kits,281.98,5.95,False
+2026-01-04T15:36:00,New Asgard,Vibranium (kg),2211.09,3.32,False
+2026-01-04T15:36:00,Wakanda,Arc Reactor Cores,584.7,2.47,False
+2026-01-04T15:36:00,Sokovia,Pym Particles,314.17,5.58,False
+2026-01-04T15:36:00,Sanctum Sanctorum,Clean Water (L),2068.1,4.96,False
+2026-01-04T15:36:00,Avengers Compound,Medical Kits,518.18,3.24,False
+2026-01-04T15:48:00,New Asgard,Vibranium (kg),2235.59,3.04,False
+2026-01-04T15:48:00,Wakanda,Arc Reactor Cores,438.14,4.16,False
+2026-01-04T15:48:00,Sokovia,Pym Particles,384.88,4.77,False
+2026-01-04T15:48:00,Sanctum Sanctorum,Clean Water (L),1951.01,6.31,False
+2026-01-04T15:48:00,Avengers Compound,Medical Kits,364.74,5.0,False
+2026-01-04T16:00:00,New Asgard,Vibranium (kg),2111.45,4.42,False
+2026-01-04T16:00:00,Wakanda,Arc Reactor Cores,393.43,4.62,False
+2026-01-04T16:00:00,Sokovia,Pym Particles,125.33,7.67,False
+2026-01-04T16:00:00,Sanctum Sanctorum,Clean Water (L),2215.61,3.23,False
+2026-01-04T16:00:00,Avengers Compound,Medical Kits,578.59,2.52,False
+2026-01-04T16:12:00,New Asgard,Vibranium (kg),2141.34,4.08,False
+2026-01-04T16:12:00,Wakanda,Arc Reactor Cores,455.27,3.92,False
+2026-01-04T16:12:00,Sokovia,Pym Particles,132.58,7.58,False
+2026-01-04T16:12:00,Sanctum Sanctorum,Clean Water (L),1957.5,6.16,False
+2026-01-04T16:12:00,Avengers Compound,Medical Kits,188.35,6.95,False
+2026-01-04T16:24:00,New Asgard,Vibranium (kg),1802.77,7.92,False
+2026-01-04T16:24:00,Wakanda,Arc Reactor Cores,346.81,5.15,False
+2026-01-04T16:24:00,Sokovia,Pym Particles,591.59,2.37,False
+2026-01-04T16:24:00,Sanctum Sanctorum,Clean Water (L),2140.47,4.09,False
+2026-01-04T16:24:00,Avengers Compound,Medical Kits,304.6,5.63,False
+2026-01-04T16:36:00,New Asgard,Vibranium (kg),1959.16,6.15,False
+2026-01-04T16:36:00,Wakanda,Arc Reactor Cores,163.0,7.24,False
+2026-01-04T16:36:00,Sokovia,Pym Particles,491.51,3.51,False
+2026-01-04T16:36:00,Sanctum Sanctorum,Clean Water (L),1941.47,6.35,False
+2026-01-04T16:36:00,Avengers Compound,Medical Kits,148.65,7.4,False
+2026-01-04T16:48:00,New Asgard,Vibranium (kg),2052.73,5.08,False
+2026-01-04T16:48:00,Wakanda,Arc Reactor Cores,250.08,6.25,False
+2026-01-04T16:48:00,Sokovia,Pym Particles,459.89,3.86,False
+2026-01-04T16:48:00,Sanctum Sanctorum,Clean Water (L),1873.12,7.12,False
+2026-01-04T16:48:00,Avengers Compound,Medical Kits,229.59,6.48,False
+2026-01-04T17:00:00,New Asgard,Vibranium (kg),2000.95,5.61,False
+2026-01-04T17:00:00,Wakanda,Arc Reactor Cores,409.02,4.39,False
+2026-01-04T17:00:00,Sokovia,Pym Particles,412.3,4.36,False
+2026-01-04T17:00:00,Sanctum Sanctorum,Clean Water (L),1861.66,7.17,False
+2026-01-04T17:00:00,Avengers Compound,Medical Kits,409.49,4.39,False
+2026-01-04T17:12:00,New Asgard,Vibranium (kg),1869.84,7.08,False
+2026-01-04T17:12:00,Wakanda,Arc Reactor Cores,375.89,4.77,False
+2026-01-04T17:12:00,Sokovia,Pym Particles,537.65,2.95,False
+2026-01-04T17:12:00,Sanctum Sanctorum,Clean Water (L),2114.07,4.34,False
+2026-01-04T17:12:00,Avengers Compound,Medical Kits,289.32,5.74,False
+2026-01-04T17:24:00,New Asgard,Vibranium (kg),2257.56,2.72,False
+2026-01-04T17:24:00,Wakanda,Arc Reactor Cores,509.08,3.27,False
+2026-01-04T17:24:00,Sokovia,Pym Particles,221.16,6.5,False
+2026-01-04T17:24:00,Sanctum Sanctorum,Clean Water (L),2062.97,4.91,False
+2026-01-04T17:24:00,Avengers Compound,Medical Kits,293.72,5.69,False
+2026-01-04T17:36:00,New Asgard,Vibranium (kg),1930.99,6.39,False
+2026-01-04T17:36:00,Wakanda,Arc Reactor Cores,559.65,2.7,False
+2026-01-04T17:36:00,Sokovia,Pym Particles,115.88,7.69,False
+2026-01-04T17:36:00,Sanctum Sanctorum,Clean Water (L),1792.0,7.96,False
+2026-01-04T17:36:00,Avengers Compound,Medical Kits,260.99,6.06,False
+2026-01-04T17:48:00,New Asgard,Vibranium (kg),2023.38,5.36,False
+2026-01-04T17:48:00,Wakanda,Arc Reactor Cores,231.03,6.39,False
+2026-01-04T17:48:00,Sokovia,Pym Particles,377.24,4.75,False
+2026-01-04T17:48:00,Sanctum Sanctorum,Clean Water (L),1982.78,5.81,False
+2026-01-04T17:48:00,Avengers Compound,Medical Kits,418.08,4.29,False
+2026-01-04T18:00:00,New Asgard,Vibranium (kg),2113.09,4.3,False
+2026-01-04T18:00:00,Wakanda,Arc Reactor Cores,303.91,5.51,False
+2026-01-04T18:00:00,Sokovia,Pym Particles,163.93,7.07,False
+2026-01-04T18:00:00,Sanctum Sanctorum,Clean Water (L),1807.79,7.69,False
+2026-01-04T18:00:00,Avengers Compound,Medical Kits,538.68,2.9,False
+2026-01-04T18:12:00,New Asgard,Vibranium (kg),2102.58,4.42,False
+2026-01-04T18:12:00,Wakanda,Arc Reactor Cores,369.93,4.78,False
+2026-01-04T18:12:00,Sokovia,Pym Particles,438.18,4.02,False
+2026-01-04T18:12:00,Sanctum Sanctorum,Clean Water (L),1801.94,7.76,False
+2026-01-04T18:12:00,Avengers Compound,Medical Kits,619.0,2.01,False
+2026-01-04T18:24:00,New Asgard,Vibranium (kg),2168.15,3.69,False
+2026-01-04T18:24:00,Wakanda,Arc Reactor Cores,149.77,7.22,False
+2026-01-04T18:24:00,Sokovia,Pym Particles,232.77,6.3,False
+2026-01-04T18:24:00,Sanctum Sanctorum,Clean Water (L),1952.53,6.08,False
+2026-01-04T18:24:00,Avengers Compound,Medical Kits,159.48,7.12,False
+2026-01-04T18:36:00,New Asgard,Vibranium (kg),1940.03,6.22,False
+2026-01-04T18:36:00,Wakanda,Arc Reactor Cores,160.58,7.1,False
+2026-01-04T18:36:00,Sokovia,Pym Particles,209.9,6.56,False
+2026-01-04T18:36:00,Sanctum Sanctorum,Clean Water (L),2096.52,4.48,False
+2026-01-04T18:36:00,Avengers Compound,Medical Kits,521.53,3.09,False
+2026-01-04T18:48:00,New Asgard,Vibranium (kg),2306.91,2.15,False
+2026-01-04T18:48:00,Wakanda,Arc Reactor Cores,498.17,3.35,False
+2026-01-04T18:48:00,Sokovia,Pym Particles,340.87,5.1,False
+2026-01-04T18:48:00,Sanctum Sanctorum,Clean Water (L),2201.63,3.32,False
+2026-01-04T18:48:00,Avengers Compound,Medical Kits,130.43,7.44,False
+2026-01-04T19:00:00,New Asgard,Vibranium (kg),2250.51,2.74,False
+2026-01-04T19:00:00,Wakanda,Arc Reactor Cores,517.07,3.11,False
+2026-01-04T19:00:00,Sokovia,Pym Particles,267.93,5.85,False
+2026-01-04T19:00:00,Sanctum Sanctorum,Clean Water (L),2238.81,2.87,False
+2026-01-04T19:00:00,Avengers Compound,Medical Kits,395.75,4.44,False
+2026-01-04T19:12:00,New Asgard,Vibranium (kg),2224.07,3.03,False
+2026-01-04T19:12:00,Wakanda,Arc Reactor Cores,247.08,6.08,False
+2026-01-04T19:12:00,Sokovia,Pym Particles,354.65,4.89,False
+2026-01-04T19:12:00,Sanctum Sanctorum,Clean Water (L),1819.28,7.48,False
+2026-01-04T19:12:00,Avengers Compound,Medical Kits,251.61,6.03,False
+2026-01-04T19:24:00,New Asgard,Vibranium (kg),1892.47,6.68,False
+2026-01-04T19:24:00,Wakanda,Arc Reactor Cores,392.19,4.48,False
+2026-01-04T19:24:00,Sokovia,Pym Particles,417.36,4.2,False
+2026-01-04T19:24:00,Sanctum Sanctorum,Clean Water (L),1800.46,7.69,False
+2026-01-04T19:24:00,Avengers Compound,Medical Kits,145.45,7.19,False
+2026-01-04T19:36:00,New Asgard,Vibranium (kg),2051.84,4.92,False
+2026-01-04T19:36:00,Wakanda,Arc Reactor Cores,210.73,6.48,False
+2026-01-04T19:36:00,Sokovia,Pym Particles,305.94,5.43,False
+2026-01-04T19:36:00,Sanctum Sanctorum,Clean Water (L),2100.38,4.39,False
+2026-01-04T19:36:00,Avengers Compound,Medical Kits,262.95,5.9,False
+2026-01-04T19:48:00,New Asgard,Vibranium (kg),1896.98,6.63,False
+2026-01-04T19:48:00,Wakanda,Arc Reactor Cores,250.45,6.04,False
+2026-01-04T19:48:00,Sokovia,Pym Particles,301.54,5.48,False
+2026-01-04T19:48:00,Sanctum Sanctorum,Clean Water (L),1879.9,6.81,False
+2026-01-04T19:48:00,Avengers Compound,Medical Kits,133.67,7.32,False
+2026-01-04T20:00:00,New Asgard,Vibranium (kg),2102.13,4.32,False
+2026-01-04T20:00:00,Wakanda,Arc Reactor Cores,252.96,5.95,False
+2026-01-04T20:00:00,Sokovia,Pym Particles,531.46,2.92,False
+2026-01-04T20:00:00,Sanctum Sanctorum,Clean Water (L),2144.71,3.86,False
+2026-01-04T20:00:00,Avengers Compound,Medical Kits,410.38,4.24,False
+2026-01-04T20:12:00,New Asgard,Vibranium (kg),2267.85,2.52,False
+2026-01-04T20:12:00,Wakanda,Arc Reactor Cores,245.68,6.03,False
+2026-01-04T20:12:00,Sokovia,Pym Particles,607.29,2.09,False
+2026-01-04T20:12:00,Sanctum Sanctorum,Clean Water (L),1832.87,7.25,False
+2026-01-04T20:12:00,Avengers Compound,Medical Kits,339.74,5.0,False
+2026-01-04T20:24:00,New Asgard,Vibranium (kg),1906.21,6.45,False
+2026-01-04T20:24:00,Wakanda,Arc Reactor Cores,589.73,2.29,False
+2026-01-04T20:24:00,Sokovia,Pym Particles,116.81,7.43,False
+2026-01-04T20:24:00,Sanctum Sanctorum,Clean Water (L),2215.62,3.09,False
+2026-01-04T20:24:00,Avengers Compound,Medical Kits,471.51,3.57,False
+2026-01-04T20:36:00,New Asgard,Vibranium (kg),2261.03,2.6,False
+2026-01-04T20:36:00,Wakanda,Arc Reactor Cores,394.41,4.41,False
+2026-01-04T20:36:00,Sokovia,Pym Particles,81.5,7.81,False
+2026-01-04T20:36:00,Sanctum Sanctorum,Clean Water (L),1857.94,6.98,False
+2026-01-04T20:36:00,Avengers Compound,Medical Kits,122.9,7.36,False
+2026-01-04T20:48:00,New Asgard,Vibranium (kg),2300.31,2.17,False
+2026-01-04T20:48:00,Wakanda,Arc Reactor Cores,160.75,6.95,False
+2026-01-04T20:48:00,Sokovia,Pym Particles,260.73,5.86,False
+2026-01-04T20:48:00,Sanctum Sanctorum,Clean Water (L),2093.92,4.41,False
+2026-01-04T20:48:00,Avengers Compound,Medical Kits,94.69,7.67,False
+2026-01-04T21:00:00,New Asgard,Vibranium (kg),2110.37,4.19,False
+2026-01-04T21:00:00,Wakanda,Arc Reactor Cores,86.34,7.67,False
+2026-01-04T21:00:00,Sokovia,Pym Particles,295.29,5.43,False
+2026-01-04T21:00:00,Sanctum Sanctorum,Clean Water (L),1771.18,7.84,False
+2026-01-04T21:00:00,Avengers Compound,Medical Kits,347.98,4.86,False
+2026-01-04T21:12:00,New Asgard,Vibranium (kg),1902.26,6.43,False
+2026-01-04T21:12:00,Wakanda,Arc Reactor Cores,155.56,6.93,False
+2026-01-04T21:12:00,Sokovia,Pym Particles,452.26,3.74,False
+2026-01-04T21:12:00,Sanctum Sanctorum,Clean Water (L),1771.71,7.83,False
+2026-01-04T21:12:00,Avengers Compound,Medical Kits,450.35,3.76,False
+2026-01-04T21:24:00,New Asgard,Vibranium (kg),2243.94,2.75,False
+2026-01-04T21:24:00,Wakanda,Arc Reactor Cores,187.37,6.59,False
+2026-01-04T21:24:00,Sokovia,Pym Particles,190.36,6.56,False
+2026-01-04T21:24:00,Sanctum Sanctorum,Clean Water (L),1809.68,7.42,False
+2026-01-04T21:24:00,Avengers Compound,Medical Kits,435.11,3.92,False
+2026-01-04T21:36:00,New Asgard,Vibranium (kg),2005.63,5.32,False
+2026-01-04T21:36:00,Wakanda,Arc Reactor Cores,322.78,5.13,False
+2026-01-04T21:36:00,Sokovia,Pym Particles,506.12,3.16,False
+2026-01-04T21:36:00,Sanctum Sanctorum,Clean Water (L),1944.5,5.97,False
+2026-01-04T21:36:00,Avengers Compound,Medical Kits,465.28,3.6,False
+2026-01-04T21:48:00,New Asgard,Vibranium (kg),1834.2,7.16,False
+2026-01-04T21:48:00,Wakanda,Arc Reactor Cores,217.12,6.27,False
+2026-01-04T21:48:00,Sokovia,Pym Particles,223.89,6.19,False
+2026-01-04T21:48:00,Sanctum Sanctorum,Clean Water (L),1920.68,6.23,False
+2026-01-04T21:48:00,Avengers Compound,Medical Kits,374.34,4.58,False
+2026-01-04T22:00:00,New Asgard,Vibranium (kg),2177.68,3.43,False
+2026-01-04T22:00:00,Wakanda,Arc Reactor Cores,246.78,5.89,False
+2026-01-04T22:00:00,Sokovia,Pym Particles,540.08,2.77,False
+2026-01-04T22:00:00,Sanctum Sanctorum,Clean Water (L),1903.34,6.35,False
+2026-01-04T22:00:00,Avengers Compound,Medical Kits,243.85,5.92,False
+2026-01-04T22:12:00,New Asgard,Vibranium (kg),1962.01,5.72,False
+2026-01-04T22:12:00,Wakanda,Arc Reactor Cores,437.22,3.86,False
+2026-01-04T22:12:00,Sokovia,Pym Particles,251.59,5.83,False
+2026-01-04T22:12:00,Sanctum Sanctorum,Clean Water (L),2266.53,2.48,False
+2026-01-04T22:12:00,Avengers Compound,Medical Kits,364.85,4.63,False
+2026-01-04T22:24:00,New Asgard,Vibranium (kg),2174.62,3.46,False
+2026-01-04T22:24:00,Wakanda,Arc Reactor Cores,361.48,4.67,False
+2026-01-04T22:24:00,Sokovia,Pym Particles,116.02,7.28,False
+2026-01-04T22:24:00,Sanctum Sanctorum,Clean Water (L),2106.6,4.19,False
+2026-01-04T22:24:00,Avengers Compound,Medical Kits,240.75,5.95,False
+2026-01-04T22:36:00,New Asgard,Vibranium (kg),1766.18,7.81,False
+2026-01-04T22:36:00,Wakanda,Arc Reactor Cores,379.2,4.48,False
+2026-01-04T22:36:00,Sokovia,Pym Particles,264.35,5.7,False
+2026-01-04T22:36:00,Sanctum Sanctorum,Clean Water (L),2005.16,5.26,False
+2026-01-04T22:36:00,Avengers Compound,Medical Kits,310.31,5.21,False
+2026-01-04T22:48:00,New Asgard,Vibranium (kg),2300.75,2.12,False
+2026-01-04T22:48:00,Wakanda,Arc Reactor Cores,477.46,3.43,False
+2026-01-04T22:48:00,Sokovia,Pym Particles,523.62,2.94,False
+2026-01-04T22:48:00,Sanctum Sanctorum,Clean Water (L),1860.26,6.81,False
+2026-01-04T22:48:00,Avengers Compound,Medical Kits,259.24,5.75,False
+2026-01-04T23:00:00,New Asgard,Vibranium (kg),2220.21,2.95,False
+2026-01-04T23:00:00,Wakanda,Arc Reactor Cores,217.33,6.13,False
+2026-01-04T23:00:00,Sokovia,Pym Particles,322.1,5.03,False
+2026-01-04T23:00:00,Sanctum Sanctorum,Clean Water (L),2289.42,2.22,False
+2026-01-04T23:00:00,Avengers Compound,Medical Kits,392.39,4.29,False
+2026-01-04T23:12:00,New Asgard,Vibranium (kg),2266.5,2.46,False
+2026-01-04T23:12:00,Wakanda,Arc Reactor Cores,561.31,2.51,False
+2026-01-04T23:12:00,Sokovia,Pym Particles,220.72,6.1,False
+2026-01-04T23:12:00,Sanctum Sanctorum,Clean Water (L),2167.79,3.5,False
+2026-01-04T23:12:00,Avengers Compound,Medical Kits,570.5,2.42,False
+2026-01-04T23:24:00,New Asgard,Vibranium (kg),2033.79,4.91,False
+2026-01-04T23:24:00,Wakanda,Arc Reactor Cores,177.1,6.56,False
+2026-01-04T23:24:00,Sokovia,Pym Particles,317.44,5.08,False
+2026-01-04T23:24:00,Sanctum Sanctorum,Clean Water (L),2114.63,4.06,False
+2026-01-04T23:24:00,Avengers Compound,Medical Kits,133.91,7.01,False
+2026-01-04T23:36:00,New Asgard,Vibranium (kg),1918.9,6.12,False
+2026-01-04T23:36:00,Wakanda,Arc Reactor Cores,549.7,2.63,False
+2026-01-04T23:36:00,Sokovia,Pym Particles,239.53,5.9,False
+2026-01-04T23:36:00,Sanctum Sanctorum,Clean Water (L),2089.93,4.32,False
+2026-01-04T23:36:00,Avengers Compound,Medical Kits,229.75,6.0,False
+2026-01-04T23:48:00,New Asgard,Vibranium (kg),2195.5,3.21,False
+2026-01-04T23:48:00,Wakanda,Arc Reactor Cores,264.09,5.64,False
+2026-01-04T23:48:00,Sokovia,Pym Particles,345.15,4.79,False
+2026-01-04T23:48:00,Sanctum Sanctorum,Clean Water (L),2193.35,3.23,False
+2026-01-04T23:48:00,Avengers Compound,Medical Kits,350.67,4.73,False
+2026-01-05T00:00:00,New Asgard,Vibranium (kg),2265.77,2.44,False
+2026-01-05T00:00:00,Wakanda,Arc Reactor Cores,358.28,4.6,False
+2026-01-05T00:00:00,Sokovia,Pym Particles,538.42,2.72,False
+2026-01-05T00:00:00,Sanctum Sanctorum,Clean Water (L),2059.35,4.59,False
+2026-01-05T00:00:00,Avengers Compound,Medical Kits,136.99,6.91,False
+2026-01-05T00:12:00,New Asgard,Vibranium (kg),1910.28,6.14,False
+2026-01-05T00:12:00,Wakanda,Arc Reactor Cores,279.24,5.42,False
+2026-01-05T00:12:00,Sokovia,Pym Particles,379.11,4.38,False
+2026-01-05T00:12:00,Sanctum Sanctorum,Clean Water (L),2302.01,2.06,False
+2026-01-05T00:12:00,Avengers Compound,Medical Kits,280.64,5.41,False
+2026-01-05T00:24:00,New Asgard,Vibranium (kg),1829.2,6.99,False
+2026-01-05T00:24:00,Wakanda,Arc Reactor Cores,161.22,6.65,False
+2026-01-05T00:24:00,Sokovia,Pym Particles,201.38,6.24,False
+2026-01-05T00:24:00,Sanctum Sanctorum,Clean Water (L),2244.15,2.67,False
+2026-01-05T00:24:00,Avengers Compound,Medical Kits,354.68,4.64,False
+2026-01-05T00:36:00,New Asgard,Vibranium (kg),2296.38,2.12,False
+2026-01-05T00:36:00,Wakanda,Arc Reactor Cores,304.18,5.16,False
+2026-01-05T00:36:00,Sokovia,Pym Particles,197.63,6.27,False
+2026-01-05T00:36:00,Sanctum Sanctorum,Clean Water (L),2093.59,4.23,False
+2026-01-05T00:36:00,Avengers Compound,Medical Kits,439.15,3.76,False
+2026-01-05T00:48:00,New Asgard,Vibranium (kg),2170.44,3.43,False
+2026-01-05T00:48:00,Wakanda,Arc Reactor Cores,152.27,6.75,False
+2026-01-05T00:48:00,Sokovia,Pym Particles,356.85,4.62,False
+2026-01-05T00:48:00,Sanctum Sanctorum,Clean Water (L),2154.3,3.6,False
+2026-01-05T00:48:00,Avengers Compound,Medical Kits,51.57,7.8,False
+2026-01-05T01:00:00,New Asgard,Vibranium (kg),2146.95,3.64,False
+2026-01-05T01:00:00,Wakanda,Arc Reactor Cores,560.87,2.47,False
+2026-01-05T01:00:00,Sokovia,Pym Particles,219.08,5.99,False
+2026-01-05T01:00:00,Sanctum Sanctorum,Clean Water (L),1926.78,5.91,False
+2026-01-05T01:00:00,Avengers Compound,Medical Kits,313.11,5.02,False
+2026-01-05T01:12:00,New Asgard,Vibranium (kg),2285.34,2.21,False
+2026-01-05T01:12:00,Wakanda,Arc Reactor Cores,306.25,5.09,False
+2026-01-05T01:12:00,Sokovia,Pym Particles,442.65,3.68,False
+2026-01-05T01:12:00,Sanctum Sanctorum,Clean Water (L),1899.66,6.19,False
+2026-01-05T01:12:00,Avengers Compound,Medical Kits,494.81,3.15,False
+2026-01-05T01:24:00,New Asgard,Vibranium (kg),1944.37,5.73,False
+2026-01-05T01:24:00,Wakanda,Arc Reactor Cores,408.19,4.04,False
+2026-01-05T01:24:00,Sokovia,Pym Particles,473.49,3.37,False
+2026-01-05T01:24:00,Sanctum Sanctorum,Clean Water (L),1819.07,7.02,False
+2026-01-05T01:24:00,Avengers Compound,Medical Kits,593.7,2.13,False
+2026-01-05T01:36:00,New Asgard,Vibranium (kg),2103.25,4.09,False
+2026-01-05T01:36:00,Wakanda,Arc Reactor Cores,205.4,6.13,False
+2026-01-05T01:36:00,Sokovia,Pym Particles,529.96,2.78,False
+2026-01-05T01:36:00,Sanctum Sanctorum,Clean Water (L),1850.99,6.69,False
+2026-01-05T01:36:00,Avengers Compound,Medical Kits,192.99,6.26,False
+2026-01-05T01:48:00,New Asgard,Vibranium (kg),2235.11,2.73,False
+2026-01-05T01:48:00,Wakanda,Arc Reactor Cores,86.12,7.36,False
+2026-01-05T01:48:00,Sokovia,Pym Particles,420.69,3.91,False
+2026-01-05T01:48:00,Sanctum Sanctorum,Clean Water (L),2194.78,3.15,False
+2026-01-05T01:48:00,Avengers Compound,Medical Kits,185.16,6.34,False
+2026-01-05T02:00:00,New Asgard,Vibranium (kg),1933.21,5.78,False
+2026-01-05T02:00:00,Wakanda,Arc Reactor Cores,37.35,7.78,False
+2026-01-05T02:00:00,Sokovia,Pym Particles,544.59,2.61,False
+2026-01-05T02:00:00,Sanctum Sanctorum,Clean Water (L),2027.73,4.82,False
+2026-01-05T02:00:00,Avengers Compound,Medical Kits,328.7,4.81,False
+2026-01-05T02:12:00,New Asgard,Vibranium (kg),2109.05,3.99,False
+2026-01-05T02:12:00,Wakanda,Arc Reactor Cores,505.51,3.01,False
+2026-01-05T02:12:00,Sokovia,Pym Particles,102.62,7.12,False
+2026-01-05T02:12:00,Sanctum Sanctorum,Clean Water (L),2216.38,2.89,False
+2026-01-05T02:12:00,Avengers Compound,Medical Kits,142.12,6.71,False
+2026-01-05T02:24:00,New Asgard,Vibranium (kg),1723.09,7.93,False
+2026-01-05T02:24:00,Wakanda,Arc Reactor Cores,76.99,7.38,False
+2026-01-05T02:24:00,Sokovia,Pym Particles,46.53,7.69,False
+2026-01-05T02:24:00,Sanctum Sanctorum,Clean Water (L),1770.03,7.45,False
+2026-01-05T02:24:00,Avengers Compound,Medical Kits,376.68,4.32,False
+2026-01-05T02:36:00,New Asgard,Vibranium (kg),2090.78,4.18,False
+2026-01-05T02:36:00,Wakanda,Arc Reactor Cores,524.11,2.82,False
+2026-01-05T02:36:00,Sokovia,Pym Particles,90.11,7.24,False
+2026-01-05T02:36:00,Sanctum Sanctorum,Clean Water (L),1949.33,5.62,False
+2026-01-05T02:36:00,Avengers Compound,Medical Kits,255.74,5.55,False
+2026-01-05T02:48:00,New Asgard,Vibranium (kg),1868.89,6.44,False
+2026-01-05T02:48:00,Wakanda,Arc Reactor Cores,315.03,4.95,False
+2026-01-05T02:48:00,Sokovia,Pym Particles,97.85,7.16,False
+2026-01-05T02:48:00,Sanctum Sanctorum,Clean Water (L),2069.17,4.4,False
+2026-01-05T02:48:00,Avengers Compound,Medical Kits,206.71,6.05,False
+2026-01-05T03:00:00,New Asgard,Vibranium (kg),1827.82,6.79,False
+2026-01-05T03:00:00,Wakanda,Arc Reactor Cores,410.08,3.94,False
+2026-01-05T03:00:00,Sokovia,Pym Particles,482.26,3.21,False
+2026-01-05T03:00:00,Sanctum Sanctorum,Clean Water (L),1995.39,5.1,False
+2026-01-05T03:00:00,Avengers Compound,Medical Kits,212.98,5.93,False
+2026-01-05T03:12:00,New Asgard,Vibranium (kg),2031.9,4.73,False
+2026-01-05T03:12:00,Wakanda,Arc Reactor Cores,355.27,4.49,False
+2026-01-05T03:12:00,Sokovia,Pym Particles,464.88,3.39,False
+2026-01-05T03:12:00,Sanctum Sanctorum,Clean Water (L),1768.68,7.39,False
+2026-01-05T03:12:00,Avengers Compound,Medical Kits,475.09,3.28,False
+2026-01-05T03:24:00,New Asgard,Vibranium (kg),1750.21,7.57,False
+2026-01-05T03:24:00,Wakanda,Arc Reactor Cores,309.11,4.96,False
+2026-01-05T03:24:00,Sokovia,Pym Particles,500.22,3.03,False
+2026-01-05T03:24:00,Sanctum Sanctorum,Clean Water (L),1746.15,7.61,False
+2026-01-05T03:24:00,Avengers Compound,Medical Kits,131.66,6.75,False
+2026-01-05T03:36:00,New Asgard,Vibranium (kg),2063.89,4.41,False
+2026-01-05T03:36:00,Wakanda,Arc Reactor Cores,316.01,4.89,False
+2026-01-05T03:36:00,Sokovia,Pym Particles,115.98,6.91,False
+2026-01-05T03:36:00,Sanctum Sanctorum,Clean Water (L),2168.96,3.34,False
+2026-01-05T03:36:00,Avengers Compound,Medical Kits,372.0,4.32,False
+2026-01-05T03:48:00,New Asgard,Vibranium (kg),1069.675,3.64,True
+2026-01-05T03:48:00,Wakanda,Arc Reactor Cores,251.135,3.01,True
+2026-01-05T03:48:00,Sokovia,Pym Particles,176.255,4.52,True
+2026-01-05T03:48:00,Sanctum Sanctorum,Clean Water (L),989.605,5.26,True
+2026-01-05T03:48:00,Avengers Compound,Medical Kits,163.825,4.77,True
+2026-01-05T04:00:00,New Asgard,Vibranium (kg),1068.552014974636,3.64,False
+2026-01-05T04:00:00,Wakanda,Arc Reactor Cores,250.10132948347461,3.01,False
+2026-01-05T04:00:00,Sokovia,Pym Particles,175.30065857132453,4.52,False
+2026-01-05T04:00:00,Sanctum Sanctorum,Clean Water (L),988.5602902442287,5.26,False
+2026-01-05T04:00:00,Avengers Compound,Medical Kits,162.78252839698874,4.77,False
+2026-01-05T04:12:00,New Asgard,Vibranium (kg),1067.629922026839,3.64,False
+2026-01-05T04:12:00,Wakanda,Arc Reactor Cores,249.54821515346885,3.01,False
+2026-01-05T04:12:00,Sokovia,Pym Particles,174.22129686942665,4.52,False
+2026-01-05T04:12:00,Sanctum Sanctorum,Clean Water (L),987.4228657880615,5.26,False
+2026-01-05T04:12:00,Avengers Compound,Medical Kits,161.93619661166542,4.77,False
+2026-01-05T04:24:00,New Asgard,Vibranium (kg),1066.3480326124022,3.64,False
+2026-01-05T04:24:00,Wakanda,Arc Reactor Cores,247.7774930755487,3.01,False
+2026-01-05T04:24:00,Sokovia,Pym Particles,173.70259869394522,4.52,False
+2026-01-05T04:24:00,Sanctum Sanctorum,Clean Water (L),986.3422034899148,5.26,False
+2026-01-05T04:24:00,Avengers Compound,Medical Kits,160.6180830391368,4.77,False
+2026-01-05T04:36:00,New Asgard,Vibranium (kg),1065.8193061297452,3.64,False
+2026-01-05T04:36:00,Wakanda,Arc Reactor Cores,246.7395908032173,3.01,False
+2026-01-05T04:36:00,Sokovia,Pym Particles,172.68159280561807,4.52,False
+2026-01-05T04:36:00,Sanctum Sanctorum,Clean Water (L),985.7903820809361,5.26,False
+2026-01-05T04:36:00,Avengers Compound,Medical Kits,160.1797307742904,4.77,False
+2026-01-05T04:48:00,New Asgard,Vibranium (kg),1064.6485639122257,3.64,False
+2026-01-05T04:48:00,Wakanda,Arc Reactor Cores,245.96365539616218,3.01,False
+2026-01-05T04:48:00,Sokovia,Pym Particles,171.66418179483335,4.52,False
+2026-01-05T04:48:00,Sanctum Sanctorum,Clean Water (L),984.1046324764932,5.26,False
+2026-01-05T04:48:00,Avengers Compound,Medical Kits,157.84632197921806,4.77,False
+2026-01-05T05:00:00,New Asgard,Vibranium (kg),1063.1605447528386,3.64,False
+2026-01-05T05:00:00,Wakanda,Arc Reactor Cores,243.9621836107877,3.01,False
+2026-01-05T05:00:00,Sokovia,Pym Particles,169.64317478108768,4.52,False
+2026-01-05T05:00:00,Sanctum Sanctorum,Clean Water (L),984.0772988242335,5.26,False
+2026-01-05T05:00:00,Avengers Compound,Medical Kits,157.2836494719326,4.77,False
+2026-01-05T05:12:00,New Asgard,Vibranium (kg),1062.0340432961475,3.64,False
+2026-01-05T05:12:00,Wakanda,Arc Reactor Cores,244.25522418981538,3.01,False
+2026-01-05T05:12:00,Sokovia,Pym Particles,168.93057269396604,4.52,False
+2026-01-05T05:12:00,Sanctum Sanctorum,Clean Water (L),981.2931077533948,5.26,False
+2026-01-05T05:12:00,Avengers Compound,Medical Kits,156.9604991131176,4.77,False
+2026-01-05T05:24:00,New Asgard,Vibranium (kg),1064.1909440346615,3.64,False
+2026-01-05T05:24:00,Wakanda,Arc Reactor Cores,242.68200581513972,3.01,False
+2026-01-05T05:24:00,Sokovia,Pym Particles,168.24420461097182,4.52,False
+2026-01-05T05:24:00,Sanctum Sanctorum,Clean Water (L),981.7304690189603,5.26,False
+2026-01-05T05:24:00,Avengers Compound,Medical Kits,154.55555815632215,4.77,False
+2026-01-05T05:36:00,New Asgard,Vibranium (kg),1060.3739403559389,3.64,False
+2026-01-05T05:36:00,Wakanda,Arc Reactor Cores,243.8823388702522,3.01,False
+2026-01-05T05:36:00,Sokovia,Pym Particles,168.2855504647407,4.52,False
+2026-01-05T05:36:00,Sanctum Sanctorum,Clean Water (L),981.6463799385349,5.26,False
+2026-01-05T05:36:00,Avengers Compound,Medical Kits,152.71640101191284,4.77,False
+2026-01-05T05:48:00,New Asgard,Vibranium (kg),1061.9680028398432,3.64,False
+2026-01-05T05:48:00,Wakanda,Arc Reactor Cores,240.97318311674755,3.01,False
+2026-01-05T05:48:00,Sokovia,Pym Particles,167.79877073090293,4.52,False
+2026-01-05T05:48:00,Sanctum Sanctorum,Clean Water (L),979.6626873536256,5.26,False
+2026-01-05T05:48:00,Avengers Compound,Medical Kits,154.254893681196,4.77,False

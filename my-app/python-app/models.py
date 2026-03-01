@@ -79,7 +79,7 @@ class User(SQLModel, table=True):
 class UserSession(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     session_token: str
-    expires: datetime = Field(default_factory=lambda: datetime.now() + timedelta(weeks=1))
+    expires: datetime = Field(default_factory=lambda: datetime.utcnow() + timedelta(weeks=1))
     user_id: int = Field(foreign_key="user.id")
 
     user: Optional[User] = Relationship(back_populates="sessions")

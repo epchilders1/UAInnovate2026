@@ -338,7 +338,7 @@ def get_dashboard(
     sr_to_resource = {sr.id: resource_map.get(sr.resource_id, "Unknown") for sr in sector_resources}
 
     # Get latest stock level and average usage per resource (within date range)
-    resource_stats = {}
+    resource_stats = {}   
     for sr in sector_resources:
         rname = sr_to_resource[sr.id]
         levels_query = (
@@ -533,7 +533,7 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
         session.query(ResourceStockLevel)
         .filter(ResourceStockLevel.sector_resource_id == sector_resource_id)
         .order_by(ResourceStockLevel.timestamp.desc())
-        .limit(300)
+        .limit(20)
     )
     rows = list(q)[::-1]  # reverse to chronological order
     if len(rows) < 2:
@@ -544,6 +544,7 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
     snap_indexes = [i for i, row in enumerate(rows) if row.snap_event]
 
     t_snap = snap_indexes[0] if snap_indexes else None
+    print(t_snap)
     reg = Regression(stock_levels, t_0, t_snap)
     reg.fit()
     result = reg.get_result_dict()

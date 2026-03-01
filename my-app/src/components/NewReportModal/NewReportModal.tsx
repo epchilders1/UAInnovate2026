@@ -21,24 +21,6 @@ const priorityColors: Record<number, string> = {
   2: '#ef4444',
 };
 
-const HERO_INITIALS: Record<string, string> = {
-  'Tony Stark': 'TS',
-  'Natasha Romanoff': 'NR',
-  'Thor Odinson': 'TO',
-  'Peter Parker': 'PP',
-  'Bruce Banner': 'BB',
-  'Steve Rogers': 'SR',
-};
-
-const HERO_COLORS: Record<string, string> = {
-  'Tony Stark': '#ef4444',
-  'Natasha Romanoff': '#1e1e1e',
-  'Thor Odinson': '#3b82f6',
-  'Peter Parker': '#dc2626',
-  'Bruce Banner': '#22c55e',
-  'Steve Rogers': '#2563eb',
-};
-
 interface NewReportModalProps {
   onClose: () => void;
   onSuccess: () => void;
@@ -90,41 +72,6 @@ export default function NewReportModal({ onClose, onSuccess }: NewReportModalPro
     }
   }
 
-  // Step 1: Hero selection
-  if (!selectedHero) {
-    return (
-      <div className="report-modal-overlay" onClick={onClose}>
-        <div className="report-modal hero-select-modal" onClick={e => e.stopPropagation()}>
-          <div className="report-modal-header">
-            <div className="report-modal-title-row">
-              <span className="hero-select-title">Select Reporting Hero</span>
-            </div>
-            <button type="button" className="report-modal-close" onClick={onClose}>✕</button>
-          </div>
-          <div className="hero-select-grid">
-            {heroes.map(h => (
-              <button
-                key={h.id}
-                className="hero-select-card"
-                onClick={() => setHeroId(h.id)}
-              >
-                <div
-                  className="hero-select-avatar"
-                  style={{ backgroundColor: HERO_COLORS[h.alias] ?? '#6366f1' }}
-                >
-                  {HERO_INITIALS[h.alias] ?? h.alias.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()}
-                </div>
-                <span className="hero-select-alias">{h.alias}</span>
-                <span className="hero-select-contact">{h.contact}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Step 2: Report form (after hero selected)
   return (
     <div className="report-modal-overlay" onClick={onClose}>
       <div className="report-modal new-report-modal" onClick={e => e.stopPropagation()}>
@@ -135,20 +82,17 @@ export default function NewReportModal({ onClose, onSuccess }: NewReportModalPro
                 className="report-modal-dot"
                 style={{ backgroundColor: priorityColors[priority] }}
               />
-              <button
-                type="button"
-                className="hero-select-change"
-                onClick={() => setHeroId('')}
-                title="Change hero"
+              <select
+                className="new-report-hero-select"
+                value={heroId}
+                onChange={e => setHeroId(Number(e.target.value))}
+                required
               >
-                <div
-                  className="hero-select-avatar-sm"
-                  style={{ backgroundColor: HERO_COLORS[selectedHero.alias] ?? '#6366f1' }}
-                >
-                  {HERO_INITIALS[selectedHero.alias] ?? selectedHero.alias.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()}
-                </div>
-                {selectedHero.alias}
-              </button>
+                <option value="">Select hero…</option>
+                {heroes.map(h => (
+                  <option key={h.id} value={h.id}>{h.alias}</option>
+                ))}
+              </select>
             </div>
             <button type="button" className="report-modal-close" onClick={onClose}>✕</button>
           </div>
@@ -175,7 +119,9 @@ export default function NewReportModal({ onClose, onSuccess }: NewReportModalPro
 
             <div className="report-modal-meta-item" style={{ gridColumn: '1 / -1' }}>
               <span className="report-modal-meta-label">Contact</span>
-              <span className="report-modal-meta-value">{selectedHero.contact}</span>
+              <span className="report-modal-meta-value">
+                {selectedHero?.contact ?? <span className="new-report-placeholder">—</span>}
+              </span>
             </div>
           </div>
 

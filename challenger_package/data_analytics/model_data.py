@@ -102,7 +102,6 @@ def simulate_paths(N, T, beta0, beta1, sigma, alpha, z_empirical):
     paths = np.zeros((N, T))
 
     for i in range(N):
-        # 👇 THIS LINE CHANGED
         z = np.random.choice(z_empirical, size=T, replace=True)
 
         noise = sigma * (t ** (alpha / 2)) * z
