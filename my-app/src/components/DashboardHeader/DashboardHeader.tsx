@@ -39,9 +39,6 @@ export default function DashboardHeader() {
         <h1 className="dash-header-title">JFX Dashboard</h1>
       </div>
       <div className="dash-header-right">
-        <button className="dash-header-btn" aria-label="Notifications">
-          <Bell size={20} />
-        </button>
         <div className="dash-header-settings-wrap" ref={dropdownRef}>
           <button
             onClick={() => setOpenSettings(o => !o)}

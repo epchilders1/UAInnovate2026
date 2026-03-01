@@ -68,6 +68,23 @@ export function useDashboardData(startDate?: string, endDate?: string, refreshKe
   return { data, loading, refreshing };
 }
 
+export interface ForecastData {
+  forecastLine: {
+    timestamps: string[];
+    values: number[];
+  };
+  zeroDayDate: string | null;
+  ciLowDate: string | null;
+  ciHighDate: string | null;
+}
+
+export async function fetchResourceForecast(resourceId: number, endDate?: string): Promise<ForecastData> {
+  const params = endDate ? `?end_date=${endDate}` : '';
+  const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/resources/${resourceId}/forecast${params}`);
+  if (!res.ok) throw new Error('Forecast unavailable');
+  return res.json();
+}
+
 export async function fetchMoreReports(
   offset: number,
   startDate?: string,

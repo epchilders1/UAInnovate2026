@@ -9,7 +9,10 @@ from config import Config
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime, timedelta
-import uuid, base64, json
+from collections import defaultdict
+import uuid, base64, json, math
+import numpy as np
+from regression import Regression
 
 jarvis = Jarvis()
 
@@ -455,6 +458,125 @@ def get_dashboard(
             "categories": categories,
             "data": stock_data,
         },
+    }
+
+
+# --- Forecast ---
+
+@app.get("/api/resources/{resource_id}/forecast")
+def get_resource_forecast(resource_id: int, end_date: Optional[str] = None, session: Session = Depends(get_session)):
+    sector_resources = session.exec(
+        select(SectorResource).where(SectorResource.resource_id == resource_id)
+    ).all()
+
+    if not sector_resources:
+        raise HTTPException(status_code=404, detail="Resource not found")
+
+    # Parse the end_date cutoff if provided
+    end_dt = None
+    if end_date:
+        try:
+            end_dt = datetime.strptime(end_date, "%Y-%m-%d").replace(hour=23, minute=59, second=59)
+        except ValueError:
+            pass
+
+    all_levels = []
+    for sr in sector_resources:
+        query = (
+            select(ResourceStockLevel)
+            .where(ResourceStockLevel.sector_resource_id == sr.id)
+        )
+        if end_dt:
+            query = query.where(ResourceStockLevel.timestamp <= end_dt)
+        query = query.order_by(ResourceStockLevel.timestamp)
+        levels = session.exec(query).all()
+        for lvl in levels:
+            all_levels.append({
+                "timestamp": lvl.timestamp,
+                "stock_level": lvl.stock_level,
+                "snap_event": lvl.snap_event,
+            })
+
+    all_levels.sort(key=lambda l: l["timestamp"])
+
+    if len(all_levels) < 3:
+        raise HTTPException(status_code=400, detail="Insufficient data for forecast")
+
+    # Aggregate stock levels by timestamp (average across sectors)
+    ts_groups = defaultdict(list)
+    snap_timestamps: set = set()
+    for lvl in all_levels:
+        ts = lvl["timestamp"]
+        ts_groups[ts].append(lvl["stock_level"])
+        if lvl["snap_event"]:
+            snap_timestamps.add(ts)
+
+    sorted_timestamps = sorted(ts_groups.keys())
+    stock_levels = [sum(ts_groups[ts]) / len(ts_groups[ts]) for ts in sorted_timestamps]
+
+    # Use only the most recent 300 data points before the cutoff
+    if len(sorted_timestamps) > 400:
+        sorted_timestamps = sorted_timestamps[-400:]
+        stock_levels = stock_levels[-400:]
+
+    t_0 = sorted_timestamps[0]
+
+    t_snap = None
+    if snap_timestamps:
+        snap_ts = min(snap_timestamps)
+        if snap_ts in sorted_timestamps:
+            t_snap = sorted_timestamps.index(snap_ts)
+
+    regression = Regression(stock_levels, t_0, t_snap)
+    result = regression.fit()
+    line_data = regression.get_line()
+    ci_data = regression.get_confidence_interval()
+
+    if not line_data:
+        raise HTTPException(status_code=500, detail="Regression failed")
+
+    def t_to_ts(t_val, clamp_negative: bool = False) -> Optional[str]:
+        if t_val is None:
+            return None
+        try:
+            fval = float(t_val)
+            if math.isnan(fval) or math.isinf(fval):
+                return None
+            if fval < 0:
+                if clamp_negative:
+                    fval = 0.0
+                else:
+                    return None
+            return (t_0 + timedelta(minutes=12 * int(fval))).strftime("%Y-%m-%d %H:%M")
+        except (ValueError, TypeError):
+            return None
+
+    forecast_timestamps = [ts.strftime("%Y-%m-%d %H:%M") for ts in line_data["timestamps"]]
+
+    zero_day_ts = t_to_ts(result.t_star)
+    # Ensure the zero-day timestamp is present in the forecast line
+    if zero_day_ts and zero_day_ts not in forecast_timestamps:
+        forecast_timestamps.append(zero_day_ts)
+        line_data["line"].append(0.0)
+
+    ci_lo_ts = None
+    ci_hi_ts = None
+    if ci_data and ci_data.get("OK"):
+        ci_lo_ts = t_to_ts(ci_data.get("ci_lo"), clamp_negative=True)
+        ci_hi_ts = t_to_ts(ci_data.get("ci_hi"), clamp_negative=True)
+
+    print(f"[FORECAST] resource_id={resource_id} t_star={result.t_star} ci_95={result.ci_95}")
+    print(f"[FORECAST] ci_data={ci_data}")
+    print(f"[FORECAST] zeroDayDate={zero_day_ts} ciLowDate={ci_lo_ts} ciHighDate={ci_hi_ts}")
+
+    return {
+        "forecastLine": {
+            "timestamps": forecast_timestamps,
+            "values": [max(0.0, v) for v in line_data["line"]],
+        },
+        "zeroDayDate": zero_day_ts,
+        "ciLowDate": ci_lo_ts,
+        "ciHighDate": ci_hi_ts,
     }
 
 
