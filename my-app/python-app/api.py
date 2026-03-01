@@ -310,8 +310,16 @@ def get_dashboard(
                 usage_by_ts[ts][rname] /= n
                 stock_by_ts[ts][rname] /= n
 
-    categories = list(resource_map.values())
+    # Compute overall min/max dates from all stock levels (unfiltered)
+    all_timestamps = session.exec(select(ResourceStockLevel.timestamp)).all()
+    if all_timestamps:
+        min_date = min(all_timestamps).strftime("%Y-%m-%d")
+        max_date = max(all_timestamps).strftime("%Y-%m-%d")
+    else:
+        min_date = None
+        max_date = None
 
+    categories = list(resource_map.values())
 
     usage_data = list(usage_by_ts.values())
     stock_data = list(stock_by_ts.values())
