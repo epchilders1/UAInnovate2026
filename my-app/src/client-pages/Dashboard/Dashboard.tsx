@@ -25,21 +25,31 @@ const USAGE_COLORS = ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e'];
 const STOCK_COLORS = ['#f43f5e', '#f59e0b', '#8b5cf6', '#06b6d4', '#10b981'];
 
 export default function Dashboard() {
-  const { askingPrompt } = useJarvis();
+  const { referencedResources } = useJarvis();
   const [selectedResources, setSelectedResources] = useState<Set<string>>(new Set());
+
+
   const [activeReport, setActiveReport] = useState<ReportDetail | null>(null);
 
-  // Input state (what's shown in the date pickers)
   const [inputStart, setInputStart] = useState('');
   const [inputEnd, setInputEnd] = useState('');
 
-  // Fetch state (only updates on user change, not on initialization)
   const [fetchStart, setFetchStart] = useState<string | undefined>(undefined);
   const [fetchEnd, setFetchEnd] = useState<string | undefined>(undefined);
 
   const { data, loading } = useDashboardData(fetchStart, fetchEnd);
 
-  // Populate date inputs from data on first load without triggering a re-fetch
+  useEffect(() => {
+    if (referencedResources.length === 0 || !data?.resources) return;
+    const normalize = (s: string) => s.replace(/\s*\(.*?\)$/, '').trim().toLowerCase();
+    const matched = new Set(
+      data.resources
+        .filter(r => referencedResources.some(ref => normalize(ref) === normalize(r.name)))
+        .map(r => r.name)
+    );
+    if (matched.size > 0) setSelectedResources(matched);
+  }, [referencedResources, data]);
+  
   useEffect(() => {
     if (data?.minDate && !inputStart) setInputStart(data.minDate);
     if (data?.maxDate && !inputEnd) setInputEnd(data.maxDate);
