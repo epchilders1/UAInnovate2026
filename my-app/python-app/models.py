@@ -46,7 +46,7 @@ class SectorResource(SQLModel, table=True):
 
 class ResourceStockLevel(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    timestamp: datetime = Field(default_factory=(datetime.now()))
+    timestamp: datetime = Field(default_factory=datetime.now)
     stock_level: float
     usage: float
     snap_event: bool = False
@@ -58,7 +58,7 @@ class ResourceStockLevel(SQLModel, table=True):
 class Report(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     raw_text: str
-    timestamp: datetime = Field(default_factory=datetime.now())
+    timestamp: datetime = Field(default_factory=datetime.now)
     priority: int = Field(default=Priority.Routine)
     hero_id: int = Field(foreign_key="hero.id")
     resource_id: int = Field(foreign_key="resource.id")

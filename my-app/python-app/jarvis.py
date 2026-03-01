@@ -57,12 +57,10 @@ class ResourceDetector(JarvisDetector):
         self,
         resource_names: list[str],
         reports: list[dict],
-        days_remaining: dict[str, int] | None = None,
         last_message: str = "",
     ):
         self.resource_names = resource_names
         self.reports = reports
-        self.days_remaining = days_remaining or {}
         self.last_message = last_message.lower()
 
     FUZZY_THRESHOLD = 0.75
@@ -99,11 +97,9 @@ class ResourceDetector(JarvisDetector):
         mentioned = self._mentioned()
         if mentioned:
             for resource in mentioned:
-                dr = self.days_remaining.get(resource, 0)
                 relevant = [r for r in redact_reports(self.reports) if resource.lower() in r["rawText"].lower()]
                 print("Relevant Report:", relevant)
                 lines.append(f"\n[{resource}]")
-                lines.append(f"  Days of supply remaining: {dr}")
                 lines.append(f"  Reports ({len(relevant)} total):")
                 for r in relevant:
                     lines.append(

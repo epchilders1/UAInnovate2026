@@ -101,13 +101,11 @@ async def ask_jarvis(body: AskJarvisRequest, db: Session = Depends(get_session))
     resources = db.exec(select(Resource)).all()
     heroes = db.exec(select(Hero)).all()
     reports = fetch_recent_reports(db)
-    days_remaining = {r.resource_name: 0 for r in resources}
     last_message = body.messageList[-1].content if body.messageList else ""
     detectors = [
         ResourceDetector(
             resource_names=[r.resource_name for r in resources],
             reports=reports,
-            days_remaining=days_remaining,
             last_message=last_message,
         ),
         HeroDetector(
