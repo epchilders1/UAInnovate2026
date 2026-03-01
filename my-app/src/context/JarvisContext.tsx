@@ -97,10 +97,6 @@ export function JarvisProvider({ children }: { children: React.ReactNode }) {
         return () => clearTimeout(timer);
     }, [transcript, askingPrompt]);
 
-    useEffect(() => {
-        if (transcript) console.log(transcript);
-    }, [transcript]);
-
     return (
         <JarvisContext.Provider value={{ askingPrompt, transcript }}>
             {children}
