@@ -4,12 +4,8 @@ from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority, User, UserSession
-<<<<<<< HEAD
-from jarvis import Jarvis, ResourceDetector
-=======
-from jarvis import Jarvis, openai_client
+from jarvis import Jarvis, openai_client, ResourceDetector
 from config import Config
->>>>>>> 717f8b6c6f3bb855c49e5e60cd14b935ddc59a56
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime, timedelta
@@ -458,3 +454,38 @@ def get_dashboard(
             "data": stock_data,
         },
     }
+
+
+@app.get("/api/dashboard/reports")
+def get_dashboard_reports(
+    session: Session = Depends(get_session),
+    offset: int = 0,
+    limit: int = 5,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
+):
+    start_dt = datetime.strptime(start_date, '%Y-%m-%d') if start_date else None
+    end_dt = datetime.strptime(end_date, '%Y-%m-%d').replace(hour=23, minute=59, second=59) if end_date else None
+
+    reports_query = (
+        select(Report, Hero)
+        .join(Hero, Report.hero_id == Hero.id)
+        .order_by(desc(Report.timestamp))
+    )
+    if start_dt:
+        reports_query = reports_query.where(Report.timestamp >= start_dt)
+    if end_dt:
+        reports_query = reports_query.where(Report.timestamp <= end_dt)
+    reports_query = reports_query.offset(offset).limit(limit)
+
+    report_rows = session.exec(reports_query).all()
+    priority_names = {0: "Routine", 1: "High", 2: "Avengers Level Threat"}
+    return [
+        {
+            "id": report.id,
+            "heroAlias": hero.alias,
+            "timestamp": report.timestamp.isoformat(),
+            "priority": priority_names.get(report.priority, "Routine"),
+        }
+        for report, hero in report_rows
+    ]
