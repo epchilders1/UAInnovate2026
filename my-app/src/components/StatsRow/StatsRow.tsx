@@ -1,8 +1,8 @@
 import './StatsRow.css';
 
 interface StatsRowProps {
-  resourceCount: number;
-  daysRemaining: number;
+  resourceCount?: number;
+  daysRemaining?: number;
 }
 
 export default function StatsRow({ resourceCount, daysRemaining }: StatsRowProps) {
