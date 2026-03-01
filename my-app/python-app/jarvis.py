@@ -187,7 +187,7 @@ class HeroDetector(JarvisDetector):
         lines = []
         for alias in mentioned:
             relevant = [r for r in self.reports if self._normalize(r.get("heroAlias", "")) == self._normalize(alias)]
-            safe = redact_reports(relevant)  # full redaction — alias → [REDACTED] in both field and rawText
+            safe = redact_reports(relevant)
             lines.append(f"\n[Field operative: REDACTED]")
             lines.append(f"  Reports ({len(safe)} total):")
             for r in safe:

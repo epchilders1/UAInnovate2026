@@ -374,7 +374,6 @@ def get_dashboard(
     # Build resource list
     resource_list = []
     for name, stats in resource_stats.items():
-    for name, stats in resource_stats.items():
         avg_usage = stats["usage"] / stats["count"] if stats["count"] else 0
         stock = stats["stockLevel"]
 
@@ -399,6 +398,8 @@ def get_dashboard(
             "name": name,
             "stockLevel": round(stock, 1),
             "usage": round(avg_usage, 2),
+            "history": history,
+            "pctChange": pct_change,
         })
 
     days_remaining = 5
@@ -534,7 +535,7 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
         session.query(ResourceStockLevel)
         .filter(ResourceStockLevel.sector_resource_id == sector_resource_id)
         .order_by(ResourceStockLevel.timestamp.desc())
-        .limit(300)
+        .limit(20)
     )
     rows = list(q)[::-1]  # reverse to chronological order
     if len(rows) < 2:
@@ -545,6 +546,7 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
     snap_indexes = [i for i, row in enumerate(rows) if row.snap_event]
 
     t_snap = snap_indexes[0] if snap_indexes else None
+    print(t_snap)
     reg = Regression(stock_levels, t_0, t_snap)
     reg.fit()
     result = reg.get_result_dict()

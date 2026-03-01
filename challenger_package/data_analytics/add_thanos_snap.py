@@ -173,7 +173,13 @@ with open("../avengers_data_with_snap.csv", "w", newline="") as csvfile:
     writer.writeheader()
 
     # Write original data
-    for row in data_dict:
+    for row in data_dict[:-5]:
+        writer.writerow(row)
+
+    for i in range(5):
+        row = data_dict[i-5]
+        row["stock_level"] = snapped_point[i]
+        row["snap_event_detected"] = True
         writer.writerow(row)
 
     # Write simulated future data

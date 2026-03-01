@@ -1,273 +1,191 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from collect_data import get_resource_data
+from typing import Optional, Dict, Any
+import datetime
 
 
-def compute_weights(T, t_snap=None):
-    t = np.arange(T, dtype=float)
-    if t_snap is None:
-        w = 1.0 / (t + 1)
-    else:
-        n_post = T - t_snap
-        safe_denom = np.where(t >= t_snap, t - t_snap + 1.0, 1.0)
-        post_weight = np.where(t >= t_snap, 1.0 / safe_denom, 0.0)
-        pre_weight  = np.where(t < t_snap, 1.0 / (t_snap * n_post), 0.0)
-        w = pre_weight + post_weight
-    return w / w.sum()
+def _safe(v):
+    """Convert numpy scalar to a JSON-serializable Python float, or None if nan/inf."""
+    if v is None:
+        return None
+    f = float(v)
+    return None if (np.isnan(f) or np.isinf(f)) else f
 
+class RegressionResult:
+    def __init__(self, alpha, beta, gamma, t_star, t_star_std, ci_95):
+        self.alpha = alpha
+        self.beta = beta
+        self.gamma = gamma
+        self.t_star = t_star
+        self.t_star_std = t_star_std
+        self.ci_95 = ci_95
 
-def fit_stockout_model(stock_levels, t_snap=None, t_offset=0, lambda_ridge=1.0):
-    T = len(stock_levels)
-    t = np.arange(t_offset, t_offset + T, dtype=float)
-    y = stock_levels.astype(float)
-    w = compute_weights(T, t_snap)
-    W = np.diag(w)
+    def to_dict(self) -> Dict[str, Any]:
+        ci_lo, ci_hi = self.ci_95
+        return {
+            "alpha": _safe(self.alpha),
+            "beta": _safe(self.beta),
+            "gamma": _safe(self.gamma),
+            "t_star": _safe(self.t_star),
+            "t_star_std": _safe(self.t_star_std),
+            "ci_95": [_safe(ci_lo), _safe(ci_hi)],
+        }
 
-    if t_snap is not None:
-        S = (t >= t_snap).astype(float)
-        X = np.column_stack([np.ones(T), t, S])
-        P = lambda_ridge * np.diag([0.0, 1.0, 0.0])  # only penalize beta
-    else:
-        X = np.column_stack([np.ones(T), t])
-        P = lambda_ridge * np.diag([0.0, 1.0])  # only penalize beta
+class Regression:
+    def __init__(self, stock_levels: np.ndarray, t_0: datetime.datetime, t_snap: Optional[int] = None):
+        self.stock_levels = np.array(stock_levels, dtype=float)
+        self.T = len(stock_levels)
+        self.t_0 = t_0
+        self.t_snap = t_snap
+        self.result = None
 
-    A = X.T @ W @ X + P
-    b = X.T @ W @ y
-    theta = np.linalg.solve(A, b)
+    def fit(self) -> RegressionResult:
+        t = np.arange(self.T, dtype=float)
+        y = self.stock_levels
 
-    n_params = len(theta)
-    residuals = y - X @ theta
-    sigma2 = np.sum(w * residuals**2) / (T - n_params)
-    cov_theta = sigma2 * np.linalg.inv(A)
+        if self.t_snap is not None:
+            t_pre, y_pre = t[t < self.t_snap], y[t < self.t_snap]
+            t_post, y_post = t[t >= self.t_snap], y[t >= self.t_snap]
 
-    if t_snap is not None:
-        alpha, beta, gamma = theta
-        t_star = -(alpha + gamma) / beta
-        grad = np.array([-1.0/beta, (alpha+gamma)/beta**2, -1.0/beta])
-    else:
-        alpha, beta = theta
-        gamma = 0.0
-        t_star = -alpha / beta
-        grad = np.array([-1.0/beta, alpha/beta**2])
+            def theil_sen_slope(tx, yx):
+                slopes = []
+                n = len(tx)
+                for i in range(n):
+                    for j in range(i+1, n):
+                        slopes.append((yx[j] - yx[i]) / (tx[j] - tx[i]))
+                return np.median(slopes)
 
-    var_tstar = grad @ cov_theta @ grad
-    std_tstar = np.sqrt(max(var_tstar, 0))
+            beta_pre  = theil_sen_slope(t_pre, y_pre)
+            beta_post = theil_sen_slope(t_post, y_post)
+            n_pre, n_post = len(t_pre), len(t_post)
+            beta = (beta_pre * n_pre + beta_post * n_post) / (n_pre + n_post)
 
-    return {
-        "theta": theta,
-        "t_star": t_star,
-        "t_star_std": std_tstar,
-        "ci_95": (t_star - 1.96*std_tstar, t_star + 1.96*std_tstar),
-        "alpha": alpha, "beta": beta, "gamma": gamma,
-        "sigma2": sigma2, "cov_theta": cov_theta, "weights": w,
-    }
+            alpha_pre  = np.median(y_pre  - beta * t_pre)
+            alpha_post = np.median(y_post - beta * t_post)
+            gamma = alpha_post - alpha_pre
+            alpha = alpha_pre
+            t_star = -(alpha + gamma) / beta if beta != 0 else np.inf
 
-def fit_stockout_model_theil_sen(stock_levels, t_snap=None, t_offset=0):
-    T = len(stock_levels)
-    t = np.arange(t_offset, t_offset + T, dtype=float)
-    y = stock_levels.astype(float)
-
-    if t_snap is not None:
-        t_pre, y_pre = t[t < t_snap], y[t < t_snap]
-        t_post, y_post = t[t >= t_snap], y[t >= t_snap]
-
-        def theil_sen_slope(tx, yx):
+        else:
             slopes = []
-            n = len(tx)
-            for i in range(n):
-                for j in range(i+1, n):
-                    slopes.append((yx[j] - yx[i]) / (tx[j] - tx[i]))
-            return np.median(slopes)
+            for i in range(self.T):
+                for j in range(i+1, self.T):
+                    slopes.append((y[j] - y[i]) / (t[j] - t[i]))
+            beta = np.median(slopes)
+            alpha = np.median(y - beta * t)
+            gamma = 0.0
+            t_star = -alpha / beta if beta != 0 else np.inf
 
-        beta_pre  = theil_sen_slope(t_pre, y_pre)
-        beta_post = theil_sen_slope(t_post, y_post)
-        n_pre, n_post = len(t_pre), len(t_post)
-        beta = (beta_pre * n_pre + beta_post * n_post) / (n_pre + n_post)
+        # Bootstrap confidence interval
+        n_boot = 500
+        t_stars_boot = []
+        rng = np.random.default_rng(42)
 
-        alpha_pre  = np.median(y_pre  - beta * t_pre)
-        alpha_post = np.median(y_post - beta * t_post)
-        gamma = alpha_post - alpha_pre
-        alpha = alpha_pre
-        t_star = -(alpha + gamma) / beta
+        for _ in range(n_boot):
+            idx = rng.integers(0, self.T, size=self.T)
+            t_b, y_b = t[idx], y[idx]
 
-    else:
-        slopes = []
-        for i in range(T):
-            for j in range(i+1, T):
-                slopes.append((y[j] - y[i]) / (t[j] - t[i]))
-        beta = np.median(slopes)
-        alpha = np.median(y - beta * t)
-        gamma = 0.0
-        t_star = -alpha / beta
+            if self.t_snap is not None:
+                mask_pre  = idx < self.t_snap
+                mask_post = idx >= self.t_snap
+                t_pre_b, y_pre_b   = t_b[mask_pre],  y_b[mask_pre]
+                t_post_b, y_post_b = t_b[mask_post], y_b[mask_post]
+                if len(t_pre_b) < 2 or len(t_post_b) < 2:
+                    continue
+                slopes_pre, slopes_post = [], []
+                for i in range(len(t_pre_b)):
+                    for j in range(i+1, len(t_pre_b)):
+                        if t_pre_b[j] != t_pre_b[i]:
+                            slopes_pre.append((y_pre_b[j] - y_pre_b[i]) / (t_pre_b[j] - t_pre_b[i]))
+                for i in range(len(t_post_b)):
+                    for j in range(i+1, len(t_post_b)):
+                        if t_post_b[j] != t_post_b[i]:
+                            slopes_post.append((y_post_b[j] - y_post_b[i]) / (t_post_b[j] - t_post_b[i]))
+                if not slopes_pre or not slopes_post:
+                    continue
+                b_pre  = np.median(slopes_pre)
+                b_post = np.median(slopes_post)
+                b = (b_pre * len(t_pre_b) + b_post * len(t_post_b)) / (len(t_pre_b) + len(t_post_b))
+                a_pre  = np.median(y_pre_b  - b * t_pre_b)
+                a_post = np.median(y_post_b - b * t_post_b)
+                g = a_post - a_pre
+                a = a_pre
+                if b == 0:
+                    continue
+                t_stars_boot.append(-(a + g) / b)
 
-    # Bootstrap confidence interval
-    n_boot = 500
-    t_stars_boot = []
-    rng = np.random.default_rng(42)
+            else:
+                slopes_b = []
+                for i in range(self.T):
+                    for j in range(i+1, self.T):
+                        if t_b[j] != t_b[i]:
+                            slopes_b.append((y_b[j] - y_b[i]) / (t_b[j] - t_b[i]))
+                if not slopes_b:
+                    continue
+                b = np.median(slopes_b)
+                a = np.median(y_b - b * t_b)
+                if b == 0:
+                    continue
+                t_stars_boot.append(-a / b)
 
-    for _ in range(n_boot):
-        idx = rng.integers(0, T, size=T)
-        t_b, y_b = t[idx], y[idx]
+        t_stars_boot = np.array(t_stars_boot)
+        ci_lo, ci_hi = np.percentile(t_stars_boot, [2.5, 97.5]) if len(t_stars_boot) > 10 else (np.nan, np.nan)
+        std_tstar = np.std(t_stars_boot) if len(t_stars_boot) > 10 else np.nan
 
-        if t_snap is not None:
-            mask_pre  = idx < t_snap
-            mask_post = idx >= t_snap
-            t_pre_b, y_pre_b   = t_b[mask_pre],  y_b[mask_pre]
-            t_post_b, y_post_b = t_b[mask_post], y_b[mask_post]
-            if len(t_pre_b) < 2 or len(t_post_b) < 2:
-                continue
-            slopes_pre, slopes_post = [], []
-            for i in range(len(t_pre_b)):
-                for j in range(i+1, len(t_pre_b)):
-                    if t_pre_b[j] != t_pre_b[i]:
-                        slopes_pre.append((y_pre_b[j] - y_pre_b[i]) / (t_pre_b[j] - t_pre_b[i]))
-            for i in range(len(t_post_b)):
-                for j in range(i+1, len(t_post_b)):
-                    if t_post_b[j] != t_post_b[i]:
-                        slopes_post.append((y_post_b[j] - y_post_b[i]) / (t_post_b[j] - t_post_b[i]))
-            if not slopes_pre or not slopes_post:
-                continue
-            b_pre  = np.median(slopes_pre)
-            b_post = np.median(slopes_post)
-            b = (b_pre * len(t_pre_b) + b_post * len(t_post_b)) / (len(t_pre_b) + len(t_post_b))
-            a_pre  = np.median(y_pre_b  - b * t_pre_b)
-            a_post = np.median(y_post_b - b * t_post_b)
-            g = a_post - a_pre
-            a = a_pre
-            if b == 0:
-                continue
-            t_stars_boot.append(-(a + g) / b)
+        self.result = RegressionResult(alpha, beta, gamma, t_star, std_tstar, (ci_lo, ci_hi))
+        return self.result
 
+    @staticmethod
+    def _compute_weights(T, t_snap=None):
+        t = np.arange(T, dtype=float)
+        if t_snap is None:
+            w = 1.0 / (t + 1)
         else:
-            slopes_b = []
-            for i in range(T):
-                for j in range(i+1, T):
-                    if t_b[j] != t_b[i]:
-                        slopes_b.append((y_b[j] - y_b[i]) / (t_b[j] - t_b[i]))
-            if not slopes_b:
-                continue
-            b = np.median(slopes_b)
-            a = np.median(y_b - b * t_b)
-            if b == 0:
-                continue
-            t_stars_boot.append(-a / b)
+            n_post = T - t_snap
+            safe_denom = np.where(t >= t_snap, t - t_snap + 1.0, 1.0)
+            post_weight = np.where(t >= t_snap, 1.0 / safe_denom, 0.0)
+            pre_weight  = np.where(t < t_snap, 1.0 / (t_snap * n_post), 0.0)
+            w = pre_weight + post_weight
+        return w / w.sum()
 
-    t_stars_boot = np.array(t_stars_boot)
-    ci_lo, ci_hi = np.percentile(t_stars_boot, [2.5, 97.5]) if len(t_stars_boot) > 10 else (np.nan, np.nan)
-    std_tstar = np.std(t_stars_boot) if len(t_stars_boot) > 10 else np.nan
+    def get_result_dict(self) -> Optional[Dict[str, Any]]:
+        if self.result:
+            return self.result.to_dict()
+        return None
 
-    return {
-        "t_star": t_star,
-        "t_star_std": std_tstar,
-        "ci_95": (ci_lo, ci_hi),
-        "alpha": alpha,
-        "beta": beta,
-        "gamma": gamma,
-    }
+    def get_line(self) -> Optional[Dict[str, Any]]:
+        if not self.result:
+            return None
 
-def plot_results(stock_levels, results, t_snap=None):
-    T = len(stock_levels)
-    t_obs = np.arange(T)
-    t_stars = [result["t_star"] for result in results]
-    ci_los = [result["ci_95"][0] for result in results]
-    ci_his = [result["ci_95"][1] for result in results]
-    alphas = [result["alpha"] for result in results]
-    betas = [result["beta"] for result in results]
-    gammas = [result["gamma"] for result in results]
+        t_star = _safe(self.result.t_star) or 0
+        ci_lo, ci_hi = self.result.ci_95
+        ci_hi_safe = _safe(ci_hi) or 0
+        t_end = int(max(self.T + 5, ci_hi_safe + 3, t_star + 3))
+        t_plot = np.linspace(0, t_end)
+        timestamps = [(self.t_0 + datetime.timedelta(minutes=12 * int(i))).isoformat() for i in t_plot]
 
-    avg_stock_levels = [np.mean(stock_levels[:i]) for i in range(T)]
-
-    avg_stock_1 = [np.mean(stock_levels[:i]) for i in range(20)]
-    avg_stock_2 = [np.mean(stock_levels[T//2 - 10:T//2 - 10 + i]) for i in range(20)]
-    avg_stock_3 = [np.mean(stock_levels[-20:-20+i]) for i in range(20)]
-    
-    # Find a sensible t_end across all valid results
-    t_end_candidates = [T + 5]
-    for result in results:
-        t_star = result["t_star"]
-        ci_hi  = result["ci_95"][1]
-        if np.isfinite(t_star):
-            t_end_candidates.append(t_star + 3)
-        if np.isfinite(ci_hi):
-            t_end_candidates.append(ci_hi + 3)
-    t_end = int(max(t_end_candidates))
-    
-    t_plot = np.linspace(0, t_end, 500)
-
-    # Plot all results on the same figure
-    plt.figure()
-    plt.plot(t_obs[20:T // 2 - 10], stock_levels[20:T//2 - 10], "o", label="Observed Stock Levels", color="blue")
-    plt.plot(t_obs[T // 2 + 10:-20], stock_levels[T//2 + 10:-20], "o", color="Blue")
-    plt.plot(t_obs[:20], stock_levels[:20], "o", label="First 20 Steps", color="cyan")
-    plt.plot(t_obs[-20:], stock_levels[-20:], "o", label="Last 20 Steps", color="magenta")
-    plt.plot(t_obs[T//2 - 10: T// 2 + 10], stock_levels[T//2 - 10: T//2 + 10], "o", label="Middle 20 Steps", color="green")
-    plt.plot(t_obs, avg_stock_levels, "--", label="Cumulative Average", color="orange")
-    plt.plot(t_obs[:20], avg_stock_1, "--", label="Average of First 20 Steps", color="cyan")
-    plt.plot(t_obs[T//2 - 10: T//2 + 10], avg_stock_2, "--", label="Average of Middle 20 Steps", color="green")
-    plt.plot(t_obs[-20:], avg_stock_3, "--", label="Average of Last 20 Steps", color="magenta")
-    colors = ["blue", "green", "purple", "brown", "magenta"]
-    for i, (t_star, ci_lo, ci_hi, alpha, beta, gamma) in enumerate(zip(t_stars, ci_los, ci_his, alphas, betas, gammas)):
-        color = colors[i % len(colors)]
-        if t_snap is not None:
-            S_plot = (t_plot >= t_snap).astype(float)
-            y_plot = alpha + beta * t_plot + gamma * S_plot
+        if self.t_snap is not None:
+            S_plot = (t_plot < self.t_snap).astype(float)
+            line = self.result.alpha + self.result.beta * t_plot + self.result.gamma * S_plot
         else:
-            y_plot = alpha + beta * t_plot
-        plt.plot(t_plot, y_plot, "-", color=color, label=f"Fitted Trend {i+1}")
-        
-        if np.isfinite(t_star):
-            plt.axvline(t_star, color=color, linestyle="--", 
-                        label=f"Predicted Stockout {i+1} (t*={t_star:.2f})")
-        else:
-            plt.axvline(T, color=color, linestyle=":", alpha=0.3,
-                        label=f"Predicted Stockout {i+1} (no stockout predicted)")
-        
-        if np.isfinite(ci_lo) and np.isfinite(ci_hi):
-            plt.fill_betweenx([min(stock_levels), max(stock_levels)], 
-                            ci_lo, ci_hi, color=color, alpha=0.2, 
-                            label=f"95% CI {i+1}")
-    if t_snap is not None:
-        plt.axvline(t_snap, color="orange", linestyle="--", label=f"Snap Event (t={t_snap})")
-    plt.xlabel("Time")
-    plt.ylabel("Stock Level")
-    plt.title("Stock Level Trend and Predicted Stockout Time")
-    plt.legend()
-    plt.grid(True)
-    plt.show()
+            line = self.result.alpha + self.result.beta * t_plot
 
+        return {
+            "timestamps": timestamps,
+            "data": line.tolist()
+        }
 
-if __name__ == "__main__":
-    T = 20
+    def get_confidence_interval(self) -> Optional[Dict[str, Any]]:
+        if not self.result:
+            return None
 
-    # --- Snap case ---
-    t_snap = 10
+        t_star = _safe(self.result.t_star)
+        ci_lo, ci_hi = self.result.ci_95
 
-    stock_data = get_resource_data("../cleaned_avengers_data.csv")
-    new_asgard_stock = stock_data["New Asgard"]
-    resource = list(new_asgard_stock.keys())[0]
-    stock_levels = np.array(new_asgard_stock[resource]["stock_level"], dtype=float)
-    stock_1 = stock_levels[:T]
-    stock_2 = stock_levels[-T:]
-    stock_3 = stock_levels[len(stock_levels)//2 - T//2 : len(stock_levels)//2 + T//2]
-    result_1 = fit_stockout_model_theil_sen(stock_1, t_snap=None)
-    result_2 = fit_stockout_model_theil_sen(stock_2, t_snap=None, t_offset=len(stock_levels)-T)
-    result_3 = fit_stockout_model_theil_sen(stock_3, t_snap=None, t_offset=len(stock_levels)//2 - T//2)
-    result_1_n = fit_stockout_model(stock_1, t_snap=None, lambda_ridge=0.5)
-    result_2_n = fit_stockout_model(stock_2, t_snap=None, t_offset=len(stock_levels)-T, lambda_ridge=0.5)
-    result_3_n = fit_stockout_model(stock_3, t_snap=None, t_offset=len(stock_levels)//2 - T//2, lambda_ridge=0.5)
-    print(f"{resource} Stock, Middle {T} Steps:")
-    print(stock_3)
-
-    # --- Snap case ---
-    # print("=== With Snap ===")
-    # print(f"alpha={result_snap['alpha']:.3f}  beta={result_snap['beta']:.3f}  gamma={result_snap['gamma']:.3f}")
-    # print(f"Predicted stockout at t={result_snap['t_star']:.2f}  ({result_snap['t_star']-(T-1):.1f} steps from now)")
-    # print(f"95% CI: ({result_snap['ci_95'][0]:.2f}, {result_snap['ci_95'][1]:.2f})")
-    # plot_results(stock_snap, result_snap, t_snap=t_snap, save_path="/mnt/user-data/outputs/stockout_snap.png")
-
-    # --- No Snap case ---
-    print("\n=== Without Snap ===")
-    print(f"alpha={result_3['alpha']:.3f}  beta={result_3['beta']:.3f}")
-    print(f"Predicted stockout at t={result_3['t_star']:.2f}  ({result_3['t_star']-(T-1):.1f} steps from now)")
-    print(f"95% CI: ({result_3['ci_95'][0]:.2f}, {result_3['ci_95'][1]:.2f})")
-    plot_results(stock_levels, [result_1, result_2, result_3, result_1_n, result_2_n, result_3_n], t_snap=None)
+        if t_star is None or t_star <= 0:
+            return {"OK": False}
+        return {
+            "OK": True,
+            "ci_lo": _safe(ci_lo),
+            "ci_hi": _safe(ci_hi),
+            "t_star": t_star,
+        }
