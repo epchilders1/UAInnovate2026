@@ -4,11 +4,7 @@ from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority, User, UserSession
-<<<<<<< Updated upstream
-from jarvis import Jarvis, openai_client, ResourceDetector
-=======
 from jarvis import Jarvis, ResourceDetector, openai_client
->>>>>>> Stashed changes
 from config import Config
 from pydantic import BaseModel
 from typing import List, Optional
@@ -330,7 +326,6 @@ def get_dashboard(
     resources = session.exec(select(Resource)).all()
     resource_count = len(resources)
     resource_map = {r.id: r.resource_name for r in resources}
-    resource_id_map = {r.resource_name: r.id for r in resources}
 
     # Get all sector_resources to map sector_resource_id -> resource_name
     sector_resources = session.exec(select(SectorResource)).all()
@@ -362,11 +357,11 @@ def get_dashboard(
 
     # Build resource list
     resource_list = []
-    for name, stats in resource_stats.items():
+    for id, name, stats in resource_stats.items():
+        id = id,
         avg_usage = stats["usage"] / stats["count"] if stats["count"] else 0
         stock = stats["stockLevel"]
         resource_list.append({
-            "id": resource_id_map.get(name),
             "name": name,
             "stockLevel": round(stock, 1),
             "usage": round(avg_usage, 2),
@@ -462,7 +457,6 @@ def get_dashboard(
         },
     }
 
-<<<<<<< Updated upstream
 
 @app.get("/api/dashboard/reports")
 def get_dashboard_reports(
@@ -497,7 +491,7 @@ def get_dashboard_reports(
         }
         for report, hero in report_rows
     ]
-=======
+
 # --- Regression ---
 @app.get("/regression/{sector_resource_id}")
 async def run_regression(sector_resource_id: int, session: Session = Depends(get_session)):
@@ -528,4 +522,3 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
         "t_0": t_0,
         "ci": ci
     }
->>>>>>> Stashed changes
