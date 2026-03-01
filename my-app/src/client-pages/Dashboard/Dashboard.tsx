@@ -1,6 +1,8 @@
 import './Dashboard.css';
+import { useState, useEffect } from 'react';
 import { useJarvis } from '../../context/JarvisContext';
 import { useDashboardData } from './DashboardApi';
+import type { ReportDetail } from './DashboardApi';
 import { hatch } from 'ldrs';
 import {
   ResponsiveContainer,
@@ -15,15 +17,47 @@ import DashboardHeader from '../../components/DashboardHeader/DashboardHeader';
 import StatsRow from '../../components/StatsRow/StatsRow';
 import ResourceCard from '../../components/ResourceCard/ResourceCard';
 import ReportCard from '../../components/ReportCard/ReportCard';
+import ReportModal from '../../components/ReportModal/ReportModal';
 
 hatch.register();
 
+const API_BASE = 'http://localhost:5001';
 const USAGE_COLORS = ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#f43f5e'];
 const STOCK_COLORS = ['#f43f5e', '#f59e0b', '#8b5cf6', '#06b6d4', '#10b981'];
 
 export default function Dashboard() {
   const { askingPrompt } = useJarvis();
-  const { data, loading } = useDashboardData();
+  const [selectedResources, setSelectedResources] = useState<Set<string>>(new Set());
+  const [activeReport, setActiveReport] = useState<ReportDetail | null>(null);
+
+  // Input state (what's shown in the date pickers)
+  const [inputStart, setInputStart] = useState('');
+  const [inputEnd, setInputEnd] = useState('');
+
+  // Fetch state (only updates on user change, not on initialization)
+  const [fetchStart, setFetchStart] = useState<string | undefined>(undefined);
+  const [fetchEnd, setFetchEnd] = useState<string | undefined>(undefined);
+
+  const { data, loading } = useDashboardData(fetchStart, fetchEnd);
+
+  // Populate date inputs from data on first load without triggering a re-fetch
+  useEffect(() => {
+    if (data?.minDate && !inputStart) setInputStart(data.minDate);
+    if (data?.maxDate && !inputEnd) setInputEnd(data.maxDate);
+  }, [data]);
+
+  function handleDateChange(start: string, end: string) {
+    setInputStart(start);
+    setInputEnd(end);
+    setFetchStart(start || undefined);
+    setFetchEnd(end || undefined);
+  }
+
+  async function handleReportClick(id: number) {
+    const res = await fetch(`${API_BASE}/reports/${id}`);
+    const detail: ReportDetail = await res.json();
+    setActiveReport(detail);
+  }
 
   return (
     <div className="dashboard-layout dark">
@@ -38,6 +72,42 @@ export default function Dashboard() {
               resourceCount={data.resourceCount}
               daysRemaining={data.daysRemaining}
             />
+
+            <div className="date-filter-row">
+              <label className="date-filter-label">
+                From
+                <input
+                  type="date"
+                  className="date-filter-input"
+                  value={inputStart}
+                  min={data.minDate ?? ''}
+                  max={inputEnd || (data.maxDate ?? '')}
+                  onChange={e => handleDateChange(e.target.value, inputEnd)}
+                />
+              </label>
+              <label className="date-filter-label">
+                To
+                <input
+                  type="date"
+                  className="date-filter-input"
+                  value={inputEnd}
+                  min={inputStart || (data.minDate ?? '')}
+                  max={data.maxDate ?? ''}
+                  onChange={e => handleDateChange(inputStart, e.target.value)}
+                />
+              </label>
+              {(fetchStart || fetchEnd) && (
+                <button
+                  className="date-filter-clear"
+                  onClick={() => {
+                    setFetchStart(undefined);
+                    setFetchEnd(undefined);
+                  }}
+                >
+                  Clear
+                </button>
+              )}
+            </div>
 
             <div className="charts-grid">
               <div className="chart-card">
@@ -67,16 +137,18 @@ export default function Dashboard() {
                           color: '#e5e7eb',
                         }}
                       />
-                      {data.usageChart.categories.map((cat, i) => (
-                        <Line
-                          key={cat}
-                          type="monotone"
-                          dataKey={cat}
-                          stroke={USAGE_COLORS[i % USAGE_COLORS.length]}
-                          strokeWidth={2}
-                          dot={false}
-                        />
-                      ))}
+                      {data.usageChart.categories
+                        .filter(cat => selectedResources.size === 0 || selectedResources.has(cat))
+                        .map((cat) => (
+                          <Line
+                            key={cat}
+                            type="monotone"
+                            dataKey={cat}
+                            stroke={USAGE_COLORS[data.usageChart.categories.indexOf(cat) % USAGE_COLORS.length]}
+                            strokeWidth={2}
+                            dot={false}
+                          />
+                        ))}
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
@@ -109,16 +181,18 @@ export default function Dashboard() {
                           color: '#e5e7eb',
                         }}
                       />
-                      {data.stockChart.categories.map((cat, i) => (
-                        <Line
-                          key={cat}
-                          type="monotone"
-                          dataKey={cat}
-                          stroke={STOCK_COLORS[i % STOCK_COLORS.length]}
-                          strokeWidth={2}
-                          dot={false}
-                        />
-                      ))}
+                      {data.stockChart.categories
+                        .filter(cat => selectedResources.size === 0 || selectedResources.has(cat))
+                        .map((cat) => (
+                          <Line
+                            key={cat}
+                            type="monotone"
+                            dataKey={cat}
+                            stroke={STOCK_COLORS[data.stockChart.categories.indexOf(cat) % STOCK_COLORS.length]}
+                            strokeWidth={2}
+                            dot={false}
+                          />
+                        ))}
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
@@ -132,17 +206,24 @@ export default function Dashboard() {
                   name={r.name}
                   stockLevel={r.stockLevel}
                   usage={r.usage}
+                  isSelected={selectedResources.has(r.name)}
+                  onClick={() => setSelectedResources(prev => {
+                    const next = new Set(prev);
+                    next.has(r.name) ? next.delete(r.name) : next.add(r.name);
+                    return next;
+                  })}
                 />
               ))}
             </div>
 
             <div className="report-cards-grid">
-              {data.reports.map((r, i) => (
+              {data.reports.map((r) => (
                 <ReportCard
-                  key={i}
+                  key={r.id}
                   heroAlias={r.heroAlias}
                   timestamp={r.timestamp}
                   priority={r.priority}
+                  onClick={() => handleReportClick(r.id)}
                 />
               ))}
             </div>
@@ -151,6 +232,10 @@ export default function Dashboard() {
           <p>Failed to load dashboard data.</p>
         )}
       </main>
+
+      {activeReport && (
+        <ReportModal report={activeReport} onClose={() => setActiveReport(null)} />
+      )}
     </div>
   );
 }
