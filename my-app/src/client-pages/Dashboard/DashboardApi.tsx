@@ -63,5 +63,6 @@ export function useDashboardData(startDate?: string, endDate?: string, refreshKe
       });
   }, [startDate, endDate, refreshKey]);
 
+  // console.log(data)
   return { data, loading, refreshing };
 }

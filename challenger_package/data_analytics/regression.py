@@ -16,9 +16,9 @@ def compute_weights(T, t_snap=None):
     return w / w.sum()
 
 
-def fit_stockout_model(stock_levels, t_snap=None, lambda_ridge=1.0):
+def fit_stockout_model(stock_levels, t_snap=None, t_offset=0, lambda_ridge=1.0):
     T = len(stock_levels)
-    t = np.arange(T, dtype=float)
+    t = np.arange(t_offset, t_offset + T, dtype=float)
     y = stock_levels.astype(float)
     w = compute_weights(T, t_snap)
     W = np.diag(w)
@@ -62,9 +62,9 @@ def fit_stockout_model(stock_levels, t_snap=None, lambda_ridge=1.0):
         "sigma2": sigma2, "cov_theta": cov_theta, "weights": w,
     }
 
-def fit_stockout_model_theil_sen(stock_levels, t_snap=None):
+def fit_stockout_model_theil_sen(stock_levels, t_snap=None, t_offset=0):
     T = len(stock_levels)
-    t = np.arange(T, dtype=float)
+    t = np.arange(t_offset, t_offset + T, dtype=float)
     y = stock_levels.astype(float)
 
     if t_snap is not None:
@@ -165,7 +165,6 @@ def fit_stockout_model_theil_sen(stock_levels, t_snap=None):
         "gamma": gamma,
     }
 
-
 def plot_results(stock_levels, results, t_snap=None):
     T = len(stock_levels)
     t_obs = np.arange(T)
@@ -176,6 +175,25 @@ def plot_results(stock_levels, results, t_snap=None):
     betas = [result["beta"] for result in results]
     gammas = [result["gamma"] for result in results]
 
+    avg_stock_levels = [np.mean(stock_levels[:i]) for i in range(T)]
+
+    avg_stock_1 = [np.mean(stock_levels[:i]) for i in range(20)]
+    avg_stock_2 = [np.mean(stock_levels[T//2 - 10:T//2 - 10 + i]) for i in range(20)]
+    avg_stock_3 = [np.mean(stock_levels[-20:-20+i]) for i in range(20)]
+    
+    # Find a sensible t_end across all valid results
+    t_end_candidates = [T + 5]
+    for result in results:
+        t_star = result["t_star"]
+        ci_hi  = result["ci_95"][1]
+        if np.isfinite(t_star):
+            t_end_candidates.append(t_star + 3)
+        if np.isfinite(ci_hi):
+            t_end_candidates.append(ci_hi + 3)
+    t_end = int(max(t_end_candidates))
+    
+    t_plot = np.linspace(0, t_end, 500)
+
     # Plot all results on the same figure
     plt.figure()
     plt.plot(t_obs[20:T // 2 - 10], stock_levels[20:T//2 - 10], "o", label="Observed Stock Levels", color="blue")
@@ -183,10 +201,12 @@ def plot_results(stock_levels, results, t_snap=None):
     plt.plot(t_obs[:20], stock_levels[:20], "o", label="First 20 Steps", color="cyan")
     plt.plot(t_obs[-20:], stock_levels[-20:], "o", label="Last 20 Steps", color="magenta")
     plt.plot(t_obs[T//2 - 10: T// 2 + 10], stock_levels[T//2 - 10: T//2 + 10], "o", label="Middle 20 Steps", color="green")
+    plt.plot(t_obs, avg_stock_levels, "--", label="Cumulative Average", color="orange")
+    plt.plot(t_obs[:20], avg_stock_1, "--", label="Average of First 20 Steps", color="cyan")
+    plt.plot(t_obs[T//2 - 10: T//2 + 10], avg_stock_2, "--", label="Average of Middle 20 Steps", color="green")
+    plt.plot(t_obs[-20:], avg_stock_3, "--", label="Average of Last 20 Steps", color="magenta")
     colors = ["blue", "green", "purple", "brown", "magenta"]
     for i, (t_star, ci_lo, ci_hi, alpha, beta, gamma) in enumerate(zip(t_stars, ci_los, ci_his, alphas, betas, gammas)):
-        t_end = int(max(T + 5, ci_hi + 3, t_star + 3))
-        t_plot = np.linspace(0, t_end)
         color = colors[i % len(colors)]
         if t_snap is not None:
             S_plot = (t_plot >= t_snap).astype(float)
@@ -194,8 +214,18 @@ def plot_results(stock_levels, results, t_snap=None):
         else:
             y_plot = alpha + beta * t_plot
         plt.plot(t_plot, y_plot, "-", color=color, label=f"Fitted Trend {i+1}")
-        plt.axvline(t_star, color=color, linestyle="--", label=f"Predicted Stockout {i+1} (t*={t_star:.2f})")
-        plt.fill_betweenx([min(stock_levels), max(stock_levels)], ci_lo, ci_hi, color=color, alpha=0.2, label=f"95% CI {i+1}")
+        
+        if np.isfinite(t_star):
+            plt.axvline(t_star, color=color, linestyle="--", 
+                        label=f"Predicted Stockout {i+1} (t*={t_star:.2f})")
+        else:
+            plt.axvline(T, color=color, linestyle=":", alpha=0.3,
+                        label=f"Predicted Stockout {i+1} (no stockout predicted)")
+        
+        if np.isfinite(ci_lo) and np.isfinite(ci_hi):
+            plt.fill_betweenx([min(stock_levels), max(stock_levels)], 
+                            ci_lo, ci_hi, color=color, alpha=0.2, 
+                            label=f"95% CI {i+1}")
     if t_snap is not None:
         plt.axvline(t_snap, color="orange", linestyle="--", label=f"Snap Event (t={t_snap})")
     plt.xlabel("Time")
@@ -219,12 +249,12 @@ if __name__ == "__main__":
     stock_1 = stock_levels[:T]
     stock_2 = stock_levels[-T:]
     stock_3 = stock_levels[len(stock_levels)//2 - T//2 : len(stock_levels)//2 + T//2]
-    result_1_ts = fit_stockout_model_theil_sen(stock_1, t_snap=None)
-    result_2_ts = fit_stockout_model_theil_sen(stock_2, t_snap=None)
-    result_3_ts = fit_stockout_model_theil_sen(stock_3, t_snap=None)
-    result_1 = fit_stockout_model(stock_1, t_snap=t_snap, lambda_ridge=0.5)
-    result_2 = fit_stockout_model(stock_2, t_snap=t_snap, lambda_ridge=0.5)
-    result_3 = fit_stockout_model(stock_3, t_snap=t_snap, lambda_ridge=0.5)
+    result_1 = fit_stockout_model_theil_sen(stock_1, t_snap=None)
+    result_2 = fit_stockout_model_theil_sen(stock_2, t_snap=None, t_offset=len(stock_levels)-T)
+    result_3 = fit_stockout_model_theil_sen(stock_3, t_snap=None, t_offset=len(stock_levels)//2 - T//2)
+    result_1_n = fit_stockout_model(stock_1, t_snap=None, lambda_ridge=0.5)
+    result_2_n = fit_stockout_model(stock_2, t_snap=None, t_offset=len(stock_levels)-T, lambda_ridge=0.5)
+    result_3_n = fit_stockout_model(stock_3, t_snap=None, t_offset=len(stock_levels)//2 - T//2, lambda_ridge=0.5)
     print(f"{resource} Stock, Middle {T} Steps:")
     print(stock_3)
 
@@ -240,4 +270,4 @@ if __name__ == "__main__":
     print(f"alpha={result_3['alpha']:.3f}  beta={result_3['beta']:.3f}")
     print(f"Predicted stockout at t={result_3['t_star']:.2f}  ({result_3['t_star']-(T-1):.1f} steps from now)")
     print(f"95% CI: ({result_3['ci_95'][0]:.2f}, {result_3['ci_95'][1]:.2f})")
-    plot_results(stock_levels, [result_1, result_2, result_3, result_1_ts, result_2_ts, result_3_ts], t_snap=None)
+    plot_results(stock_levels, [result_1, result_2, result_3, result_1_n, result_2_n, result_3_n], t_snap=None)

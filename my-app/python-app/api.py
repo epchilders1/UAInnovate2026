@@ -4,11 +4,15 @@ from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority, User, UserSession
+<<<<<<< HEAD
+from jarvis import Jarvis, ResourceDetector
+=======
 from jarvis import Jarvis, openai_client
 from config import Config
+>>>>>>> 717f8b6c6f3bb855c49e5e60cd14b935ddc59a56
 from pydantic import BaseModel
 from typing import List, Optional
-from datetime import datetime
+from datetime import datetime, timedelta
 import uuid, base64, json
 
 jarvis = Jarvis()
@@ -94,9 +98,22 @@ def logout(body: LogoutRequest, db: Session = Depends(get_session)):
 # --- Jarvis ---
 
 @app.post("/ask_jarvis")
-async def ask_jarvis(body: AskJarvisRequest):
+async def ask_jarvis(body: AskJarvisRequest, db: Session = Depends(get_session)):
+    resources = db.exec(select(Resource)).all()
+    reports = fetch_recent_reports(db);
+    days_remaining = {r.resource_name: 0 for r in resources}
+    last_message = body.messageList[-1].content if body.messageList else ""
+    detectors = [
+        ResourceDetector(
+            resource_names=[r.resource_name for r in resources],
+            reports=reports,
+            days_remaining=days_remaining,
+            last_message=last_message,
+        ),
+    ]
+
     message_dicts = [m.model_dump() for m in body.messageList]
-    response = await jarvis.ask_jarvis(messageList=message_dicts)
+    response = await jarvis.ask_jarvis(messageList=message_dicts, detectors=detectors)
     return response
 
 
@@ -247,6 +264,53 @@ async def create_report(body: CreateReportRequest, session: Session = Depends(ge
         "sector": matched_sector["name"],
         "resource": matched_resource["name"],
     }
+
+@app.get("/reports/recent")
+def get_recent_reports(session: Session = Depends(get_session)):
+    return fetch_recent_reports(session)
+
+def fetch_recent_reports(session: Session) -> list[dict]:
+    """
+    Returns:
+      - All reports from the last 7 days (any priority)
+      - High / AvengersLevelThreat reports from the last 30 days
+    Deduped and sorted newest-first.
+    """
+    now = datetime(2026, 1, 6)
+    cutoff_7d  = now - timedelta(days=7)
+    cutoff_30d = now - timedelta(days=30)
+
+    recent_any = session.exec(
+        select(Report, Hero)
+        .join(Hero, Report.hero_id == Hero.id)
+        .where(Report.timestamp >= cutoff_7d)
+    ).all()
+
+    urgent_30d = session.exec(
+        select(Report, Hero)
+        .join(Hero, Report.hero_id == Hero.id)
+        .where(Report.timestamp >= cutoff_30d)
+        .where(Report.priority >= Priority.High)
+    ).all()
+
+    priority_names = {0: "Routine", 1: "High", 2: "Avengers Level Threat"}
+
+    seen = set()
+    results = []
+    for report, hero in (*recent_any, *urgent_30d):
+        if report.id in seen:
+            continue
+        seen.add(report.id)
+        results.append({
+            "id": report.id,
+            "heroAlias": hero.alias,
+            "timestamp": report.timestamp.isoformat(),
+            "priority": priority_names.get(report.priority, "Routine"),
+            "rawText": report.raw_text,
+        })
+
+    results.sort(key=lambda r: r["timestamp"], reverse=True)
+    return results
 
 
 # --- Dashboard ---
