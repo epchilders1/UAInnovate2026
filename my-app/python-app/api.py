@@ -535,7 +535,7 @@ async def run_regression(sector_resource_id: int, session: Session = Depends(get
         .order_by(ResourceStockLevel.timestamp.desc())
         .limit(200)
     )
-    rows = list(q)[::-1]  # reverse to chronological order
+    rows = list(q)[::-1] 
     if len(rows) < 2:
         raise HTTPException(status_code=404, detail="Not enough data for regression.")
 

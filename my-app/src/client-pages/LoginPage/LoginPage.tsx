@@ -12,7 +12,7 @@ export default function LoginPage(){
                         <span className="login-card__dot" />
                     </p>
                     <h1 className="login-card__wordmark">JFX</h1>
-                    <p className="login-card__sub">Jarvis Fucks</p>
+                    <p className="login-card__sub">Jarvis Forecasting Expert</p>
                     <div className="login-card__divider" />
                     <LoginButton/>
                     <p className="login-card__footer">Unauthorized access is monitored and prosecuted.</p>
