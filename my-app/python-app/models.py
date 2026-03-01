@@ -1,6 +1,6 @@
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional, List
-from datetime import datetime
+from datetime import datetime, timedelta
 from enum import IntEnum
 
 
@@ -73,10 +73,10 @@ class User(SQLModel, table=True):
     name: str
     email: str
 
-    sessions: List["Session"] = Relationship(back_populates="user")
+    sessions: List["UserSession"] = Relationship(back_populates="user")
 
 
-class Session(SQLModel, table=True):
+class UserSession(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     session_token: str
     expires: datetime = Field(default_factory=lambda: datetime.utcnow() + timedelta(weeks=1))
