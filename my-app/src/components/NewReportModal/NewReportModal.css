@@ -1,21 +1,101 @@
-.new-report-modal {
-  gap: 1.25rem;
+/* ── Hero Selection Step ── */
+
+.hero-select-modal {
+  max-width: 480px;
+  gap: 1rem;
 }
 
-.new-report-hero-select {
+.hero-select-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f3f4f6;
+}
+
+.hero-select-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.hero-select-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: #161923;
+  border: 1px solid #2d3148;
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+}
+
+.hero-select-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.hero-select-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.hero-select-alias {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.hero-select-contact {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+/* ── Change-hero button in report form ── */
+
+.hero-select-change {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: transparent;
   border: none;
   color: #f3f4f6;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  outline: none;
+  padding: 0;
   padding-bottom: .5rem;
 }
 
-.new-report-hero-select option {
-  background: #161923;
-  color: #f3f4f6;
+.hero-select-change:hover {
+  color: #93c5fd;
+}
+
+.hero-select-avatar-sm {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* ── Report Form Step ── */
+
+.new-report-modal {
+  gap: 1.25rem;
 }
 
 .new-report-select {
