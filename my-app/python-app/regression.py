@@ -22,12 +22,11 @@ class RegressionResult:
         }
 
 class Regression:
-    async def __init__(self, stock_levels: np.ndarray, t_0: datetime.datetime, t_snap: Optional[int] = None, lambda_ridge: float = 1.0):
+    async def __init__(self, stock_levels: np.ndarray, t_0: datetime.datetime, t_snap: Optional[int] = None):
         self.stock_levels = np.array(stock_levels, dtype=float)
         self.T = len(stock_levels)
         self.t_0 = t_0
         self.t_snap = t_snap
-        self.lambda_ridge = lambda_ridge
         self.result = None
 
     async def fit(self) -> RegressionResult:
@@ -163,7 +162,7 @@ class Regression:
         
         return {
             "timestamps": timestamps,
-            "line": line.tolist()
+            "data": line.tolist()
         }
     
     async def get_confidence_interval(self) -> Optional[Dict[str, Any]]:

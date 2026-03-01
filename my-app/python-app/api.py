@@ -4,12 +4,17 @@ from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority, User, UserSession
+<<<<<<< Updated upstream
 from jarvis import Jarvis, openai_client, ResourceDetector
+=======
+from jarvis import Jarvis, ResourceDetector, openai_client
+>>>>>>> Stashed changes
 from config import Config
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime, timedelta
 import uuid, base64, json
+from regression import Regression
 
 jarvis = Jarvis()
 
@@ -457,6 +462,7 @@ def get_dashboard(
         },
     }
 
+<<<<<<< Updated upstream
 
 @app.get("/api/dashboard/reports")
 def get_dashboard_reports(
@@ -491,3 +497,35 @@ def get_dashboard_reports(
         }
         for report, hero in report_rows
     ]
+=======
+# --- Regression ---
+@app.get("/regression/{sector_resource_id}")
+async def run_regression(sector_resource_id: int, session: Session = Depends(get_session)):
+    # Get last 20 stock level entries for this resource
+    q = (
+        session.query(ResourceStockLevel)
+        .filter(ResourceStockLevel.sector_resource_id == sector_resource_id)
+        .order_by(ResourceStockLevel.timestamp.desc())
+        .limit(20)
+    )
+    rows = list(q)[::-1]  # reverse to chronological order
+    if len(rows) < 2:
+        raise HTTPException(status_code=404, detail="Not enough data for regression.")
+
+    stock_levels = [row.stock_level for row in rows]
+    t_0 = rows[0].timestamp
+    snap_indexes = [i for i, row in enumerate(rows) if row.snap_event]
+
+    reg = Regression(stock_levels, t_0, snap_indexes)
+    reg.fit()
+    result = reg.get_result_dict()
+    line = reg.get_line()
+    ci = reg.get_confidence_interval()
+    return {
+        "result": result,
+        "line": line,
+        "snap_indexes": snap_indexes,
+        "t_0": t_0,
+        "ci": ci
+    }
+>>>>>>> Stashed changes

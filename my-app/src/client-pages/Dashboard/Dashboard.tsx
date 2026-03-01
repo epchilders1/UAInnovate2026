@@ -94,6 +94,17 @@ export default function Dashboard() {
     setActiveReport(detail);
   }
 
+  async function handleResourceClick(r) {
+      const data = await fetch(`${import.meta.env.VITE_API_BASE}/api/regression/${r.id}`)
+      console.log("Data: ", data)
+    return setSelectedResources(prev => {
+      const next = new Set(prev);
+      next.has(r.name) ? next.delete(r.name) : next.add(r.name);
+
+      return next;
+    })
+  }
+
   return (
     <div className="dashboard-layout dark">
       <main className="dashboard-main">
@@ -261,11 +272,7 @@ export default function Dashboard() {
                     stockLevel={r.stockLevel}
                     usage={r.usage}
                     isSelected={selectedResources.has(r.name)}
-                    onClick={() => setSelectedResources(prev => {
-                      const next = new Set(prev);
-                      next.has(r.name) ? next.delete(r.name) : next.add(r.name);
-                      return next;
-                    })}
+                    onClick={() => handleResourceClick(r)}
                   />
                 </div>
               ))}
