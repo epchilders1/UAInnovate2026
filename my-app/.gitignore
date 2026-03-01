@@ -27,3 +27,4 @@ dist-ssr
 *.sw?
 .vscode/
 ./python-app/__pycache__/jarvis.cpython-313.pyc
+./appsettings.json
