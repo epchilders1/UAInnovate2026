@@ -11,6 +11,44 @@
   padding: 1.5rem 2rem;
 }
 
+/* Section titles */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-header .section-title {
+  margin-bottom: 0.75rem;
+}
+
+.new-report-btn {
+  background: transparent;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.new-report-btn:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.new-report-btn:focus {
+  outline:none;
+}
+
 /* Date filter */
 .date-filter-row {
   display: flex;

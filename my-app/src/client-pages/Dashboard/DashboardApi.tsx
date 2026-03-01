@@ -42,13 +42,18 @@ export interface DashboardData {
   };
 }
 
-export function useDashboardData(startDate?: string, endDate?: string) {
+export function useDashboardData(startDate?: string, endDate?: string, refreshKey?: number) {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_BASE}/api/dashboard`)
+    const params = new URLSearchParams();
+    if (startDate) params.set('start_date', startDate);
+    if (endDate) params.set('end_date', endDate);
+    const query = params.toString() ? `?${params.toString()}` : '';
+
+    fetch(`${import.meta.env.VITE_API_BASE}/api/dashboard${query}`)
       .then(res => res.json())
       .then((json: DashboardData) => setData(json))
       .catch(err => console.error('Failed to fetch dashboard data:', err))
@@ -56,7 +61,7 @@ export function useDashboardData(startDate?: string, endDate?: string) {
         setLoading(false);
         setRefreshing(false);
       });
-  }, [startDate, endDate]);
+  }, [startDate, endDate, refreshKey]);
 
   // console.log(data)
   return { data, loading, refreshing };
