@@ -1,14 +1,24 @@
 import { useState, useEffect } from 'react';
 
-const API_BASE = 'http://localhost:5228';
+const API_BASE = 'http://localhost:5001';
+
+export interface ResourceItem {
+  name: string;
+  stockLevel: number;
+  usage: number;
+}
+
+export interface ReportItem {
+  heroAlias: string;
+  timestamp: string;
+  priority: string;
+}
 
 export interface DashboardData {
-  cards: {
-    sectors: number;
-    resources: number;
-    heroes: number;
-    reports: number;
-  };
+  resourceCount: number;
+  daysRemaining: number;
+  resources: ResourceItem[];
+  reports: ReportItem[];
   usageChart: {
     categories: string[];
     data: Record<string, unknown>[];

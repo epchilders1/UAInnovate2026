@@ -1,0 +1,85 @@
+.login-page-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-content {
+    z-index: 1;
+}
+
+.login-card {
+    background: rgba(8, 8, 12, 0.88);
+    border-top: 3px solid #C0392B;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-left: 1px solid rgba(255,255,255,0.06);
+    border-right: 1px solid rgba(255,255,255,0.06);
+    border-radius: 2px;
+    padding: 40px 44px 32px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-card__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0;
+    white-space: nowrap;
+}
+
+.login-card__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #C0392B;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.login-card__wordmark {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1;
+}
+
+.login-card__sub {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    color: #C0392B;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.login-card__divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.login-card__footer {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 0;
+    text-align: center;
+}

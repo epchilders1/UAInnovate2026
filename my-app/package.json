@@ -11,14 +11,21 @@
   },
   "dependencies": {
     "@elevenlabs/react": "^0.14.1",
+    "@react-oauth/google": "^0.13.4",
+    "@react-three/fiber": "^9.5.0",
+    "@react-three/postprocessing": "^3.0.4",
     "@tailwindcss/vite": "^4.2.1",
     "@tremor/react": "^3.18.7",
+    "jwt-decode": "^4.0.0",
     "ldrs": "^1.1.9",
     "lucide-react": "^0.575.0",
+    "postprocessing": "^6.38.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.1",
     "react-speech-recognition": "^4.0.1",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -26,6 +33,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/react-speech-recognition": "^3.9.6",
+    "@types/three": "^0.183.1",
     "@vitejs/plugin-react": "^5.1.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
