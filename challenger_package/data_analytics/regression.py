@@ -1,19 +1,6 @@
 import numpy as np
-import warnings
 import matplotlib.pyplot as plt
-
-def generate_stock_data(T=20, t_snap=10, seed=42):
-    rng = np.random.default_rng(seed)
-    pre_snap = np.zeros(t_snap)
-    pre_snap[0] = 100
-    for i in range(1, t_snap):
-        pre_snap[i] = pre_snap[i-1] - 2 + rng.normal(0, 0.5 * np.sqrt(i))
-    snap_level = pre_snap[-1] / 2
-    post_snap = np.zeros(T - t_snap)
-    post_snap[0] = snap_level
-    for i in range(1, T - t_snap):
-        post_snap[i] = post_snap[i-1] - 2 + rng.normal(0, 0.5 * np.sqrt(i))
-    return np.concatenate([pre_snap, post_snap])
+from collect_data import get_resource_data
 
 
 def compute_weights(T, t_snap=None):
@@ -39,10 +26,10 @@ def fit_stockout_model(stock_levels, t_snap=None, lambda_ridge=1.0):
     if t_snap is not None:
         S = (t >= t_snap).astype(float)
         X = np.column_stack([np.ones(T), t, S])
-        P = lambda_ridge * np.diag([1.0, 1.0, 0.0])
+        P = lambda_ridge * np.diag([0.0, 1.0, 0.0])  # only penalize beta
     else:
         X = np.column_stack([np.ones(T), t])
-        P = lambda_ridge * np.diag([1.0, 1.0])
+        P = lambda_ridge * np.diag([0.0, 1.0])  # only penalize beta
 
     A = X.T @ W @ X + P
     b = X.T @ W @ y
@@ -75,105 +62,148 @@ def fit_stockout_model(stock_levels, t_snap=None, lambda_ridge=1.0):
         "sigma2": sigma2, "cov_theta": cov_theta, "weights": w,
     }
 
+def fit_stockout_model_theil_sen(stock_levels, t_snap=None):
+    T = len(stock_levels)
+    t = np.arange(T, dtype=float)
+    y = stock_levels.astype(float)
 
-def plot_results(stock_levels, result, t_snap=None, save_path="stockout_plot.png"):
+    if t_snap is not None:
+        t_pre, y_pre = t[t < t_snap], y[t < t_snap]
+        t_post, y_post = t[t >= t_snap], y[t >= t_snap]
+
+        def theil_sen_slope(tx, yx):
+            slopes = []
+            n = len(tx)
+            for i in range(n):
+                for j in range(i+1, n):
+                    slopes.append((yx[j] - yx[i]) / (tx[j] - tx[i]))
+            return np.median(slopes)
+
+        beta_pre  = theil_sen_slope(t_pre, y_pre)
+        beta_post = theil_sen_slope(t_post, y_post)
+        n_pre, n_post = len(t_pre), len(t_post)
+        beta = (beta_pre * n_pre + beta_post * n_post) / (n_pre + n_post)
+
+        alpha_pre  = np.median(y_pre  - beta * t_pre)
+        alpha_post = np.median(y_post - beta * t_post)
+        gamma = alpha_post - alpha_pre
+        alpha = alpha_pre
+        t_star = -(alpha + gamma) / beta
+
+    else:
+        slopes = []
+        for i in range(T):
+            for j in range(i+1, T):
+                slopes.append((y[j] - y[i]) / (t[j] - t[i]))
+        beta = np.median(slopes)
+        alpha = np.median(y - beta * t)
+        gamma = 0.0
+        t_star = -alpha / beta
+
+    # Bootstrap confidence interval
+    n_boot = 500
+    t_stars_boot = []
+    rng = np.random.default_rng(42)
+
+    for _ in range(n_boot):
+        idx = rng.integers(0, T, size=T)
+        t_b, y_b = t[idx], y[idx]
+
+        if t_snap is not None:
+            mask_pre  = idx < t_snap
+            mask_post = idx >= t_snap
+            t_pre_b, y_pre_b   = t_b[mask_pre],  y_b[mask_pre]
+            t_post_b, y_post_b = t_b[mask_post], y_b[mask_post]
+            if len(t_pre_b) < 2 or len(t_post_b) < 2:
+                continue
+            slopes_pre, slopes_post = [], []
+            for i in range(len(t_pre_b)):
+                for j in range(i+1, len(t_pre_b)):
+                    if t_pre_b[j] != t_pre_b[i]:
+                        slopes_pre.append((y_pre_b[j] - y_pre_b[i]) / (t_pre_b[j] - t_pre_b[i]))
+            for i in range(len(t_post_b)):
+                for j in range(i+1, len(t_post_b)):
+                    if t_post_b[j] != t_post_b[i]:
+                        slopes_post.append((y_post_b[j] - y_post_b[i]) / (t_post_b[j] - t_post_b[i]))
+            if not slopes_pre or not slopes_post:
+                continue
+            b_pre  = np.median(slopes_pre)
+            b_post = np.median(slopes_post)
+            b = (b_pre * len(t_pre_b) + b_post * len(t_post_b)) / (len(t_pre_b) + len(t_post_b))
+            a_pre  = np.median(y_pre_b  - b * t_pre_b)
+            a_post = np.median(y_post_b - b * t_post_b)
+            g = a_post - a_pre
+            a = a_pre
+            if b == 0:
+                continue
+            t_stars_boot.append(-(a + g) / b)
+
+        else:
+            slopes_b = []
+            for i in range(T):
+                for j in range(i+1, T):
+                    if t_b[j] != t_b[i]:
+                        slopes_b.append((y_b[j] - y_b[i]) / (t_b[j] - t_b[i]))
+            if not slopes_b:
+                continue
+            b = np.median(slopes_b)
+            a = np.median(y_b - b * t_b)
+            if b == 0:
+                continue
+            t_stars_boot.append(-a / b)
+
+    t_stars_boot = np.array(t_stars_boot)
+    ci_lo, ci_hi = np.percentile(t_stars_boot, [2.5, 97.5]) if len(t_stars_boot) > 10 else (np.nan, np.nan)
+    std_tstar = np.std(t_stars_boot) if len(t_stars_boot) > 10 else np.nan
+
+    return {
+        "t_star": t_star,
+        "t_star_std": std_tstar,
+        "ci_95": (ci_lo, ci_hi),
+        "alpha": alpha,
+        "beta": beta,
+        "gamma": gamma,
+    }
+
+
+def plot_results(stock_levels, results, t_snap=None):
     T = len(stock_levels)
     t_obs = np.arange(T)
-    t_star = result["t_star"]
-    ci_lo, ci_hi = result["ci_95"]
-    alpha, beta, gamma = result["alpha"], result["beta"], result["gamma"]
-    cov_theta = result["cov_theta"]
-    weights = result["weights"]
+    t_stars = [result["t_star"] for result in results]
+    ci_los = [result["ci_95"][0] for result in results]
+    ci_his = [result["ci_95"][1] for result in results]
+    alphas = [result["alpha"] for result in results]
+    betas = [result["beta"] for result in results]
+    gammas = [result["gamma"] for result in results]
 
-    t_end = int(max(T + 5, ci_hi + 3, t_star + 3))
-    t_plot = np.linspace(0, t_end, 500)
-
-    fig, ax = plt.subplots(figsize=(13, 6))
-    fig.patch.set_facecolor("#0f1117")
-    ax.set_facecolor("#0f1117")
-    ax.grid(color="#ffffff15", linestyle="--", linewidth=0.5, zorder=0)
-
-    # Extrapolation CI band
-    t_extrap = t_plot[t_plot >= T - 1]
+    # Plot all results on the same figure
+    plt.figure()
+    plt.plot(t_obs[20:T // 2 - 10], stock_levels[20:T//2 - 10], "o", label="Observed Stock Levels", color="blue")
+    plt.plot(t_obs[T // 2 + 10:-20], stock_levels[T//2 + 10:-20], "o", color="Blue")
+    plt.plot(t_obs[:20], stock_levels[:20], "o", label="First 20 Steps", color="cyan")
+    plt.plot(t_obs[-20:], stock_levels[-20:], "o", label="Last 20 Steps", color="magenta")
+    plt.plot(t_obs[T//2 - 10: T// 2 + 10], stock_levels[T//2 - 10: T//2 + 10], "o", label="Middle 20 Steps", color="green")
+    colors = ["blue", "green", "purple", "brown", "magenta"]
+    for i, (t_star, ci_lo, ci_hi, alpha, beta, gamma) in enumerate(zip(t_stars, ci_los, ci_his, alphas, betas, gammas)):
+        t_end = int(max(T + 5, ci_hi + 3, t_star + 3))
+        t_plot = np.linspace(0, t_end)
+        color = colors[i % len(colors)]
+        if t_snap is not None:
+            S_plot = (t_plot >= t_snap).astype(float)
+            y_plot = alpha + beta * t_plot + gamma * S_plot
+        else:
+            y_plot = alpha + beta * t_plot
+        plt.plot(t_plot, y_plot, "-", color=color, label=f"Fitted Trend {i+1}")
+        plt.axvline(t_star, color=color, linestyle="--", label=f"Predicted Stockout {i+1} (t*={t_star:.2f})")
+        plt.fill_betweenx([min(stock_levels), max(stock_levels)], ci_lo, ci_hi, color=color, alpha=0.2, label=f"95% CI {i+1}")
     if t_snap is not None:
-        X_extrap = np.column_stack([np.ones_like(t_extrap), t_extrap, np.ones_like(t_extrap)])
-        y_extrap = alpha + beta * t_extrap + gamma
-    else:
-        X_extrap = np.column_stack([np.ones_like(t_extrap), t_extrap])
-        y_extrap = alpha + beta * t_extrap
-
-    pointwise_var = np.array([x @ cov_theta @ x for x in X_extrap])
-    pointwise_std = np.sqrt(np.maximum(pointwise_var, 0))
-    ax.fill_between(t_extrap, y_extrap - 1.96*pointwise_std, y_extrap + 1.96*pointwise_std,
-                    alpha=0.15, color="#4fc3f7", label="95% prediction band")
-
-    # Fitted lines
-    if t_snap is not None:
-        t_pre = t_plot[t_plot < t_snap]
-        ax.plot(t_pre, alpha + beta*t_pre, color="#4fc3f7", linewidth=1.5, linestyle="--", alpha=0.4)
-        t_post = t_plot[t_plot >= t_snap]
-        ax.plot(t_post, alpha + beta*t_post + gamma, color="#4fc3f7", linewidth=2, label="Fitted trend (post-snap)")
-    else:
-        ax.plot(t_plot, alpha + beta*t_plot, color="#4fc3f7", linewidth=2, label="Fitted trend")
-
-    # Data points sized by weight
-    sizes = 40 + 220 * weights / weights.max()
-    if t_snap is not None:
-        pre_mask = t_obs < t_snap
-        post_mask = t_obs >= t_snap
-        ax.scatter(t_obs[pre_mask], stock_levels[pre_mask], s=sizes[pre_mask],
-                   color="#90caf9", zorder=5, label="Pre-snap", edgecolors="#ffffff25", linewidths=0.5)
-        ax.scatter(t_obs[post_mask], stock_levels[post_mask], s=sizes[post_mask],
-                   color="#f48fb1", zorder=5, label="Post-snap", edgecolors="#ffffff25", linewidths=0.5)
-        ax.axvline(t_snap, color="#ff6b6b", linewidth=1.5, linestyle=":", alpha=0.8,
-                   label=f"Thanos snap (t={t_snap})")
-    else:
-        ax.scatter(t_obs, stock_levels, s=sizes, color="#90caf9", zorder=5,
-                   label="Observations", edgecolors="#ffffff25", linewidths=0.5)
-
-    # Zero line
-    ax.axhline(0, color="#ffffff35", linewidth=1)
-
-    # Stockout prediction
-    ax.axvline(t_star, color="#ffd54f", linewidth=2, alpha=0.9,
-               label=f"Predicted stockout t={t_star:.1f}")
-    ax.axvspan(ci_lo, ci_hi, alpha=0.08, color="#ffd54f",
-               label=f"95% CI [{ci_lo:.1f}, {ci_hi:.1f}]")
-    ax.scatter([t_star], [0], color="#ffd54f", s=140, zorder=6, marker="*")
-
-    # "Now" line
-    ax.axvline(T - 1, color="#ffffff25", linewidth=1, linestyle="--")
-    ylims = ax.get_ylim()
-    ax.text(T - 0.7, ylims[1] * 0.97, "now", color="#ffffff50", fontsize=8)
-
-    # Annotation
-    steps_out = t_star - (T - 1)
-    snap_line = f"γ (level shift) = {gamma:.2f}\n" if t_snap is not None else ""
-    info = (
-        f"α (intercept) = {alpha:.3f}\n"
-        f"β (drift/step) = {beta:.3f}\n"
-        f"{snap_line}"
-        f"σ² = {result['sigma2']:.3f}\n"
-        f"Stockout in ~{steps_out:.1f} steps"
-    )
-    ax.text(0.02, 0.05, info, transform=ax.transAxes, fontsize=9,
-            color="#ffffffcc", verticalalignment="bottom", fontfamily="monospace",
-            bbox=dict(boxstyle="round,pad=0.5", facecolor="#1e2130",
-                      edgecolor="#ffffff20", alpha=0.85))
-
-    ax.set_xlabel("Time step", color="#ffffffcc", fontsize=11)
-    ax.set_ylabel("Stock Level", color="#ffffffcc", fontsize=11)
-    title = "Stock Level Ridge Regression — With Snap" if t_snap is not None else "Stock Level Ridge Regression — No Snap"
-    ax.set_title(title, color="#ffffff", fontsize=13, pad=12)
-    ax.tick_params(colors="#ffffffaa")
-    for spine in ax.spines.values():
-        spine.set_edgecolor("#ffffff15")
-    ax.legend(facecolor="#1e2130", edgecolor="#ffffff20", labelcolor="#ffffffcc", fontsize=8.5)
-
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=150, bbox_inches="tight", facecolor=fig.get_facecolor())
-    plt.close()
-    print(f"Saved: {save_path}")
+        plt.axvline(t_snap, color="orange", linestyle="--", label=f"Snap Event (t={t_snap})")
+    plt.xlabel("Time")
+    plt.ylabel("Stock Level")
+    plt.title("Stock Level Trend and Predicted Stockout Time")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
 
 
 if __name__ == "__main__":
@@ -181,25 +211,33 @@ if __name__ == "__main__":
 
     # --- Snap case ---
     t_snap = 10
-    stock_snap = generate_stock_data(T=T, t_snap=t_snap, seed=7)
-    result_snap = fit_stockout_model(stock_snap, t_snap=t_snap, lambda_ridge=0.5)
 
-    print("=== With Snap ===")
-    print(f"alpha={result_snap['alpha']:.3f}  beta={result_snap['beta']:.3f}  gamma={result_snap['gamma']:.3f}")
-    print(f"Predicted stockout at t={result_snap['t_star']:.2f}  ({result_snap['t_star']-(T-1):.1f} steps from now)")
-    print(f"95% CI: ({result_snap['ci_95'][0]:.2f}, {result_snap['ci_95'][1]:.2f})")
-    plot_results(stock_snap, result_snap, t_snap=t_snap, save_path="/mnt/user-data/outputs/stockout_snap.png")
+    stock_data = get_resource_data("../cleaned_avengers_data.csv")
+    new_asgard_stock = stock_data["New Asgard"]
+    resource = list(new_asgard_stock.keys())[0]
+    stock_levels = np.array(new_asgard_stock[resource]["stock_level"], dtype=float)
+    stock_1 = stock_levels[:T]
+    stock_2 = stock_levels[-T:]
+    stock_3 = stock_levels[len(stock_levels)//2 - T//2 : len(stock_levels)//2 + T//2]
+    result_1_ts = fit_stockout_model_theil_sen(stock_1, t_snap=None)
+    result_2_ts = fit_stockout_model_theil_sen(stock_2, t_snap=None)
+    result_3_ts = fit_stockout_model_theil_sen(stock_3, t_snap=None)
+    result_1 = fit_stockout_model(stock_1, t_snap=t_snap, lambda_ridge=0.5)
+    result_2 = fit_stockout_model(stock_2, t_snap=t_snap, lambda_ridge=0.5)
+    result_3 = fit_stockout_model(stock_3, t_snap=t_snap, lambda_ridge=0.5)
+    print(f"{resource} Stock, Middle {T} Steps:")
+    print(stock_3)
 
-    # --- No snap case ---
-    rng = np.random.default_rng(42)
-    stock_no_snap = np.zeros(T)
-    stock_no_snap[0] = 100
-    for i in range(1, T):
-        stock_no_snap[i] = stock_no_snap[i-1] - 2 + rng.normal(0, 0.5 * np.sqrt(i))
-    result_no_snap = fit_stockout_model(stock_no_snap, t_snap=None, lambda_ridge=0.5)
+    # --- Snap case ---
+    # print("=== With Snap ===")
+    # print(f"alpha={result_snap['alpha']:.3f}  beta={result_snap['beta']:.3f}  gamma={result_snap['gamma']:.3f}")
+    # print(f"Predicted stockout at t={result_snap['t_star']:.2f}  ({result_snap['t_star']-(T-1):.1f} steps from now)")
+    # print(f"95% CI: ({result_snap['ci_95'][0]:.2f}, {result_snap['ci_95'][1]:.2f})")
+    # plot_results(stock_snap, result_snap, t_snap=t_snap, save_path="/mnt/user-data/outputs/stockout_snap.png")
 
+    # --- No Snap case ---
     print("\n=== Without Snap ===")
-    print(f"alpha={result_no_snap['alpha']:.3f}  beta={result_no_snap['beta']:.3f}")
-    print(f"Predicted stockout at t={result_no_snap['t_star']:.2f}  ({result_no_snap['t_star']-(T-1):.1f} steps from now)")
-    print(f"95% CI: ({result_no_snap['ci_95'][0]:.2f}, {result_no_snap['ci_95'][1]:.2f})")
-    plot_results(stock_no_snap, result_no_snap, t_snap=None, save_path="/mnt/user-data/outputs/stockout_nosnap.png")
+    print(f"alpha={result_3['alpha']:.3f}  beta={result_3['beta']:.3f}")
+    print(f"Predicted stockout at t={result_3['t_star']:.2f}  ({result_3['t_star']-(T-1):.1f} steps from now)")
+    print(f"95% CI: ({result_3['ci_95'][0]:.2f}, {result_3['ci_95'][1]:.2f})")
+    plot_results(stock_levels, [result_1, result_2, result_3, result_1_ts, result_2_ts, result_3_ts], t_snap=None)
