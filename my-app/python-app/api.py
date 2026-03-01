@@ -4,16 +4,14 @@ from sqlmodel import Session, select
 from sqlalchemy import func, desc
 from database import create_db, get_session
 from models import Hero, Sector, Resource, SectorResource, ResourceStockLevel, Report, Priority, User, UserSession
-<<<<<<< HEAD
-from jarvis import Jarvis, ResourceDetector
-=======
-from jarvis import Jarvis, openai_client
+from jarvis import Jarvis, ResourceDetector, openai_client
 from config import Config
->>>>>>> 717f8b6c6f3bb855c49e5e60cd14b935ddc59a56
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime, timedelta
 import uuid, base64, json
+
+from redact_report import redact_reports
 
 jarvis = Jarvis()
 
@@ -101,6 +99,7 @@ def logout(body: LogoutRequest, db: Session = Depends(get_session)):
 async def ask_jarvis(body: AskJarvisRequest, db: Session = Depends(get_session)):
     resources = db.exec(select(Resource)).all()
     reports = fetch_recent_reports(db);
+    reports = redact_reports(reports)
     days_remaining = {r.resource_name: 0 for r in resources}
     last_message = body.messageList[-1].content if body.messageList else ""
     detectors = [

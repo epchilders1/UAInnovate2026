@@ -6,6 +6,8 @@ from config import Config
 
 openai_client = AsyncOpenAI(api_key=Config.OPENAI_API_KEY)
 
+from redact_report import redact_reports
+
 
 # ---------------------------------------------------------------------------
 # Detector protocol
@@ -94,20 +96,20 @@ class ResourceDetector(JarvisDetector):
         if mentioned:
             for resource in mentioned:
                 dr = self.days_remaining.get(resource, 0)
-                relevant = [r for r in self.reports if resource.lower() in r["rawText"].lower()]
+                relevant = [r for r in redact_reports(self.reports) if resource.lower() in r["rawText"].lower()]
                 print("Relevant Report:", relevant)
                 lines.append(f"\n[{resource}]")
                 lines.append(f"  Days of supply remaining: {dr}")
                 lines.append(f"  Reports ({len(relevant)} total):")
                 for r in relevant:
                     lines.append(
-                        f"    [{r['timestamp'][:16]}] {r['heroAlias']} | {r['priority']} | {r['rawText']}"
+                        f"    [{r['timestamp'][:16]}] {'[REDACTED]'} | {r['priority']} | {r['rawText']}"
                     )
         elif self.reports:
             lines.append("\nRecent reports:")
             for r in self.reports[:5]:
                 lines.append(
-                    f"  [{r['timestamp'][:16]}] {r['heroAlias']} | {r['priority']} | {r['rawText'][:120]}"
+                    f"  [{r['timestamp'][:16]}] [REDACTED] | {r['priority']} | {r['rawText'][:120]}"
                 )
 
         return "\n".join(lines)
@@ -149,6 +151,7 @@ BASE_INSTRUCTIONS = """
     - Do not use markdown or formatting symbols.
     - Do not mention being an AI or language model.
     - Keep responses as short as possible while remaining useful.
+    - Include humor and sarcasm in your responses, as Jarvis would do in the Avengers movies.
     """
 
 

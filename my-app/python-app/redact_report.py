@@ -1,10 +1,12 @@
+import re
+
 def redact_reports(reports: list[dict]) -> list[dict]:
     redacted = []
     for report in reports:
         r = report.copy()
-        if "metadata" in r:
-            r["metadata"] = r["metadata"].copy()
-            r["metadata"]["hero_alias"] = "REDACTED"
-            r["metadata"]["secure_contact"] = "REDACTED"
+        name_mention_regex = f"{r["heroAlias"]}"
+        number_mention_regex = f"{r["heroContact"]}"
+        r["heroAlias"] = "[REDACTED]"
+        r.pop("heroContact", None)
         redacted.append(r)
     return redacted
