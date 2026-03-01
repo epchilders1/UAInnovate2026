@@ -5,6 +5,19 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/dashboard": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "operationId": "GetDashboardData",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/heroes": {
       "get": {
         "tags": [
@@ -159,7 +172,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Report"
+                    "$ref": "#/components/schemas/Int32StringDateTimePriorityInt32Int32StringInt32String<>f__AnonymousType4"
                   }
                 }
               }
@@ -793,6 +806,47 @@
         },
         "additionalProperties": false
       },
+      "Int32StringDateTimePriorityInt32Int32StringInt32String<>f__AnonymousType4": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rawText": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/Priority"
+          },
+          "heroId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resourceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resourceName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sectorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sectorName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Priority": {
         "enum": [
           0,
@@ -966,6 +1020,9 @@
     }
   },
   "tags": [
+    {
+      "name": "Dashboard"
+    },
     {
       "name": "Heroes"
     },

@@ -1,0 +1,5 @@
+# Visual Studio
+.vs/
+
+# Generated data
+challenger_package/generated_stock_data.csv
