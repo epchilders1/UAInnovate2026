@@ -1,0 +1,73 @@
+.jarvis-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 48px;
+  animation: hud-slide-up 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes hud-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.jarvis-hud {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(30, 30, 30, 0.92);
+  backdrop-filter: blur(20px);
+  border-radius: 100px;
+  padding: 14px 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: fit-content;
+}
+
+/* Google-colored pulse dots */
+.pulse-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: dot-bounce 1.2s ease-in-out infinite;
+}
+
+.pulse-dot--1 { background: #4285F4; animation-delay: 0s; }
+.pulse-dot--2 { background: #EA4335; animation-delay: 0.15s; }
+.pulse-dot--3 { background: #FBBC05; animation-delay: 0.3s; }
+.pulse-dot--4 { background: #34A853; animation-delay: 0.45s; }
+
+@keyframes dot-bounce {
+  0%, 60%, 100% { transform: scaleY(1);   opacity: 0.5; }
+  30%            { transform: scaleY(1.8); opacity: 1; }
+}
+
+.jarvis-hud__text {
+  font-family: 'Google Sans', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 440px;
+}
+
+.jarvis-hud__status {
+  color: rgba(255, 255, 255, 0.55);
+  font-style: italic;
+}
+
+.jarvis-hud__transcript {
+  color: #fff;
+}
